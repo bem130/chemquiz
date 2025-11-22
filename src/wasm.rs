@@ -126,7 +126,7 @@ fn format_path(path: &[String]) -> String {
 fn find_by_name(dataset: &[Compound], label: &str) -> Option<Compound> {
     dataset
         .iter()
-        .find(|compound| compound.display_name() == label)
+        .find(|compound| compound.english_label() == label)
         .cloned()
 }
 
@@ -138,12 +138,7 @@ fn find_by_structure(dataset: &[Compound], label: &str) -> Option<Compound> {
 }
 
 fn english_label(compound: &Compound) -> String {
-    match &compound.common_name {
-        Some(common) if common != &compound.iupac_name => {
-            format!("{} ({})", compound.iupac_name, common)
-        }
-        _ => compound.iupac_name.clone(),
-    }
+    compound.english_label()
 }
 
 fn japanese_label(compound: &Compound) -> Option<String> {
@@ -434,6 +429,8 @@ fn StructureTile(
     let iupac_name = compound.iupac_name.clone();
     let skeletal_formula = compound.skeletal_formula.clone();
     let molecular_formula = compound.molecular_formula.clone();
+    let formula_badge = (!molecular_formula.is_empty())
+        .then(|| view! { <FormulaBadge formula=molecular_formula.clone() /> });
 
     create_effect(move |_| {
         let current_theme = theme.get();
@@ -492,8 +489,7 @@ fn StructureTile(
                     role="img"
                     aria-label=format!("Full structural formula for {}", iupac_name.clone())
                 ></div>
-                {(size == StructureViewSize::Option && !molecular_formula.is_empty())
-                    .then(|| view! { <FormulaBadge formula=molecular_formula.clone() /> })}
+                {formula_badge.clone()}
             </div>
         }
         .into_view()
@@ -504,6 +500,7 @@ fn StructureTile(
             view! {
                 <div class=container_class>
                     <p class="prompt-formula-text">{format!("{}", skeletal_formula.clone())}</p>
+                    {formula_badge.clone()}
                 </div>
             }
             .into_view()

@@ -62,7 +62,7 @@ fn deterministic_generation_from_seed() {
     assert_eq!(quiz.options.len(), 4);
     assert_eq!(
         quiz.options[quiz.correct_index],
-        "methanol (methyl alcohol) / メタノール"
+        "methanol (methyl alcohol)"
     );
 }
 
@@ -93,5 +93,5 @@ fn prompt_matches_selected_option() {
         .find(|compound| compound.display_structure() == quiz.prompt)
         .expect("prompt should match provided compounds");
 
-    assert_eq!(quiz.options[quiz.correct_index], matched.display_name());
+    assert_eq!(quiz.options[quiz.correct_index], matched.english_label());
 }

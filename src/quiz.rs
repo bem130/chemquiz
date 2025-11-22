@@ -68,7 +68,7 @@ pub fn generate_quiz<R: Rng + ?Sized>(
     for (idx, compound) in compounds.iter().enumerate() {
         let label = match mode {
             QuizMode::NameToStructure => compound.display_structure(),
-            QuizMode::StructureToName => compound.display_name(),
+            QuizMode::StructureToName => compound.english_label(),
         };
 
         if seen.insert(label) {
@@ -95,7 +95,7 @@ pub fn generate_quiz<R: Rng + ?Sized>(
             let compound = &compounds[*idx];
             let option_text = match mode {
                 QuizMode::NameToStructure => compound.display_structure(),
-                QuizMode::StructureToName => compound.display_name(),
+                QuizMode::StructureToName => compound.english_label(),
             };
             (*idx, option_text)
         })
@@ -109,8 +109,12 @@ pub fn generate_quiz<R: Rng + ?Sized>(
         .expect("correct option must exist after shuffle");
 
     let prompt = match mode {
-        QuizMode::NameToStructure => compounds[correct_compound_index].display_name(),
-        QuizMode::StructureToName => compounds[correct_compound_index].display_structure(),
+        QuizMode::NameToStructure => {
+            compounds[correct_compound_index].english_label()
+        }
+        QuizMode::StructureToName => {
+            compounds[correct_compound_index].display_structure()
+        }
     };
 
     Ok(QuizItem {
@@ -190,12 +194,12 @@ mod tests {
 
         let correct_compound = compounds
             .iter()
-            .find(|compound| compound.display_name() == quiz.prompt)
+            .find(|compound| compound.english_label() == quiz.prompt)
             .expect("prompt should match a provided compound");
 
         assert_eq!(
             quiz.options[quiz.correct_index],
-            correct_compound.display_structure()
+            correct_compound.display_structure(),
         );
     }
 
@@ -218,7 +222,7 @@ mod tests {
 
         assert_eq!(
             quiz.options[quiz.correct_index],
-            correct_compound.display_name()
+            correct_compound.english_label(),
         );
     }
 
