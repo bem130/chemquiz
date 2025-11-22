@@ -66,9 +66,10 @@ trunk serve --public-url /chemquiz/
 The app mounts to the page body, toggles light/dark themes, and generates sample quizzes using the
 `demo` module. Users can switch between "Name → Structure" and "Structure → Name" prompts, browse
 a tree of organic and inorganic folders, and load JSON datasets directly from the published catalog.
-Structural prompts render both a skeletal canvas (RDKit MinimalLib) and a full structural formula
-using Kekule.js; entries without SMILES fall back to textual formulas. The `--public-url` flag keeps
-asset paths compatible with GitHub Pages.
+The UI is split into Menu → Game → Result scenes with per-question scoring. Structural prompts render
+both a skeletal canvas (RDKit MinimalLib) and a full structural formula using Kekule.js, while
+molecular formulas are drawn with KaTeX/mhchem for clearer subscripts. Entries without SMILES fall
+back to textual formulas. The `--public-url` flag keeps asset paths compatible with GitHub Pages.
 
 ## Deploy to GitHub Pages
 
