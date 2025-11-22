@@ -293,8 +293,8 @@ fn StructureTile(compound: Compound, theme: ReadSignal<String>) -> impl IntoView
             (effect_smiles.clone(), skeletal_ref.get(), full_ref.get())
         {
             let status = set_render_message;
-            let skeletal_element: HtmlCanvasElement = canvas.unchecked_into();
-            let full_element: HtmlDivElement = full.unchecked_into();
+            let skeletal_element: HtmlCanvasElement = (*canvas).clone().unchecked_into();
+            let full_element: HtmlDivElement = (*full).clone().unchecked_into();
 
             spawn_local(async move {
                 let result =

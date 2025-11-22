@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Chemical Formula Rendering Comparison</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Dark theme base styles -->
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #0f172a;
+            --bg-elevated: #020617;
+            --bg-panel: #020617;
+            --accent: #38bdf8;
+            --accent-soft: rgba(56, 189, 248, 0.15);
+            --border-subtle: rgba(148, 163, 184, 0.3);
+            --text-main: #e5e7eb;
+            --text-muted: #9ca3af;
+            --error: #f97373;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #1e293b, var(--bg));
+            color: var(--text-main);
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .app-shell {
+            width: 100%;
+            max-width: 1120px;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.98));
+            border-radius: 20px;
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            box-shadow:
+                0 24px 80px rgba(15, 23, 42, 0.8),
+                0 0 0 1px rgba(15, 23, 42, 0.9);
+            padding: 20px 24px 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            backdrop-filter: blur(18px);
+        }
+
+        @media (min-width: 960px) {
+            .app-shell {
+                padding: 22px 26px 24px;
+            }
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .title-block {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .title-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        h1 {
+            font-size: 20px;
+            letter-spacing: 0.02em;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
+            padding: 2px 8px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.6);
+            background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.2), rgba(15, 23, 42, 0.9));
+            color: var(--text-main);
+        }
+
+        .subtitle {
+            margin: 0;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .header-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            align-items: flex-end;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .chip-row {
+            display: flex;
+            gap: 6px;
+        }
+
+        .chip {
+            padding: 3px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            background: radial-gradient(circle at top, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8));
+        }
+
+        .hint-text {
+            font-size: 11px;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+            gap: 16px;
+        }
+
+        @media (max-width: 860px) {
+            body {
+                padding: 16px;
+            }
+            .app-shell {
+                padding: 16px 14px 18px;
+            }
+            .main-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .header-meta {
+                align-items: flex-start;
+            }
+        }
+
+        .panel {
+            background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.96));
+            border-radius: 16px;
+            border: 1px solid var(--border-subtle);
+            padding: 14px 14px 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow:
+                0 18px 40px rgba(15, 23, 42, 0.7),
+                0 0 0 1px rgba(15, 23, 42, 0.75);
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .panel-title {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--text-muted);
+        }
+
+        .pill {
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.7);
+            background: radial-gradient(circle at top, rgba(56, 189, 248, 0.2), rgba(15, 23, 42, 0.9));
+        }
+
+        .input-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .textarea-shell {
+            position: relative;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 124px;
+            resize: vertical;
+            padding: 10px 11px 26px;
+            border-radius: 12px;
+            border: 1px solid rgba(148, 163, 184, 0.55);
+            background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.98));
+            color: var(--text-main);
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 13px;
+            outline: none;
+            transition: border-color 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+        }
+
+        textarea::placeholder {
+            color: rgba(148, 163, 184, 0.75);
+        }
+
+        textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.7);
+            background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 1));
+        }
+
+        .textarea-footer {
+            position: absolute;
+            inset-inline: 8px;
+            bottom: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            pointer-events: none;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .textarea-footer span {
+            background: radial-gradient(circle at top, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.96));
+            padding: 2px 6px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.6);
+        }
+
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.6);
+            background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.2), rgba(15, 23, 42, 1));
+            color: var(--text-main);
+            font-size: 12px;
+            cursor: pointer;
+            outline: none;
+            transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: radial-gradient(circle at top center, rgba(248, 250, 252, 0.12), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.15s ease;
+        }
+
+        .btn:hover::before {
+            opacity: 1;
+        }
+
+        .btn:hover {
+            border-color: rgba(56, 189, 248, 0.8);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.9);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+            box-shadow: 0 3px 8px rgba(15, 23, 42, 0.9);
+        }
+
+        .btn-outline {
+            background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.98));
+        }
+
+        .btn-outline:hover {
+            background: radial-gradient(circle at top left, rgba(15, 23, 42, 1), rgba(15, 23, 42, 1));
+        }
+
+        .btn span.key {
+            padding: 0 6px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.7);
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+        }
+
+        .tiny-label {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .sample-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 8px;
+        }
+
+        .sample-btn {
+            border-radius: 999px;
+            border: 1px dashed rgba(148, 163, 184, 0.7);
+            padding: 5px 9px;
+            font-size: 11px;
+            cursor: pointer;
+            background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.98));
+            color: var(--text-main);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: border-color 0.12s ease, background 0.12s ease, transform 0.12s ease;
+        }
+
+        .sample-btn:hover {
+            border-color: rgba(56, 189, 248, 0.85);
+            background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.99), rgba(15, 23, 42, 1));
+            transform: translateY(-1px);
+        }
+
+        .sample-btn span.code {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 10px;
+            color: var(--text-muted);
+        }
+
+        .output-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+        }
+
+        .render-card {
+            position: relative;
+            border-radius: 14px;
+            padding: 10px 10px 9px;
+            background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 1));
+            border: 1px solid rgba(148, 163, 184, 0.6);
+            min-height: 96px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            overflow: hidden;
+        }
+
+        .render-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .render-header strong {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+        }
+
+        .render-meta {
+            font-size: 10px;
+            opacity: 0.85;
+        }
+
+        .render-body {
+            flex: 1 1 auto;
+            border-radius: 9px;
+            background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.99));
+            border: 1px dashed rgba(148, 163, 184, 0.35);
+            padding: 8px 8px 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .render-body.plain {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 13px;
+        }
+
+        .render-body-inner {
+            width: 100%;
+            text-align: center;
+            min-height: 42px;
+        }
+
+        .render-body-inner.katex-output {
+            font-size: 1.2rem;
+        }
+
+        .render-body-inner.mathjax-output {
+            font-size: 1.2rem;
+        }
+
+        .status-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .status-dot {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 99px;
+            background: rgba(56, 189, 248, 0.7);
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+        }
+
+        .error-dot {
+            background: var(--error);
+            box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.2);
+        }
+
+        .error-text {
+            color: var(--error);
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .footer span strong {
+            color: var(--accent);
+        }
+
+        .legend {
+            display: inline-flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .legend-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 2px 8px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.6);
+            background: radial-gradient(circle at top, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 1));
+        }
+
+        .legend-pill span.bullet {
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: rgba(56, 189, 248, 0.8);
+        }
+
+        .legend-pill span.bullet-secondary {
+            background: rgba(94, 234, 212, 0.9);
+        }
+
+        .legend-pill span.bullet-plain {
+            background: rgba(148, 163, 184, 0.9);
+        }
+    </style>
+
+    <!-- KaTeX core + mhchem extension -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css"
+        crossorigin="anonymous"
+    />
+    <script
+        defer
+        src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"
+        crossorigin="anonymous"
+    ></script>
+    <script
+        defer
+        src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/mhchem.min.js"
+        crossorigin="anonymous"
+    ></script>
+
+    <!-- MathJax v3 configured with mhchem extension -->
+    <script>
+        window.MathJax = {
+            loader: { load: ['[tex]/mhchem'] },
+            tex: {
+                packages: { '[+]': ['mhchem'] }
+            },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script
+        defer
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+        id="mathjax-script"
+    ></script>
+</head>
+<body>
+    <div class="app-shell">
+        <header class="header">
+            <div class="title-block">
+                <div class="title-row">
+                    <h1>
+                        Chemical Formula Renderer
+                    </h1>
+                    <div class="badge">KaTeX × MathJax × Plain</div>
+                </div>
+                <p class="subtitle">
+                    Type LaTeX + mhchem syntax once, compare how <code>\ce{...}</code> renders in different engines.
+                </p>
+            </div>
+            <div class="header-meta">
+                <div class="chip-row">
+                    <div class="chip">mhchem syntax playground</div>
+                    <div class="chip">Dark UI</div>
+                </div>
+                <div class="hint-text">
+                    Tip: focus the input and press <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>Enter</kbd> to re-render.
+                </div>
+            </div>
+        </header>
+
+        <main class="main-grid">
+            <!-- Left: Input & samples -->
+            <section class="panel">
+                <div class="panel-header">
+                    <div class="panel-title">Input</div>
+                    <div class="pill">LaTeX + mhchem</div>
+                </div>
+
+                <div class="input-stack">
+                    <label for="formula-input">
+                        Expression (for mhchem <code>\ce{}</code>, no dollar signs needed)
+                    </label>
+
+                    <div class="textarea-shell">
+                        <textarea
+                            id="formula-input"
+                            spellcheck="false"
+                            placeholder="Examples:
+\ce{H2O}
+\ce{2H2 + O2 -> 2H2O}
+\ce{CH3-CH2-OH}
+\ce{SO4^2- + Ba^2+ -> BaSO4 v}"
+                        ></textarea>
+                        <div class="textarea-footer">
+                            <span>Engine: KaTeX &amp; MathJax with mhchem</span>
+                            <span><code>\ce{...}</code> only</span>
+                        </div>
+                    </div>
+
+                    <div class="button-row">
+                        <button class="btn" id="render-btn" type="button">
+                            <span>Render in all panels</span>
+                            <span class="key">Ctrl / Cmd + Enter</span>
+                        </button>
+                        <button class="btn btn-outline" id="clear-btn" type="button">
+                            Clear
+                        </button>
+                    </div>
+
+                    <div>
+                        <div class="tiny-label" style="margin-bottom: 4px;">Insert a sample:</div>
+                        <div class="sample-grid">
+                            <button class="sample-btn" data-sample="\ce{H2O}">
+                                <span>Simple molecule</span>
+                                <span class="code">H2O</span>
+                            </button>
+                            <button class="sample-btn" data-sample="\ce{2H2 + O2 -> 2H2O}">
+                                <span>Reaction (combustion)</span>
+                                <span class="code">2H2 + O2 → 2H2O</span>
+                            </button>
+                            <button class="sample-btn" data-sample="\ce{NH4+ + Cl-}">
+                                <span>Ionic species</span>
+                                <span class="code">NH4+ + Cl-</span>
+                            </button>
+                            <button class="sample-btn" data-sample="\ce{SO4^2- + Ba^2+ -> BaSO4 v}">
+                                <span>Precipitation</span>
+                                <span class="code">BaSO4</span>
+                            </button>
+                            <button class="sample-btn" data-sample="\ce{CH3-CH2-OH}">
+                                <span>Organic chain</span>
+                                <span class="code">CH3-CH2-OH</span>
+                            </button>
+                            <button class="sample-btn" data-sample="\ce{^{14}_{6}C}">
+                                <span>Isotope</span>
+                                <span class="code">14/6 C</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right: Output comparison -->
+            <section class="panel">
+                <div class="panel-header">
+                    <div class="panel-title">Comparison</div>
+                    <div class="pill">Side by side</div>
+                </div>
+
+                <div class="output-layout">
+                    <article class="render-card">
+                        <header class="render-header">
+                            <div>
+                                <strong>KaTeX</strong>
+                                <div class="render-meta">Fast static renderer</div>
+                            </div>
+                            <div class="legend-pill">
+                                <span class="bullet"></span>
+                                <span>mhchem</span>
+                            </div>
+                        </header>
+                        <div class="render-body">
+                            <div id="katex-output" class="render-body-inner katex-output"></div>
+                        </div>
+                    </article>
+
+                    <article class="render-card">
+                        <header class="render-header">
+                            <div>
+                                <strong>MathJax</strong>
+                                <div class="render-meta">High-quality &amp; accessible</div>
+                            </div>
+                            <div class="legend-pill">
+                                <span class="bullet bullet-secondary"></span>
+                                <span>mhchem</span>
+                            </div>
+                        </header>
+                        <div class="render-body">
+                            <div id="mathjax-output" class="render-body-inner mathjax-output"></div>
+                        </div>
+                    </article>
+
+                    <article class="render-card">
+                        <header class="render-header">
+                            <div>
+                                <strong>Plain text</strong>
+                                <div class="render-meta">Just the raw input</div>
+                            </div>
+                            <div class="legend-pill">
+                                <span class="bullet bullet-plain"></span>
+                                <span>Source</span>
+                            </div>
+                        </header>
+                        <div class="render-body plain">
+                            <pre id="plain-output" class="render-body-inner"></pre>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="status-row" id="status-row">
+                    <div class="status-dot" id="status-message">
+                        <span class="dot" id="status-dot"></span>
+                        <span>Ready. Load a sample or type your own mhchem expression.</span>
+                    </div>
+                    <div class="legend">
+                        <div class="legend-pill">
+                            <span class="bullet"></span>
+                            <span>KaTeX</span>
+                        </div>
+                        <div class="legend-pill">
+                            <span class="bullet bullet-secondary"></span>
+                            <span>MathJax</span>
+                        </div>
+                        <div class="legend-pill">
+                            <span class="bullet bullet-plain"></span>
+                            <span>Plain</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <span>
+                Uses <strong>mhchem</strong> syntax (<code>\ce{...}</code>) with <strong>KaTeX</strong> and <strong>MathJax</strong>.
+            </span>
+            <span>
+                Hint: Try invalid input to see how error handling differs.
+            </span>
+        </footer>
+    </div>
+
+    <script>
+        // Utility: update status indicator with message and state
+        function setStatus(message, isError) {
+            var statusDot = document.getElementById('status-dot');
+            var statusMessage = document.getElementById('status-message');
+
+            if (!statusDot || !statusMessage) {
+                return;
+            }
+
+            statusDot.classList.toggle('error-dot', Boolean(isError));
+            statusMessage.classList.toggle('error-text', Boolean(isError));
+
+            var spans = statusMessage.querySelectorAll('span');
+            if (spans.length >= 2) {
+                spans[1].textContent = message;
+            }
+        }
+
+        // Render formula in KaTeX, MathJax, and plain text panels
+        function renderAll() {
+            var inputEl = document.getElementById('formula-input');
+            var katexOutput = document.getElementById('katex-output');
+            var mathjaxOutput = document.getElementById('mathjax-output');
+            var plainOutput = document.getElementById('plain-output');
+
+            if (!inputEl || !katexOutput || !mathjaxOutput || !plainOutput) {
+                return;
+            }
+
+            var source = inputEl.value.trim();
+
+            // Update plain text panel
+            plainOutput.textContent = source || '—';
+
+            if (!source) {
+                katexOutput.innerHTML = '';
+                mathjaxOutput.innerHTML = '';
+                setStatus('Cleared. Enter a mhchem expression to render.', false);
+                return;
+            }
+
+            var katexOk = false;
+            var mathjaxOk = false;
+
+            // KaTeX rendering (direct mhchem "ce" macro)
+            try {
+                if (window.katex) {
+                    window.katex.render(source, katexOutput, {
+                        throwOnError: false,
+                        strict: false
+                    });
+                    katexOk = true;
+                } else {
+                    katexOutput.textContent = 'KaTeX not loaded.';
+                }
+            } catch (error) {
+                console.error('KaTeX render error:', error);
+                katexOutput.textContent = 'KaTeX error: ' + String(error.message || error);
+            }
+
+            // MathJax v3 rendering with mhchem
+            try {
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    // Wrap source in inline math delimiters so mhchem is interpreted
+                    mathjaxOutput.textContent = '';
+                    mathjaxOutput.innerHTML = '\\(' + source.replace(/\\/g, '\\\\') + '\\)';
+                    window.MathJax.typesetPromise([mathjaxOutput])
+                        .then(function () {
+                            mathjaxOk = true;
+                            if (katexOk && mathjaxOk) {
+                                setStatus('Rendered successfully in KaTeX and MathJax.', false);
+                            } else if (katexOk || mathjaxOk) {
+                                setStatus('Rendered in one engine, but the other had an issue.', true);
+                            }
+                        })
+                        .catch(function (error) {
+                            console.error('MathJax render error:', error);
+                            mathjaxOutput.textContent = 'MathJax error: ' + String(error.message || error);
+                            if (!katexOk) {
+                                setStatus('Both engines reported errors. Check your mhchem syntax.', true);
+                            } else {
+                                setStatus('MathJax error; KaTeX rendered successfully.', true);
+                            }
+                        });
+                } else {
+                    mathjaxOutput.textContent = 'MathJax not loaded yet…';
+                }
+            } catch (error) {
+                console.error('MathJax exception:', error);
+                mathjaxOutput.textContent = 'MathJax exception: ' + String(error.message || error);
+                if (!katexOk) {
+                    setStatus('Both engines reported errors. Check your mhchem syntax.', true);
+                } else {
+                    setStatus('MathJax error; KaTeX rendered successfully.', true);
+                }
+            }
+
+            // If only KaTeX succeeded and MathJax is still pending, show a provisional status
+            if (katexOk && !mathjaxOk) {
+                setStatus('Waiting for MathJax to finish rendering…', false);
+            }
+        }
+
+        function attachEvents() {
+            var inputEl = document.getElementById('formula-input');
+            var renderBtn = document.getElementById('render-btn');
+            var clearBtn = document.getElementById('clear-btn');
+            var sampleButtons = document.querySelectorAll('.sample-btn');
+
+            if (!inputEl) {
+                return;
+            }
+
+            // Initial demo value
+            inputEl.value = '\\ce{2H2 + O2 -> 2H2O}';
+            renderAll();
+
+            if (renderBtn) {
+                renderBtn.addEventListener('click', function () {
+                    renderAll();
+                });
+            }
+
+            if (clearBtn) {
+                clearBtn.addEventListener('click', function () {
+                    inputEl.value = '';
+                    renderAll();
+                    inputEl.focus();
+                });
+            }
+
+            sampleButtons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var sample = btn.getAttribute('data-sample') || '';
+                    inputEl.value = sample;
+                    renderAll();
+                    inputEl.focus();
+                    inputEl.setSelectionRange(sample.length, sample.length);
+                });
+            });
+
+            // Keyboard shortcut: Ctrl/Cmd + Enter
+            inputEl.addEventListener('keydown', function (event) {
+                var isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+                var isCmd = isMac && event.metaKey;
+                var isCtrl = !isMac && event.ctrlKey;
+
+                if ((isCmd || isCtrl) && event.key === 'Enter') {
+                    event.preventDefault();
+                    renderAll();
+                }
+            });
+        }
+
+        // Attach once all resources (including KaTeX & MathJax) are loaded
+        window.addEventListener('load', attachEvents);
+    </script>
+</body>
+</html>

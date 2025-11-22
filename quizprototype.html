@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Chem Quiz – compounds.json + Kekule.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Katex.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous" />
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/mhchem.min.js" crossorigin="anonymous"></script>
+
+    <!-- Kekule.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/kekule/dist/themes/default/kekule.css" />
+    <script src="https://cdn.jsdelivr.net/npm/kekule/dist/kekule.min.js"></script>
+
+    <!-- RDKit.js (MinimalLib) -->
+    <script src="https://unpkg.com/@rdkit/rdkit/dist/RDKit_minimal.js"></script>
+
+    <style>
+        :root {
+            --bg-dark: #020617;
+            --bg-panel: #020617;
+            --border-panel: rgba(55, 65, 81, 0.9);
+            --text-primary: #e5e7eb;
+            --text-muted: #9ca3af;
+            --accent: #10b981;
+            --accent-soft: rgba(16, 185, 129, 0.18);
+            --danger-soft: rgba(248, 113, 113, 0.18);
+            --danger: #fb7185;
+            --surface-soft: rgba(15, 23, 42, 0.8);
+        }
+
+        * { box-sizing: border-box; }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #0f172a 0, #020617 55%, #020617 100%);
+            color: var(--text-primary);
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        .app {
+            width: 100%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .app-header {
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .app-title {
+            font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 4px;
+        }
+
+        .app-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .panel {
+            border-radius: 20px;
+            padding: 14px 16px 16px;
+            background: var(--bg-panel);
+            border: 1px solid var(--border-panel);
+            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.85);
+        }
+
+        .panel + .panel {
+            margin-top: 16px;
+        }
+
+        .panel-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .top-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .mode-switch {
+            display: inline-flex;
+            border-radius: 999px;
+            border: 1px solid rgba(55, 65, 81, 0.9);
+            overflow: hidden;
+            background: rgba(15, 23, 42, 0.95);
+        }
+
+        .mode-btn {
+            border: none;
+            padding: 6px 10px;
+            font-size: 0.78rem;
+            cursor: pointer;
+            background: transparent;
+            color: var(--text-muted);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .mode-btn + .mode-btn {
+            border-left: 1px solid rgba(55, 65, 81, 0.9);
+        }
+
+        .mode-btn.active {
+            background: var(--accent);
+            color: #0b1120;
+        }
+
+        .score-badge {
+            font-size: 0.8rem;
+            padding: 2px 10px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(55, 65, 81, 0.9);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .score-badge strong {
+            color: var(--accent);
+        }
+
+        .progress-wrap {
+            margin-top: 6px;
+        }
+
+        .progress-bar {
+            height: 6px;
+            border-radius: 999px;
+            background: #1f2937;
+            overflow: hidden;
+        }
+
+        .progress-bar-inner {
+            height: 100%;
+            width: 0;
+            background: var(--accent);
+            transition: width 0.3s ease-out;
+        }
+
+        .progress-meta {
+            margin-top: 4px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .grid-main {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.7fr);
+            gap: 14px;
+            margin-top: 6px;
+        }
+
+        @media (max-width: 900px) {
+            .grid-main {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        .prompt-card,
+        .options-card {
+            border-radius: 16px;
+            padding: 12px;
+            background: rgba(15, 23, 42, 0.92);
+            border: 1px solid rgba(55, 65, 81, 0.9);
+        }
+
+        .prompt-card-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .prompt-heading {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-muted);
+        }
+
+        .prompt-body {
+            margin-top: 10px;
+        }
+
+        .prompt-structure-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .prompt-structure-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        .viewer-card {
+            border-radius: 12px;
+            padding: 8px;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(55, 65, 81, 0.9);
+        }
+
+        .viewer-title-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 6px;
+            margin-bottom: 4px;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .viewer-label { font-weight: 600; }
+
+        .viewer-badge {
+            padding: 1px 6px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.6);
+            font-size: 0.68rem;
+        }
+
+        .viewer-inner {
+            width: 100%;
+            height: 220px;
+            border-radius: 10px;
+            overflow: hidden;
+            background: radial-gradient(circle at top, #020617 0, #020617 60%, #020617 100%);
+            position: relative;
+        }
+
+        .kekule-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .prompt-name-main {
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .prompt-name-ja {
+            margin-top: 4px;
+            font-size: 0.75rem;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        .prompt-formula-text {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: 8px;
+        }
+
+        @media (max-width: 800px) {
+            .options-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        .option-btn {
+            border-radius: 14px;
+            padding: 8px 10px;
+            border: 1px solid rgba(55, 65, 81, 0.9);
+            background: rgba(15, 23, 42, 0.95);
+            color: var(--text-primary);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 0.9rem;
+            transition: background 0.18s ease-out, border-color 0.18s ease-out, transform 0.08s ease-out;
+        }
+
+        .option-btn:hover:not(.option-disabled) {
+            background: rgba(30, 64, 175, 0.25);
+            transform: translateY(-1px);
+        }
+
+        .option-btn.option-disabled {
+            cursor: default;
+            opacity: 0.85;
+        }
+
+        .option-btn.option-correct {
+            border-color: var(--accent);
+            background: var(--accent-soft);
+        }
+
+        .option-btn.option-wrong {
+            border-color: var(--danger);
+            background: var(--danger-soft);
+        }
+
+        .option-row-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 6px;
+        }
+
+        .option-name-main { font-size: 0.9rem; }
+
+        .option-name-ja {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+        }
+
+        .option-tag {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .option-structure-box {
+            margin-top: 4px;
+            border-radius: 10px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px dashed rgba(55, 65, 81, 0.9);
+            padding: 4px;
+        }
+
+        .option-structure-inner {
+            height: 160px;
+        }
+
+        .molformula-badge {
+            position: absolute;
+            right: 8px;
+            bottom: 8px;
+            background: rgba(2,6,23,0.75);
+            color: #e5e7eb;
+            font-size: 0.72rem;
+            padding: 4px 6px;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.06);
+            backdrop-filter: blur(4px);
+        }
+
+        .controls-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .feedback-text {
+            font-size: 0.85rem;
+            min-height: 1.2em;
+        }
+
+        .feedback-neutral { color: var(--text-muted); }
+        .feedback-correct { color: #6ee7b7; }
+        .feedback-wrong { color: #fecaca; }
+
+        .btn {
+            border-radius: 999px;
+            border: 1px solid rgba(55, 65, 81, 0.9);
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            background: rgba(15, 23, 42, 0.95);
+            color: var(--text-primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-primary {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: #0b1120;
+            font-weight: 600;
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.45;
+            cursor: default;
+        }
+
+        .btn:hover:not(:disabled) {
+            filter: brightness(1.05);
+        }
+
+        .hint-box {
+            margin-top: 8px;
+            padding: 6px 8px;
+            border-radius: 12px;
+            border: 1px dashed rgba(55, 65, 81, 0.9);
+            background: rgba(15, 23, 42, 0.9);
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .footer-note {
+            margin-top: 12px;
+            font-size: 0.72rem;
+            text-align: center;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+<div class="app">
+    <header class="app-header">
+        <div class="app-title">Molecular Structure Quiz (compounds.json)</div>
+        <div class="app-subtitle">
+            Structure → Name / Name → Structure, using Kekule.js where SMILES are available.
+        </div>
+    </header>
+
+    <section class="panel">
+        <div class="panel-title">Quiz settings &amp; progress</div>
+        <div class="top-row">
+            <div>
+                <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:3px;">
+                    Quiz mode
+                </div>
+                <div class="mode-switch">
+                    <button id="modeStructureToName" class="mode-btn active" type="button" data-mode="structure-to-name">
+                        Structure → Name
+                    </button>
+                    <button id="modeNameToStructure" class="mode-btn" type="button" data-mode="name-to-structure">
+                        Name → Structure
+                    </button>
+                </div>
+                    <div style="display:inline-block;margin-left:10px;vertical-align:middle;">
+                        <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:3px;">Structure view</div>
+                        <div class="mode-switch" id="viewModeSwitch" style="--gap:6px;">
+                            <button id="viewSkeletalBtn" class="mode-btn active" type="button" data-view="skeletal">Skeletal</button>
+                            <button id="viewFullBtn" class="mode-btn" type="button" data-view="full">Full</button>
+                        </div>
+                    </div>
+            </div>
+            <div class="score-badge">
+                <span>Score:</span>
+                <strong><span id="scoreValue">0</span></strong>
+                <span>/ <span id="totalQuestions">0</span></span>
+            </div>
+        </div>
+
+        <div class="progress-wrap">
+            <div class="progress-bar">
+                <div id="progressBarInner" class="progress-bar-inner"></div>
+            </div>
+            <div class="progress-meta">
+                <span>Question <span id="questionIndexLabel">0</span>/<span id="questionTotalLabel">0</span></span>
+                <span id="modeLabel" style="font-size:0.72rem;color:var(--text-muted);">
+                    Structure → Name
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <div class="panel-title">Current question</div>
+
+        <div class="grid-main">
+            <!-- Prompt area -->
+            <div class="prompt-card">
+                <div class="prompt-card-header">
+                    <div class="prompt-heading">Prompt</div>
+                </div>
+                <div class="prompt-body">
+                    <!-- Mode: Structure → Name -->
+                    <div id="promptStructureBlock">
+                        <div style="margin-bottom: 8px;">
+                            <!-- Large skeletal formula (RDKit) -->
+                            <div class="viewer-card" style="margin-bottom: 8px;">
+                                <div class="viewer-title-row">
+                                    <div class="viewer-label">Skeletal formula (bond-line)</div>
+                                </div>
+                                <div class="viewer-inner" style="height: 260px;">
+                                    <div id="promptSkeletalContainer" class="kekule-container"></div>
+                                </div>
+                            </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                                <div class="viewer-card">
+                                    <div class="viewer-title-row">
+                                        <div class="viewer-label" style="font-size: 0.65rem;">Full structural</div>
+                                    </div>
+                                    <div class="viewer-inner" style="height: 140px; padding: 8px; overflow: hidden;">
+                                        <div id="promptFullContainer" class="kekule-container" style="width: 100%; height: 100%;"></div>
+                                    </div>
+                                </div>
+                                <div class="viewer-card">
+                                    <div class="viewer-title-row">
+                                        <div class="viewer-label" style="font-size: 0.65rem;">Skeletal formula (text)</div>
+                                    </div>
+                                    <div class="viewer-inner" style="height: 140px; display: flex; align-items: center; justify-content: center; padding: 8px; overflow: auto;">
+                                        <div id="promptSkeletalTextFallback" style="font-size: 0.75rem; color: #9ca3af; text-align: center; white-space: nowrap; line-height: 1.4;">
+                                            (skeletal formula)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mode: Name → Structure -->
+                    <div id="promptNameBlock" style="display:none;">
+                        <div class="prompt-name-main" id="promptNameMain">–</div>
+                        <div class="prompt-name-ja" id="promptNameJa">–</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Options area -->
+            <div class="options-card">
+                <div class="prompt-card-header" style="margin-bottom:6px;">
+                    <div class="prompt-heading" id="optionsHeadingLabel">
+                        Choose the correct name
+                    </div>
+                </div>
+                <div id="optionsContainer" class="options-grid">
+                    <!-- options injected by JS -->
+                </div>
+
+                <div class="controls-row">
+                    <div id="feedbackText" class="feedback-text feedback-neutral">
+                        Loading compounds.json…
+                    </div>
+                    <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                        <button id="hintToggleBtn" class="btn" type="button" disabled>Show hint</button>
+                        <button id="nextBtn" class="btn btn-primary" type="button" disabled>Next</button>
+                    </div>
+                </div>
+
+                <div id="hintBox" class="hint-box" style="display:none;">
+                    Hint: <span id="hintContent">–</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            Names are IUPAC + common (English) with smaller Japanese annotation. Structures use Kekule.js when
+            <code>smiles</code> data is available; otherwise skeletal formula text is shown.
+        </div>
+    </section>
+</div>
+
+<script>
+    const QUIZ_MODES = {
+        STRUCTURE_TO_NAME: "structure-to-name",
+        NAME_TO_STRUCTURE: "name-to-structure"
+    };
+
+    // Loaded from compounds.json
+    let COMPOUNDS = [];
+
+    // RDKit instance
+    let RDKitModuleInstance = null;
+
+    // Quiz state
+    let currentMode = QUIZ_MODES.STRUCTURE_TO_NAME;
+    let questions = [];
+    let currentIndex = 0;
+    let score = 0;
+    let selectedOptionId = null;
+    let finished = false;
+    let showHint = false;
+
+    // DOM elements
+    const modeStructureBtn = document.getElementById("modeStructureToName");
+    const modeNameBtn = document.getElementById("modeNameToStructure");
+    const scoreValueEl = document.getElementById("scoreValue");
+    const totalQuestionsEl = document.getElementById("totalQuestions");
+    const progressBarInnerEl = document.getElementById("progressBarInner");
+    const questionIndexLabelEl = document.getElementById("questionIndexLabel");
+    const questionTotalLabelEl = document.getElementById("questionTotalLabel");
+    const modeLabelEl = document.getElementById("modeLabel");
+
+    const promptStructureBlock = document.getElementById("promptStructureBlock");
+    const promptNameBlock = document.getElementById("promptNameBlock");
+    const promptNameMainEl = document.getElementById("promptNameMain");
+    const promptNameJaEl = document.getElementById("promptNameJa");
+    const promptSkeletalTextFallbackEl = document.getElementById("promptSkeletalTextFallback");
+
+    const optionsHeadingLabelEl = document.getElementById("optionsHeadingLabel");
+    const optionsContainerEl = document.getElementById("optionsContainer");
+
+    const feedbackTextEl = document.getElementById("feedbackText");
+    const hintToggleBtn = document.getElementById("hintToggleBtn");
+    const hintBoxEl = document.getElementById("hintBox");
+    const hintContentEl = document.getElementById("hintContent");
+    const nextBtn = document.getElementById("nextBtn");
+
+    // Utility
+    function shuffleArray(array) {
+        const copy = array.slice();
+        for (let i = copy.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [copy[i], copy[j]] = [copy[j], copy[i]];
+        }
+        return copy;
+    }
+
+    function getEnglishName(c) {
+        if (!c) return "";
+        const iupac = c.iupacName || "";
+        const common = c.commonName || "";
+        if (!common || common === iupac) return iupac;
+        return iupac + " (" + common + ")";
+    }
+
+    function getJapaneseName(c) {
+        return c && c.localName ? c.localName : "";
+    }
+
+    function createOptionsForCompound(target, pool, optionCount) {
+        const others = pool.filter(x => x.id !== target.id);
+        const distractors = shuffleArray(others).slice(0, Math.max(0, optionCount - 1));
+        return shuffleArray([target].concat(distractors));
+    }
+
+    function generateQuestions() {
+        const order = shuffleArray(COMPOUNDS);
+        return order.map((c) => ({
+            id: c.id,
+            compound: c,
+            options: createOptionsForCompound(c, COMPOUNDS, 4)
+        }));
+    }
+
+    // Rendering helpers
+    function smilesToMolblock(smiles) {
+        if (!RDKitModuleInstance || !smiles) return null;
+        try {
+            const mol = RDKitModuleInstance.get_mol(smiles);
+            if (!mol) return null;
+            const molblock = mol.get_molblock();
+            mol.delete();
+            return molblock;
+        } catch (e) {
+            console.error("[smilesToMolblock] error:", e);
+            return null;
+        }
+    }
+
+    function drawSkeletalWithRDKit(canvasId, smiles) {
+        if (!RDKitModuleInstance || !smiles) {
+            const canvas = document.getElementById(canvasId);
+            if (canvas) {
+                const ctx = canvas.getContext("2d");
+                ctx.fillStyle = "rgba(15, 23, 42, 0.85)";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = "#9ca3af";
+                ctx.font = "12px sans-serif";
+                ctx.textAlign = "center";
+                ctx.fillText("Cannot render structure", canvas.width / 2, canvas.height / 2);
+            }
+            return;
+        }
+
+        const canvas = document.getElementById(canvasId);
+        if (!canvas) return;
+
+        const w = canvas.clientWidth || 260;
+        const h = 220;
+        canvas.width = w;
+        canvas.height = h;
+
+        const canvasRaw = document.createElement("canvas");
+        canvasRaw.width = w;
+        canvasRaw.height = h;
+
+        let mol = null;
+        try {
+            mol = RDKitModuleInstance.get_mol(smiles);
+            if (!mol) {
+                const ctx = canvas.getContext("2d");
+                ctx.fillStyle = "rgba(15, 23, 42, 0.85)";
+                ctx.fillRect(0, 0, w, h);
+                ctx.fillStyle = "#9ca3af";
+                ctx.font = "12px sans-serif";
+                ctx.textAlign = "center";
+                ctx.fillText("Invalid SMILES", w / 2, h / 2);
+                return;
+            }
+            mol.draw_to_canvas(canvasRaw, -1, -1);
+        } catch (e) {
+            console.error("[drawSkeletalWithRDKit] error:", e);
+            return;
+        }
+
+        const rctx = canvasRaw.getContext("2d");
+        const img = rctx.getImageData(0, 0, w, h);
+        const data = img.data;
+        const vctx = canvas.getContext("2d");
+
+        // Dark mode post-processing: white bg -> transparent, black strokes -> white
+        for (let i = 0; i < data.length; i += 4) {
+            const r = data[i];
+            const g = data[i + 1];
+            const b = data[i + 2];
+
+            // nearly white background -> transparent
+            if (r > 245 && g > 245 && b > 245) {
+                data[i + 3] = 0;
+                continue;
+            }
+
+            // nearly black / dark gray (low chroma) -> treat as stroke and make it white
+            const maxRGB = Math.max(r, g, b);
+            const minRGB = Math.min(r, g, b);
+            const isNearGray = (maxRGB - minRGB) < 10;
+
+            if (maxRGB < 60 && isNearGray) {
+                data[i] = 255;
+                data[i + 1] = 255;
+                data[i + 2] = 255;
+            }
+        }
+
+        vctx.clearRect(0, 0, w, h);
+        vctx.putImageData(img, 0, 0);
+
+        mol.delete();
+    }
+
+    function loadFullStructureIntoKekule(containerId, molblock) {
+        if (!molblock) {
+            const container = document.getElementById(containerId);
+            if (container) {
+                container.innerHTML = '<div style="font-size:11px;color:#9ca3af;text-align:center;">Cannot render structure</div>';
+            }
+            return;
+        }
+
+        if (typeof Kekule === "undefined") {
+            const container = document.getElementById(containerId);
+            if (container) {
+                container.innerHTML = "Kekule.js not loaded";
+            }
+            return;
+        }
+
+        const container = document.getElementById(containerId);
+        if (!container) {
+            console.warn("[loadFullStructureIntoKekule] container not found:", containerId);
+            return;
+        }
+
+        try {
+            const mol = Kekule.IO.loadFormatData(molblock, "mol");
+            if (!mol) {
+                console.error("[loadFullStructureIntoKekule] Kekule.IO.loadFormatData returned null");
+                container.textContent = "Cannot parse Molblock";
+                return;
+            }
+
+            container.innerHTML = "";
+            const V = Kekule.ChemWidget;
+            const R = Kekule.Render;
+
+            const viewer = new V.Viewer(container);
+            console.log("[loadFullStructureIntoKekule] created Viewer for", containerId);
+            
+            viewer.setRenderType(R.RendererType.R2D);
+            viewer.setMoleculeDisplayType(R.Molecule2DDisplayType.CONDENSED);
+            viewer.setEnableToolbar(false);
+            viewer.setEnableDirectInteraction(false);
+            viewer.setEnableEdit(false);
+            viewer.setAutoSize(true);
+            viewer.setAutofit(true);
+            viewer.setPadding(6);
+            viewer.setBackgroundColor("transparent");
+
+            const HDL = R.HydrogenDisplayLevel;
+            const NDM = R.NodeLabelDisplayMode;
+            const cfg = viewer.getRenderConfigs().getMoleculeDisplayConfigs();
+            cfg.setDefHydrogenDisplayLevel(HDL.ALL);
+            cfg.setDefNodeDisplayMode(NDM.SHOWN);
+
+            const colorCfg = viewer.getRenderConfigs().getColorConfigs();
+            colorCfg.setAtomColor("#ffffff");
+            colorCfg.setBondColor("#ffffff");
+            colorCfg.setLabelColor("#ffffff");
+
+            viewer.setChemObj(mol);
+            console.log("[loadFullStructureIntoKekule] successfully set molecule for", containerId);
+        } catch (e) {
+            console.error("[loadFullStructureIntoKekule] error:", e);
+            container.textContent = "Render error: " + e.message;
+        }
+    }
+
+    // structureViewMode: 'skeletal' | 'full'
+    let structureViewMode = 'skeletal';
+
+    function setStructureViewMode(mode) {
+        structureViewMode = mode;
+        // re-render current question to apply mode change
+        renderQuestion();
+    }
+
+    function renderSmilesInPrompt(smiles, skeletalFormula, molFormula) {
+        if (!smiles) {
+            document.getElementById("promptSkeletalContainer").innerHTML =
+                '<div style="font-size:11px;color:#9ca3af;text-align:center;">SMILES not provided</div>';
+            document.getElementById("promptFullContainer").innerHTML = "";
+            document.getElementById("promptSkeletalTextFallback").textContent = skeletalFormula || "(no skeletal formula)";
+            return;
+        }
+        // Draw skeletal with RDKit (add canvas element)
+        const skeletalDiv = document.getElementById("promptSkeletalContainer");
+        skeletalDiv.innerHTML = "";
+        const canvas = document.createElement("canvas");
+        canvas.id = "promptSkeletalCanvas";
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
+        canvas.style.display = "block";
+        skeletalDiv.appendChild(canvas);
+
+        drawSkeletalWithRDKit("promptSkeletalCanvas", smiles);
+
+        // Load full structural with Kekule
+        const molblock = smilesToMolblock(smiles);
+        loadFullStructureIntoKekule("promptFullContainer", molblock);
+
+        // Display skeletal formula text
+        document.getElementById("promptSkeletalTextFallback").textContent = skeletalFormula || "(no skeletal formula text)";
+
+        // Apply view mode: show/hide skeletal/full and adjust sizes
+        const skeletalParent = document.getElementById("promptSkeletalContainer").parentElement;
+        const fullParent = document.getElementById("promptFullContainer").parentElement;
+        // reset to defaults
+        skeletalParent.style.display = "block";
+        fullParent.style.display = "block";
+        skeletalParent.style.height = '';
+        fullParent.style.height = '';
+
+        if (structureViewMode === 'skeletal') {
+            // show skeletal prominently, hide full
+            skeletalParent.style.display = 'block';
+            skeletalParent.style.height = '360px';
+            fullParent.style.display = 'none';
+        } else if (structureViewMode === 'full') {
+            fullParent.style.display = 'block';
+            fullParent.style.height = '360px';
+            skeletalParent.style.display = 'none';
+        }
+
+        // Add molecular formula badge to visible area: remove previous badges first
+        [skeletalParent, fullParent].forEach(p => {
+            const prev = p.querySelector('.molformula-badge');
+            if (prev) prev.remove();
+        });
+
+        if (molFormula) {
+            const badge = document.createElement('div');
+            badge.className = 'molformula-badge';
+            badge.textContent = molFormula;
+            if (structureViewMode === 'full') {
+                fullParent.appendChild(badge);
+            } else {
+                skeletalParent.appendChild(badge);
+            }
+        }
+    }
+
+    function renderOptionStructure(containerId, smiles, skeletalFormula, molFormula) {
+        const container = document.getElementById(containerId);
+        if (!container) {
+            console.warn("[renderOptionStructure] container not found:", containerId);
+            return;
+        }
+
+        // create wrapper holding a small skeletal preview and a full structural area
+        container.innerHTML = "";
+        const wrapper = document.createElement('div');
+        wrapper.style.display = 'grid';
+        wrapper.style.gridTemplateRows = '1fr 1fr';
+        wrapper.style.gap = '6px';
+        wrapper.style.height = '100%';
+        wrapper.style.position = 'relative';
+
+        const skeletalDiv = document.createElement('div');
+        skeletalDiv.style.height = '100%';
+        skeletalDiv.style.display = 'flex';
+        skeletalDiv.style.alignItems = 'center';
+        skeletalDiv.style.justifyContent = 'center';
+        skeletalDiv.id = containerId + '_skeletal';
+
+        const fullDiv = document.createElement('div');
+        fullDiv.style.height = '100%';
+        fullDiv.id = containerId + '_full';
+
+        wrapper.appendChild(skeletalDiv);
+        wrapper.appendChild(fullDiv);
+        container.appendChild(wrapper);
+
+        if (!smiles) {
+            skeletalDiv.innerHTML = '<div style="font-size:0.78rem;color:#9ca3af;text-align:center;">' + (skeletalFormula || 'No structure data') + '</div>';
+            fullDiv.innerHTML = '<div style="font-size:0.75rem;color:#9ca3af;text-align:center;">SMILES not provided</div>';
+            return;
+        }
+
+        // skeletal preview
+        const canvas = document.createElement('canvas');
+        const skeletalCanvasId = containerId + '_skeletal_canvas';
+        canvas.id = skeletalCanvasId;
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+        canvas.style.display = 'block';
+        skeletalDiv.appendChild(canvas);
+        try {
+            drawSkeletalWithRDKit(skeletalCanvasId, smiles);
+        } catch (e) {
+            skeletalDiv.innerHTML = '<div style="font-size:0.78rem;color:#9ca3af;text-align:center;">' + (skeletalFormula || 'Cannot render skeletal') + '</div>';
+        }
+
+        // full structure
+        const molblock = smilesToMolblock(smiles);
+        if (!molblock) {
+            fullDiv.innerHTML = '<div style="font-size:0.78rem;color:#9ca3af;text-align:center;">Cannot render structure</div>';
+            return;
+        }
+        try {
+            loadFullStructureIntoKekule(fullDiv.id, molblock);
+        } catch (e) {
+            fullDiv.innerHTML = '<div style="font-size:0.78rem;color:#9ca3af;text-align:center;">Render error</div>';
+        }
+
+        // show/hide according to global view mode
+        if (structureViewMode === 'skeletal') {
+            fullDiv.style.display = 'none';
+            skeletalDiv.style.display = 'block';
+        } else {
+            skeletalDiv.style.display = 'none';
+            fullDiv.style.display = 'block';
+        }
+
+        // add molecular formula badge
+        const prevBadge = wrapper.querySelector('.molformula-badge');
+        if (prevBadge) prevBadge.remove();
+        if (molFormula) {
+            const b = document.createElement('div');
+            b.className = 'molformula-badge';
+            b.textContent = molFormula;
+            wrapper.appendChild(b);
+        }
+    }
+
+    // Render the option buttons for a question
+    function renderOptions(question) {
+        optionsContainerEl.innerHTML = '';
+        if (!question || !Array.isArray(question.options)) return;
+
+        const isStructureToName = currentMode === QUIZ_MODES.STRUCTURE_TO_NAME;
+
+        question.options.forEach((opt, index) => {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'option-btn';
+
+            const isRight = opt.id === question.compound.id;
+            const isChosen = selectedOptionId === opt.id;
+
+            if (selectedOptionId !== null) {
+                btn.classList.add('option-disabled');
+                if (isRight) btn.classList.add('option-correct');
+                if (isChosen && !isRight) btn.classList.add('option-wrong');
+            }
+
+            const topRow = document.createElement('div');
+            topRow.className = 'option-row-top';
+
+            const textWrap = document.createElement('div');
+            const mainText = document.createElement('div');
+            mainText.className = 'option-name-main';
+            mainText.textContent = isStructureToName ? getEnglishName(opt) : `Option ${index + 1}`;
+
+            const jaText = document.createElement('div');
+            jaText.className = 'option-name-ja';
+            jaText.textContent = isStructureToName ? getJapaneseName(opt) || '' : '';
+
+            textWrap.appendChild(mainText);
+            if (jaText.textContent) textWrap.appendChild(jaText);
+
+            const tagEl = document.createElement('div');
+            tagEl.className = 'option-tag';
+            if (selectedOptionId !== null) {
+                if (isRight) tagEl.textContent = 'Correct';
+                else if (isChosen && !isRight) tagEl.textContent = 'Your choice';
+                else tagEl.textContent = '';
+            } else {
+                tagEl.textContent = isStructureToName ? '' : 'Click to view structure';
+            }
+
+            topRow.appendChild(textWrap);
+            topRow.appendChild(tagEl);
+            btn.appendChild(topRow);
+
+            if (!isStructureToName) {
+                const structBox = document.createElement('div');
+                structBox.className = 'option-structure-box';
+                const structInner = document.createElement('div');
+                structInner.className = 'option-structure-inner';
+                structInner.id = 'optionStruct_' + opt.id;
+                structBox.appendChild(structInner);
+                btn.appendChild(structBox);
+            }
+
+            if (selectedOptionId === null) {
+                btn.addEventListener('click', () => onOptionClick(opt.id));
+            }
+
+            optionsContainerEl.appendChild(btn);
+        });
+
+        // After buttons are added, render small structure previews for Name->Structure mode
+        if (!isStructureToName) {
+            question.options.forEach((opt) => {
+                renderOptionStructure('optionStruct_' + opt.id, opt.smiles || null, opt.skeletalFormula, opt.molecularFormula || null);
+            });
+        }
+    }
+
+    function updateFeedback(question) {
+        if (!question) {
+            feedbackTextEl.className = "feedback-text feedback-neutral";
+            feedbackTextEl.textContent = "No question.";
+            return;
+        }
+        if (selectedOptionId === null) {
+            feedbackTextEl.className = "feedback-text feedback-neutral";
+            feedbackTextEl.textContent = "Select one option to check your answer.";
+            return;
+        }
+        const isCorrect = selectedOptionId === question.compound.id;
+        if (isCorrect) {
+            feedbackTextEl.className = "feedback-text feedback-correct";
+            feedbackTextEl.textContent = "✓ Correct! Well done.";
+        } else {
+            feedbackTextEl.className = "feedback-text feedback-wrong";
+            const enName = getEnglishName(question.compound);
+            const jaName = getJapaneseName(question.compound);
+            feedbackTextEl.textContent =
+                "✗ Not correct. The answer is " +
+                enName +
+                (jaName ? ` (${jaName})` : "") +
+                ".";
+        }
+    }
+
+    function updateHint(question) {
+        if (!question) {
+            hintBoxEl.style.display = "none";
+            return;
+        }
+        if (showHint) {
+            hintBoxEl.style.display = "";
+            hintContentEl.textContent = question.compound.notes || "No hint.";
+            hintToggleBtn.textContent = "Hide hint";
+        } else {
+            hintBoxEl.style.display = "none";
+            hintToggleBtn.textContent = "Show hint";
+        }
+    }
+
+    // Update header UI: score, progress bar, question indices, and mode label
+    function updateHeaderUI() {
+        const total = questions.length;
+        totalQuestionsEl.textContent = total;
+        questionTotalLabelEl.textContent = total;
+
+        const displayedIndex = finished ? total : (questions.length === 0 ? 0 : currentIndex + 1);
+        questionIndexLabelEl.textContent = displayedIndex;
+        scoreValueEl.textContent = score;
+
+        const progress = total === 0 ? 0 : (currentIndex / total) * 100;
+        progressBarInnerEl.style.width = finished ? "100%" : (progress + "%");
+
+        modeLabelEl.textContent = currentMode === QUIZ_MODES.STRUCTURE_TO_NAME ? "Structure → Name" : "Name → Structure";
+    }
+
+    // Render the prompt area for the current question depending on mode
+    function renderPrompt(question) {
+        if (!question) return;
+        const compound = question.compound;
+
+        if (currentMode === QUIZ_MODES.STRUCTURE_TO_NAME) {
+            // Show the large structure viewer and hide the name prompt
+            promptStructureBlock.style.display = "";
+            promptNameBlock.style.display = "none";
+
+            // Render skeletal/full in the prompt area and attach molecular formula badge
+            renderSmilesInPrompt(compound.smiles || null, compound.skeletalFormula || "", compound.molecularFormula || "");
+
+            // Clear name fields
+            promptNameMainEl.textContent = "";
+            promptNameJaEl.textContent = "";
+        } else {
+            // Name -> Structure: hide structure viewers and show the name prompt
+            promptStructureBlock.style.display = "none";
+            promptNameBlock.style.display = "";
+
+            promptNameMainEl.textContent = getEnglishName(compound) || "–";
+            promptNameJaEl.textContent = getJapaneseName(compound) || "";
+
+            // Clear any previous structural viewers to avoid stale content
+            const skeletalContainer = document.getElementById("promptSkeletalContainer");
+            const fullContainer = document.getElementById("promptFullContainer");
+            const skeletalText = document.getElementById("promptSkeletalTextFallback");
+            if (skeletalContainer) skeletalContainer.innerHTML = "";
+            if (fullContainer) fullContainer.innerHTML = "";
+            if (skeletalText) skeletalText.textContent = compound.skeletalFormula || "(no skeletal formula)";
+        }
+
+        // Update options heading depending on mode
+        optionsHeadingLabelEl.textContent = currentMode === QUIZ_MODES.STRUCTURE_TO_NAME ? "Choose the correct name" : "Choose the correct structure";
+    }
+
+    function renderQuestion() {
+        const question = questions[currentIndex];
+        if (!question) {
+            feedbackTextEl.className = "feedback-text feedback-neutral";
+            feedbackTextEl.textContent = "No questions available (check compounds.json).";
+            nextBtn.disabled = true;
+            hintToggleBtn.disabled = true;
+            return;
+        }
+
+        if (finished) {
+            updateHeaderUI();
+            feedbackTextEl.className = "feedback-text feedback-neutral";
+            feedbackTextEl.textContent = "Quiz finished. Click Next to restart.";
+            nextBtn.textContent = "Restart";
+            nextBtn.disabled = false;
+            hintToggleBtn.disabled = true;
+            return;
+        }
+
+        updateHeaderUI();
+        renderPrompt(question);
+        renderOptions(question);
+        updateFeedback(question);
+        updateHint(question);
+
+        nextBtn.textContent = currentIndex === questions.length - 1 ? "Finish" : "Next";
+        nextBtn.disabled = selectedOptionId === null;
+        hintToggleBtn.disabled = false;
+    }
+
+    // Event handlers
+    function resetQuizForMode(newMode) {
+        currentMode = newMode;
+        questions = generateQuestions();
+        currentIndex = 0;
+        score = 0;
+        selectedOptionId = null;
+        finished = false;
+        showHint = false;
+        renderQuestion();
+    }
+
+    function onOptionClick(optionId) {
+        if (finished) return;
+        if (selectedOptionId !== null) return;
+
+        selectedOptionId = optionId;
+        const question = questions[currentIndex];
+        const isCorrect = optionId === question.compound.id;
+        if (isCorrect) score++;
+
+        renderQuestion();
+    }
+
+    function onNextClick() {
+        if (finished) {
+            resetQuizForMode(currentMode);
+            return;
+        }
+        if (selectedOptionId === null) return;
+
+        const nextIndex = currentIndex + 1;
+        if (nextIndex >= questions.length) {
+            finished = true;
+            renderQuestion();
+        } else {
+            currentIndex = nextIndex;
+            selectedOptionId = null;
+            showHint = false;
+            renderQuestion();
+        }
+    }
+
+    function onHintToggle() {
+        showHint = !showHint;
+        updateHint(questions[currentIndex]);
+    }
+
+    // Load compounds.json and init quiz
+    async function loadCompoundsJson() {
+        try {
+            const res = await fetch("catalog/Organic/Alcohols/Polyols/compounds.json");
+            const data = await res.json();
+            const arr = Array.isArray(data.compounds) ? data.compounds : [];
+
+            COMPOUNDS = arr.map((c, idx) => ({
+                id: "cmp_" + idx,
+                iupacName: c.iupac_name || "",
+                commonName: c.common_name || "",
+                localName: c.local_name || "",
+                skeletalFormula: c.skeletal_formula || "",
+                molecularFormula: c.molecular_formula || "",
+                notes: c.notes || "",
+                // IMPORTANT: if you later add "smiles" to compounds.json, it will be used:
+                smiles: c.smiles || null
+            }));
+
+            if (COMPOUNDS.length === 0) {
+                feedbackTextEl.textContent = "No compounds found in compounds.json.";
+                return;
+            }
+
+            questions = generateQuestions();
+            currentIndex = 0;
+            score = 0;
+            selectedOptionId = null;
+            finished = false;
+            showHint = false;
+            renderQuestion();
+        } catch (e) {
+            console.error("Failed to load compounds.json:", e);
+            feedbackTextEl.textContent = "Error loading compounds.json.";
+        }
+    }
+
+    window.addEventListener("load", function () {
+        modeStructureBtn.addEventListener("click", () => {
+            modeStructureBtn.classList.add("active");
+            modeNameBtn.classList.remove("active");
+            resetQuizForMode(QUIZ_MODES.STRUCTURE_TO_NAME);
+        });
+
+        modeNameBtn.addEventListener("click", () => {
+            modeNameBtn.classList.add("active");
+            modeStructureBtn.classList.remove("active");
+            resetQuizForMode(QUIZ_MODES.NAME_TO_STRUCTURE);
+        });
+
+        // view mode buttons
+        const viewSkeletalBtn = document.getElementById('viewSkeletalBtn');
+        const viewFullBtn = document.getElementById('viewFullBtn');
+
+        function clearViewActive() {
+            viewSkeletalBtn.classList.remove('active');
+            viewFullBtn.classList.remove('active');
+        }
+
+        viewSkeletalBtn.addEventListener('click', () => { clearViewActive(); viewSkeletalBtn.classList.add('active'); setStructureViewMode('skeletal'); });
+        viewFullBtn.addEventListener('click', () => { clearViewActive(); viewFullBtn.classList.add('active'); setStructureViewMode('full'); });
+
+        hintToggleBtn.addEventListener("click", onHintToggle);
+        nextBtn.addEventListener("click", onNextClick);
+
+        // Initialize RDKit
+        if (typeof initRDKitModule !== "function") {
+            console.error("initRDKitModule not found. RDKit_minimal.js failed to load?");
+            feedbackTextEl.textContent = "Error: RDKit.js not loaded.";
+            return;
+        }
+
+        initRDKitModule().then((rdkit) => {
+            RDKitModuleInstance = rdkit;
+            console.log("RDKit.js initialized, version:", RDKitModuleInstance.version());
+            // Initial load
+            loadCompoundsJson();
+        }).catch((e) => {
+            console.error("Failed to initialize RDKit:", e);
+            feedbackTextEl.textContent = "Error initializing RDKit.";
+        });
+    });
+</script>
+</body>
+</html>

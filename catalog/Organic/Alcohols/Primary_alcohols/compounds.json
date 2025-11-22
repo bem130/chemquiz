@@ -14,7 +14,8 @@
                     "pattern": "R–OH"
                 }
             ],
-            "notes": "Simplest alcohol; highly toxic; used as fuel and solvent."
+            "notes": "Simplest alcohol; highly toxic; used as fuel and solvent.",
+            "smiles": "CO"
         },
         {
             "iupac_name": "ethanol",
@@ -30,7 +31,8 @@
                     "pattern": "R–OH"
                 }
             ],
-            "notes": "Drinking alcohol; produced by fermentation; oxidized to ethanal then ethanoic acid."
+            "notes": "Drinking alcohol; produced by fermentation; oxidized to ethanal then ethanoic acid.",
+            "smiles": "CCO"
         },
         {
             "iupac_name": "propan-1-ol",
@@ -46,7 +48,8 @@
                     "pattern": "R–OH"
                 }
             ],
-            "notes": "Typical primary alcohol; can be oxidized to propanal then propanoic acid."
+            "notes": "Typical primary alcohol; can be oxidized to propanal then propanoic acid.",
+            "smiles": "CCCO"
         },
         {
             "iupac_name": "butan-1-ol",
@@ -62,7 +65,8 @@
                     "pattern": "R–OH"
                 }
             ],
-            "notes": "Used as solvent; exhibits typical primary-alcohol reactions."
+            "notes": "Used as solvent; exhibits typical primary-alcohol reactions.",
+            "smiles": "CCCCO"
         }
     ]
 }
