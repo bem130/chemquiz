@@ -337,13 +337,6 @@
             gap: 6px;
         }
 
-        .option-name-main { font-size: 0.9rem; }
-
-        .option-name-ja {
-            font-size: 0.72rem;
-            color: var(--text-muted);
-        }
-
         .option-tag {
             font-size: 0.7rem;
             color: var(--text-muted);
@@ -359,6 +352,21 @@
 
         .option-structure-inner {
             height: 160px;
+        }
+
+        .option-name-inner {
+            height: 160px;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            gap: 4px;
+        }
+
+        .option-name-main { font-size: 0.95rem; }
+
+        .option-name-ja {
+            font-size: 0.72rem;
+            color: var(--text-muted);
         }
 
         .molformula-badge {
@@ -899,6 +907,30 @@
         }
     }
 
+    function renderFormulaBadge(wrapper, formula) {
+        const prevBadge = wrapper.querySelector('.molformula-badge');
+        if (prevBadge) prevBadge.remove();
+        if (!formula) return;
+
+        const badge = document.createElement('div');
+        badge.className = 'molformula-badge';
+        const target = document.createElement('span');
+        badge.appendChild(target);
+
+        try {
+            const expr = `\\ce{${formula}}`;
+            if (window.katex && window.katex.render) {
+                window.katex.render(expr, target, { throwOnError: false });
+            } else {
+                target.textContent = formula;
+            }
+        } catch (e) {
+            target.textContent = formula;
+        }
+
+        wrapper.appendChild(badge);
+    }
+
     function renderOptionStructure(containerId, smiles, skeletalFormula, molFormula) {
         const container = document.getElementById(containerId);
         if (!container) {
@@ -971,15 +1003,7 @@
             fullDiv.style.display = 'block';
         }
 
-        // add molecular formula badge
-        const prevBadge = wrapper.querySelector('.molformula-badge');
-        if (prevBadge) prevBadge.remove();
-        if (molFormula) {
-            const b = document.createElement('div');
-            b.className = 'molformula-badge';
-            b.textContent = molFormula;
-            wrapper.appendChild(b);
-        }
+        renderFormulaBadge(wrapper, molFormula);
     }
 
     // Render the option buttons for a question
@@ -1006,17 +1030,9 @@
             const topRow = document.createElement('div');
             topRow.className = 'option-row-top';
 
-            const textWrap = document.createElement('div');
-            const mainText = document.createElement('div');
-            mainText.className = 'option-name-main';
-            mainText.textContent = isStructureToName ? getEnglishName(opt) : `Option ${index + 1}`;
-
-            const jaText = document.createElement('div');
-            jaText.className = 'option-name-ja';
-            jaText.textContent = isStructureToName ? getJapaneseName(opt) || '' : '';
-
-            textWrap.appendChild(mainText);
-            if (jaText.textContent) textWrap.appendChild(jaText);
+            const mainLabel = document.createElement('div');
+            mainLabel.className = 'option-name-main';
+            mainLabel.textContent = `Option ${index + 1}`;
 
             const tagEl = document.createElement('div');
             tagEl.className = 'option-tag';
@@ -1025,22 +1041,43 @@
                 else if (isChosen && !isRight) tagEl.textContent = 'Your choice';
                 else tagEl.textContent = '';
             } else {
-                tagEl.textContent = isStructureToName ? '' : 'Click to view structure';
+                tagEl.textContent = isStructureToName ? 'Tap to answer' : 'Click to view structure';
             }
 
-            topRow.appendChild(textWrap);
+            topRow.appendChild(mainLabel);
             topRow.appendChild(tagEl);
             btn.appendChild(topRow);
 
-            if (!isStructureToName) {
-                const structBox = document.createElement('div');
-                structBox.className = 'option-structure-box';
+            const contentBox = document.createElement('div');
+            contentBox.className = 'option-structure-box';
+
+            if (isStructureToName) {
+                const nameInner = document.createElement('div');
+                nameInner.className = 'option-name-inner';
+
+                const en = document.createElement('div');
+                en.className = 'option-name-main';
+                en.textContent = getEnglishName(opt);
+                nameInner.appendChild(en);
+
+                const ja = getJapaneseName(opt);
+                if (ja) {
+                    const jaEl = document.createElement('div');
+                    jaEl.className = 'option-name-ja';
+                    jaEl.textContent = ja;
+                    nameInner.appendChild(jaEl);
+                }
+
+                contentBox.appendChild(nameInner);
+                renderFormulaBadge(contentBox, opt.molecularFormula || null);
+            } else {
                 const structInner = document.createElement('div');
                 structInner.className = 'option-structure-inner';
                 structInner.id = 'optionStruct_' + opt.id;
-                structBox.appendChild(structInner);
-                btn.appendChild(structBox);
+                contentBox.appendChild(structInner);
             }
+
+            btn.appendChild(contentBox);
 
             if (selectedOptionId === null) {
                 btn.addEventListener('click', () => onOptionClick(opt.id));
@@ -1049,7 +1086,6 @@
             optionsContainerEl.appendChild(btn);
         });
 
-        // After buttons are added, render small structure previews for Name->Structure mode
         if (!isStructureToName) {
             question.options.forEach((opt) => {
                 renderOptionStructure('optionStruct_' + opt.id, opt.smiles || null, opt.skeletalFormula, opt.molecularFormula || null);

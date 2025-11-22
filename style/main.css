@@ -178,6 +178,18 @@ body[data-theme="light"] .control-panel {
     margin-top: 18px;
 }
 
+.menu-actions {
+    margin-left: auto;
+}
+
+.action-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 14px;
+    flex-wrap: wrap;
+}
+
 .quiz-card {
     padding: 16px 18px;
     border-radius: 24px;
@@ -225,6 +237,15 @@ body[data-theme="light"] .card-surface {
     background: color-mix(in srgb, var(--panel-light) 94%, transparent);
 }
 
+.result-card {
+    margin-top: 18px;
+}
+
+.score-line {
+    margin: 8px 0 0;
+    font-weight: 700;
+}
+
 .prompt-card .prompt {
     font-size: 1.3rem;
     margin: 6px 0 0;
@@ -247,6 +268,7 @@ body[data-theme="light"] .card-surface {
     display: flex;
     align-items: center;
     gap: 10px;
+    transition: border-color 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
 }
 
 .option-card.correct {
@@ -254,8 +276,17 @@ body[data-theme="light"] .card-surface {
     background: rgba(34, 211, 238, 0.14);
 }
 
-.option-card.distractor {
-    opacity: 0.92;
+.option-card.active {
+    border-color: var(--accent);
+}
+
+.option-card.wrong {
+    border-color: #fb7185;
+    background: rgba(251, 113, 133, 0.16);
+}
+
+.option-card.muted {
+    opacity: 0.7;
 }
 
 .option-index {
@@ -321,11 +352,25 @@ body[data-theme="light"] .card-surface {
     padding: 10px 12px;
     border: 1px solid var(--border-light);
     background: color-mix(in srgb, var(--panel-dark) 85%, transparent);
+    position: relative;
 }
 
 body[data-theme="light"] .structure-frame {
     border: 1px solid var(--border-light);
     background: color-mix(in srgb, var(--panel-light) 92%, transparent);
+}
+
+.formula-badge {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 6px 8px;
+    border-radius: 10px;
+    background: rgba(2, 6, 23, 0.78);
+    color: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(4px);
+    font-size: 0.85rem;
 }
 
 .structure-label {
