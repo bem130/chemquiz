@@ -1,0 +1,30 @@
+name: Rust Tests
+
+on:
+    push:
+        branches:
+            - main
+            - develop
+    pull_request:
+        branches:
+            - main
+            - develop
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Set up Rust
+              uses: dtolnay/rust-toolchain@stable
+              with:
+                  toolchain: stable
+
+            - name: Cache Cargo build
+              uses: Swatinem/rust-cache@v2
+
+            - name: Run cargo test
+              run: cargo test --all --all-features --locked

@@ -57,7 +57,7 @@ jobs:
             - name: Build static site
               run: |
                   set -e
-                  trunk build --release --public-url /chemquiz/
+                  trunk build --release --public-url ./
                   touch dist/.nojekyll
 
             - name: Upload artifact
