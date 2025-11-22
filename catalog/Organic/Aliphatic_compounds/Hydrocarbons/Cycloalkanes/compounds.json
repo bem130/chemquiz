@@ -1,0 +1,80 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "cyclopropane",
+            "common_name": "cyclopropane",
+            "local_name": "シクロプロパン",
+            "skeletal_formula": "(-CH2-)3 (three-membered ring)",
+            "molecular_formula": "C3H6",
+            "series_general_formula": "Cycloalkanes: CnH2n (n>=3)",
+            "functional_groups": [
+                {
+                    "name_en": "Cycloalkane ring",
+                    "name_ja": "シクロアルカン環",
+                    "pattern": "saturated C3 ring"
+                }
+            ],
+            "notes": "Smallest cycloalkane; large ring strain and relatively reactive; used as example of angle strain.",
+            "smiles": "C1CC1",
+            "katex_skeletal_formula": "\\ce{(CH2)3}",
+            "katex_molecular_formula": "\\ce{C3H6}"
+        },
+        {
+            "iupac_name": "cyclobutane",
+            "common_name": "cyclobutane",
+            "local_name": "シクロブタン",
+            "skeletal_formula": "(-CH2-)4 (four-membered ring)",
+            "molecular_formula": "C4H8",
+            "series_general_formula": "Cycloalkanes: CnH2n (n>=3)",
+            "functional_groups": [
+                {
+                    "name_en": "Cycloalkane ring",
+                    "name_ja": "シクロアルカン環",
+                    "pattern": "saturated C4 ring"
+                }
+            ],
+            "notes": "Four-membered cycloalkane; still strained and more reactive than larger rings.",
+            "smiles": "C1CCC1",
+            "katex_skeletal_formula": "\\ce{(CH2)4}",
+            "katex_molecular_formula": "\\ce{C4H8}"
+        },
+        {
+            "iupac_name": "cyclopentane",
+            "common_name": "cyclopentane",
+            "local_name": "シクロペンタン",
+            "skeletal_formula": "(-CH2-)5 (five-membered ring)",
+            "molecular_formula": "C5H10",
+            "series_general_formula": "Cycloalkanes: CnH2n (n>=3)",
+            "functional_groups": [
+                {
+                    "name_en": "Cycloalkane ring",
+                    "name_ja": "シクロアルカン環",
+                    "pattern": "saturated C5 ring"
+                }
+            ],
+            "notes": "Relatively low ring strain; together with cyclohexane, used as example of stable cycloalkanes in textbooks.",
+            "smiles": "C1CCCC1",
+            "katex_skeletal_formula": "\\ce{(CH2)5}",
+            "katex_molecular_formula": "\\ce{C5H10}"
+        },
+        {
+            "iupac_name": "cyclohexane",
+            "common_name": "cyclohexane",
+            "local_name": "シクロヘキサン",
+            "skeletal_formula": "(-CH2-)6 (six-membered ring)",
+            "molecular_formula": "C6H12",
+            "series_general_formula": "Cycloalkanes: CnH2n (n>=3)",
+            "functional_groups": [
+                {
+                    "name_en": "Cycloalkane ring",
+                    "name_ja": "シクロアルカン環",
+                    "pattern": "saturated C6 ring"
+                }
+            ],
+            "notes": "Most stable cycloalkane; adopts chair conformation with minimal strain; key example for conformational analysis.",
+            "smiles": "C1CCCCC1",
+            "katex_skeletal_formula": "\\ce{(CH2)6}",
+            "katex_molecular_formula": "\\ce{C6H12}"
+        }
+    ]
+}
