@@ -5,14 +5,16 @@
             "common_name": "table salt",
             "local_name": "塩化ナトリウム",
             "skeletal_formula": "NaCl",
-            "molecular_formula": "NaCl"
+            "molecular_formula": "NaCl",
+            "smiles": "Cl[Na]"
         },
         {
             "iupac_name": "potassium chloride",
             "common_name": null,
             "local_name": "塩化カリウム",
             "skeletal_formula": "KCl",
-            "molecular_formula": "KCl"
+            "molecular_formula": "KCl",
+            "smiles": "Cl[K]"
         }
     ]
 }

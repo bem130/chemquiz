@@ -1,7 +1,7 @@
 use crate::{Catalog, CatalogEntry, Compound};
 
 #[cfg(test)]
-use crate::{generate_quiz, QuizMode};
+use crate::{QuizMode, generate_quiz};
 #[cfg(test)]
 use rand::SeedableRng;
 
@@ -16,6 +16,7 @@ fn demo_entries() -> Vec<(Compound, Vec<String>)> {
                 local_name: Some("メタノール".to_string()),
                 skeletal_formula: "CH3OH".to_string(),
                 molecular_formula: "CH4O".to_string(),
+                smiles: Some("CO".to_string()),
             },
             vec![
                 "Organic".to_string(),
@@ -30,6 +31,7 @@ fn demo_entries() -> Vec<(Compound, Vec<String>)> {
                 local_name: Some("エタノール".to_string()),
                 skeletal_formula: "CH3-CH2-OH".to_string(),
                 molecular_formula: "C2H6O".to_string(),
+                smiles: Some("CCO".to_string()),
             },
             vec![
                 "Organic".to_string(),
@@ -44,6 +46,7 @@ fn demo_entries() -> Vec<(Compound, Vec<String>)> {
                 local_name: Some("イソプロパノール".to_string()),
                 skeletal_formula: "(CH3)2CHOH".to_string(),
                 molecular_formula: "C3H8O".to_string(),
+                smiles: Some("CC(O)C".to_string()),
             },
             vec![
                 "Organic".to_string(),
@@ -58,6 +61,7 @@ fn demo_entries() -> Vec<(Compound, Vec<String>)> {
                 local_name: Some("酢酸".to_string()),
                 skeletal_formula: "CH3COOH".to_string(),
                 molecular_formula: "C2H4O2".to_string(),
+                smiles: Some("CC(=O)O".to_string()),
             },
             vec!["Organic".to_string(), "Carboxylic acids".to_string()],
         ),
@@ -68,6 +72,7 @@ fn demo_entries() -> Vec<(Compound, Vec<String>)> {
                 local_name: Some("プロピオン酸".to_string()),
                 skeletal_formula: "CH3-CH2-COOH".to_string(),
                 molecular_formula: "C3H6O2".to_string(),
+                smiles: Some("CCC(=O)O".to_string()),
             },
             vec!["Organic".to_string(), "Carboxylic acids".to_string()],
         ),
@@ -78,6 +83,7 @@ fn demo_entries() -> Vec<(Compound, Vec<String>)> {
                 local_name: Some("ベンゼン".to_string()),
                 skeletal_formula: "C6H6".to_string(),
                 molecular_formula: "C6H6".to_string(),
+                smiles: Some("c1ccccc1".to_string()),
             },
             vec!["Organic".to_string(), "Arenes".to_string()],
         ),
@@ -88,6 +94,7 @@ fn demo_entries() -> Vec<(Compound, Vec<String>)> {
                 local_name: Some("トルエン".to_string()),
                 skeletal_formula: "C6H5-CH3".to_string(),
                 molecular_formula: "C7H8".to_string(),
+                smiles: Some("Cc1ccccc1".to_string()),
             },
             vec!["Organic".to_string(), "Arenes".to_string()],
         ),
@@ -98,6 +105,7 @@ fn demo_entries() -> Vec<(Compound, Vec<String>)> {
                 local_name: Some("アセチレン".to_string()),
                 skeletal_formula: "HC≡CH".to_string(),
                 molecular_formula: "C2H2".to_string(),
+                smiles: Some("C#C".to_string()),
             },
             vec!["Organic".to_string(), "Alkynes".to_string()],
         ),
@@ -108,6 +116,7 @@ fn demo_entries() -> Vec<(Compound, Vec<String>)> {
                 local_name: Some("2-ブチン".to_string()),
                 skeletal_formula: "CH3-C≡C-CH3".to_string(),
                 molecular_formula: "C4H6".to_string(),
+                smiles: Some("CC#CC".to_string()),
             },
             vec!["Organic".to_string(), "Alkynes".to_string()],
         ),
@@ -118,6 +127,7 @@ fn demo_entries() -> Vec<(Compound, Vec<String>)> {
                 local_name: Some("イソブタン".to_string()),
                 skeletal_formula: "(CH3)2CH-CH3".to_string(),
                 molecular_formula: "C4H10".to_string(),
+                smiles: Some("CC(C)C".to_string()),
             },
             vec!["Organic".to_string(), "Alkanes".to_string()],
         ),
@@ -128,6 +138,7 @@ fn demo_entries() -> Vec<(Compound, Vec<String>)> {
                 local_name: Some("ヘキサン".to_string()),
                 skeletal_formula: "CH3-(CH2)4-CH3".to_string(),
                 molecular_formula: "C6H14".to_string(),
+                smiles: Some("CCCCCC".to_string()),
             },
             vec!["Organic".to_string(), "Alkanes".to_string()],
         ),
@@ -138,6 +149,7 @@ fn demo_entries() -> Vec<(Compound, Vec<String>)> {
                 local_name: Some("グリセリン".to_string()),
                 skeletal_formula: "HO-CH2-CH(OH)-CH2-OH".to_string(),
                 molecular_formula: "C3H8O3".to_string(),
+                smiles: Some("OCC(O)CO".to_string()),
             },
             vec![
                 "Organic".to_string(),
@@ -152,8 +164,13 @@ fn demo_entries() -> Vec<(Compound, Vec<String>)> {
                 local_name: Some("塩化ナトリウム".to_string()),
                 skeletal_formula: "NaCl".to_string(),
                 molecular_formula: "NaCl".to_string(),
+                smiles: Some("Cl[Na]".to_string()),
             },
-            vec!["Inorganic".to_string(), "Salts".to_string(), "Halides".to_string()],
+            vec![
+                "Inorganic".to_string(),
+                "Salts".to_string(),
+                "Halides".to_string(),
+            ],
         ),
         (
             Compound {
@@ -162,8 +179,13 @@ fn demo_entries() -> Vec<(Compound, Vec<String>)> {
                 local_name: Some("炭酸カルシウム".to_string()),
                 skeletal_formula: "CaCO3".to_string(),
                 molecular_formula: "CaCO3".to_string(),
+                smiles: Some("[Ca+2].[O-]C(=O)[O-]".to_string()),
             },
-            vec!["Inorganic".to_string(), "Salts".to_string(), "Carbonates".to_string()],
+            vec![
+                "Inorganic".to_string(),
+                "Salts".to_string(),
+                "Carbonates".to_string(),
+            ],
         ),
     ]
 }

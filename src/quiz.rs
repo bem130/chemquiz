@@ -135,6 +135,7 @@ mod tests {
                 local_name: Some("エタノール".to_string()),
                 skeletal_formula: "CH3-CH2-OH".to_string(),
                 molecular_formula: "C2H6O".to_string(),
+                smiles: Some("CCO".to_string()),
             },
             Compound {
                 iupac_name: "propan-2-ol".to_string(),
@@ -142,6 +143,7 @@ mod tests {
                 local_name: Some("イソプロパノール".to_string()),
                 skeletal_formula: "(CH3)2CHOH".to_string(),
                 molecular_formula: "C3H8O".to_string(),
+                smiles: Some("CC(O)C".to_string()),
             },
             Compound {
                 iupac_name: "ethanoic acid".to_string(),
@@ -149,6 +151,7 @@ mod tests {
                 local_name: Some("酢酸".to_string()),
                 skeletal_formula: "CH3COOH".to_string(),
                 molecular_formula: "C2H4O2".to_string(),
+                smiles: Some("CC(=O)O".to_string()),
             },
             Compound {
                 iupac_name: "benzene".to_string(),
@@ -156,6 +159,7 @@ mod tests {
                 local_name: Some("ベンゼン".to_string()),
                 skeletal_formula: "C6H6".to_string(),
                 molecular_formula: "C6H6".to_string(),
+                smiles: Some("c1ccccc1".to_string()),
             },
         ]
     }
@@ -232,6 +236,7 @@ mod tests {
                 local_name: None,
                 skeletal_formula: "CH3-CH2-OH".to_string(),
                 molecular_formula: "C2H6O".to_string(),
+                smiles: Some("CCO".to_string()),
             },
             Compound {
                 iupac_name: "ethanol".to_string(),
@@ -239,6 +244,7 @@ mod tests {
                 local_name: None,
                 skeletal_formula: "CH3-CH2-OH".to_string(),
                 molecular_formula: "C2H6O".to_string(),
+                smiles: Some("CCO".to_string()),
             },
             Compound {
                 iupac_name: "propan-1-ol".to_string(),
@@ -246,6 +252,7 @@ mod tests {
                 local_name: None,
                 skeletal_formula: "CH3-CH2-CH2-OH".to_string(),
                 molecular_formula: "C3H8O".to_string(),
+                smiles: Some("CCCO".to_string()),
             },
         ];
 

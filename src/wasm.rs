@@ -5,9 +5,12 @@ use crate::{
     demo_compounds, generate_quiz,
 };
 use gloo_net::http::Request;
-use leptos::*;
+use js_sys::Reflect;
+use leptos::{html, *};
 use rand::SeedableRng;
-use wasm_bindgen::prelude::wasm_bindgen;
+use wasm_bindgen::JsCast;
+use wasm_bindgen::prelude::*;
+use web_sys::{HtmlCanvasElement, HtmlDivElement};
 
 #[derive(Debug, Clone, PartialEq, Eq, serde::Deserialize)]
 struct CompoundList {
@@ -65,6 +68,189 @@ fn find_by_structure(dataset: &[Compound], label: &str) -> Option<Compound> {
         .cloned()
 }
 
+#[wasm_bindgen(inline_js = r#"
+let rdkitModulePromise = null;
+
+function waitForRdkit() {
+    if (!rdkitModulePromise) {
+        rdkitModulePromise = new Promise((resolve, reject) => {
+            let attempts = 0;
+            const check = () => {
+                if (typeof initRDKitModule === 'function') {
+                    initRDKitModule().then(resolve).catch(reject);
+                } else if (attempts < 50) {
+                    attempts += 1;
+                    setTimeout(check, 40);
+                } else {
+                    reject(new Error('RDKit.js not loaded'));
+                }
+            };
+            check();
+        });
+    }
+
+    return rdkitModulePromise;
+}
+
+function ensureKekule() {
+    if (typeof Kekule === 'undefined' || !Kekule.IO || !Kekule.Render) {
+        return Promise.reject(new Error('Kekule.js not loaded'));
+    }
+    return Promise.resolve(Kekule);
+}
+
+function copySkeletalCanvas(offscreen, target, theme) {
+    const width = offscreen.width;
+    const height = offscreen.height;
+    const rawContext = offscreen.getContext('2d');
+    const visibleContext = target.getContext('2d');
+    const img = rawContext.getImageData(0, 0, width, height);
+
+    if (theme === 'dark') {
+        const data = img.data;
+        for (let i = 0; i < data.length; i += 4) {
+            const r = data[i];
+            const g = data[i + 1];
+            const b = data[i + 2];
+
+            if (r > 245 && g > 245 && b > 245) {
+                data[i + 3] = 0;
+                continue;
+            }
+
+            const maxRGB = Math.max(r, g, b);
+            const minRGB = Math.min(r, g, b);
+            const isNearGray = (maxRGB - minRGB) < 10;
+
+            if (maxRGB < 60 && isNearGray) {
+                data[i] = 255;
+                data[i + 1] = 255;
+                data[i + 2] = 255;
+            }
+        }
+
+        visibleContext.clearRect(0, 0, width, height);
+        visibleContext.putImageData(img, 0, 0);
+    } else {
+        visibleContext.fillStyle = '#ffffff';
+        visibleContext.fillRect(0, 0, width, height);
+        visibleContext.putImageData(img, 0, 0);
+    }
+}
+
+function buildKekuleViewer(container, width, height, theme) {
+    const V = Kekule.ChemWidget;
+    const R = Kekule.Render;
+
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+
+    const viewer = new V.Viewer(container);
+    viewer.setRenderType(R.RendererType.R2D);
+    viewer.setMoleculeDisplayType(R.Molecule2DDisplayType.CONDENSED);
+    viewer.setEnableToolbar(false);
+    viewer.setEnableDirectInteraction(false);
+    viewer.setEnableEdit(false);
+    viewer.setAutoSize(false);
+    viewer.setAutofit(true);
+    viewer.setPadding(12);
+    viewer.setDimension(width, height);
+
+    const moleculeConfigs = viewer.getRenderConfigs().getMoleculeDisplayConfigs();
+    moleculeConfigs.setDefHydrogenDisplayLevel(R.HydrogenDisplayLevel.ALL);
+    moleculeConfigs.setDefNodeDisplayMode(R.NodeLabelDisplayMode.SHOWN);
+
+    const colorConfigs = viewer.getRenderConfigs().getColorConfigs();
+    if (theme === 'dark') {
+        colorConfigs.setAtomColor('#ffffff');
+        colorConfigs.setBondColor('#ffffff');
+        colorConfigs.setLabelColor('#ffffff');
+    } else {
+        colorConfigs.setAtomColor('#000000');
+        colorConfigs.setBondColor('#000000');
+        colorConfigs.setLabelColor('#000000');
+    }
+    viewer.setBackgroundColor('transparent');
+
+    return viewer;
+}
+
+export async function renderStructure(smiles, theme, skeletalCanvas, fullDiv) {
+    const [rdkit] = await Promise.all([waitForRdkit(), ensureKekule()]);
+    let molecule = null;
+
+    try {
+        molecule = rdkit.get_mol(smiles);
+    } catch (err) {
+        return { ok: false, message: `RDKit get_mol failed: ${err}` };
+    }
+
+    const width = skeletalCanvas.clientWidth || (skeletalCanvas.parentElement && skeletalCanvas.parentElement.clientWidth) || 260;
+    const height = skeletalCanvas.clientHeight || 190;
+    skeletalCanvas.width = width;
+    skeletalCanvas.height = height;
+
+    const offscreen = document.createElement('canvas');
+    offscreen.width = width;
+    offscreen.height = height;
+
+    try {
+        molecule.draw_to_canvas(offscreen, -1, -1);
+    } catch (err) {
+        molecule.delete();
+        return { ok: false, message: `RDKit draw_to_canvas failed: ${err}` };
+    }
+
+    copySkeletalCanvas(offscreen, skeletalCanvas, theme);
+
+    let molblock = '';
+    try {
+        molblock = molecule.get_molblock();
+    } catch (err) {
+        molblock = '';
+    }
+    molecule.delete();
+
+    if (molblock && fullDiv) {
+        const targetWidth = fullDiv.clientWidth || width;
+        const targetHeight = fullDiv.clientHeight || height;
+        const viewer = buildKekuleViewer(fullDiv, targetWidth, targetHeight, theme);
+
+        try {
+            const molObj = Kekule.IO.loadFormatData(molblock, 'mol');
+            if (!molObj) {
+                return { ok: false, message: 'Kekule failed to load Molfile' };
+            }
+            viewer.setChemObj(molObj);
+            viewer.requestRepaint();
+        } catch (err) {
+            return { ok: false, message: `Kekule render failed: ${err}` };
+        }
+    }
+
+    return { ok: true };
+}
+"#)]
+extern "C" {
+    #[wasm_bindgen(js_name = renderStructure)]
+    async fn render_structure(
+        smiles: &str,
+        theme: &str,
+        skeletal: HtmlCanvasElement,
+        full: HtmlDivElement,
+    ) -> JsValue;
+}
+
+fn render_error_from(result: JsValue) -> Option<String> {
+    match Reflect::get(&result, &JsValue::from_str("ok")) {
+        Ok(flag) if flag.as_bool().unwrap_or(false) => None,
+        _ => Reflect::get(&result, &JsValue::from_str("message"))
+            .ok()
+            .and_then(|message| message.as_string()),
+    }
+}
+
 fn generate_from_dataset(dataset: &[Compound], mode: QuizMode) -> Result<QuizItem, String> {
     let mut rng = rand::rngs::StdRng::from_entropy();
     generate_quiz(&mut rng, dataset, mode, DEMO_OPTION_COUNT).map_err(|error| error.to_string())
@@ -88,11 +274,72 @@ fn NameTile(compound: Compound) -> impl IntoView {
 }
 
 #[component]
-fn StructureTile(compound: Compound) -> impl IntoView {
+fn StructureTile(compound: Compound, theme: ReadSignal<String>) -> impl IntoView {
+    let skeletal_ref = create_node_ref::<html::Canvas>();
+    let full_ref = create_node_ref::<html::Div>();
+    let (render_message, set_render_message) = create_signal::<Option<String>>(None);
+
+    let smiles = compound.smiles.clone();
+    let effect_smiles = smiles.clone();
+    let iupac_name = compound.iupac_name.clone();
+    let skeletal_formula = compound.skeletal_formula.clone();
+    let molecular_formula = compound.molecular_formula.clone();
+
+    create_effect(move |_| {
+        let current_theme = theme.get();
+        set_render_message.set(None);
+
+        if let (Some(smiles_value), Some(canvas), Some(full)) =
+            (effect_smiles.clone(), skeletal_ref.get(), full_ref.get())
+        {
+            let status = set_render_message;
+
+            spawn_local(async move {
+                let result = render_structure(&smiles_value, &current_theme, canvas, full).await;
+                status.set(render_error_from(result));
+            });
+        }
+    });
+
+    let visuals = smiles.map(|_| {
+        view! {
+            <div class="structure-visual">
+                <div class="structure-frame">
+                    <p class="structure-label">Skeletal formula</p>
+                    <canvas
+                        node_ref=skeletal_ref
+                        class="structure-canvas"
+                        role="img"
+                        aria-label=format!("Skeletal depiction for {}", iupac_name.clone())
+                    ></canvas>
+                </div>
+                <div class="structure-frame">
+                    <p class="structure-label">Structural formula</p>
+                    <div
+                        node_ref=full_ref
+                        class="full-structure"
+                        role="img"
+                        aria-label=format!("Full structural formula for {}", iupac_name.clone())
+                    ></div>
+                </div>
+            </div>
+        }
+    });
+
     view! {
         <div class="structure-tile">
-            <p class="skeletal">{compound.skeletal_formula}</p>
-            <p class="molecular">{compound.molecular_formula}</p>
+            {visuals.unwrap_or_else(|| {
+                view! { <p class="structure-fallback">Structure preview is unavailable for this entry.</p> }.into_view()
+            })}
+            {move || {
+                render_message
+                    .get()
+                    .map(|message| view! { <p class="structure-fallback">{message}</p> })
+            }}
+            <div class="structure-meta">
+                <p class="skeletal">{format!("Skeletal: {}", skeletal_formula.clone())}</p>
+                <p class="molecular">{format!("Molecular: {}", molecular_formula.clone())}</p>
+            </div>
         </div>
     }
 }
@@ -164,7 +411,7 @@ fn CatalogTree(manifest: CatalogManifest, on_select: Callback<CatalogLeaf>) -> i
 }
 
 #[component]
-fn QuizCard(quiz: QuizItem, dataset: Vec<Compound>) -> impl IntoView {
+fn QuizCard(quiz: QuizItem, dataset: Vec<Compound>, theme: ReadSignal<String>) -> impl IntoView {
     let mode_label = match quiz.mode {
         QuizMode::NameToStructure => "Name → Structure",
         QuizMode::StructureToName => "Structure → Name",
@@ -193,7 +440,9 @@ fn QuizCard(quiz: QuizItem, dataset: Vec<Compound>) -> impl IntoView {
                     {prompt_compound
                         .map(|compound| match quiz.mode {
                             QuizMode::NameToStructure => view! { <NameTile compound=compound /> }.into_view(),
-                            QuizMode::StructureToName => view! { <StructureTile compound=compound /> }.into_view(),
+                            QuizMode::StructureToName => {
+                                view! { <StructureTile compound=compound theme=theme /> }.into_view()
+                            }
                         })
                         .unwrap_or_else(|| view! { <p class="prompt">{quiz.prompt.clone()}</p> }.into_view())}
                 </div>
@@ -220,7 +469,9 @@ fn QuizCard(quiz: QuizItem, dataset: Vec<Compound>) -> impl IntoView {
                                     <span class="option-index">{(index + 1).to_string()}</span>
                                     {compound
                                         .map(|compound| match quiz.mode {
-                                            QuizMode::NameToStructure => view! { <StructureTile compound=compound /> }.into_view(),
+                                            QuizMode::NameToStructure => {
+                                                view! { <StructureTile compound=compound theme=theme /> }.into_view()
+                                            }
                                             QuizMode::StructureToName => view! { <NameTile compound=compound /> }.into_view(),
                                         })
                                         .unwrap_or_else(|| view! { <p class="option-body">{option.clone()}</p> }.into_view())}
@@ -251,9 +502,7 @@ fn App() -> impl IntoView {
     });
 
     let regenerate = move |_| {
-        let dataset = compounds
-            .get()
-            .unwrap_or_else(|| active_dataset.get());
+        let dataset = compounds.get().unwrap_or_else(|| active_dataset.get());
 
         match generate_from_dataset(&dataset, mode.get()) {
             Ok(item) => {
@@ -348,7 +597,7 @@ fn App() -> impl IntoView {
             <section class="quiz-shell">
                 {move || {
                     if let Some(item) = quiz.get() {
-                        view! { <QuizCard quiz=item dataset=active_dataset.get() /> }.into_view()
+                        view! { <QuizCard quiz=item dataset=active_dataset.get() theme=theme /> }.into_view()
                     } else if let Some(message) = error.get() {
                         view! {
                             <section class="error-card card-surface">

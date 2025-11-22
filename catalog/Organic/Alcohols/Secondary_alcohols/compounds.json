@@ -5,21 +5,24 @@
             "common_name": "isopropyl alcohol",
             "local_name": "イソプロパノール",
             "skeletal_formula": "(CH3)2CHOH",
-            "molecular_formula": "C3H8O"
+            "molecular_formula": "C3H8O",
+            "smiles": "CC(O)C"
         },
         {
             "iupac_name": "butan-2-ol",
             "common_name": "sec-butanol",
             "local_name": "2-ブタノール",
             "skeletal_formula": "CH3-CH(OH)-CH2-CH3",
-            "molecular_formula": "C4H10O"
+            "molecular_formula": "C4H10O",
+            "smiles": "CC(O)CC"
         },
         {
             "iupac_name": "4-methylpentan-2-ol",
             "common_name": "methyl isobutyl carbinol",
             "local_name": "4-メチル-2-ペンタノール",
             "skeletal_formula": "(CH3)2CH-CH2-CH(OH)-CH3",
-            "molecular_formula": "C6H14O"
+            "molecular_formula": "C6H14O",
+            "smiles": "CC(O)CC(C)C"
         }
     ]
 }

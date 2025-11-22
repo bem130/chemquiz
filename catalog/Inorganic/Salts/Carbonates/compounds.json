@@ -5,14 +5,16 @@
             "common_name": "calcite",
             "local_name": "炭酸カルシウム",
             "skeletal_formula": "CaCO3",
-            "molecular_formula": "CaCO3"
+            "molecular_formula": "CaCO3",
+            "smiles": "[Ca+2].[O-]C(=O)[O-]"
         },
         {
             "iupac_name": "sodium hydrogen carbonate",
             "common_name": "baking soda",
             "local_name": "炭酸水素ナトリウム",
             "skeletal_formula": "NaHCO3",
-            "molecular_formula": "NaHCO3"
+            "molecular_formula": "NaHCO3",
+            "smiles": "[Na+].O=C([O-])O"
         }
     ]
 }
