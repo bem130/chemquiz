@@ -1,0 +1,37 @@
+name: Rust Wasm Tests
+
+on:
+    push:
+        branches:
+            - main
+            - develop
+    pull_request:
+        branches:
+            - main
+            - develop
+
+jobs:
+    wasm-test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Set up Rust
+              uses: dtolnay/rust-toolchain@stable
+              with:
+                  toolchain: stable
+
+            - name: Install wasm32 target
+              run: rustup target add wasm32-unknown-unknown
+
+            - name: Cache Cargo build
+              uses: Swatinem/rust-cache@v2
+              with:
+                  # Share cache with other workflows (test, gh-pages)
+                  shared-key: chemquiz
+                  cache-on-failure: true
+
+            - name: Compile tests for wasm32 (no run)
+              run: cargo test --target wasm32-unknown-unknown --no-run --all --all-features --locked
