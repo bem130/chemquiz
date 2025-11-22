@@ -40,6 +40,22 @@ Install Rust (edition 2024) and run the test suite:
 cargo test
 ```
 
+To compile the crate for the browser target (for example to ensure `cargo test --target
+wasm32-unknown-unknown --no-run` works), install the WASM standard library first:
+
+```bash
+rustup target add wasm32-unknown-unknown
+cargo test --target wasm32-unknown-unknown --no-run
+```
+
+If direct downloads are blocked, configure an alternate mirror before adding the target:
+
+```bash
+export RUSTUP_DIST_SERVER=https://rsproxy.cn
+export RUSTUP_UPDATE_ROOT=https://rsproxy.cn/rustup
+rustup target add wasm32-unknown-unknown
+```
+
 Unit tests cover the compound formatting helpers, catalog filtering, and quiz edge cases.
 Integration tests validate end-to-end quiz generation from catalog slices alongside typical and
 edge configurations.
