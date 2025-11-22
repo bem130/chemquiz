@@ -1,0 +1,234 @@
+{
+    "polyatomic_ions": [
+        {
+            "name_en": "ammonium",
+            "name_ja": "アンモニウムイオン",
+            "formula": "NH4+",
+            "katex_formula": "\\ce{NH4+}",
+            "charge": 1,
+            "category": "cation",
+            "common_acid": "NH3 (base, conjugate acid)",
+            "notes": "Only common polyatomic cation in high school problems; forms many ammonium salts (NH4Cl, (NH4)2SO4, etc.)."
+        },
+        {
+            "name_en": "hydronium",
+            "name_ja": "オキソニウムイオン（水和水素イオン）",
+            "formula": "H3O+",
+            "katex_formula": "\\ce{H3O+}",
+            "charge": 1,
+            "category": "cation",
+            "common_acid": "H2O + H+",
+            "notes": "Actual form of hydrogen ion in water; often written as H+ in high school but important conceptually."
+        },
+        {
+            "name_en": "hydroxide",
+            "name_ja": "水酸化物イオン",
+            "formula": "OH-",
+            "katex_formula": "\\ce{OH-}",
+            "charge": -1,
+            "category": "base",
+            "common_acid": "H2O",
+            "notes": "Conjugate base of water; main species in strong bases like NaOH, KOH, Ca(OH)2."
+        },
+        {
+            "name_en": "nitrate",
+            "name_ja": "硝酸イオン",
+            "formula": "NO3-",
+            "katex_formula": "\\ce{NO3-}",
+            "charge": -1,
+            "category": "oxyanion (nitrogen)",
+            "common_acid": "HNO3",
+            "notes": "All nitrates are soluble in water; common in fertilizers and oxidizing agents."
+        },
+        {
+            "name_en": "nitrite",
+            "name_ja": "亜硝酸イオン",
+            "formula": "NO2-",
+            "katex_formula": "\\ce{NO2-}",
+            "charge": -1,
+            "category": "oxyanion (nitrogen)",
+            "common_acid": "HNO2",
+            "notes": "Weaker oxidizing agent; appears in redox and equilibrium problems."
+        },
+        {
+            "name_en": "carbonate",
+            "name_ja": "炭酸イオン",
+            "formula": "CO3^2-",
+            "katex_formula": "\\ce{CO3^{2-}}",
+            "charge": -2,
+            "category": "oxyanion (carbon)",
+            "common_acid": "H2CO3",
+            "notes": "Forms many insoluble carbonates (CaCO3, BaCO3 etc.); releases CO2 with acids."
+        },
+        {
+            "name_en": "hydrogencarbonate (bicarbonate)",
+            "name_ja": "炭酸水素イオン",
+            "formula": "HCO3-",
+            "katex_formula": "\\ce{HCO3-}",
+            "charge": -1,
+            "category": "acid oxyanion",
+            "common_acid": "H2CO3",
+            "notes": "Amphiprotic; found in baking soda NaHCO3 and buffer solutions."
+        },
+        {
+            "name_en": "sulfate",
+            "name_ja": "硫酸イオン",
+            "formula": "SO4^2-",
+            "katex_formula": "\\ce{SO4^{2-}}",
+            "charge": -2,
+            "category": "oxyanion (sulfur)",
+            "common_acid": "H2SO4",
+            "notes": "Most sulfates soluble except BaSO4, PbSO4, CaSO4 (slightly); used in solubility rules."
+        },
+        {
+            "name_en": "hydrogensulfate (bisulfate)",
+            "name_ja": "硫酸水素イオン",
+            "formula": "HSO4-",
+            "katex_formula": "\\ce{HSO4-}",
+            "charge": -1,
+            "category": "acid oxyanion",
+            "common_acid": "H2SO4",
+            "notes": "Present in acid salts such as NaHSO4; acts as weak acid or weak base depending on conditions."
+        },
+        {
+            "name_en": "sulfite",
+            "name_ja": "亜硫酸イオン",
+            "formula": "SO3^2-",
+            "katex_formula": "\\ce{SO3^{2-}}",
+            "charge": -2,
+            "category": "oxyanion (sulfur)",
+            "common_acid": "H2SO3",
+            "notes": "Reducing agent; related to SO2; appears in redox and gas evolution problems."
+        },
+        {
+            "name_en": "phosphate",
+            "name_ja": "リン酸イオン",
+            "formula": "PO4^3-",
+            "katex_formula": "\\ce{PO4^{3-}}",
+            "charge": -3,
+            "category": "oxyanion (phosphorus)",
+            "common_acid": "H3PO4",
+            "notes": "Common in fertilizers and biological systems; forms insoluble salts like Ca3(PO4)2."
+        },
+        {
+            "name_en": "hydrogen phosphate",
+            "name_ja": "水素リン酸イオン",
+            "formula": "HPO4^2-",
+            "katex_formula": "\\ce{HPO4^{2-}}",
+            "charge": -2,
+            "category": "acid oxyanion",
+            "common_acid": "H3PO4",
+            "notes": "Part of phosphate buffer systems; intermediate protonation state."
+        },
+        {
+            "name_en": "dihydrogen phosphate",
+            "name_ja": "二水素リン酸イオン",
+            "formula": "H2PO4-",
+            "katex_formula": "\\ce{H2PO4-}",
+            "charge": -1,
+            "category": "acid oxyanion",
+            "common_acid": "H3PO4",
+            "notes": "Occurs in acid phosphate salts such as NaH2PO4 and NH4H2PO4."
+        },
+        {
+            "name_en": "acetate",
+            "name_ja": "酢酸イオン（アセテート）",
+            "formula": "CH3COO-",
+            "katex_formula": "\\ce{CH3COO-}",
+            "charge": -1,
+            "category": "carboxylate",
+            "common_acid": "CH3COOH",
+            "notes": "Conjugate base of acetic acid; present in sodium acetate, common buffer component."
+        },
+        {
+            "name_en": "cyanide",
+            "name_ja": "シアン化物イオン",
+            "formula": "CN-",
+            "katex_formula": "\\ce{CN-}",
+            "charge": -1,
+            "category": "pseudo-halide",
+            "common_acid": "HCN",
+            "notes": "Strong ligand and strong nucleophile; considered dangerous; appears mainly as conceptual example."
+        },
+        {
+            "name_en": "thiocyanate",
+            "name_ja": "チオシアン酸イオン",
+            "formula": "SCN-",
+            "katex_formula": "\\ce{SCN-}",
+            "charge": -1,
+            "category": "pseudo-halide",
+            "common_acid": "HSCN",
+            "notes": "Forms intense blood-red complex [Fe(SCN)]2+ used as test for Fe3+."
+        },
+        {
+            "name_en": "chlorate",
+            "name_ja": "塩素酸イオン",
+            "formula": "ClO3-",
+            "katex_formula": "\\ce{ClO3-}",
+            "charge": -1,
+            "category": "halogen oxyanion",
+            "common_acid": "HClO3",
+            "notes": "Strong oxidizing agent; appears in discussions of oxyacids of chlorine."
+        },
+        {
+            "name_en": "perchlorate",
+            "name_ja": "過塩素酸イオン",
+            "formula": "ClO4-",
+            "katex_formula": "\\ce{ClO4-}",
+            "charge": -1,
+            "category": "halogen oxyanion",
+            "common_acid": "HClO4",
+            "notes": "Conjugate base of strong acid HClO4; often considered fully dissociated in solution."
+        },
+        {
+            "name_en": "chlorite",
+            "name_ja": "亜塩素酸イオン",
+            "formula": "ClO2-",
+            "katex_formula": "\\ce{ClO2-}",
+            "charge": -1,
+            "category": "halogen oxyanion",
+            "common_acid": "HClO2",
+            "notes": "Less common but sometimes appears in extended oxyanion lists."
+        },
+        {
+            "name_en": "hypochlorite",
+            "name_ja": "次亜塩素酸イオン",
+            "formula": "ClO-",
+            "katex_formula": "\\ce{ClO-}",
+            "charge": -1,
+            "category": "halogen oxyanion",
+            "common_acid": "HClO",
+            "notes": "Active component in bleaching agents such as NaClO; strong oxidizing and disinfecting agent."
+        },
+        {
+            "name_en": "permanganate",
+            "name_ja": "過マンガン酸イオン",
+            "formula": "MnO4-",
+            "katex_formula": "\\ce{MnO4-}",
+            "charge": -1,
+            "category": "transition metal oxyanion",
+            "common_acid": "HMnO4",
+            "notes": "Strong oxidizing agent with purple color; used in redox titrations and qualitative tests."
+        },
+        {
+            "name_en": "chromate",
+            "name_ja": "クロム酸イオン",
+            "formula": "CrO4^2-",
+            "katex_formula": "\\ce{CrO4^{2-}}",
+            "charge": -2,
+            "category": "transition metal oxyanion",
+            "common_acid": "H2CrO4",
+            "notes": "Yellow; in equilibrium with orange dichromate depending on pH."
+        },
+        {
+            "name_en": "dichromate",
+            "name_ja": "二クロム酸イオン",
+            "formula": "Cr2O7^2-",
+            "katex_formula": "\\ce{Cr2O7^{2-}}",
+            "charge": -2,
+            "category": "transition metal oxyanion",
+            "common_acid": "H2Cr2O7",
+            "notes": "Orange; strong oxidizing agent; used in redox titrations and oxidation of organic compounds."
+        }
+    ]
+}

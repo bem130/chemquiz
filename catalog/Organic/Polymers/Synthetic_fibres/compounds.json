@@ -1,0 +1,109 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "poly(hexane-1,6-diyladipamide)",
+            "common_name": "nylon-6,6",
+            "local_name": "ナイロン66（ポリアミド系合成繊維）",
+            "skeletal_formula": "[-NH-(CH2)6-NH-CO-(CH2)4-CO-]n",
+            "molecular_formula": "(C12H22N2O2)n",
+            "series_general_formula": "Polyamides from diamine + diacid: H2N-(CH2)x-NH2 + HOOC-(CH2)y-COOH",
+            "functional_groups": [
+                {
+                    "name_en": "Amide (polyamide) linkage",
+                    "name_ja": "アミド結合（ポリアミド）",
+                    "pattern": "–CO–NH–"
+                }
+            ],
+            "notes": "Representative synthetic fibre; made from hexamethylenediamine and adipic acid; strong, abrasion-resistant; used in fibers and engineering plastics.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-NH-(CH2)6-NH-CO-(CH2)4-CO-]_n}",
+            "katex_molecular_formula": "\\ce{(C12H22N2O2)_n}"
+        },
+        {
+            "iupac_name": "poly(hexanamide)",
+            "common_name": "nylon-6",
+            "local_name": "ナイロン6",
+            "skeletal_formula": "[-NH-(CH2)5-CO-]n",
+            "molecular_formula": "(C6H11NO)n",
+            "series_general_formula": "Ring-opening polymer of ε-caprolactam",
+            "functional_groups": [
+                {
+                    "name_en": "Amide",
+                    "name_ja": "アミド結合",
+                    "pattern": "–CO–NH–"
+                }
+            ],
+            "notes": "Polyamide produced by ring-opening polymerization of ε-caprolactam; used similarly to nylon-6,6.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-NH-(CH2)5-CO-]_n}",
+            "katex_molecular_formula": "\\ce{(C6H11NO)_n}"
+        },
+        {
+            "iupac_name": "poly(ethylene terephthalate)",
+            "common_name": "polyethylene terephthalate (PET)",
+            "local_name": "ポリエチレンテレフタラート（ポリエステル繊維；テリレン）",
+            "skeletal_formula": "[-O-CH2-CH2-O-CO-C6H4-CO-]n",
+            "molecular_formula": "(C10H8O4)n",
+            "series_general_formula": "Polyesters from diol + aromatic diacid",
+            "functional_groups": [
+                {
+                    "name_en": "Ester",
+                    "name_ja": "エステル結合",
+                    "pattern": "–COO–"
+                },
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香族環",
+                    "pattern": "C6H4"
+                }
+            ],
+            "notes": "Typical polyester fibre and plastic (PET bottles); made from ethylene glycol and terephthalic acid; strong, wrinkle-resistant.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-O-CH2-CH2-O-CO-C6H4-CO-]_n}",
+            "katex_molecular_formula": "\\ce{(C10H8O4)_n}"
+        },
+        {
+            "iupac_name": "poly(vinyl alcohol) formal-acetal crosslinked fibre (vinylon)",
+            "common_name": "vinylon",
+            "local_name": "ビニロン",
+            "skeletal_formula": "[-CH2-CHOH-]n partially acetalized with –O–CH2–O–",
+            "molecular_formula": "(C2H4O)n (before crosslinking)",
+            "series_general_formula": "Acetalized poly(vinyl alcohol) fibres",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "–CH2–CHOH–"
+                },
+                {
+                    "name_en": "Acetal",
+                    "name_ja": "アセタール結合",
+                    "pattern": "–O–CH2–O–"
+                }
+            ],
+            "notes": "Made from poly(vinyl alcohol) treated with formaldehyde; strong, water-resistant; typical Japanese-developed synthetic fibre.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CH2-CHOH-]_n (partly –O-CH2-O-)}",
+            "katex_molecular_formula": "\\ce{(C2H4O)_n}"
+        },
+        {
+            "iupac_name": "poly(acrylonitrile)",
+            "common_name": "acrylic fibre (PAN)",
+            "local_name": "アクリル繊維（ポリアクリロニトリル）",
+            "skeletal_formula": "[-CH2-CH(CN)-]n",
+            "molecular_formula": "(C3H3N)n",
+            "series_general_formula": "Nitrile polymers from acrylonitrile",
+            "functional_groups": [
+                {
+                    "name_en": "Nitrile",
+                    "name_ja": "ニトリル基（シアノ基）",
+                    "pattern": "–C≡N"
+                }
+            ],
+            "notes": "Common synthetic fibre with wool-like feel; produced by addition polymerization of acrylonitrile; often blended in clothing.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CH2-CH(CN)-]_n}",
+            "katex_molecular_formula": "\\ce{(C3H3N)_n}"
+        }
+    ]
+}

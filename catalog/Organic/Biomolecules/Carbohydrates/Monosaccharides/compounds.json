@@ -1,0 +1,124 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "D-glucose",
+            "common_name": "glucose (grape sugar)",
+            "local_name": "グルコース（ブドウ糖）",
+            "skeletal_formula": "HO-CH2-(CHOH)4-CHO",
+            "molecular_formula": "C6H12O6",
+            "series_general_formula": "Aldohexoses (アルドヘキソース): C6H12O6; general carbohydrates ~ Cn(H2O)m",
+            "functional_groups": [
+                {
+                    "name_en": "Aldehyde",
+                    "name_ja": "アルデヒド基",
+                    "pattern": "–CHO"
+                },
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH (multiple)"
+                }
+            ],
+            "notes": "Most important monosaccharide in metabolism; reducing sugar; forms starch, glycogen, cellulose upon polymerization.",
+            "smiles": "OC[C@H](O)[C@H](O)[C@H](O)[C@H](O)C=O",
+            "katex_skeletal_formula": "\\ce{HO-CH2-(CHOH)4-CHO}",
+            "katex_molecular_formula": "\\ce{C6H12O6}"
+        },
+        {
+            "iupac_name": "D-fructose",
+            "common_name": "fructose (fruit sugar)",
+            "local_name": "フルクトース（果糖）",
+            "skeletal_formula": "HO-CH2-CO-(CHOH)3-CH2OH",
+            "molecular_formula": "C6H12O6",
+            "series_general_formula": "Ketohexoses (ケトヘキソース): C6H12O6; isomeric with glucose",
+            "functional_groups": [
+                {
+                    "name_en": "Ketone",
+                    "name_ja": "ケトン基",
+                    "pattern": "R-CO-R"
+                },
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH (multiple)"
+                }
+            ],
+            "notes": "Sweet monosaccharide found in fruits and honey; ketose; reducing sugar; forms part of sucrose.",
+            "smiles": "OC[C@H](O)[C@@H](O)C(=O)CO",
+            "katex_skeletal_formula": "\\ce{HO-CH2-CO-(CHOH)3-CH2OH}",
+            "katex_molecular_formula": "\\ce{C6H12O6}"
+        },
+        {
+            "iupac_name": "D-galactose",
+            "common_name": "galactose",
+            "local_name": "ガラクトース",
+            "skeletal_formula": "HO-CH2-(CHOH)4-CHO (different stereochemistry from glucose)",
+            "molecular_formula": "C6H12O6",
+            "series_general_formula": "Aldohexoses: C6H12O6; epimer of glucose",
+            "functional_groups": [
+                {
+                    "name_en": "Aldehyde",
+                    "name_ja": "アルデヒド基",
+                    "pattern": "–CHO"
+                },
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Component of lactose (milk sugar); same formula as glucose but different configuration at one stereocenter.",
+            "smiles": "OC[C@H](O)[C@@H](O)[C@@H](O)[C@H](O)C=O",
+            "katex_skeletal_formula": "\\ce{HO-CH2-(CHOH)4-CHO}",
+            "katex_molecular_formula": "\\ce{C6H12O6}"
+        },
+        {
+            "iupac_name": "D-ribose",
+            "common_name": "ribose",
+            "local_name": "リボース",
+            "skeletal_formula": "HO-CH2-(CHOH)3-CHO",
+            "molecular_formula": "C5H10O5",
+            "series_general_formula": "Aldopentoses (アルドペントース): C5H10O5",
+            "functional_groups": [
+                {
+                    "name_en": "Aldehyde",
+                    "name_ja": "アルデヒド基",
+                    "pattern": "–CHO"
+                },
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Pentose sugar; component of RNA and many biomolecules; important example of pentose in high school biology/chemistry.",
+            "smiles": "OC[C@H](O)[C@H](O)C=O",
+            "katex_skeletal_formula": "\\ce{HO-CH2-(CHOH)3-CHO}",
+            "katex_molecular_formula": "\\ce{C5H10O5}"
+        },
+        {
+            "iupac_name": "2-deoxy-D-ribose",
+            "common_name": "deoxyribose",
+            "local_name": "デオキシリボース",
+            "skeletal_formula": "HO-CH2-CH2-CHOH-CHO",
+            "molecular_formula": "C5H10O4",
+            "series_general_formula": "Deoxypentoses (デオキシペントース): C5H10O4",
+            "functional_groups": [
+                {
+                    "name_en": "Aldehyde",
+                    "name_ja": "アルデヒド基",
+                    "pattern": "–CHO"
+                },
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH (fewer than ribose)"
+                }
+            ],
+            "notes": "Pentose sugar lacking one hydroxyl group compared to ribose; component of DNA; important in biomolecule unit.",
+            "smiles": "OC[C@H](CO)[C@H](O)C=O",
+            "katex_skeletal_formula": "\\ce{HO-CH2-CH2-CHOH-CHO}",
+            "katex_molecular_formula": "\\ce{C5H10O4}"
+        }
+    ]
+}

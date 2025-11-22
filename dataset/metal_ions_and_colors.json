@@ -1,0 +1,314 @@
+{
+    "metal_ions": [
+        {
+            "ion": "Cu2+",
+            "katex_ion": "\\ce{Cu^{2+}}",
+            "name_en": "copper(II) ion",
+            "name_ja": "銅(II)イオン",
+            "aq_color": "blue",
+            "precipitates": [
+                {
+                    "reagent": "NaOH (aq) (limited)",
+                    "precipitate_formula": "Cu(OH)2",
+                    "katex_precipitate_formula": "\\ce{Cu(OH)2}",
+                    "color": "blue",
+                    "behavior": "insoluble in excess NaOH"
+                },
+                {
+                    "reagent": "NH3 (aq) (limited)",
+                    "precipitate_formula": "Cu(OH)2",
+                    "katex_precipitate_formula": "\\ce{Cu(OH)2}",
+                    "color": "blue",
+                    "behavior": "dissolves in excess NH3 to form deep-blue complex"
+                },
+                {
+                    "reagent": "S2- (from H2S)",
+                    "precipitate_formula": "CuS",
+                    "katex_precipitate_formula": "\\ce{CuS}",
+                    "color": "black",
+                    "behavior": "insoluble sulfide precipitate"
+                }
+            ],
+            "complex_colors": [
+                {
+                    "ligand": "excess NH3 (aq)",
+                    "species": "[Cu(NH3)4(H2O)2]2+",
+                    "katex_species": "\\ce{[Cu(NH3)4(H2O)2]^{2+}}",
+                    "color": "deep blue"
+                }
+            ],
+            "notes": "Blue aqueous ion; characteristic deep-blue complex with NH3; forms blue hydroxide and black sulfide precipitates."
+        },
+        {
+            "ion": "Fe2+",
+            "katex_ion": "\\ce{Fe^{2+}}",
+            "name_en": "iron(II) ion",
+            "name_ja": "鉄(II)イオン",
+            "aq_color": "pale green",
+            "precipitates": [
+                {
+                    "reagent": "NaOH (aq)",
+                    "precipitate_formula": "Fe(OH)2",
+                    "katex_precipitate_formula": "\\ce{Fe(OH)2}",
+                    "color": "greenish white",
+                    "behavior": "oxidizes in air to brown Fe(OH)3"
+                },
+                {
+                    "reagent": "S2- (H2S)",
+                    "precipitate_formula": "FeS",
+                    "katex_precipitate_formula": "\\ce{FeS}",
+                    "color": "black",
+                    "behavior": "insoluble black sulfide"
+                }
+            ],
+            "complex_colors": [],
+            "notes": "Easily oxidized to Fe3+; Fe2+/Fe3+ color and precipitation behavior are commonly contrasted."
+        },
+        {
+            "ion": "Fe3+",
+            "katex_ion": "\\ce{Fe^{3+}}",
+            "name_en": "iron(III) ion",
+            "name_ja": "鉄(III)イオン",
+            "aq_color": "yellow-brown",
+            "precipitates": [
+                {
+                    "reagent": "NaOH (aq)",
+                    "precipitate_formula": "Fe(OH)3",
+                    "katex_precipitate_formula": "\\ce{Fe(OH)3}",
+                    "color": "brown",
+                    "behavior": "insoluble in excess NaOH"
+                },
+                {
+                    "reagent": "NH3 (aq)",
+                    "precipitate_formula": "Fe(OH)3",
+                    "katex_precipitate_formula": "\\ce{Fe(OH)3}",
+                    "color": "brown",
+                    "behavior": "similar behavior to NaOH"
+                }
+            ],
+            "complex_colors": [],
+            "notes": "Yellow-brown solution; gives brown hydroxide precipitate; forms blood-red complex with thiocyanate SCN-."
+        },
+        {
+            "ion": "Zn2+",
+            "katex_ion": "\\ce{Zn^{2+}}",
+            "name_en": "zinc ion",
+            "name_ja": "亜鉛イオン",
+            "aq_color": "colorless",
+            "precipitates": [
+                {
+                    "reagent": "NaOH (aq) (limited)",
+                    "precipitate_formula": "Zn(OH)2",
+                    "katex_precipitate_formula": "\\ce{Zn(OH)2}",
+                    "color": "white",
+                    "behavior": "dissolves in excess NaOH (amphoteric)"
+                },
+                {
+                    "reagent": "NH3 (aq) (limited)",
+                    "precipitate_formula": "Zn(OH)2",
+                    "katex_precipitate_formula": "\\ce{Zn(OH)2}",
+                    "color": "white",
+                    "behavior": "dissolves in excess NH3 to form colorless complex"
+                },
+                {
+                    "reagent": "S2- (alkaline)",
+                    "precipitate_formula": "ZnS",
+                    "katex_precipitate_formula": "\\ce{ZnS}",
+                    "color": "white",
+                    "behavior": "insoluble sulfide"
+                }
+            ],
+            "complex_colors": [],
+            "notes": "Typical amphoteric metal; white hydroxide dissolves in excess OH- and NH3."
+        },
+        {
+            "ion": "Al3+",
+            "katex_ion": "\\ce{Al^{3+}}",
+            "name_en": "aluminium ion",
+            "name_ja": "アルミニウムイオン",
+            "aq_color": "colorless",
+            "precipitates": [
+                {
+                    "reagent": "NaOH (aq) (limited)",
+                    "precipitate_formula": "Al(OH)3",
+                    "katex_precipitate_formula": "\\ce{Al(OH)3}",
+                    "color": "white",
+                    "behavior": "dissolves in excess NaOH (amphoteric)"
+                },
+                {
+                    "reagent": "NH3 (aq)",
+                    "precipitate_formula": "Al(OH)3",
+                    "katex_precipitate_formula": "\\ce{Al(OH)3}",
+                    "color": "white",
+                    "behavior": "insoluble in excess NH3"
+                }
+            ],
+            "complex_colors": [],
+            "notes": "Amphoteric hydroxide; key in separation from Zn2+ and Fe3+ in qualitative analysis."
+        },
+        {
+            "ion": "Ag+",
+            "katex_ion": "\\ce{Ag+}",
+            "name_en": "silver ion",
+            "name_ja": "銀イオン",
+            "aq_color": "colorless",
+            "precipitates": [
+                {
+                    "reagent": "Cl- (e.g., HCl, NaCl)",
+                    "precipitate_formula": "AgCl",
+                    "katex_precipitate_formula": "\\ce{AgCl}",
+                    "color": "white",
+                    "behavior": "dissolves in NH3 (aq) to form complex"
+                },
+                {
+                    "reagent": "Br-",
+                    "precipitate_formula": "AgBr",
+                    "katex_precipitate_formula": "\\ce{AgBr}",
+                    "color": "pale yellow",
+                    "behavior": "sparingly soluble in NH3"
+                },
+                {
+                    "reagent": "I-",
+                    "precipitate_formula": "AgI",
+                    "katex_precipitate_formula": "\\ce{AgI}",
+                    "color": "yellow",
+                    "behavior": "insoluble in NH3"
+                }
+            ],
+            "complex_colors": [
+                {
+                    "ligand": "excess NH3 (aq)",
+                    "species": "[Ag(NH3)2]+",
+                    "katex_species": "\\ce{[Ag(NH3)2]+}",
+                    "color": "colorless"
+                }
+            ],
+            "notes": "Silver halides are classic examples of low-solubility precipitates; AgCl + NH3 is a standard test reaction."
+        },
+        {
+            "ion": "Pb2+",
+            "katex_ion": "\\ce{Pb^{2+}}",
+            "name_en": "lead(II) ion",
+            "name_ja": "鉛(II)イオン",
+            "aq_color": "colorless",
+            "precipitates": [
+                {
+                    "reagent": "Cl- (HCl)",
+                    "precipitate_formula": "PbCl2",
+                    "katex_precipitate_formula": "\\ce{PbCl2}",
+                    "color": "white",
+                    "behavior": "sparingly soluble in cold water; more soluble in hot water"
+                },
+                {
+                    "reagent": "SO4^2-",
+                    "precipitate_formula": "PbSO4",
+                    "katex_precipitate_formula": "\\ce{PbSO4}",
+                    "color": "white",
+                    "behavior": "insoluble sulfate"
+                },
+                {
+                    "reagent": "S2-",
+                    "precipitate_formula": "PbS",
+                    "katex_precipitate_formula": "\\ce{PbS}",
+                    "color": "black",
+                    "behavior": "insoluble sulfide"
+                }
+            ],
+            "complex_colors": [],
+            "notes": "Forms sparingly soluble chloride and sulfate; classic example in separation procedures."
+        },
+        {
+            "ion": "Ba2+",
+            "katex_ion": "\\ce{Ba^{2+}}",
+            "name_en": "barium ion",
+            "name_ja": "バリウムイオン",
+            "aq_color": "colorless",
+            "precipitates": [
+                {
+                    "reagent": "SO4^2-",
+                    "precipitate_formula": "BaSO4",
+                    "katex_precipitate_formula": "\\ce{BaSO4}",
+                    "color": "white",
+                    "behavior": "very insoluble; used in sulfate tests and as contrast agent"
+                },
+                {
+                    "reagent": "CO3^2-",
+                    "precipitate_formula": "BaCO3",
+                    "katex_precipitate_formula": "\\ce{BaCO3}",
+                    "color": "white",
+                    "behavior": "insoluble carbonate"
+                }
+            ],
+            "complex_colors": [],
+            "notes": "Important in solubility rules; most Ba2+ salts (sulfate, carbonate) are poorly soluble."
+        },
+        {
+            "ion": "Ca2+",
+            "katex_ion": "\\ce{Ca^{2+}}",
+            "name_en": "calcium ion",
+            "name_ja": "カルシウムイオン",
+            "aq_color": "colorless",
+            "precipitates": [
+                {
+                    "reagent": "CO3^2-",
+                    "precipitate_formula": "CaCO3",
+                    "katex_precipitate_formula": "\\ce{CaCO3}",
+                    "color": "white",
+                    "behavior": "insoluble; decomposes on heating to CaO + CO2"
+                },
+                {
+                    "reagent": "SO4^2-",
+                    "precipitate_formula": "CaSO4",
+                    "katex_precipitate_formula": "\\ce{CaSO4}",
+                    "color": "white (sparingly soluble)",
+                    "behavior": "slightly soluble; hardness of water"
+                }
+            ],
+            "complex_colors": [],
+            "notes": "Hardness of water is related to Ca2+ (and Mg2+) as carbonates/sulfates; typical flame test (brick red)."
+        },
+        {
+            "ion": "Ni2+",
+            "katex_ion": "\\ce{Ni^{2+}}",
+            "name_en": "nickel(II) ion",
+            "name_ja": "ニッケル(II)イオン",
+            "aq_color": "green",
+            "precipitates": [
+                {
+                    "reagent": "NaOH (aq)",
+                    "precipitate_formula": "Ni(OH)2",
+                    "katex_precipitate_formula": "\\ce{Ni(OH)2}",
+                    "color": "green",
+                    "behavior": "insoluble in excess NaOH"
+                },
+                {
+                    "reagent": "S2-",
+                    "precipitate_formula": "NiS",
+                    "katex_precipitate_formula": "\\ce{NiS}",
+                    "color": "black",
+                    "behavior": "insoluble sulfide"
+                }
+            ],
+            "complex_colors": [],
+            "notes": "Green solution and precipitate; appears in extended qualitative analysis problems."
+        },
+        {
+            "ion": "Co2+",
+            "katex_ion": "\\ce{Co^{2+}}",
+            "name_en": "cobalt(II) ion",
+            "name_ja": "コバルト(II)イオン",
+            "aq_color": "pink",
+            "precipitates": [
+                {
+                    "reagent": "NaOH (aq)",
+                    "precipitate_formula": "Co(OH)2",
+                    "katex_precipitate_formula": "\\ce{Co(OH)2}",
+                    "color": "blue then brown on standing",
+                    "behavior": "oxidizes in air"
+                }
+            ],
+            "complex_colors": [],
+            "notes": "Pink Co2+ and its color changes with ligands; sometimes used as example of complexation/color change."
+        }
+    ]
+}

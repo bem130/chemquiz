@@ -1,0 +1,76 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "O-α-D-glucopyranosyl-(1→2)-β-D-fructofuranose",
+            "common_name": "sucrose",
+            "local_name": "スクロース（ショ糖）",
+            "skeletal_formula": "Glc(α1→2β)Fru",
+            "molecular_formula": "C12H22O11",
+            "series_general_formula": "Disaccharides (二糖類): C12H22O11; formed by condensation of two monosaccharides",
+            "functional_groups": [
+                {
+                    "name_en": "Acetal (glycosidic bond)",
+                    "name_ja": "アセタール（グリコシド結合）",
+                    "pattern": "C–O–C between sugar units"
+                },
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH (multiple)"
+                }
+            ],
+            "notes": "Non-reducing disaccharide; main component of common sugar; from glucose + fructose; does not give silver mirror or Cu2+ reduction.",
+            "smiles": "OC[C@H]1O[C@@H](O[C@H]2[C@H](O)[C@@H](O)[C@H](O)[C@H](CO)O2)[C@H](O)[C@@H](O)[C@@H]1O",
+            "katex_skeletal_formula": "\\ce{C12H22O11}",
+            "katex_molecular_formula": "\\ce{C12H22O11}"
+        },
+        {
+            "iupac_name": "4-O-α-D-glucopyranosyl-D-glucopyranose",
+            "common_name": "maltose",
+            "local_name": "マルトース（麦芽糖）",
+            "skeletal_formula": "Glc(α1→4)Glc",
+            "molecular_formula": "C12H22O11",
+            "series_general_formula": "Reducing disaccharides: C12H22O11 (one free hemiacetal)",
+            "functional_groups": [
+                {
+                    "name_en": "Hemiacetal",
+                    "name_ja": "ヘミアセタール",
+                    "pattern": "–CHOH–O– (cyclic reducing end)"
+                },
+                {
+                    "name_en": "Glycosidic bond",
+                    "name_ja": "グリコシド結合",
+                    "pattern": "C–O–C between two glucoses"
+                }
+            ],
+            "notes": "Formed by partial hydrolysis of starch; reducing sugar; appears in starch hydrolysis and Benedict/Tollens reactions.",
+            "smiles": "OC[C@H]1O[C@@H](O[C@H]2[C@H](O)[C@@H](O)[C@H](O)[C@H](CO)O2)[C@H](O)[C@@H](O)[C@@H]1O",
+            "katex_skeletal_formula": "\\ce{C12H22O11}",
+            "katex_molecular_formula": "\\ce{C12H22O11}"
+        },
+        {
+            "iupac_name": "4-O-β-D-galactopyranosyl-D-glucopyranose",
+            "common_name": "lactose",
+            "local_name": "ラクトース（乳糖）",
+            "skeletal_formula": "Gal(β1→4)Glc",
+            "molecular_formula": "C12H22O11",
+            "series_general_formula": "Disaccharides in milk sugar: C12H22O11",
+            "functional_groups": [
+                {
+                    "name_en": "Hemiacetal",
+                    "name_ja": "ヘミアセタール",
+                    "pattern": "Reducing end on glucose unit"
+                },
+                {
+                    "name_en": "Glycosidic bond",
+                    "name_ja": "グリコシド結合",
+                    "pattern": "β1→4 linkage"
+                }
+            ],
+            "notes": "Reducing disaccharide in milk; composed of galactose and glucose; important example in carbohydrate unit.",
+            "smiles": "OC[C@H]1O[C@@H](O[C@H]2[C@H](O)[C@@H](O)[C@H](O)[C@H](CO)O2)[C@H](O)[C@@H](O)[C@@H]1O",
+            "katex_skeletal_formula": "\\ce{C12H22O11}",
+            "katex_molecular_formula": "\\ce{C12H22O11}"
+        }
+    ]
+}

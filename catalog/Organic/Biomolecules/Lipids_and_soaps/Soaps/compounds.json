@@ -1,0 +1,104 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "sodium octadecanoate",
+            "common_name": "sodium stearate",
+            "local_name": "ステアリン酸ナトリウム",
+            "skeletal_formula": "C17H35COO^- Na^+",
+            "molecular_formula": "C18H35NaO2",
+            "series_general_formula": "Soaps (fatty acid salts): RCOO^- M^+ (R ≈ C11–C17; M = Na, K)",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxylate",
+                    "name_ja": "カルボキシラート（カルボン酸イオン）",
+                    "pattern": "RCOO^-"
+                }
+            ],
+            "notes": "Typical solid soap; sodium salt of stearic acid; forms micelles in water and emulsifies oils.",
+            "smiles": "[Na+].[O-]C(=O)CCCCCCCCCCCCCCCCC",
+            "katex_skeletal_formula": "\\ce{C17H35COONa}",
+            "katex_molecular_formula": "\\ce{C18H35NaO2}"
+        },
+        {
+            "iupac_name": "sodium hexadecanoate",
+            "common_name": "sodium palmitate",
+            "local_name": "パルミチン酸ナトリウム",
+            "skeletal_formula": "C15H31COO^- Na^+",
+            "molecular_formula": "C16H31NaO2",
+            "series_general_formula": "Sodium soaps: CnH2n+1COONa",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxylate",
+                    "name_ja": "カルボキシラート",
+                    "pattern": "RCOO^-"
+                }
+            ],
+            "notes": "Another common sodium soap; from palmitic acid; used in many soap bars and detergents.",
+            "smiles": "[Na+].[O-]C(=O)CCCCCCCCCCCCCCCC",
+            "katex_skeletal_formula": "\\ce{C15H31COONa}",
+            "katex_molecular_formula": "\\ce{C16H31NaO2}"
+        },
+        {
+            "iupac_name": "sodium (9Z-octadec-9-enoate)",
+            "common_name": "sodium oleate",
+            "local_name": "オレイン酸ナトリウム",
+            "skeletal_formula": "C17H33COO^- Na^+",
+            "molecular_formula": "C18H33NaO2",
+            "series_general_formula": "Unsaturated soaps: RCOO^- Na^+ with C=C",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxylate",
+                    "name_ja": "カルボキシラート",
+                    "pattern": "RCOO^-"
+                },
+                {
+                    "name_en": "Alkene",
+                    "name_ja": "二重結合",
+                    "pattern": "C=C in R"
+                }
+            ],
+            "notes": "Soap containing unsaturated hydrocarbon chain; tends to be softer; improves lathering properties.",
+            "smiles": "[Na+].[O-]C(=O)CCCCCCCCC=CCCCCCCCC",
+            "katex_skeletal_formula": "\\ce{C17H33COONa}",
+            "katex_molecular_formula": "\\ce{C18H33NaO2}"
+        },
+        {
+            "iupac_name": "potassium octadecanoate",
+            "common_name": "potassium stearate",
+            "local_name": "ステアリン酸カリウム",
+            "skeletal_formula": "C17H35COO^- K^+",
+            "molecular_formula": "C18H35KO2",
+            "series_general_formula": "Potassium soaps: CnH2n+1COOK",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxylate",
+                    "name_ja": "カルボキシラート",
+                    "pattern": "RCOO^-"
+                }
+            ],
+            "notes": "Potassium soap; softer than sodium soaps; used in liquid soaps and shaving creams.",
+            "smiles": "[K+].[O-]C(=O)CCCCCCCCCCCCCCCCC",
+            "katex_skeletal_formula": "\\ce{C17H35COOK}",
+            "katex_molecular_formula": "\\ce{C18H35KO2}"
+        },
+        {
+            "iupac_name": "fatty acid soap (generic)",
+            "common_name": "soap (generic)",
+            "local_name": "石けん（一般式）",
+            "skeletal_formula": "R–COO^- M^+ (R = C11–C17 alkyl, M = Na or K)",
+            "molecular_formula": "RCOOM (generic)",
+            "series_general_formula": "Soaps: RCOO^- M^+ produced by saponification of fats/oils",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxylate",
+                    "name_ja": "カルボキシラート",
+                    "pattern": "RCOO^-"
+                }
+            ],
+            "notes": "Anionic surfactant; hydrophilic head (COO^- M^+), hydrophobic tail (R); forms micelles in water and emulsifies oils and fats.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{RCOO^- M^+}",
+            "katex_molecular_formula": "\\ce{RCOOM}"
+        }
+    ]
+}

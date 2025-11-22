@@ -1,0 +1,100 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "glycylglycine",
+            "common_name": "glycylglycine (dipeptide of glycine)",
+            "local_name": "グリシルグリシン（ジペプチド）",
+            "skeletal_formula": "H2N-CH2-CO-NH-CH2-COOH",
+            "molecular_formula": "C4H8N2O3",
+            "series_general_formula": "Dipeptides: two amino acids linked by one peptide bond",
+            "functional_groups": [
+                {
+                    "name_en": "Peptide (amide) bond",
+                    "name_ja": "ペプチド結合（アミド結合）",
+                    "pattern": "–CO–NH–"
+                },
+                {
+                    "name_en": "Amino (terminal)",
+                    "name_ja": "末端アミノ基",
+                    "pattern": "H2N–"
+                },
+                {
+                    "name_en": "Carboxyl (terminal)",
+                    "name_ja": "末端カルボキシ基",
+                    "pattern": "–COOH"
+                }
+            ],
+            "notes": "Simplest model dipeptide; used to illustrate peptide bond formation by condensation of two α-amino acids.",
+            "smiles": "NCC(=O)NCC(=O)O",
+            "katex_skeletal_formula": "\\ce{H2N-CH2-CO-NH-CH2-COOH}",
+            "katex_molecular_formula": "\\ce{C4H8N2O3}"
+        },
+        {
+            "iupac_name": "general oligopeptide",
+            "common_name": "peptide (n amino acid residues)",
+            "local_name": "ペプチド（n個のアミノ酸残基）",
+            "skeletal_formula": "H2N-CH(R1)-CO-NH-CH(R2)-CO-…-NH-CH(Rn)-COOH",
+            "molecular_formula": "(C2H3N O)_n + side chain contribution (generic)",
+            "series_general_formula": "Peptides: n amino acid residues linked by n−1 peptide bonds",
+            "functional_groups": [
+                {
+                    "name_en": "Peptide bonds",
+                    "name_ja": "ペプチド結合",
+                    "pattern": "–CO–NH– (repeating)"
+                }
+            ],
+            "notes": "General structure of peptides; formed by condensation polymerization of α-amino acids; hydrolysis yields original amino acids.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{H2N-CH(R1)-CO-(NH-CH(R2)-CO)_{n-1}-OH}",
+            "katex_molecular_formula": "\\ce{(C2H3NO)_n + side\\ chains}"
+        },
+        {
+            "iupac_name": "keratin (fibrous protein)",
+            "common_name": "keratin",
+            "local_name": "ケラチン（繊維状タンパク質）",
+            "skeletal_formula": "polypeptide rich in cysteine; many disulfide bonds –CH2–S–S–CH2–",
+            "molecular_formula": "very large (polypeptide; not written explicitly)",
+            "series_general_formula": "Fibrous proteins: long polypeptide chains forming fibers",
+            "functional_groups": [
+                {
+                    "name_en": "Peptide bonds",
+                    "name_ja": "ペプチド結合",
+                    "pattern": "–CO–NH–"
+                },
+                {
+                    "name_en": "Disulfide bonds",
+                    "name_ja": "ジスルフィド結合",
+                    "pattern": "–S–S– between cysteine residues"
+                }
+            ],
+            "notes": "Main component of hair, nails, wool; typical fibrous protein; many disulfide bonds give mechanical strength.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[–NH–CH(R)–CO–]_n + S–S\\ bonds}",
+            "katex_molecular_formula": "\\text{large polypeptide}"
+        },
+        {
+            "iupac_name": "hemoglobin (globular protein)",
+            "common_name": "hemoglobin",
+            "local_name": "ヘモグロビン（球状タンパク質）",
+            "skeletal_formula": "tetrameric globular protein with heme groups binding O2",
+            "molecular_formula": "very large (approx. 10^4 atoms per molecule)",
+            "series_general_formula": "Globular proteins: compact, water-soluble polypeptides",
+            "functional_groups": [
+                {
+                    "name_en": "Peptide bonds",
+                    "name_ja": "ペプチド結合",
+                    "pattern": "–CO–NH–"
+                },
+                {
+                    "name_en": "Heme (porphyrin–Fe complex)",
+                    "name_ja": "ヘム（ポルフィリン−鉄錯体）",
+                    "pattern": "Fe-porphyrin"
+                }
+            ],
+            "notes": "Typical globular protein in blood; transports oxygen; often contrasted with keratin as example of globular vs fibrous protein.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\text{polypeptide tetramer + heme groups}",
+            "katex_molecular_formula": "\\text{very large}"
+        }
+    ]
+}

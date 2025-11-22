@@ -1,0 +1,114 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "poly(1,3-butadiene)",
+            "common_name": "butadiene rubber (BR)",
+            "local_name": "ブタジエンゴム（BR）",
+            "skeletal_formula": "[-CH2-CH=CH-CH2-]n",
+            "molecular_formula": "(C4H6)n",
+            "series_general_formula": "Diene rubbers: (C4H6)n from 1,3-butadiene",
+            "functional_groups": [
+                {
+                    "name_en": "Alkene",
+                    "name_ja": "二重結合",
+                    "pattern": "C=C in main chain"
+                }
+            ],
+            "notes": "Produced by polymerization of 1,3-butadiene; good elasticity; used in tires; typical synthetic rubber example.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CH2-CH=CH-CH2-]_n}",
+            "katex_molecular_formula": "\\ce{(C4H6)_n}"
+        },
+        {
+            "iupac_name": "poly(2-chloro-1,3-butadiene)",
+            "common_name": "chloroprene rubber (CR)",
+            "local_name": "クロロプレンゴム（CR）",
+            "skeletal_formula": "[-CH2-C(Cl)=CH-CH2-]n",
+            "molecular_formula": "(C4H5Cl)n",
+            "series_general_formula": "Halogenated diene rubbers",
+            "functional_groups": [
+                {
+                    "name_en": "C–Cl bonds",
+                    "name_ja": "炭素–塩素結合",
+                    "pattern": "C–Cl"
+                },
+                {
+                    "name_en": "Alkene",
+                    "name_ja": "二重結合",
+                    "pattern": "C=C"
+                }
+            ],
+            "notes": "From chloroprene monomer; good weather and oil resistance; used for belts, hoses; standard CR example.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CH2-C(Cl)=CH-CH2-]_n}",
+            "katex_molecular_formula": "\\ce{(C4H5Cl)_n}"
+        },
+        {
+            "iupac_name": "styrene–butadiene copolymer",
+            "common_name": "styrene-butadiene rubber (SBR)",
+            "local_name": "スチレン-ブタジエンゴム（SBR）",
+            "skeletal_formula": "copolymer of [-CH2-CH(Ph)-] and [-CH2-CH=CH-CH2-]",
+            "molecular_formula": "approx. (C8H8)m(C4H6)n",
+            "series_general_formula": "Copolymer rubbers from styrene + butadiene",
+            "functional_groups": [
+                {
+                    "name_en": "Alkene",
+                    "name_ja": "二重結合",
+                    "pattern": "C=C units"
+                },
+                {
+                    "name_en": "Phenyl group",
+                    "name_ja": "フェニル基",
+                    "pattern": "–C6H5"
+                }
+            ],
+            "notes": "Copolymer of styrene and 1,3-butadiene; major synthetic rubber for tires; better abrasion and heat resistance than natural rubber.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CH2-CH(Ph)-]_m[-CH2-CH=CH-CH2-]_n}",
+            "katex_molecular_formula": "\\ce{(C8H8)_m(C4H6)_n}"
+        },
+        {
+            "iupac_name": "acrylonitrile–butadiene copolymer",
+            "common_name": "nitrile rubber (NBR)",
+            "local_name": "ニトリルゴム（NBR）",
+            "skeletal_formula": "copolymer of [-CH2-CH(CN)-] and [-CH2-CH=CH-CH2-]",
+            "molecular_formula": "approx. (C3H3N)m(C4H6)n",
+            "series_general_formula": "Copolymer rubbers from acrylonitrile + butadiene",
+            "functional_groups": [
+                {
+                    "name_en": "Nitrile",
+                    "name_ja": "ニトリル基",
+                    "pattern": "–C≡N"
+                },
+                {
+                    "name_en": "Alkene units",
+                    "name_ja": "二重結合ユニット",
+                    "pattern": "C=C"
+                }
+            ],
+            "notes": "Excellent oil resistance; used in oil-resistant hoses, seals; appears as typical copolymer synthetic rubber.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CH2-CH(CN)-]_m[-CH2-CH=CH-CH2-]_n}",
+            "katex_molecular_formula": "\\ce{(C3H3N)_m(C4H6)_n}"
+        },
+        {
+            "iupac_name": "poly(cis-1,4-isoprene) (synthetic form)",
+            "common_name": "polyisoprene rubber (IR)",
+            "local_name": "ポリイソプレンゴム（IR）",
+            "skeletal_formula": "[-CH2-C(=CH2)-CH2-CH2-]n",
+            "molecular_formula": "(C5H8)n",
+            "series_general_formula": "Synthetic analog of natural rubber",
+            "functional_groups": [
+                {
+                    "name_en": "Alkene",
+                    "name_ja": "二重結合",
+                    "pattern": "C=C in chain"
+                }
+            ],
+            "notes": "Synthetic version of natural rubber from isoprene; properties similar to natural rubber; used where uniformity is needed.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CH2-C(=CH2)-CH2-CH2-]_n}",
+            "katex_molecular_formula": "\\ce{(C5H8)_n}"
+        }
+    ]
+}

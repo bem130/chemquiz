@@ -1,0 +1,99 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "starch (amylose and amylopectin)",
+            "common_name": "starch",
+            "local_name": "デンプン",
+            "skeletal_formula": "[-C6H10O5-]n (α-1,4 / α-1,6 linked D-glucose)",
+            "molecular_formula": "(C6H10O5)n",
+            "series_general_formula": "Natural polysaccharides: (C6H10O5)n",
+            "functional_groups": [
+                {
+                    "name_en": "Acetal bonds",
+                    "name_ja": "アセタール結合（グリコシド結合）",
+                    "pattern": "α(1→4), α(1→6)"
+                }
+            ],
+            "notes": "Representative natural polymer; plant storage polysaccharide; already appears in biomolecule section but also key natural polymer.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-C6H10O5-]_n}",
+            "katex_molecular_formula": "\\ce{(C6H10O5)_n}"
+        },
+        {
+            "iupac_name": "cellulose",
+            "common_name": "cellulose",
+            "local_name": "セルロース",
+            "skeletal_formula": "[-C6H10O5-]n (β-1,4 linked D-glucose)",
+            "molecular_formula": "(C6H10O5)n",
+            "series_general_formula": "Natural fibrous polysaccharides",
+            "functional_groups": [
+                {
+                    "name_en": "Acetal bonds",
+                    "name_ja": "アセタール結合",
+                    "pattern": "β(1→4)"
+                }
+            ],
+            "notes": "Main component of cotton and wood; typical natural fibrous polymer; does not dissolve in water; used to derive rayon, cellulose acetate, etc.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-C6H10O5-]_n (β(1→4))}",
+            "katex_molecular_formula": "\\ce{(C6H10O5)_n}"
+        },
+        {
+            "iupac_name": "glycogen",
+            "common_name": "glycogen",
+            "local_name": "グリコーゲン",
+            "skeletal_formula": "Highly branched α(1→4), α(1→6) D-glucose polymer",
+            "molecular_formula": "(C6H10O5)n",
+            "series_general_formula": "Animal storage polysaccharides",
+            "functional_groups": [
+                {
+                    "name_en": "Acetal bonds",
+                    "name_ja": "アセタール結合",
+                    "pattern": "α(1→4), α(1→6)"
+                }
+            ],
+            "notes": "Storage polysaccharide in animals; typical natural polymer in liver and muscle; more branched than amylopectin.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-C6H10O5-]_n}",
+            "katex_molecular_formula": "\\ce{(C6H10O5)_n}"
+        },
+        {
+            "iupac_name": "poly(cis-1,4-isoprene)",
+            "common_name": "natural rubber",
+            "local_name": "天然ゴム（ポリイソプレン）",
+            "skeletal_formula": "[-CH2-C(=CH2)-CH2-CH2-]n (from isoprene)",
+            "molecular_formula": "(C5H8)n",
+            "series_general_formula": "Isoprene polymers: (C5H8)n",
+            "functional_groups": [
+                {
+                    "name_en": "Alkene",
+                    "name_ja": "二重結合",
+                    "pattern": "C=C along polymer chain"
+                }
+            ],
+            "notes": "Natural elastic polymer from isoprene; basis for rubber; contrasted with synthetic rubbers in high polymer unit.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CH2-C(=CH2)-CH2-CH2-]_n}",
+            "katex_molecular_formula": "\\ce{(C5H8)_n}"
+        },
+        {
+            "iupac_name": "proteins (generic polypeptides)",
+            "common_name": "proteins",
+            "local_name": "タンパク質",
+            "skeletal_formula": "[-NH-CH(R)-CO-]n",
+            "molecular_formula": "approx. (C2H3NO)n + side chains",
+            "series_general_formula": "Polypeptides from α-amino acids",
+            "functional_groups": [
+                {
+                    "name_en": "Peptide bonds",
+                    "name_ja": "ペプチド結合",
+                    "pattern": "–CO–NH–"
+                }
+            ],
+            "notes": "Natural polymers built from α-amino acids; examples: keratin, collagen, enzymes; key natural polymer category in exams.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-NH-CH(R)-CO-]_n}",
+            "katex_molecular_formula": "\\ce{(C2H3NO)_n + side\\ chains}"
+        }
+    ]
+}

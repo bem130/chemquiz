@@ -1,0 +1,199 @@
+{
+    "series": [
+        {
+            "name_en": "Alkanes",
+            "name_ja": "アルカン",
+            "general_formula": "CnH2n+2",
+            "katex_general_formula": "\\ce{C_nH_{2n+2}}",
+            "functional_group_ref": "Alkanes",
+            "saturated": true,
+            "aromatic": false,
+            "example_members": [
+                {"name_en": "methane", "name_ja": "メタン", "formula": "CH4"},
+                {"name_en": "ethane", "name_ja": "エタン", "formula": "C2H6"}
+            ],
+            "notes": "Saturated hydrocarbons; single bonds only; homologous series with successive CH2 units."
+        },
+        {
+            "name_en": "Cycloalkanes",
+            "name_ja": "シクロアルカン",
+            "general_formula": "CnH2n",
+            "katex_general_formula": "\\ce{C_nH_{2n}}",
+            "functional_group_ref": "Alkanes",
+            "saturated": true,
+            "aromatic": false,
+            "example_members": [
+                {"name_en": "cyclopropane", "name_ja": "シクロプロパン", "formula": "C3H6"},
+                {"name_en": "cyclohexane", "name_ja": "シクロヘキサン", "formula": "C6H12"}
+            ],
+            "notes": "Ring analogues of alkanes; same general formula as alkenes but no C=C."
+        },
+        {
+            "name_en": "Alkenes",
+            "name_ja": "アルケン",
+            "general_formula": "CnH2n",
+            "katex_general_formula": "\\ce{C_nH_{2n}}",
+            "functional_group_ref": "Alkenes",
+            "saturated": false,
+            "aromatic": false,
+            "example_members": [
+                {"name_en": "ethene", "name_ja": "エチレン", "formula": "C2H4"},
+                {"name_en": "propene", "name_ja": "プロペン", "formula": "C3H6"}
+            ],
+            "notes": "One C=C double bond; unsaturated; undergo addition reactions and polymerization."
+        },
+        {
+            "name_en": "Alkynes",
+            "name_ja": "アルキン",
+            "general_formula": "CnH2n-2",
+            "katex_general_formula": "\\ce{C_nH_{2n-2}}",
+            "functional_group_ref": "Alkynes",
+            "saturated": false,
+            "aromatic": false,
+            "example_members": [
+                {"name_en": "ethyne", "name_ja": "エチン", "formula": "C2H2"},
+                {"name_en": "propyne", "name_ja": "プロピン", "formula": "C3H4"}
+            ],
+            "notes": "One C≡C triple bond; unsaturated; can add two equivalents of reagents (e.g. halogens, hydrogen)."
+        },
+        {
+            "name_en": "Haloalkanes (halogenoalkanes)",
+            "name_ja": "ハロゲン化アルキル",
+            "general_formula": "CnH2n+1X",
+            "katex_general_formula": "\\ce{C_nH_{2n+1}X}",
+            "functional_group_ref": "Halogenoalkanes",
+            "saturated": true,
+            "aromatic": false,
+            "example_members": [
+                {"name_en": "chloromethane", "name_ja": "クロロメタン", "formula": "CH3Cl"},
+                {"name_en": "bromomethane", "name_ja": "ブロモメタン", "formula": "CH3Br"}
+            ],
+            "notes": "Derived from alkanes by substitution of H with halogen; key intermediates in substitution/elimination."
+        },
+        {
+            "name_en": "Alcohols",
+            "name_ja": "アルコール",
+            "general_formula": "CnH2n+1OH",
+            "katex_general_formula": "\\ce{C_nH_{2n+1}OH}",
+            "functional_group_ref": "Alcohols",
+            "saturated": true,
+            "aromatic": false,
+            "example_members": [
+                {"name_en": "methanol", "name_ja": "メタノール", "formula": "CH3OH"},
+                {"name_en": "ethanol", "name_ja": "エタノール", "formula": "C2H5OH"}
+            ],
+            "notes": "Monohydric alcohols; hydrogen bonding → boiling points higher than corresponding alkanes."
+        },
+        {
+            "name_en": "Aldehydes",
+            "name_ja": "アルデヒド",
+            "general_formula": "CnH2nO",
+            "katex_general_formula": "\\ce{C_nH_{2n}O}",
+            "functional_group_ref": "Aldehydes",
+            "saturated": true,
+            "aromatic": false,
+            "example_members": [
+                {"name_en": "methanal (formaldehyde)", "name_ja": "メタナール（ホルムアルデヒド）", "formula": "HCHO"},
+                {"name_en": "ethanal", "name_ja": "アセトアルデヒド", "formula": "CH3CHO"}
+            ],
+            "notes": "Terminal carbonyl; reducing; oxidized to carboxylic acids; distinguished from ketones by Tollens/Fehling tests."
+        },
+        {
+            "name_en": "Ketones",
+            "name_ja": "ケトン",
+            "general_formula": "CnH2nO",
+            "katex_general_formula": "\\ce{C_nH_{2n}O}",
+            "functional_group_ref": "Ketones",
+            "saturated": true,
+            "aromatic": false,
+            "example_members": [
+                {"name_en": "propanone", "name_ja": "プロパノン（アセトン）", "formula": "C3H6O"},
+                {"name_en": "butanone", "name_ja": "ブタノン", "formula": "C4H8O"}
+            ],
+            "notes": "Internal carbonyl; same general formula as aldehydes but different structure; non-reducing in Tollens/Fehling tests."
+        },
+        {
+            "name_en": "Carboxylic acids",
+            "name_ja": "カルボン酸",
+            "general_formula": "CnH2nO2",
+            "katex_general_formula": "\\ce{C_nH_{2n}O2}",
+            "functional_group_ref": "Carboxylic acids",
+            "saturated": true,
+            "aromatic": false,
+            "example_members": [
+                {"name_en": "methanoic acid", "name_ja": "ギ酸", "formula": "HCOOH"},
+                {"name_en": "ethanoic acid", "name_ja": "酢酸", "formula": "CH3COOH"}
+            ],
+            "notes": "Weak acids; react with bases, carbonates and metals; form esters and amides."
+        },
+        {
+            "name_en": "Esters",
+            "name_ja": "エステル",
+            "general_formula": "CnH2nO2 (simple esters from Cn carboxylic acids)",
+            "katex_general_formula": "\\ce{C_nH_{2n}O2} \\text{ (for simple R-COOR')}",
+            "functional_group_ref": "Esters",
+            "saturated": true,
+            "aromatic": false,
+            "example_members": [
+                {"name_en": "methyl methanoate", "name_ja": "ギ酸メチル", "formula": "HCOOCH3"},
+                {"name_en": "ethyl ethanoate", "name_ja": "酢酸エチル", "formula": "CH3COOC2H5"}
+            ],
+            "notes": "Condensation products of acids and alcohols; often have fruity aromas; hydrolysis gives acid + alcohol."
+        },
+        {
+            "name_en": "Amines",
+            "name_ja": "アミン",
+            "general_formula": "Primary: CnH2n+3N",
+            "katex_general_formula": "\\ce{C_nH_{2n+3}N} \\text{ (primary)}",
+            "functional_group_ref": "Amines",
+            "saturated": true,
+            "aromatic": false,
+            "example_members": [
+                {"name_en": "methylamine", "name_ja": "メチルアミン", "formula": "CH3NH2"},
+                {"name_en": "ethylamine", "name_ja": "エチルアミン", "formula": "C2H5NH2"}
+            ],
+            "notes": "Organic analogues of ammonia; basic; form ammonium salts with acids."
+        },
+        {
+            "name_en": "Amides",
+            "name_ja": "アミド",
+            "general_formula": "CnH2n+1CONH2 (simple primary amides)",
+            "katex_general_formula": "\\ce{C_nH_{2n+1}CONH2}",
+            "functional_group_ref": "Amides",
+            "saturated": true,
+            "aromatic": false,
+            "example_members": [
+                {"name_en": "methanamide", "name_ja": "メタナミド", "formula": "HCONH2"},
+                {"name_en": "ethanamide (acetamide)", "name_ja": "エタナミド（アセトアミド）", "formula": "CH3CONH2"}
+            ],
+            "notes": "Derived from carboxylic acids + ammonia/amine; hydrolyze to acid + amine; peptide bonds are polyamides of amino acids."
+        },
+        {
+            "name_en": "Nitriles",
+            "name_ja": "ニトリル",
+            "general_formula": "CnH2n-1N",
+            "katex_general_formula": "\\ce{C_nH_{2n-1}N}",
+            "functional_group_ref": "Nitriles",
+            "saturated": true,
+            "aromatic": false,
+            "example_members": [
+                {"name_en": "ethanenitrile", "name_ja": "エタニトリル", "formula": "CH3CN"},
+                {"name_en": "propanenitrile", "name_ja": "プロパニトリル", "formula": "C2H5CN"}
+            ],
+            "notes": "Contain –C≡N; hydrolysis leads to carboxylic acids; often used as synthetic intermediates."
+        },
+        {
+            "name_en": "Nitroalkanes",
+            "name_ja": "ニトロアルカン",
+            "general_formula": "CnH2n+1NO2",
+            "katex_general_formula": "\\ce{C_nH_{2n+1}NO2}",
+            "functional_group_ref": "Nitro compounds",
+            "saturated": true,
+            "aromatic": false,
+            "example_members": [
+                {"name_en": "nitromethane", "name_ja": "ニトロメタン", "formula": "CH3NO2"}
+            ],
+            "notes": "Contain –NO2 on an alkyl chain; important in explosives and organic synthesis."
+        }
+    ]
+}

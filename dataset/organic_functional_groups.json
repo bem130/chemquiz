@@ -1,0 +1,327 @@
+{
+    "functional_groups": [
+        {
+            "label_en": "Alkanes",
+            "label_ja": "アルカン",
+            "group_en": "Alkane (no functional group)",
+            "group_ja": "アルカン（官能基なし）",
+            "pattern": "R–H, R–R (C–C single bonds only)",
+            "katex_pattern": "\\ce{C-C, C-H (single bonds only)}",
+            "category": "hydrocarbon",
+            "typical_series": ["Alkanes"],
+            "example_compounds": [
+                {
+                    "name_en": "methane",
+                    "name_ja": "メタン",
+                    "skeletal_formula": "CH4",
+                    "katex_skeletal_formula": "\\ce{CH4}"
+                }
+            ],
+            "notes": "Saturated hydrocarbons; no functional group other than C–C and C–H; base line for many comparisons."
+        },
+        {
+            "label_en": "Alkenes",
+            "label_ja": "アルケン",
+            "group_en": "Carbon–carbon double bond",
+            "group_ja": "二重結合（アルケン）",
+            "pattern": "C=C",
+            "katex_pattern": "\\ce{C=C}",
+            "category": "hydrocarbon",
+            "typical_series": ["Alkenes"],
+            "example_compounds": [
+                {
+                    "name_en": "ethene",
+                    "name_ja": "エチレン",
+                    "skeletal_formula": "CH2=CH2",
+                    "katex_skeletal_formula": "\\ce{CH2=CH2}"
+                }
+            ],
+            "notes": "Unsaturated hydrocarbons; addition reactions (halogenation, hydrogenation, polymerization); high-frequency exam topic."
+        },
+        {
+            "label_en": "Alkynes",
+            "label_ja": "アルキン",
+            "group_en": "Carbon–carbon triple bond",
+            "group_ja": "三重結合（アルキン）",
+            "pattern": "C≡C",
+            "katex_pattern": "\\ce{C#C}",
+            "category": "hydrocarbon",
+            "typical_series": ["Alkynes"],
+            "example_compounds": [
+                {
+                    "name_en": "ethyne (acetylene)",
+                    "name_ja": "エチン（アセチレン）",
+                    "skeletal_formula": "HC≡CH",
+                    "katex_skeletal_formula": "\\ce{HC#CH}"
+                }
+            ],
+            "notes": "Unsaturated hydrocarbons with triple bond; important for addition reactions and polymerization problems."
+        },
+        {
+            "label_en": "Arenes",
+            "label_ja": "芳香族炭化水素",
+            "group_en": "Aromatic ring (benzene ring)",
+            "group_ja": "芳香環（ベンゼン環）",
+            "pattern": "Ar– (benzene ring)",
+            "katex_pattern": "\\ce{C6H6} \\text{ ring}",
+            "category": "aromatic",
+            "typical_series": ["Aromatic hydrocarbons"],
+            "example_compounds": [
+                {
+                    "name_en": "benzene",
+                    "name_ja": "ベンゼン",
+                    "skeletal_formula": "C6H6",
+                    "katex_skeletal_formula": "\\ce{C6H6}"
+                }
+            ],
+            "notes": "Planar ring with delocalized π electrons; substitution reactions; starting point for many aromatic derivatives."
+        },
+        {
+            "label_en": "Halogenoalkanes",
+            "label_ja": "ハロゲン化アルキル",
+            "group_en": "Halo (chloro, bromo, iodo, fluoro)",
+            "group_ja": "ハロゲン化物基",
+            "pattern": "R–X (X = F, Cl, Br, I)",
+            "katex_pattern": "\\ce{R-X}",
+            "category": "halogen",
+            "typical_series": ["Haloalkanes"],
+            "example_compounds": [
+                {
+                    "name_en": "chloromethane",
+                    "name_ja": "クロロメタン",
+                    "skeletal_formula": "CH3Cl",
+                    "katex_skeletal_formula": "\\ce{CH3Cl}"
+                }
+            ],
+            "notes": "Important leaving groups in substitution and elimination; appear as intermediates and starting materials."
+        },
+        {
+            "label_en": "Alcohols",
+            "label_ja": "アルコール",
+            "group_en": "Hydroxyl",
+            "group_ja": "ヒドロキシ基",
+            "pattern": "R–OH",
+            "katex_pattern": "\\ce{R-OH}",
+            "category": "oxygen",
+            "typical_series": ["Alcohols"],
+            "example_compounds": [
+                {
+                    "name_en": "ethanol",
+                    "name_ja": "エタノール",
+                    "skeletal_formula": "CH3CH2OH",
+                    "katex_skeletal_formula": "\\ce{CH3CH2OH}"
+                }
+            ],
+            "notes": "Polar; hydrogen bonding; oxidation gives aldehydes/ketones/acids depending on class; typical functional group for questions."
+        },
+        {
+            "label_en": "Phenols",
+            "label_ja": "フェノール類",
+            "group_en": "Phenolic hydroxyl",
+            "group_ja": "フェノール性ヒドロキシ基",
+            "pattern": "Ar–OH",
+            "katex_pattern": "\\ce{Ar-OH}",
+            "category": "aromatic oxygen",
+            "typical_series": ["Phenols"],
+            "example_compounds": [
+                {
+                    "name_en": "phenol",
+                    "name_ja": "フェノール",
+                    "skeletal_formula": "C6H5OH",
+                    "katex_skeletal_formula": "\\ce{C6H5OH}"
+                }
+            ],
+            "notes": "More acidic than alcohols; undergoes electrophilic substitution on ring; FeCl3 test gives violet color."
+        },
+        {
+            "label_en": "Ethers",
+            "label_ja": "エーテル",
+            "group_en": "Ether (alkoxy)",
+            "group_ja": "エーテル結合",
+            "pattern": "R–O–R'",
+            "katex_pattern": "\\ce{R-O-R'}",
+            "category": "oxygen",
+            "typical_series": ["Ethers"],
+            "example_compounds": [
+                {
+                    "name_en": "diethyl ether",
+                    "name_ja": "ジエチルエーテル",
+                    "skeletal_formula": "CH3CH2–O–CH2CH3",
+                    "katex_skeletal_formula": "\\ce{CH3CH2-O-CH2CH3}"
+                }
+            ],
+            "notes": "Low polarity compared to alcohols; often used as organic solvents; appear in nomenclature and reaction questions."
+        },
+        {
+            "label_en": "Aldehydes",
+            "label_ja": "アルデヒド",
+            "group_en": "Aldehyde",
+            "group_ja": "アルデヒド基",
+            "pattern": "–CHO",
+            "katex_pattern": "\\ce{-CHO}",
+            "category": "oxygen (carbonyl)",
+            "typical_series": ["Aldehydes"],
+            "example_compounds": [
+                {
+                    "name_en": "ethanal",
+                    "name_ja": "アセトアルデヒド",
+                    "skeletal_formula": "CH3–CHO",
+                    "katex_skeletal_formula": "\\ce{CH3-CHO}"
+                }
+            ],
+            "notes": "Terminal carbonyl; reducing sugars have this; gives Tollens silver mirror and Fehling tests; oxidized to carboxylic acids."
+        },
+        {
+            "label_en": "Ketones",
+            "label_ja": "ケトン",
+            "group_en": "Carbonyl (ketone)",
+            "group_ja": "カルボニル基（ケトン）",
+            "pattern": "R–CO–R'",
+            "katex_pattern": "\\ce{R-CO-R'}",
+            "category": "oxygen (carbonyl)",
+            "typical_series": ["Ketones"],
+            "example_compounds": [
+                {
+                    "name_en": "propanone (acetone)",
+                    "name_ja": "プロパノン（アセトン）",
+                    "skeletal_formula": "CH3–CO–CH3",
+                    "katex_skeletal_formula": "\\ce{CH3-CO-CH3}"
+                }
+            ],
+            "notes": "Internal carbonyl; does not give Tollens or Fehling tests; important solvent and intermediate."
+        },
+        {
+            "label_en": "Carboxylic acids",
+            "label_ja": "カルボン酸",
+            "group_en": "Carboxyl",
+            "group_ja": "カルボキシ基",
+            "pattern": "–COOH",
+            "katex_pattern": "\\ce{-COOH}",
+            "category": "oxygen (acid)",
+            "typical_series": ["Carboxylic acids"],
+            "example_compounds": [
+                {
+                    "name_en": "ethanoic acid (acetic acid)",
+                    "name_ja": "酢酸",
+                    "skeletal_formula": "CH3COOH",
+                    "katex_skeletal_formula": "\\ce{CH3COOH}"
+                }
+            ],
+            "notes": "Weak acids; form esters and amides by condensation; strongly characteristic smell and reactions; big in exams."
+        },
+        {
+            "label_en": "Esters",
+            "label_ja": "エステル",
+            "group_en": "Ester",
+            "group_ja": "エステル結合",
+            "pattern": "R–COO–R'",
+            "katex_pattern": "\\ce{R-COO-R'}",
+            "category": "oxygen (derivative of acid)",
+            "typical_series": ["Esters"],
+            "example_compounds": [
+                {
+                    "name_en": "ethyl ethanoate",
+                    "name_ja": "酢酸エチル",
+                    "skeletal_formula": "CH3COOCH2CH3",
+                    "katex_skeletal_formula": "\\ce{CH3COOCH2CH3}"
+                }
+            ],
+            "notes": "Pleasant fruity odors; formed from carboxylic acid + alcohol; hydrolysis yields acid + alcohol; key in biomolecule & polymer units."
+        },
+        {
+            "label_en": "Amines",
+            "label_ja": "アミン",
+            "group_en": "Amino (primary/secondary/tertiary)",
+            "group_ja": "アミノ基",
+            "pattern": "R–NH2, R2NH, R3N",
+            "katex_pattern": "\\ce{R-NH2, R2NH, R3N}",
+            "category": "nitrogen",
+            "typical_series": ["Amines"],
+            "example_compounds": [
+                {
+                    "name_en": "ethylamine",
+                    "name_ja": "エチルアミン",
+                    "skeletal_formula": "CH3CH2NH2",
+                    "katex_skeletal_formula": "\\ce{CH3CH2NH2}"
+                }
+            ],
+            "notes": "Basic; form ammonium salts; important as organic bases and in dye synthesis; structurally related to ammonia."
+        },
+        {
+            "label_en": "Amides",
+            "label_ja": "アミド",
+            "group_en": "Amide",
+            "group_ja": "アミド結合",
+            "pattern": "R–CONH2 (or –CONHR, –CONR2)",
+            "katex_pattern": "\\ce{R-CONH2}",
+            "category": "nitrogen (derivative of acid)",
+            "typical_series": ["Amides"],
+            "example_compounds": [
+                {
+                    "name_en": "acetamide",
+                    "name_ja": "アセトアミド",
+                    "skeletal_formula": "CH3CONH2",
+                    "katex_skeletal_formula": "\\ce{CH3CONH2}"
+                }
+            ],
+            "notes": "Very important in proteins (peptide bonds); formed from carboxylic acids and amines/ammonia; hydrolysis regenerates acid and amine."
+        },
+        {
+            "label_en": "Nitriles",
+            "label_ja": "ニトリル",
+            "group_en": "Cyano",
+            "group_ja": "シアノ基",
+            "pattern": "–C≡N",
+            "katex_pattern": "\\ce{-C#N}",
+            "category": "nitrogen",
+            "typical_series": ["Nitriles"],
+            "example_compounds": [
+                {
+                    "name_en": "ethanenitrile (acetonitrile)",
+                    "name_ja": "アセトニトリル",
+                    "skeletal_formula": "CH3CN",
+                    "katex_skeletal_formula": "\\ce{CH3CN}"
+                }
+            ],
+            "notes": "Often appear as synthetic intermediates; hydrolysis yields carboxylic acids; strongly polar and high boiling."
+        },
+        {
+            "label_en": "Nitro compounds",
+            "label_ja": "ニトロ化合物",
+            "group_en": "Nitro",
+            "group_ja": "ニトロ基",
+            "pattern": "–NO2",
+            "katex_pattern": "\\ce{-NO2}",
+            "category": "nitrogen",
+            "typical_series": ["Nitro compounds"],
+            "example_compounds": [
+                {
+                    "name_en": "nitrobenzene",
+                    "name_ja": "ニトロベンゼン",
+                    "skeletal_formula": "C6H5NO2",
+                    "katex_skeletal_formula": "\\ce{C6H5NO2}"
+                }
+            ],
+            "notes": "Strong electron-withdrawing group; important in electrophilic aromatic substitution and explosives (e.g. TNT)."
+        },
+        {
+            "label_en": "Thiols",
+            "label_ja": "チオール（メルカプタン）",
+            "group_en": "Thiol (sulfhydryl)",
+            "group_ja": "チオール基",
+            "pattern": "R–SH",
+            "katex_pattern": "\\ce{R-SH}",
+            "category": "sulfur",
+            "typical_series": ["Thiols"],
+            "example_compounds": [
+                {
+                    "name_en": "ethanethiol",
+                    "name_ja": "エタンチオール",
+                    "skeletal_formula": "CH3CH2SH",
+                    "katex_skeletal_formula": "\\ce{CH3CH2SH}"
+                }
+            ],
+            "notes": "Strong, unpleasant odors; important in biochemistry (cysteine –SH and disulfide formation)."
+        }
+    ]
+}

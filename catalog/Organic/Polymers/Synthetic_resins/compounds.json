@@ -1,0 +1,176 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "poly(ethene)",
+            "common_name": "polyethylene",
+            "local_name": "ポリエチレン",
+            "skeletal_formula": "[-CH2-CH2-]n",
+            "molecular_formula": "(C2H4)n",
+            "series_general_formula": "Addition polymers of ethene: (C2H4)n",
+            "functional_groups": [
+                {
+                    "name_en": "Carbon–carbon single bonds",
+                    "name_ja": "炭素–炭素単結合",
+                    "pattern": "C–C (saturated chain)"
+                }
+            ],
+            "notes": "Typical thermoplastic resin; used in films, bags, containers; produced by addition polymerization of ethene.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CH2-CH2-]_n}",
+            "katex_molecular_formula": "\\ce{(C2H4)_n}"
+        },
+        {
+            "iupac_name": "poly(propene)",
+            "common_name": "polypropylene",
+            "local_name": "ポリプロピレン",
+            "skeletal_formula": "[-CH2-CH(CH3)-]n",
+            "molecular_formula": "(C3H6)n",
+            "series_general_formula": "Addition polymers of propene",
+            "functional_groups": [
+                {
+                    "name_en": "Carbon–carbon single bonds",
+                    "name_ja": "炭素–炭素単結合",
+                    "pattern": "C–C"
+                },
+                {
+                    "name_en": "Methyl side group",
+                    "name_ja": "メチル側鎖",
+                    "pattern": "–CH3 on main chain"
+                }
+            ],
+            "notes": "Thermoplastic resin; stronger and more heat-resistant than polyethylene; used in containers, fibers, etc.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CH2-CH(CH3)-]_n}",
+            "katex_molecular_formula": "\\ce{(C3H6)_n}"
+        },
+        {
+            "iupac_name": "poly(1-chloroethene)",
+            "common_name": "poly(vinyl chloride) (PVC)",
+            "local_name": "ポリ塩化ビニル（PVC）",
+            "skeletal_formula": "[-CH2-CH(Cl)-]n",
+            "molecular_formula": "(C2H3Cl)n",
+            "series_general_formula": "Vinyl polymers: –CH2–CH(X)–",
+            "functional_groups": [
+                {
+                    "name_en": "C–Cl bonds",
+                    "name_ja": "炭素–塩素結合",
+                    "pattern": "C–Cl"
+                }
+            ],
+            "notes": "Typical thermoplastic resin; used for pipes, films, records; produced from vinyl chloride monomer.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CH2-CH(Cl)-]_n}",
+            "katex_molecular_formula": "\\ce{(C2H3Cl)_n}"
+        },
+        {
+            "iupac_name": "poly(phenylethene)",
+            "common_name": "polystyrene",
+            "local_name": "ポリスチレン",
+            "skeletal_formula": "[-CH2-CH(C6H5)-]n",
+            "molecular_formula": "(C8H8)n",
+            "series_general_formula": "Aromatic vinyl polymers: –CH2–CH(Ph)–",
+            "functional_groups": [
+                {
+                    "name_en": "Phenyl group",
+                    "name_ja": "フェニル基",
+                    "pattern": "–C6H5"
+                }
+            ],
+            "notes": "Hard, transparent thermoplastic; used for foam (Styrofoam), cases, trays; brittle but easily molded.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CH2-CH(C6H5)-]_n}",
+            "katex_molecular_formula": "\\ce{(C8H8)_n}"
+        },
+        {
+            "iupac_name": "poly(tetrafluoroethene)",
+            "common_name": "polytetrafluoroethylene (PTFE, Teflon)",
+            "local_name": "ポリテトラフルオロエチレン（テフロン）",
+            "skeletal_formula": "[-CF2-CF2-]n",
+            "molecular_formula": "(C2F4)n",
+            "series_general_formula": "Fluorocarbon polymers: –CF2–CF2–",
+            "functional_groups": [
+                {
+                    "name_en": "C–F bonds",
+                    "name_ja": "炭素–フッ素結合",
+                    "pattern": "C–F"
+                }
+            ],
+            "notes": "Very chemically inert and heat-resistant; used for non-stick coatings and chemical equipment; typical fluoropolymer.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CF2-CF2-]_n}",
+            "katex_molecular_formula": "\\ce{(C2F4)_n}"
+        },
+        {
+            "iupac_name": "phenol–formaldehyde resin (generic)",
+            "common_name": "phenol-formaldehyde resin (Bakelite)",
+            "local_name": "フェノール樹脂（ベークライト）",
+            "skeletal_formula": "crosslinked network from phenol and methanal",
+            "molecular_formula": "network polymer (no simple formula)",
+            "series_general_formula": "Thermosetting resins from phenol + formaldehyde",
+            "functional_groups": [
+                {
+                    "name_en": "Phenyl",
+                    "name_ja": "フェニル基",
+                    "pattern": "C6H4–"
+                },
+                {
+                    "name_en": "Methylened linkage",
+                    "name_ja": "メチレン架橋",
+                    "pattern": "–CH2– between rings"
+                }
+            ],
+            "notes": "Representative thermosetting resin; hard, heat-resistant; used for electric insulators, handles, etc.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[C6H4(OH)-CH2-]_n (crosslinked)}",
+            "katex_molecular_formula": "\\text{network polymer}"
+        },
+        {
+            "iupac_name": "urea–formaldehyde resin (generic)",
+            "common_name": "urea resin",
+            "local_name": "尿素樹脂",
+            "skeletal_formula": "network from urea and formaldehyde",
+            "molecular_formula": "network polymer",
+            "series_general_formula": "Thermosetting resins from urea + formaldehyde",
+            "functional_groups": [
+                {
+                    "name_en": "Amide",
+                    "name_ja": "アミド結合",
+                    "pattern": "–NH–CO–NH–"
+                },
+                {
+                    "name_en": "Methylene bridges",
+                    "name_ja": "メチレン架橋",
+                    "pattern": "–CH2–"
+                }
+            ],
+            "notes": "Colorless thermosetting resin; used for tableware, adhesives; appears as typical thermosetting resin example.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\text{(urea–formaldehyde network)}",
+            "katex_molecular_formula": "\\text{network polymer}"
+        },
+        {
+            "iupac_name": "melamine–formaldehyde resin (generic)",
+            "common_name": "melamine resin",
+            "local_name": "メラミン樹脂",
+            "skeletal_formula": "network from melamine and formaldehyde",
+            "molecular_formula": "network polymer",
+            "series_general_formula": "Thermosetting resins from melamine + formaldehyde",
+            "functional_groups": [
+                {
+                    "name_en": "Triazine ring",
+                    "name_ja": "トリアジン環",
+                    "pattern": "C3N3 ring"
+                },
+                {
+                    "name_en": "Methylene bridges",
+                    "name_ja": "メチレン架橋",
+                    "pattern": "–CH2–"
+                }
+            ],
+            "notes": "Hard, heat-resistant thermosetting resin; used in melamine tableware, laminates; standard example in high-school chemistry.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\text{(melamine–formaldehyde network)}",
+            "katex_molecular_formula": "\\text{network polymer}"
+        }
+    ]
+}
