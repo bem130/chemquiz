@@ -82,10 +82,15 @@ impl Catalog {
     }
 
     pub fn available_paths(&self) -> BTreeSet<Vec<String>> {
-        self.entries
-            .iter()
-            .map(|entry| entry.categories.clone())
-            .collect()
+        let mut paths = BTreeSet::new();
+
+        for entry in &self.entries {
+            for depth in 1..=entry.categories.len() {
+                paths.insert(entry.categories[..depth].to_vec());
+            }
+        }
+
+        paths
     }
 
     pub fn compounds_for(&self, path: &[String]) -> Result<Vec<Compound>, CatalogError> {
@@ -110,7 +115,7 @@ impl Catalog {
     }
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, serde::Deserialize)]
+#[derive(Debug, Clone, PartialEq, Eq, serde::Deserialize, serde::Serialize)]
 struct CompoundList {
     compounds: Vec<Compound>,
 }

@@ -298,7 +298,7 @@ fn App() -> impl IntoView {
             <header class="page-header">
                 <div>
                     <p class="eyebrow">Chemistry practice</p>
-                    <h1 class="headline">Name ⇄ Structure quiz</h1>
+                    <h1 class="headline">{"Name ⇄ Structure quiz"}</h1>
                     <p class="lede">Pick a catalog folder and generate four-choice prompts for IUPAC names and skeletal formulas.</p>
                 </div>
                 <div class="header-actions">

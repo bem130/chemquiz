@@ -42,9 +42,12 @@ fn deterministic_generation_from_seed() {
     let quiz = generate_quiz(&mut rng, &compounds, QuizMode::StructureToName, 4)
         .expect("quiz should be generated with provided data");
 
-    assert_eq!(quiz.prompt, "C6H6 (C6H6)");
+    assert_eq!(quiz.prompt, "CH3OH (CH4O)");
     assert_eq!(quiz.options.len(), 4);
-    assert_eq!(quiz.options[quiz.correct_index], "benzene / ベンゼン");
+    assert_eq!(
+        quiz.options[quiz.correct_index],
+        "methanol (methyl alcohol) / メタノール"
+    );
 }
 
 #[test]
