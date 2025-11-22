@@ -351,7 +351,11 @@
         }
 
         .option-structure-inner {
-            height: 160px;
+            height: 180px;
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            overflow: hidden;
         }
 
         .option-name-inner {
@@ -384,16 +388,34 @@
 
         .controls-row {
             display: flex;
-            flex-wrap: wrap;
-            align-items: center;
+            align-items: flex-start;
             justify-content: space-between;
             gap: 8px;
             margin-top: 8px;
+            flex-wrap: nowrap;
         }
 
         .feedback-text {
             font-size: 0.85rem;
             min-height: 1.2em;
+            flex: 1 1 auto;
+        }
+
+        .controls-buttons {
+            display: flex;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+
+        /* スマホなど狭い画面では上下に並べる */
+        @media (max-width: 640px) {
+            .controls-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .controls-buttons {
+                justify-content: flex-end;
+            }
         }
 
         .feedback-neutral { color: var(--text-muted); }
@@ -699,13 +721,30 @@
         const canvas = document.getElementById(canvasId);
         if (!canvas) return;
 
-        const w = canvas.clientWidth || 260;
-        const h = 220;
-        canvas.width = w;
+        // Measure displayed size (CSS pixels)
+        const rect = canvas.getBoundingClientRect();
+        let cssWidth  = rect.width  || canvas.clientWidth  || 260;
+        let cssHeight = rect.height || canvas.clientHeight || 220;
+
+        // Fallback: if height is 0 (very early layout), assume original aspect ratio
+        if (!cssHeight) {
+            cssHeight = cssWidth * (220 / 260); // same ratio as before
+        }
+
+        // High-resolution scale (at least 2×, or devicePixelRatio if larger)
+        const dpr   = window.devicePixelRatio || 1;
+        const scale = Math.max(2, dpr);
+
+        // Internal pixel size (hi-res, keeps aspect ratio)
+        const w = Math.round(cssWidth  * scale);
+        const h = Math.round(cssHeight * scale);
+
+        canvas.width  = w;
         canvas.height = h;
 
+        // RDKit draws on an off-screen canvas with the same hi-res size
         const canvasRaw = document.createElement("canvas");
-        canvasRaw.width = w;
+        canvasRaw.width  = w;
         canvasRaw.height = h;
 
         let mol = null;
@@ -728,31 +767,34 @@
         }
 
         const rctx = canvasRaw.getContext("2d");
+        // in drawSkeletalWithRDKit, keep everything above until you get img/data/vctx
         const img = rctx.getImageData(0, 0, w, h);
         const data = img.data;
         const vctx = canvas.getContext("2d");
 
-        // Dark mode post-processing: white bg -> transparent, black strokes -> white
+        // Dark mode post-processing: make *pure* white transparent,
+        // recolor dark strokes to white, but keep anti-aliased edges.
         for (let i = 0; i < data.length; i += 4) {
             const r = data[i];
             const g = data[i + 1];
             const b = data[i + 2];
 
-            // nearly white background -> transparent
-            if (r > 245 && g > 245 && b > 245) {
+            // only pure white background -> transparent
+            if (r === 255 && g === 255 && b === 255) {
                 data[i + 3] = 0;
                 continue;
             }
 
-            // nearly black / dark gray (low chroma) -> treat as stroke and make it white
+            // nearly gray, fairly dark → treat as bond and turn to white
             const maxRGB = Math.max(r, g, b);
             const minRGB = Math.min(r, g, b);
             const isNearGray = (maxRGB - minRGB) < 10;
 
-            if (maxRGB < 60 && isNearGray) {
-                data[i] = 255;
+            if (maxRGB < 80 && isNearGray) {
+                data[i]     = 255;
                 data[i + 1] = 255;
                 data[i + 2] = 255;
+                data[i + 3] = 255;
             }
         }
 
@@ -968,73 +1010,80 @@ function renderSmilesInPrompt(smiles, skeletalFormula, molFormula, katexSkeletal
             return;
         }
 
-        // create wrapper holding a small skeletal preview and a full structural area
         container.innerHTML = "";
-        const wrapper = document.createElement('div');
-        wrapper.style.display = 'grid';
-        wrapper.style.gridTemplateRows = '1fr 1fr';
-        wrapper.style.gap = '6px';
-        wrapper.style.height = '100%';
-        wrapper.style.position = 'relative';
-
-        const skeletalDiv = document.createElement('div');
-        skeletalDiv.style.height = '100%';
-        skeletalDiv.style.display = 'flex';
-        skeletalDiv.style.alignItems = 'center';
-        skeletalDiv.style.justifyContent = 'center';
-        skeletalDiv.id = containerId + '_skeletal';
-
-        const fullDiv = document.createElement('div');
-        fullDiv.style.height = '100%';
-        fullDiv.id = containerId + '_full';
-
-        wrapper.appendChild(skeletalDiv);
-        wrapper.appendChild(fullDiv);
-        container.appendChild(wrapper);
+        container.style.position = "relative";
+        container.style.display = "flex";
+        container.style.alignItems = "center";
+        container.style.justifyContent = "center";
+        container.style.overflow = "hidden";
 
         if (!smiles) {
-            skeletalDiv.innerHTML = '<div style="font-size:0.78rem;color:#9ca3af;text-align:center;">' + (skeletalFormula || 'No structure data') + '</div>';
-            fullDiv.innerHTML = '<div style="font-size:0.75rem;color:#9ca3af;text-align:center;">SMILES not provided</div>';
+            container.innerHTML =
+                '<div style="font-size:0.78rem;color:#9ca3af;text-align:center;">' +
+                (skeletalFormula || "No structure data") +
+                "</div>";
+            renderFormulaBadge(container, katexMolFormula || molFormula);
             return;
         }
 
-        // skeletal preview
-        const canvas = document.createElement('canvas');
-        const skeletalCanvasId = containerId + '_skeletal_canvas';
-        canvas.id = skeletalCanvasId;
-        canvas.style.width = '100%';
-        canvas.style.height = '100%';
-        canvas.style.display = 'block';
-        skeletalDiv.appendChild(canvas);
+        // 骨格表示用と完全構造表示用の 2 つの div を同じ位置に重ねる
+        const skeletalDiv = document.createElement("div");
+        skeletalDiv.id = containerId + "_skeletal";
+        skeletalDiv.style.width = "100%";
+        skeletalDiv.style.height = "100%";
+
+        const fullDiv = document.createElement("div");
+        fullDiv.id = containerId + "_full";
+        fullDiv.style.width = "100%";
+        fullDiv.style.height = "100%";
+
+        container.appendChild(skeletalDiv);
+        container.appendChild(fullDiv);
+
+        // RDKit で骨格式
         try {
+            const canvas = document.createElement("canvas");
+            const skeletalCanvasId = containerId + "_skeletal_canvas";
+            canvas.id = skeletalCanvasId;
+            canvas.style.width = "100%";
+            canvas.style.height = "100%";
+            canvas.style.display = "block";
+            skeletalDiv.appendChild(canvas);
             drawSkeletalWithRDKit(skeletalCanvasId, smiles);
         } catch (e) {
-            skeletalDiv.innerHTML = '<div style="font-size:0.78rem;color:#9ca3af;text-align:center;">' + (skeletalFormula || 'Cannot render skeletal') + '</div>';
+            skeletalDiv.innerHTML =
+                '<div style="font-size:0.78rem;color:#9ca3af;text-align:center;">' +
+                (skeletalFormula || "Cannot render skeletal") +
+                "</div>";
         }
 
-        // full structure
+        // Kekule で完全構造
         const molblock = smilesToMolblock(smiles);
         if (!molblock) {
-            fullDiv.innerHTML = '<div style="font-size:0.78rem;color:#9ca3af;text-align:center;">Cannot render structure</div>';
-            return;
-        }
-        try {
-            loadFullStructureIntoKekule(fullDiv.id, molblock);
-        } catch (e) {
-            fullDiv.innerHTML = '<div style="font-size:0.78rem;color:#9ca3af;text-align:center;">Render error</div>';
-        }
-
-        // show/hide according to global view mode
-        if (structureViewMode === 'skeletal') {
-            fullDiv.style.display = 'none';
-            skeletalDiv.style.display = 'block';
+            fullDiv.innerHTML =
+                '<div style="font-size:0.78rem;color:#9ca3af;text-align:center;">Cannot render structure</div>';
         } else {
-            skeletalDiv.style.display = 'none';
-            fullDiv.style.display = 'block';
+            try {
+                loadFullStructureIntoKekule(fullDiv.id, molblock);
+            } catch (e) {
+                fullDiv.innerHTML =
+                    '<div style="font-size:0.78rem;color:#9ca3af;text-align:center;">Render error</div>';
+            }
         }
 
-        renderFormulaBadge(wrapper, katexMolFormula || molFormula);
+        // グローバルの structureViewMode でどちらを表示するか切り替える
+        if (structureViewMode === "skeletal") {
+            fullDiv.style.display = "none";
+            skeletalDiv.style.display = "block";
+        } else {
+            skeletalDiv.style.display = "none";
+            fullDiv.style.display = "block";
+        }
+
+        // 分子式のバッジを右下に重ねる
+        renderFormulaBadge(container, katexMolFormula || molFormula);
     }
+
 
     // Render the option buttons for a question
     function renderOptions(question) {
@@ -1312,7 +1361,7 @@ function renderSmilesInPrompt(smiles, skeletalFormula, molFormula, katexSkeletal
     // Load compounds.json and init quiz
     async function loadCompoundsJson() {
         try {
-            const res = await fetch("catalog/Organic/Aliphatic_compounds/Alcohls_and_ethers/Ethers/compounds.json");
+            const res = await fetch("catalog/Organic/Aliphatic_compounds/Alcohls_and_ethers/Primary_alchols/compounds.json");
             const data = await res.json();
             const arr = Array.isArray(data.compounds) ? data.compounds : [];
 
