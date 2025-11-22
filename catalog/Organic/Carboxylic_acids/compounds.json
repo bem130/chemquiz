@@ -6,6 +6,20 @@
             "local_name": "酢酸",
             "skeletal_formula": "CH3COOH",
             "molecular_formula": "C2H4O2"
+        },
+        {
+            "iupac_name": "propanoic acid",
+            "common_name": "propionic acid",
+            "local_name": "プロピオン酸",
+            "skeletal_formula": "CH3-CH2-COOH",
+            "molecular_formula": "C3H6O2"
+        },
+        {
+            "iupac_name": "benzoic acid",
+            "common_name": null,
+            "local_name": "安息香酸",
+            "skeletal_formula": "C6H5COOH",
+            "molecular_formula": "C7H6O2"
         }
     ]
 }

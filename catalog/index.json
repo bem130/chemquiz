@@ -7,8 +7,26 @@
                 {
                     "label": "Alcohols",
                     "slug": "Alcohols",
-                    "file": "catalog/Organic/Alcohols/compounds.json",
-                    "children": []
+                    "children": [
+                        {
+                            "label": "Primary alcohols",
+                            "slug": "Primary_alcohols",
+                            "file": "catalog/Organic/Alcohols/Primary_alcohols/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Secondary alcohols",
+                            "slug": "Secondary_alcohols",
+                            "file": "catalog/Organic/Alcohols/Secondary_alcohols/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Polyols",
+                            "slug": "Polyols",
+                            "file": "catalog/Organic/Alcohols/Polyols/compounds.json",
+                            "children": []
+                        }
+                    ]
                 },
                 {
                     "label": "Carboxylic acids",
@@ -43,8 +61,20 @@
                 {
                     "label": "Salts",
                     "slug": "Salts",
-                    "file": "catalog/Inorganic/Salts/compounds.json",
-                    "children": []
+                    "children": [
+                        {
+                            "label": "Halides",
+                            "slug": "Halides",
+                            "file": "catalog/Inorganic/Salts/Halides/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Carbonates",
+                            "slug": "Carbonates",
+                            "file": "catalog/Inorganic/Salts/Carbonates/compounds.json",
+                            "children": []
+                        }
+                    ]
                 }
             ]
         }

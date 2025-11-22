@@ -6,6 +6,20 @@
             "local_name": "イソブタン",
             "skeletal_formula": "(CH3)2CH-CH3",
             "molecular_formula": "C4H10"
+        },
+        {
+            "iupac_name": "pentane",
+            "common_name": null,
+            "local_name": "ペンタン",
+            "skeletal_formula": "CH3-CH2-CH2-CH2-CH3",
+            "molecular_formula": "C5H12"
+        },
+        {
+            "iupac_name": "hexane",
+            "common_name": null,
+            "local_name": "ヘキサン",
+            "skeletal_formula": "CH3-(CH2)4-CH3",
+            "molecular_formula": "C6H14"
         }
     ]
 }
