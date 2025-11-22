@@ -3,4 +3,4 @@ target = "index.html"
 public_url = "/chemquiz/"
 
 [watch]
-ignore = ["dist"]
+ignore = []
