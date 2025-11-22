@@ -58,10 +58,23 @@ mod tests {
                 slug: "Organic".to_string(),
                 file: None,
                 children: vec![CatalogNode {
-                    label: "Alcohols".to_string(),
-                    slug: "Alcohols".to_string(),
-                    file: Some("catalog/Organic/Alcohols/compounds.json".to_string()),
-                    children: vec![],
+                    label: "Aliphatic compounds".to_string(),
+                    slug: "Aliphatic_compounds".to_string(),
+                    file: None,
+                    children: vec![CatalogNode {
+                        label: "Alcohols and ethers".to_string(),
+                        slug: "Alcohols_and_ethers".to_string(),
+                        file: None,
+                        children: vec![CatalogNode {
+                            label: "Primary alcohols".to_string(),
+                            slug: "Primary_alcohols".to_string(),
+                            file: Some(
+                                "catalog/Organic/Aliphatic_compounds/Alcohols_and_ethers/Primary_alcohols/compounds.json"
+                                    .to_string(),
+                            ),
+                            children: vec![],
+                        }],
+                    }],
                 }],
             }],
         };
@@ -70,9 +83,17 @@ mod tests {
         assert_eq!(leaves.len(), 1);
         assert_eq!(
             leaves[0].path,
-            vec!["Organic".to_string(), "Alcohols".to_string()]
+            vec![
+                "Organic".to_string(),
+                "Aliphatic compounds".to_string(),
+                "Alcohols and ethers".to_string(),
+                "Primary alcohols".to_string(),
+            ]
         );
-        assert_eq!(leaves[0].file, "catalog/Organic/Alcohols/compounds.json");
+        assert_eq!(
+            leaves[0].file,
+            "catalog/Organic/Aliphatic_compounds/Alcohols_and_ethers/Primary_alcohols/compounds.json"
+        );
     }
 
     #[test]

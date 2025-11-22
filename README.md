@@ -16,7 +16,11 @@ use rand::SeedableRng;
 
 let catalog = demo_catalog();
 let alcohols = catalog
-    .compounds_for(&vec!["Organic".to_string(), "Alcohols".to_string()])
+    .compounds_for(&vec![
+        "Organic".to_string(),
+        "Aliphatic_compounds".to_string(),
+        "Alcohols_and_ethers".to_string(),
+    ])
     .map_err(|error| match error {
         CatalogError::CategoryNotFound { path } => format!("missing path: {}", path),
         CatalogError::EmptyPath => "no category selected".to_string(),

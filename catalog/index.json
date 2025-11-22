@@ -19,12 +19,6 @@
                                     "children": []
                                 },
                                 {
-                                    "label": "Cycloalkanes",
-                                    "slug": "Cycloalkanes",
-                                    "file": "catalog/Organic/Aliphatic_compounds/Hydrocarbons/Cycloalkanes/compounds.json",
-                                    "children": []
-                                },
-                                {
                                     "label": "Alkenes",
                                     "slug": "Alkenes",
                                     "file": "catalog/Organic/Aliphatic_compounds/Hydrocarbons/Alkenes/compounds.json",
@@ -111,7 +105,7 @@
                             ]
                         },
                         {
-                            "label": "Amines and amides",
+                            "label": "Amines, amides, and nitro compounds",
                             "slug": "Amines_and_amides",
                             "children": [
                                 {
@@ -162,6 +156,36 @@
                             "label": "Nitrogen-containing aromatics",
                             "slug": "Nitrogen_containing_aromatics",
                             "file": "catalog/Organic/Aromatic_compounds/Nitrogen_containing_aromatics/compounds.json",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "label": "Polymers",
+                    "slug": "Polymers",
+                    "children": [
+                        {
+                            "label": "Synthetic resins",
+                            "slug": "Synthetic_resins",
+                            "file": "catalog/Organic/Polymers/Synthetic_resins/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Synthetic rubbers",
+                            "slug": "Synthetic_rubbers",
+                            "file": "catalog/Organic/Polymers/Synthetic_rubbers/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Synthetic fibres",
+                            "slug": "Synthetic_fibres",
+                            "file": "catalog/Organic/Polymers/Synthetic_fibres/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Natural polymers",
+                            "slug": "Natural_polymers",
+                            "file": "catalog/Organic/Polymers/Natural_polymers/compounds.json",
                             "children": []
                         }
                     ]
@@ -231,36 +255,6 @@
                             ]
                         }
                     ]
-                },
-                {
-                    "label": "Polymers",
-                    "slug": "Polymers",
-                    "children": [
-                        {
-                            "label": "Natural polymers",
-                            "slug": "Natural_polymers",
-                            "file": "catalog/Organic/Polymers/Natural_polymers/compounds.json",
-                            "children": []
-                        },
-                        {
-                            "label": "Synthetic fibres",
-                            "slug": "Synthetic_fibres",
-                            "file": "catalog/Organic/Polymers/Synthetic_fibres/compounds.json",
-                            "children": []
-                        },
-                        {
-                            "label": "Synthetic resins",
-                            "slug": "Synthetic_resins",
-                            "file": "catalog/Organic/Polymers/Synthetic_resins/compounds.json",
-                            "children": []
-                        },
-                        {
-                            "label": "Synthetic rubbers",
-                            "slug": "Synthetic_rubbers",
-                            "file": "catalog/Organic/Polymers/Synthetic_rubbers/compounds.json",
-                            "children": []
-                        }
-                    ]
                 }
             ]
         },
@@ -269,44 +263,8 @@
             "slug": "Inorganic",
             "children": [
                 {
-                    "label": "Nonmetal elements and compounds",
-                    "slug": "Nonmetal_elements",
-                    "children": [
-                        {
-                            "label": "Hydrogen and noble gases",
-                            "slug": "Hydrogen_and_noble_gases",
-                            "file": "catalog/Inorganic/Nonmetals/Hydrogen_and_noble_gases/compounds.json",
-                            "children": []
-                        },
-                        {
-                            "label": "Halogens and hydrogen halides",
-                            "slug": "Halogens",
-                            "file": "catalog/Inorganic/Nonmetals/Halogens/compounds.json",
-                            "children": []
-                        },
-                        {
-                            "label": "Oxygen and sulfur",
-                            "slug": "Oxygen_and_sulfur",
-                            "file": "catalog/Inorganic/Nonmetals/Oxygen_and_sulfur/compounds.json",
-                            "children": []
-                        },
-                        {
-                            "label": "Nitrogen and phosphorus",
-                            "slug": "Nitrogen_and_phosphorus",
-                            "file": "catalog/Inorganic/Nonmetals/Nitrogen_and_phosphorus/compounds.json",
-                            "children": []
-                        },
-                        {
-                            "label": "Carbon and silicon",
-                            "slug": "Carbon_and_silicon",
-                            "file": "catalog/Inorganic/Nonmetals/Carbon_and_silicon/compounds.json",
-                            "children": []
-                        }
-                    ]
-                },
-                {
-                    "label": "Metal elements and compounds",
-                    "slug": "Metal_elements",
+                    "label": "Metals",
+                    "slug": "Metals",
                     "children": [
                         {
                             "label": "Alkali metals",
@@ -347,22 +305,52 @@
                     ]
                 },
                 {
-                    "label": "Acids and bases",
-                    "slug": "Acids_and_bases",
+                    "label": "Nonmetals",
+                    "slug": "Nonmetals",
                     "children": [
                         {
-                            "label": "Acids",
-                            "slug": "Acids",
-                            "file": "catalog/Inorganic/Acids/compounds.json",
+                            "label": "Hydrogen and noble gases",
+                            "slug": "Hydrogen_and_noble_gases",
+                            "file": "catalog/Inorganic/Nonmetals/Hydrogen_and_noble_gases/compounds.json",
                             "children": []
                         },
                         {
-                            "label": "Bases and hydroxides",
-                            "slug": "Bases_and_hydroxides",
-                            "file": "catalog/Inorganic/Bases_and_hydroxides/compounds.json",
+                            "label": "Carbon and silicon",
+                            "slug": "Carbon_and_silicon",
+                            "file": "catalog/Inorganic/Nonmetals/Carbon_and_silicon/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Nitrogen and phosphorus",
+                            "slug": "Nitrogen_and_phosphorus",
+                            "file": "catalog/Inorganic/Nonmetals/Nitrogen_and_phosphorus/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Oxygen and sulfur",
+                            "slug": "Oxygen_and_sulfur",
+                            "file": "catalog/Inorganic/Nonmetals/Oxygen_and_sulfur/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Halogens",
+                            "slug": "Halogens",
+                            "file": "catalog/Inorganic/Nonmetals/Halogens/compounds.json",
                             "children": []
                         }
                     ]
+                },
+                {
+                    "label": "Acids",
+                    "slug": "Acids",
+                    "file": "catalog/Inorganic/Acids/compounds.json",
+                    "children": []
+                },
+                {
+                    "label": "Bases and hydroxides",
+                    "slug": "Bases_and_hydroxides",
+                    "file": "catalog/Inorganic/Bases_and_hydroxides/compounds.json",
+                    "children": []
                 },
                 {
                     "label": "Salts (by anion)",

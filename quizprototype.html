@@ -1366,7 +1366,7 @@ function renderSmilesInPrompt(smiles, skeletalFormula, molFormula, katexSkeletal
     // Load compounds.json and init quiz
     async function loadCompoundsJson() {
         try {
-            const res = await fetch("catalog/Organic/Aliphatic_compounds/Alcohls_and_ethers/Primary_alchols/compounds.json");
+            const res = await fetch("catalog/Organic/Aliphatic_compounds/Alcohols_and_ethers/Primary_alcohols/compounds.json");
             const data = await res.json();
             const arr = Array.isArray(data.compounds) ? data.compounds : [];
 

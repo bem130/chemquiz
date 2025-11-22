@@ -213,8 +213,9 @@ mod tests {
                 },
                 categories: vec![
                     "Organic".to_string(),
-                    "Alcohols".to_string(),
-                    "Primary Alcohols".to_string(),
+                    "Aliphatic_compounds".to_string(),
+                    "Alcohols_and_ethers".to_string(),
+                    "Primary_alcohols".to_string(),
                 ],
             },
             CatalogEntry {
@@ -241,8 +242,9 @@ mod tests {
 
         assert!(paths.contains(&vec![
             "Organic".to_string(),
-            "Alcohols".to_string(),
-            "Primary Alcohols".to_string(),
+            "Aliphatic_compounds".to_string(),
+            "Alcohols_and_ethers".to_string(),
+            "Primary_alcohols".to_string(),
         ]));
         assert!(paths.contains(&vec!["Inorganic".to_string(), "Salts".to_string()]));
     }
@@ -251,7 +253,11 @@ mod tests {
     fn returns_compounds_for_category_prefix() {
         let catalog = sample_catalog();
         let compounds = catalog
-            .compounds_for(&vec!["Organic".to_string(), "Alcohols".to_string()])
+            .compounds_for(&vec![
+                "Organic".to_string(),
+                "Aliphatic_compounds".to_string(),
+                "Alcohols_and_ethers".to_string(),
+            ])
             .expect("category exists");
 
         assert_eq!(compounds.len(), 1);
@@ -286,10 +292,15 @@ mod tests {
     #[test]
     fn loads_entries_from_directory_tree() {
         let root = tempfile::tempdir().expect("temporary directory should be created");
-        let organic_alcohols = root.path().join("Organic").join("Alcohols");
+        let organic_alcohols = root
+            .path()
+            .join("Organic")
+            .join("Aliphatic_compounds")
+            .join("Alcohols_and_ethers")
+            .join("Primary_alcohols");
         fs::create_dir_all(&organic_alcohols).expect("directory tree should be created");
 
-        let inorganic_salts = root.path().join("Inorganic").join("Salts");
+        let inorganic_salts = root.path().join("Inorganic").join("Salts").join("Halides");
         fs::create_dir_all(&inorganic_salts).expect("directory tree should be created");
 
         write_compound_list(
@@ -325,8 +336,17 @@ mod tests {
         let catalog = Catalog::from_directory(root.path()).expect("catalog should load");
         let paths = catalog.available_paths();
 
-        assert!(paths.contains(&vec!["Organic".to_string(), "Alcohols".to_string()]));
-        assert!(paths.contains(&vec!["Inorganic".to_string(), "Salts".to_string()]));
+        assert!(paths.contains(&vec![
+            "Organic".to_string(),
+            "Aliphatic_compounds".to_string(),
+            "Alcohols_and_ethers".to_string(),
+            "Primary_alcohols".to_string(),
+        ]));
+        assert!(paths.contains(&vec![
+            "Inorganic".to_string(),
+            "Salts".to_string(),
+            "Halides".to_string(),
+        ]));
         assert_eq!(catalog.all_compounds().len(), 2);
     }
 
