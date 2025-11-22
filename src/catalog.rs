@@ -206,6 +206,10 @@ mod tests {
                     local_name: Some("エタノール".to_string()),
                     skeletal_formula: "CH3-CH2-OH".to_string(),
                     molecular_formula: "C2H6O".to_string(),
+                    series_general_formula: None,
+                    functional_groups: Vec::new(),
+                    notes: None,
+                    smiles: Some("CCO".to_string()),
                 },
                 categories: vec![
                     "Organic".to_string(),
@@ -220,6 +224,10 @@ mod tests {
                     local_name: Some("塩化ナトリウム".to_string()),
                     skeletal_formula: "NaCl".to_string(),
                     molecular_formula: "NaCl".to_string(),
+                    series_general_formula: None,
+                    functional_groups: Vec::new(),
+                    notes: None,
+                    smiles: Some("Cl[Na]".to_string()),
                 },
                 categories: vec!["Inorganic".to_string(), "Salts".to_string()],
             },
@@ -292,6 +300,10 @@ mod tests {
                 local_name: Some("エタノール".to_string()),
                 skeletal_formula: "CH3-CH2-OH".to_string(),
                 molecular_formula: "C2H6O".to_string(),
+                series_general_formula: None,
+                functional_groups: Vec::new(),
+                notes: None,
+                smiles: Some("CCO".to_string()),
             }],
         );
 
@@ -303,6 +315,10 @@ mod tests {
                 local_name: Some("塩化ナトリウム".to_string()),
                 skeletal_formula: "NaCl".to_string(),
                 molecular_formula: "NaCl".to_string(),
+                series_general_formula: None,
+                functional_groups: Vec::new(),
+                notes: None,
+                smiles: Some("Cl[Na]".to_string()),
             }],
         );
 
@@ -326,6 +342,10 @@ mod tests {
                 local_name: Some("メタン".to_string()),
                 skeletal_formula: "CH4".to_string(),
                 molecular_formula: "CH4".to_string(),
+                series_general_formula: None,
+                functional_groups: Vec::new(),
+                notes: None,
+                smiles: Some("C".to_string()),
             }],
         );
 
