@@ -337,7 +337,11 @@ fn FormulaBadge(formula: String) -> impl IntoView {
 
     create_effect(move |_| {
         if let Some(element) = node_ref.get() {
-            render_formula_into(element.unchecked_into::<HtmlElement>(), &formula);
+            // Clone the underlying HtmlDivElement, then cast the clone to web_sys::HtmlElement
+            render_formula_into(
+                <HtmlDivElement as Clone>::clone(&element).unchecked_into::<HtmlElement>(),
+                &formula,
+            );
         }
     });
 
@@ -355,9 +359,12 @@ fn StructureTile(compound: Compound, theme: ReadSignal<String>) -> impl IntoView
     let iupac_name = compound.iupac_name.clone();
     let skeletal_formula = compound.skeletal_formula.clone();
     let molecular_formula = compound.molecular_formula.clone();
-    let badge = molecular_formula
-        .clone()
-        .map(|formula| view! { <FormulaBadge formula=formula /> });
+
+    let badge = if molecular_formula.is_empty() {
+        None
+    } else {
+        Some(view! { <FormulaBadge formula=molecular_formula.clone() /> })
+    };
 
     create_effect(move |_| {
         let current_theme = theme.get();
@@ -566,10 +573,16 @@ fn QuizCard(
                                 QuizMode::StructureToName => find_by_name(&dataset, option),
                             };
 
-                            let click_handler = on_select.clone().map(|callback| {
+                            let click_handler = {
+                                let on_select = on_select.clone();
                                 let idx = index;
-                                move |_| callback.call(idx)
-                            });
+
+                                move |_| {
+                                    if let Some(ref callback) = on_select {
+                                        callback.call(idx);
+                                    }
+                                }
+                            };
 
                             view! {
                                 <button
