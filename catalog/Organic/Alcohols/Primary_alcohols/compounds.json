@@ -1,0 +1,32 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "methanol",
+            "common_name": "methyl alcohol",
+            "local_name": "メタノール",
+            "skeletal_formula": "CH3OH",
+            "molecular_formula": "CH4O"
+        },
+        {
+            "iupac_name": "ethanol",
+            "common_name": "ethyl alcohol",
+            "local_name": "エタノール",
+            "skeletal_formula": "CH3-CH2-OH",
+            "molecular_formula": "C2H6O"
+        },
+        {
+            "iupac_name": "propan-1-ol",
+            "common_name": "n-propyl alcohol",
+            "local_name": "1-プロパノール",
+            "skeletal_formula": "CH3-CH2-CH2-OH",
+            "molecular_formula": "C3H8O"
+        },
+        {
+            "iupac_name": "butan-1-ol",
+            "common_name": "n-butanol",
+            "local_name": "1-ブタノール",
+            "skeletal_formula": "CH3-CH2-CH2-CH2-OH",
+            "molecular_formula": "C4H10O"
+        }
+    ]
+}

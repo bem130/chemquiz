@@ -6,6 +6,20 @@
             "local_name": "アセチレン",
             "skeletal_formula": "HC≡CH",
             "molecular_formula": "C2H2"
+        },
+        {
+            "iupac_name": "propyne",
+            "common_name": "methylacetylene",
+            "local_name": "プロピン",
+            "skeletal_formula": "CH3-C≡CH",
+            "molecular_formula": "C3H4"
+        },
+        {
+            "iupac_name": "but-2-yne",
+            "common_name": "dimethylacetylene",
+            "local_name": "2-ブチン",
+            "skeletal_formula": "CH3-C≡C-CH3",
+            "molecular_formula": "C4H6"
         }
     ]
 }

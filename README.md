@@ -57,7 +57,9 @@ trunk serve --public-url /chemquiz/
 ```
 
 The app mounts to the page body, toggles light/dark themes, and generates sample quizzes using the
-`demo` module. The `--public-url` flag keeps asset paths compatible with GitHub Pages.
+`demo` module. Users can switch between "Name → Structure" and "Structure → Name" prompts, browse
+a tree of organic and inorganic folders, and load JSON datasets directly from the published catalog.
+The `--public-url` flag keeps asset paths compatible with GitHub Pages.
 
 ## Deploy to GitHub Pages
 

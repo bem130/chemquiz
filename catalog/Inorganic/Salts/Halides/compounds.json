@@ -6,6 +6,13 @@
             "local_name": "塩化ナトリウム",
             "skeletal_formula": "NaCl",
             "molecular_formula": "NaCl"
+        },
+        {
+            "iupac_name": "potassium chloride",
+            "common_name": null,
+            "local_name": "塩化カリウム",
+            "skeletal_formula": "KCl",
+            "molecular_formula": "KCl"
         }
     ]
 }
