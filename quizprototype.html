@@ -510,35 +510,31 @@
                 </div>
                 <div class="prompt-body">
                     <!-- Mode: Structure → Name -->
-                    <div id="promptStructureBlock">
-                        <div style="margin-bottom: 8px;">
-                            <!-- Large skeletal formula (RDKit) -->
-                            <div class="viewer-card" style="margin-bottom: 8px;">
+                    <div id="promptStructureBlock" style="display:none;">
+                        <div id="promptStructureContainer" class="structure-container">
+                            <div class="viewer-card">
                                 <div class="viewer-title-row">
-                                    <div class="viewer-label">Skeletal formula (bond-line)</div>
+                                    <div class="viewer-label">Skeletal / full structure</div>
+                                    <div class="viewer-badge">Prompt</div>
                                 </div>
-                                <div class="viewer-inner" style="height: 260px;">
+                                <div class="viewer-inner" style="height: 320px; position: relative;">
+                                    <!-- Main drawing area: we reuse this for BOTH skeletal and full -->
                                     <div id="promptSkeletalContainer" class="kekule-container"></div>
-                                </div>
-                            </div>
 
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-                                <div class="viewer-card">
-                                    <div class="viewer-title-row">
-                                        <div class="viewer-label" style="font-size: 0.65rem;">Full structural</div>
-                                    </div>
-                                    <div class="viewer-inner" style="height: 140px; padding: 8px; overflow: hidden;">
-                                        <div id="promptFullContainer" class="kekule-container" style="width: 100%; height: 100%;"></div>
-                                    </div>
-                                </div>
-                                <div class="viewer-card">
-                                    <div class="viewer-title-row">
-                                        <div class="viewer-label" style="font-size: 0.65rem;">Skeletal formula (text)</div>
-                                    </div>
-                                    <div class="viewer-inner" style="height: 140px; display: flex; align-items: center; justify-content: center; padding: 8px; overflow: auto;">
-                                        <div id="promptSkeletalTextFallback" style="font-size: 0.75rem; color: #9ca3af; text-align: center; white-space: nowrap; line-height: 1.4;">
-                                            (skeletal formula)
-                                        </div>
+                                    <!-- optional text fallback, overlaid near the bottom -->
+                                    <div id="promptSkeletalTextFallback"
+                                        style="
+                                            position: absolute;
+                                            left: 50%;
+                                            bottom: 0.6rem;
+                                            transform: translateX(-50%);
+                                            font-size: 0.75rem;
+                                            color: #9ca3af;
+                                            text-align: center;
+                                            white-space: nowrap;
+                                            pointer-events: none;
+                                        ">
+                                        (skeletal formula)
                                     </div>
                                 </div>
                             </div>
@@ -832,106 +828,140 @@
             container.textContent = "Render error: " + e.message;
         }
     }
+let structureViewMode = 'skeletal';
 
-    // structureViewMode: 'skeletal' | 'full'
-    let structureViewMode = 'skeletal';
+function setStructureViewMode(mode) {
+    structureViewMode = mode;
+    // re-render current question to apply mode change
+    renderQuestion();
+}
 
-    function setStructureViewMode(mode) {
-        structureViewMode = mode;
-        // re-render current question to apply mode change
-        renderQuestion();
+function renderSmilesInPrompt(smiles, skeletalFormula, molFormula, katexSkeletalFormula, katexMolFormula) {
+    const skeletalTextEl = document.getElementById("promptSkeletalTextFallback");
+    const container = document.getElementById("promptSkeletalContainer");
+    const wrapper = document.getElementById("promptStructureContainer");
+
+    if (!container || !wrapper) {
+        console.warn("[renderSmilesInPrompt] container or wrapper not found");
+        return;
     }
 
-    function renderSmilesInPrompt(smiles, skeletalFormula, molFormula) {
-        if (!smiles) {
-            document.getElementById("promptSkeletalContainer").innerHTML =
-                '<div style="font-size:11px;color:#9ca3af;text-align:center;">SMILES not provided</div>';
-            document.getElementById("promptFullContainer").innerHTML = "";
-            document.getElementById("promptSkeletalTextFallback").textContent = skeletalFormula || "(no skeletal formula)";
-            return;
+    // clear drawing area and fallback text
+    container.innerHTML = "";
+    if (skeletalTextEl) {
+        skeletalTextEl.innerHTML = "";
+    }
+
+    // no SMILES → show simple text only
+    if (!smiles) {
+        container.innerHTML =
+            '<div style="font-size:11px;color:#9ca3af;text-align:center;">SMILES not provided</div>';
+
+        if (skeletalTextEl) {
+            if (katexSkeletalFormula && window.katex && window.katex.render) {
+                try {
+                    window.katex.render(katexSkeletalFormula, skeletalTextEl, { throwOnError: false });
+                } catch (e) {
+                    skeletalTextEl.textContent = skeletalFormula || "(no skeletal formula)";
+                }
+            } else {
+                skeletalTextEl.textContent = skeletalFormula || "(no skeletal formula)";
+            }
         }
-        // Draw skeletal with RDKit (add canvas element)
-        const skeletalDiv = document.getElementById("promptSkeletalContainer");
-        skeletalDiv.innerHTML = "";
+        return;
+    }
+
+    // ----- draw structure in a single big frame -----
+    if (structureViewMode === "skeletal") {
+        // RDKit skeletal drawing
         const canvas = document.createElement("canvas");
         canvas.id = "promptSkeletalCanvas";
         canvas.style.width = "100%";
         canvas.style.height = "100%";
         canvas.style.display = "block";
-        skeletalDiv.appendChild(canvas);
+        container.appendChild(canvas);
 
         drawSkeletalWithRDKit("promptSkeletalCanvas", smiles);
-
-        // Load full structural with Kekule
+    } else if (structureViewMode === "full") {
+        // Kekule full structure in the same container
         const molblock = smilesToMolblock(smiles);
-        loadFullStructureIntoKekule("promptFullContainer", molblock);
+        loadFullStructureIntoKekule("promptSkeletalContainer", molblock);
+    }
 
-        // Display skeletal formula text
-        document.getElementById("promptSkeletalTextFallback").textContent = skeletalFormula || "(no skeletal formula text)";
-
-        // Apply view mode: show/hide skeletal/full and adjust sizes
-        const skeletalParent = document.getElementById("promptSkeletalContainer").parentElement;
-        const fullParent = document.getElementById("promptFullContainer").parentElement;
-        // reset to defaults
-        skeletalParent.style.display = "block";
-        fullParent.style.display = "block";
-        skeletalParent.style.height = '';
-        fullParent.style.height = '';
-
-        if (structureViewMode === 'skeletal') {
-            // show skeletal prominently, hide full
-            skeletalParent.style.display = 'block';
-            skeletalParent.style.height = '360px';
-            fullParent.style.display = 'none';
-        } else if (structureViewMode === 'full') {
-            fullParent.style.display = 'block';
-            fullParent.style.height = '360px';
-            skeletalParent.style.display = 'none';
-        }
-
-        // Add molecular formula badge to visible area: remove previous badges first
-        [skeletalParent, fullParent].forEach(p => {
-            const prev = p.querySelector('.molformula-badge');
-            if (prev) prev.remove();
-        });
-
-        if (molFormula) {
-            const badge = document.createElement('div');
-            badge.className = 'molformula-badge';
-            badge.textContent = molFormula;
-            if (structureViewMode === 'full') {
-                fullParent.appendChild(badge);
-            } else {
-                skeletalParent.appendChild(badge);
+    // skeletal formula text (small overlay)
+    if (skeletalTextEl) {
+        if (katexSkeletalFormula && window.katex && window.katex.render) {
+            try {
+                window.katex.render(katexSkeletalFormula, skeletalTextEl, { throwOnError: false });
+            } catch (e) {
+                skeletalTextEl.textContent = skeletalFormula || "(no skeletal formula text)";
             }
+        } else {
+            skeletalTextEl.textContent = skeletalFormula || "(no skeletal formula text)";
         }
     }
 
-    function renderFormulaBadge(wrapper, formula) {
+    // ----- molecular formula badge in bottom-right -----
+    // remove previous badges in this prompt container
+    wrapper.querySelectorAll(".molformula-badge").forEach((b) => b.remove());
+
+    if (molFormula || katexMolFormula) {
+        const badge = document.createElement("div");
+        badge.className = "molformula-badge";
+        const target = document.createElement("span");
+        badge.appendChild(target);
+
+        const raw = katexMolFormula || molFormula || "";
+
+        try {
+            if (window.katex && window.katex.render && raw) {
+                const trimmed = raw.trim();
+                const expr = trimmed.startsWith("\\") ? trimmed : `\\ce{${trimmed}}`;
+                window.katex.render(expr, target, { throwOnError: false });
+            } else if (raw) {
+                target.textContent = raw;
+            }
+        } catch (e) {
+            target.textContent = raw;
+        }
+
+        // attach badge inside the same big frame
+        container.appendChild(badge);
+    }
+}
+
+
+    function renderFormulaBadge(wrapper, formulaOrKatex) {
         const prevBadge = wrapper.querySelector('.molformula-badge');
         if (prevBadge) prevBadge.remove();
-        if (!formula) return;
+        if (!formulaOrKatex) return;
 
         const badge = document.createElement('div');
         badge.className = 'molformula-badge';
         const target = document.createElement('span');
         badge.appendChild(target);
 
+        const raw = String(formulaOrKatex);
+
         try {
-            const expr = `\\ce{${formula}}`;
             if (window.katex && window.katex.render) {
+                // If the string already looks like a KaTeX command (e.g. "\\ce{...}"), use it as-is.
+                // Otherwise, wrap it with \\ce{...} for chemical formulas.
+                const trimmed = raw.trim();
+                const expr = trimmed.startsWith("\\") ? trimmed : `\\ce{${trimmed}}`;
                 window.katex.render(expr, target, { throwOnError: false });
             } else {
-                target.textContent = formula;
+                target.textContent = raw;
             }
         } catch (e) {
-            target.textContent = formula;
+            target.textContent = raw;
         }
 
         wrapper.appendChild(badge);
     }
 
-    function renderOptionStructure(containerId, smiles, skeletalFormula, molFormula) {
+
+    function renderOptionStructure(containerId, smiles, skeletalFormula, molFormula, katexMolFormula) {
         const container = document.getElementById(containerId);
         if (!container) {
             console.warn("[renderOptionStructure] container not found:", containerId);
@@ -1003,7 +1033,7 @@
             fullDiv.style.display = 'block';
         }
 
-        renderFormulaBadge(wrapper, molFormula);
+        renderFormulaBadge(wrapper, katexMolFormula || molFormula);
     }
 
     // Render the option buttons for a question
@@ -1069,7 +1099,7 @@
                 }
 
                 contentBox.appendChild(nameInner);
-                renderFormulaBadge(contentBox, opt.molecularFormula || null);
+                renderFormulaBadge(contentBox, opt.katexMolecularFormula || opt.molecularFormula || null);
             } else {
                 const structInner = document.createElement('div');
                 structInner.className = 'option-structure-inner';
@@ -1088,7 +1118,13 @@
 
         if (!isStructureToName) {
             question.options.forEach((opt) => {
-                renderOptionStructure('optionStruct_' + opt.id, opt.smiles || null, opt.skeletalFormula, opt.molecularFormula || null);
+                renderOptionStructure(
+                    'optionStruct_' + opt.id,
+                    opt.smiles || null,
+                    opt.skeletalFormula,
+                    opt.molecularFormula || null,
+                    opt.katexMolecularFormula || null
+                );
             });
         }
     }
@@ -1162,7 +1198,13 @@
             promptNameBlock.style.display = "none";
 
             // Render skeletal/full in the prompt area and attach molecular formula badge
-            renderSmilesInPrompt(compound.smiles || null, compound.skeletalFormula || "", compound.molecularFormula || "");
+            renderSmilesInPrompt(
+                compound.smiles || null,
+                compound.skeletalFormula || "",
+                compound.molecularFormula || "",
+                compound.katexSkeletalFormula || null,
+                compound.katexMolecularFormula || null
+            );
 
             // Clear name fields
             promptNameMainEl.textContent = "";
@@ -1270,7 +1312,7 @@
     // Load compounds.json and init quiz
     async function loadCompoundsJson() {
         try {
-            const res = await fetch("catalog/Organic/Alcohols/Polyols/compounds.json");
+            const res = await fetch("catalog/Organic/Aliphatic_compounds/Alcohls_and_ethers/Ethers/compounds.json");
             const data = await res.json();
             const arr = Array.isArray(data.compounds) ? data.compounds : [];
 
@@ -1281,8 +1323,9 @@
                 localName: c.local_name || "",
                 skeletalFormula: c.skeletal_formula || "",
                 molecularFormula: c.molecular_formula || "",
+                katexSkeletalFormula: c.katex_skeletal_formula || null,
+                katexMolecularFormula: c.katex_molecular_formula || null,
                 notes: c.notes || "",
-                // IMPORTANT: if you later add "smiles" to compounds.json, it will be used:
                 smiles: c.smiles || null
             }));
 
