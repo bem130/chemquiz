@@ -25,6 +25,14 @@ jobs:
 
             - name: Cache Cargo build
               uses: Swatinem/rust-cache@v2
+              with:
+                  # Use the same shared-key in all workflows in this repo
+                  # (e.g. also in your deploy workflow) so compiled crates
+                  # are reused across workflows.
+                  shared-key: chemquiz
+                  # Make sure we save cache even if tests fail,
+                  # so the next run is still fast.
+                  cache-on-failure: true
 
             - name: Run cargo test
               run: cargo test --all --all-features --locked
