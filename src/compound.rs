@@ -171,12 +171,16 @@ mod tests {
             "notes": "Unstable solid used in leavening mixtures"
         }"#;
 
-        let parsed: Compound = serde_json::from_str(json).expect("compound should parse with groups");
+        let parsed: Compound =
+            serde_json::from_str(json).expect("compound should parse with groups");
 
         assert_eq!(parsed.functional_groups.len(), 2);
         assert_eq!(parsed.functional_groups[0].name_en, "Ammonium ion");
         assert_eq!(parsed.functional_groups[1].pattern, "HCO3^-");
-        assert_eq!(parsed.notes.as_deref(), Some("Unstable solid used in leavening mixtures"));
+        assert_eq!(
+            parsed.notes.as_deref(),
+            Some("Unstable solid used in leavening mixtures")
+        );
     }
 
     #[test]
