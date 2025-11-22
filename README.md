@@ -4,7 +4,7 @@ A Rust crate for building a chemistry quiz application. The current focus is cor
 generation logic that can be embedded into a future Leptos frontend.
 
 ## Modules
-- `compound`: Compound data model with formatted display helpers for names and structures (including optional SMILES strings for rendering).
+- `compound`: Compound data model with formatted display helpers for names and structures (including optional SMILES strings for rendering) plus optional series formulas, functional group metadata, and notes.
 - `catalog`: Hierarchical categorization for compounds with filtering utilities for menu-based selection.
 - `quiz`: Quiz mode definitions, quiz item structure, and randomized quiz generation.
 - `demo`: Ready-to-use dataset and catalog for UI previews and integration checks.
@@ -45,6 +45,13 @@ edge configurations.
 Compound lists live under `catalog/` as JSON files organized by folder hierarchy. The
 `catalog/index.json` manifest exposes the available paths for the WASM frontend, which fetches and
 deserializes the selected file at runtime using `serde`.
+
+Each compound entry can optionally include:
+
+- `series_general_formula`: a generalized formula describing the family to which the compound belongs.
+- `functional_groups`: an array of `{ name_en, name_ja, pattern }` objects describing functional groups.
+- `notes`: free-form descriptive text about properties or handling.
+- `smiles`: a SMILES string for structure rendering when available.
 
 ## Frontend preview (WASM)
 

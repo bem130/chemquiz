@@ -293,9 +293,13 @@ fn StructureTile(compound: Compound, theme: ReadSignal<String>) -> impl IntoView
             (effect_smiles.clone(), skeletal_ref.get(), full_ref.get())
         {
             let status = set_render_message;
+            let skeletal_element: HtmlCanvasElement = canvas.unchecked_into();
+            let full_element: HtmlDivElement = full.unchecked_into();
 
             spawn_local(async move {
-                let result = render_structure(&smiles_value, &current_theme, canvas, full).await;
+                let result =
+                    render_structure(&smiles_value, &current_theme, skeletal_element, full_element)
+                        .await;
                 status.set(render_error_from(result));
             });
         }
@@ -324,12 +328,13 @@ fn StructureTile(compound: Compound, theme: ReadSignal<String>) -> impl IntoView
                 </div>
             </div>
         }
+        .into_view()
     });
 
     view! {
         <div class="structure-tile">
             {visuals.unwrap_or_else(|| {
-                view! { <p class="structure-fallback">Structure preview is unavailable for this entry.</p> }.into_view()
+                view! { <p class="structure-fallback">Structure preview is unavailable for this entry.</p> }
             })}
             {move || {
                 render_message

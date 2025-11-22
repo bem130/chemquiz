@@ -9,6 +9,9 @@ fn sample_compounds() -> Vec<Compound> {
             local_name: Some("エタノール".to_string()),
             skeletal_formula: "CH3-CH2-OH".to_string(),
             molecular_formula: "C2H6O".to_string(),
+            series_general_formula: None,
+            functional_groups: Vec::new(),
+            notes: None,
             smiles: Some("CCO".to_string()),
         },
         Compound {
@@ -17,6 +20,9 @@ fn sample_compounds() -> Vec<Compound> {
             local_name: Some("メタノール".to_string()),
             skeletal_formula: "CH3OH".to_string(),
             molecular_formula: "CH4O".to_string(),
+            series_general_formula: None,
+            functional_groups: Vec::new(),
+            notes: None,
             smiles: Some("CO".to_string()),
         },
         Compound {
@@ -25,6 +31,9 @@ fn sample_compounds() -> Vec<Compound> {
             local_name: Some("アセトン".to_string()),
             skeletal_formula: "(CH3)2CO".to_string(),
             molecular_formula: "C3H6O".to_string(),
+            series_general_formula: None,
+            functional_groups: Vec::new(),
+            notes: None,
             smiles: Some("CC(=O)C".to_string()),
         },
         Compound {
@@ -33,6 +42,9 @@ fn sample_compounds() -> Vec<Compound> {
             local_name: Some("ベンゼン".to_string()),
             skeletal_formula: "C6H6".to_string(),
             molecular_formula: "C6H6".to_string(),
+            series_general_formula: None,
+            functional_groups: Vec::new(),
+            notes: None,
             smiles: Some("c1ccccc1".to_string()),
         },
     ]

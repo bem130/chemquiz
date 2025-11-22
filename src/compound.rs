@@ -1,5 +1,16 @@
 use std::fmt;
 
+/// Functional group metadata that appears within compound definitions.
+#[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
+pub struct FunctionalGroup {
+    /// English label for the functional group.
+    pub name_en: String,
+    /// Japanese label for the functional group.
+    pub name_ja: String,
+    /// Pattern or formula describing the group.
+    pub pattern: String,
+}
+
 /// Represents a chemical compound used for quiz questions.
 #[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
 pub struct Compound {
@@ -13,6 +24,15 @@ pub struct Compound {
     pub skeletal_formula: String,
     /// Molecular formula shown as a compact representation.
     pub molecular_formula: String,
+    /// Generalized formula shared across a series, when applicable.
+    #[serde(default)]
+    pub series_general_formula: Option<String>,
+    /// Functional groups that appear in the compound.
+    #[serde(default)]
+    pub functional_groups: Vec<FunctionalGroup>,
+    /// Free-form notes about properties or preparation.
+    #[serde(default)]
+    pub notes: Option<String>,
     /// SMILES string used for structure rendering when available.
     #[serde(default)]
     pub smiles: Option<String>,
@@ -55,6 +75,9 @@ mod tests {
             local_name: Some("エタノール".to_string()),
             skeletal_formula: "CH3-CH2-OH".to_string(),
             molecular_formula: "C2H6O".to_string(),
+            series_general_formula: None,
+            functional_groups: Vec::new(),
+            notes: None,
             smiles: Some("CCO".to_string()),
         }
     }
@@ -73,6 +96,9 @@ mod tests {
             local_name: Some("ベンゼン".to_string()),
             skeletal_formula: "C6H6".to_string(),
             molecular_formula: "C6H6".to_string(),
+            series_general_formula: None,
+            functional_groups: Vec::new(),
+            notes: None,
             smiles: Some("c1ccccc1".to_string()),
         };
 
@@ -120,6 +146,7 @@ mod tests {
             "local_name": "酢酸",
             "skeletal_formula": "CH3COOH",
             "molecular_formula": "C2H4O2",
+            "functional_groups": [],
             "smiles": "CC(=O)O"
         }"#;
 
@@ -127,5 +154,46 @@ mod tests {
             serde_json::from_str(json).expect("compound should parse with smiles");
 
         assert_eq!(parsed.smiles.as_deref(), Some("CC(=O)O"));
+    }
+
+    #[test]
+    fn functional_groups_are_parsed() {
+        let json = r#"{
+            "iupac_name": "ammonium hydrogencarbonate",
+            "common_name": "ammonium bicarbonate",
+            "local_name": "炭酸水素アンモニウム",
+            "skeletal_formula": "(NH4)HCO3",
+            "molecular_formula": "NH4HCO3",
+            "functional_groups": [
+                { "name_en": "Ammonium ion", "name_ja": "アンモニウムイオン", "pattern": "NH4^+" },
+                { "name_en": "Hydrogen carbonate ion", "name_ja": "炭酸水素イオン", "pattern": "HCO3^-" }
+            ],
+            "notes": "Unstable solid used in leavening mixtures"
+        }"#;
+
+        let parsed: Compound = serde_json::from_str(json).expect("compound should parse with groups");
+
+        assert_eq!(parsed.functional_groups.len(), 2);
+        assert_eq!(parsed.functional_groups[0].name_en, "Ammonium ion");
+        assert_eq!(parsed.functional_groups[1].pattern, "HCO3^-");
+        assert_eq!(parsed.notes.as_deref(), Some("Unstable solid used in leavening mixtures"));
+    }
+
+    #[test]
+    fn optional_fields_default_to_none() {
+        let json = r#"{
+            "iupac_name": "sodium carbonate",
+            "common_name": "soda ash",
+            "local_name": "炭酸ナトリウム",
+            "skeletal_formula": "Na2CO3",
+            "molecular_formula": "Na2CO3"
+        }"#;
+
+        let parsed: Compound = serde_json::from_str(json).expect("compound should fill defaults");
+
+        assert!(parsed.functional_groups.is_empty());
+        assert!(parsed.series_general_formula.is_none());
+        assert!(parsed.notes.is_none());
+        assert!(parsed.smiles.is_none());
     }
 }
