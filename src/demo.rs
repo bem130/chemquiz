@@ -1,4 +1,8 @@
-use crate::{Catalog, CatalogEntry, Compound, QuizMode, generate_quiz};
+use crate::{Catalog, CatalogEntry, Compound};
+
+#[cfg(test)]
+use crate::{generate_quiz, QuizMode};
+#[cfg(test)]
 use rand::SeedableRng;
 
 pub const DEMO_OPTION_COUNT: usize = 4;
