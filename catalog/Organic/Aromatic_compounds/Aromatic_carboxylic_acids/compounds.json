@@ -1,0 +1,105 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "benzoic acid",
+            "common_name": "benzoic acid",
+            "local_name": "安息香酸",
+            "skeletal_formula": "C6H5-COOH",
+            "molecular_formula": "C7H6O2",
+            "series_general_formula": "Aromatic monocarboxylic acids: Ar-COOH (Ar = aromatic ring)",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                },
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H5–"
+                }
+            ],
+            "notes": "Simplest aromatic carboxylic acid; used as food preservative and important intermediate; typical example of Ar-COOH.",
+            "smiles": "OC(=O)c1ccccc1",
+            "katex_skeletal_formula": "\\ce{C6H5-COOH}",
+            "katex_molecular_formula": "\\ce{C7H6O2}"
+        },
+        {
+            "iupac_name": "benzene-1,2-dicarboxylic acid",
+            "common_name": "phthalic acid",
+            "local_name": "ベンゼン-1,2-ジカルボン酸（フタル酸）",
+            "skeletal_formula": "HOOC-C6H4-COOH (1,2-)",
+            "molecular_formula": "C8H6O4",
+            "series_general_formula": "Aromatic dicarboxylic acids: C6H4(COOH)2",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl (dicarboxylic)",
+                    "name_ja": "二価カルボキシ基",
+                    "pattern": "–COOH ×2"
+                },
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H4–"
+                }
+            ],
+            "notes": "Ortho-dicarboxylic acid; used to prepare phthalic anhydride and dyes; appears in phenolphthalein synthesis schemes in textbooks.",
+            "smiles": "O=C(O)c1ccccc1C(=O)O",
+            "katex_skeletal_formula": "\\ce{HOOC-C6H4-COOH}",
+            "katex_molecular_formula": "\\ce{C8H6O4}"
+        },
+        {
+            "iupac_name": "benzene-1,4-dicarboxylic acid",
+            "common_name": "terephthalic acid",
+            "local_name": "ベンゼン-1,4-ジカルボン酸（テレフタル酸）",
+            "skeletal_formula": "HOOC-C6H4-COOH (1,4-)",
+            "molecular_formula": "C8H6O4",
+            "series_general_formula": "Aromatic dicarboxylic acids: C6H4(COOH)2",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl (dicarboxylic)",
+                    "name_ja": "二価カルボキシ基",
+                    "pattern": "–COOH ×2"
+                },
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H4–"
+                }
+            ],
+            "notes": "Para-dicarboxylic acid; key monomer for PET (polyethylene terephthalate) together with ethylene glycol; very important industrial aromatic acid.",
+            "smiles": "O=C(O)c1ccc(cc1)C(=O)O",
+            "katex_skeletal_formula": "\\ce{HOOC-C6H4-COOH}",
+            "katex_molecular_formula": "\\ce{C8H6O4}"
+        },
+        {
+            "iupac_name": "2-hydroxybenzoic acid",
+            "common_name": "salicylic acid",
+            "local_name": "2-ヒドロキシ安息香酸（サリチル酸）",
+            "skeletal_formula": "HO-C6H4-COOH (ortho OH/COOH)",
+            "molecular_formula": "C7H6O3",
+            "series_general_formula": "Hydroxybenzoic acids: HO–C6H4–COOH",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                },
+                {
+                    "name_en": "Phenolic hydroxyl",
+                    "name_ja": "フェノール性ヒドロキシ基",
+                    "pattern": "Ar–OH"
+                },
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H4–"
+                }
+            ],
+            "notes": "Aromatic hydroxy acid; precursor of aspirin (acetylsalicylic acid) and methyl salicylate; often appears in problems linking phenols and carboxylic acids.",
+            "smiles": "O=C(O)c1ccccc1O",
+            "katex_skeletal_formula": "\\ce{HO-C6H4-COOH}",
+            "katex_molecular_formula": "\\ce{C7H6O3}"
+        }
+    ]
+}

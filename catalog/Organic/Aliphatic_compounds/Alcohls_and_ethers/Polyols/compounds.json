@@ -1,0 +1,61 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "ethane-1,2-diol",
+            "common_name": "ethylene glycol",
+            "local_name": "エタンド-1,2-ジオール（エチレングリコール）",
+            "skeletal_formula": "HO-CH2-CH2-OH",
+            "molecular_formula": "C2H6O2",
+            "series_general_formula": "Polyols (dihydric): CnH2n+2On, n>=2 (two hydroxyl groups)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Dihydric alcohol; used as antifreeze and in polyester production; typical example of 2-valent alcohol.",
+            "smiles": "OCCO",
+            "katex_skeletal_formula": "\\ce{HO-CH2-CH2-OH}",
+            "katex_molecular_formula": "\\ce{C2H6O2}"
+        },
+        {
+            "iupac_name": "propane-1,2-diol",
+            "common_name": "propylene glycol",
+            "local_name": "プロパン-1,2-ジオール（プロピレングリコール）",
+            "skeletal_formula": "HO-CH2-CH(OH)-CH3",
+            "molecular_formula": "C3H8O2",
+            "series_general_formula": "Polyols (dihydric): CnH2n+2On, n>=2 (two hydroxyl groups)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Dihydric alcohol; used as solvent and humectant; often contrasted with more toxic ethylene glycol.",
+            "smiles": "CC(O)CO",
+            "katex_skeletal_formula": "\\ce{HO-CH2-CH(OH)-CH3}",
+            "katex_molecular_formula": "\\ce{C3H8O2}"
+        },
+        {
+            "iupac_name": "propane-1,2,3-triol",
+            "common_name": "glycerol",
+            "local_name": "プロパン-1,2,3-トリオール（グリセリン）",
+            "skeletal_formula": "HO-CH2-CH(OH)-CH2-OH",
+            "molecular_formula": "C3H8O3",
+            "series_general_formula": "Polyols (trihydric): CnH2n+2On, n>=3 (three hydroxyl groups)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Trihydric alcohol; viscous, sweet-tasting liquid; important in fats, soaps, and many biomolecules; typical 3-valent alcohol in exams.",
+            "smiles": "OCC(O)CO",
+            "katex_skeletal_formula": "\\ce{HO-CH2-CH(OH)-CH2-OH}",
+            "katex_molecular_formula": "\\ce{C3H8O3}"
+        }
+    ]
+}

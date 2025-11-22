@@ -1,0 +1,99 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "methanamine",
+            "common_name": "methylamine",
+            "local_name": "メタンアミン（メチルアミン）",
+            "skeletal_formula": "CH3-NH2",
+            "molecular_formula": "CH5N",
+            "series_general_formula": "Primary aliphatic amines: RNH2, CnH2n+3N (n>=1)",
+            "functional_groups": [
+                {
+                    "name_en": "Amino",
+                    "name_ja": "アミノ基",
+                    "pattern": "–NH2"
+                }
+            ],
+            "notes": "Simplest primary aliphatic amine; gas with ammonia-like smell; basic; typical example in tests distinguishing primary, secondary and tertiary amines.",
+            "smiles": "CN",
+            "katex_skeletal_formula": "\\ce{CH3-NH2}",
+            "katex_molecular_formula": "\\ce{CH5N}"
+        },
+        {
+            "iupac_name": "ethanamine",
+            "common_name": "ethylamine",
+            "local_name": "エタンアミン（エチルアミン）",
+            "skeletal_formula": "CH3-CH2-NH2",
+            "molecular_formula": "C2H7N",
+            "series_general_formula": "Primary aliphatic amines: RNH2, CnH2n+3N (n>=1)",
+            "functional_groups": [
+                {
+                    "name_en": "Amino",
+                    "name_ja": "アミノ基",
+                    "pattern": "–NH2"
+                }
+            ],
+            "notes": "Typical lower primary amine; basic and water-soluble; smells like ammonia; standard example in many exam problems.",
+            "smiles": "CCN",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-NH2}",
+            "katex_molecular_formula": "\\ce{C2H7N}"
+        },
+        {
+            "iupac_name": "propan-1-amine",
+            "common_name": "n-propylamine",
+            "local_name": "プロパン-1-アミン（n-プロピルアミン）",
+            "skeletal_formula": "CH3-CH2-CH2-NH2",
+            "molecular_formula": "C3H9N",
+            "series_general_formula": "Primary aliphatic amines: RNH2, CnH2n+3N (n>=1)",
+            "functional_groups": [
+                {
+                    "name_en": "Amino",
+                    "name_ja": "アミノ基",
+                    "pattern": "–NH2"
+                }
+            ],
+            "notes": "Higher primary amine; used for homologous series questions and comparison of basicity and solubility trends.",
+            "smiles": "CCCN",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH2-NH2}",
+            "katex_molecular_formula": "\\ce{C3H9N}"
+        },
+        {
+            "iupac_name": "dimethylamine",
+            "common_name": "dimethylamine",
+            "local_name": "ジメチルアミン",
+            "skeletal_formula": "CH3-NH-CH3",
+            "molecular_formula": "C2H7N",
+            "series_general_formula": "Secondary aliphatic amines: R2NH",
+            "functional_groups": [
+                {
+                    "name_en": "Amino (secondary)",
+                    "name_ja": "二級アミノ基",
+                    "pattern": "R2NH"
+                }
+            ],
+            "notes": "Simple secondary amine; used to illustrate classification (primary vs secondary vs tertiary) and differences in reactivity with nitrous acid.",
+            "smiles": "CN(C)H",
+            "katex_skeletal_formula": "\\ce{CH3-NH-CH3}",
+            "katex_molecular_formula": "\\ce{C2H7N}"
+        },
+        {
+            "iupac_name": "trimethylamine",
+            "common_name": "trimethylamine",
+            "local_name": "トリメチルアミン",
+            "skeletal_formula": "N(CH3)3",
+            "molecular_formula": "C3H9N",
+            "series_general_formula": "Tertiary aliphatic amines: R3N",
+            "functional_groups": [
+                {
+                    "name_en": "Amino (tertiary)",
+                    "name_ja": "三級アミノ基",
+                    "pattern": "R3N"
+                }
+            ],
+            "notes": "Typical tertiary amine; has strong fishy smell; appears in questions about classification, basicity, and solubility of amines.",
+            "smiles": "CN(C)C",
+            "katex_skeletal_formula": "\\ce{N(CH3)3}",
+            "katex_molecular_formula": "\\ce{C3H9N}"
+        }
+    ]
+}

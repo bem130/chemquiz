@@ -1,0 +1,61 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "methoxymethane",
+            "common_name": "dimethyl ether",
+            "local_name": "メトキシメタン（ジメチルエーテル）",
+            "skeletal_formula": "CH3-O-CH3",
+            "molecular_formula": "C2H6O",
+            "series_general_formula": "Simple ethers: CnH2n+2O (same as monohydric alcohols)",
+            "functional_groups": [
+                {
+                    "name_en": "Ether linkage",
+                    "name_ja": "エーテル結合",
+                    "pattern": "R–O–R'"
+                }
+            ],
+            "notes": "Simplest ether; structural isomer of ethanol; typical example in questions on isomerism and boiling-point comparison with alcohols.",
+            "smiles": "COC",
+            "katex_skeletal_formula": "\\ce{CH3-O-CH3}",
+            "katex_molecular_formula": "\\ce{C2H6O}"
+        },
+        {
+            "iupac_name": "ethoxyethane",
+            "common_name": "diethyl ether",
+            "local_name": "エトキシエタン（ジエチルエーテル）",
+            "skeletal_formula": "CH3-CH2-O-CH2-CH3",
+            "molecular_formula": "C4H10O",
+            "series_general_formula": "Simple ethers: CnH2n+2O",
+            "functional_groups": [
+                {
+                    "name_en": "Ether linkage",
+                    "name_ja": "エーテル結合",
+                    "pattern": "R–O–R'"
+                }
+            ],
+            "notes": "Representative ether produced by intermolecular dehydration of ethanol; volatile, flammable solvent; appears in many textbook examples.",
+            "smiles": "CCOCC",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-O-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C4H10O}"
+        },
+        {
+            "iupac_name": "methoxyethane",
+            "common_name": "methyl ethyl ether",
+            "local_name": "メトキシエタン（メチルエチルエーテル）",
+            "skeletal_formula": "CH3-O-CH2-CH3",
+            "molecular_formula": "C3H8O",
+            "series_general_formula": "Simple ethers: CnH2n+2O",
+            "functional_groups": [
+                {
+                    "name_en": "Ether linkage",
+                    "name_ja": "エーテル結合",
+                    "pattern": "R–O–R'"
+                }
+            ],
+            "notes": "Unsymmetrical ether; good for practice of IUPAC naming and for isomerism problems with C3H8O alcohols (propanols).",
+            "smiles": "COCC",
+            "katex_skeletal_formula": "\\ce{CH3-O-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C3H8O}"
+        }
+    ]
+}

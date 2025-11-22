@@ -1,0 +1,80 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "nitromethane",
+            "common_name": "nitromethane",
+            "local_name": "ニトロメタン",
+            "skeletal_formula": "CH3-NO2",
+            "molecular_formula": "CH3NO2",
+            "series_general_formula": "Primary nitroalkanes: RNO2 (R = alkyl), simplest CnH2n+1NO2",
+            "functional_groups": [
+                {
+                    "name_en": "Nitro",
+                    "name_ja": "ニトロ基",
+                    "pattern": "–NO2"
+                }
+            ],
+            "notes": "Simplest nitroalkane; used as solvent and in fuels; classic example of a nitro compound in high-school texts.",
+            "smiles": "C[N+](=O)[O-]",
+            "katex_skeletal_formula": "\\ce{CH3-NO2}",
+            "katex_molecular_formula": "\\ce{CH3NO2}"
+        },
+        {
+            "iupac_name": "nitroethane",
+            "common_name": "nitroethane",
+            "local_name": "ニトロエタン",
+            "skeletal_formula": "CH3-CH2-NO2",
+            "molecular_formula": "C2H5NO2",
+            "series_general_formula": "Primary nitroalkanes: CnH2n+1NO2 (n>=1)",
+            "functional_groups": [
+                {
+                    "name_en": "Nitro",
+                    "name_ja": "ニトロ基",
+                    "pattern": "–NO2"
+                }
+            ],
+            "notes": "Primary nitroalkane; used industrially as solvent and intermediate; typical example in classification of nitro compounds.",
+            "smiles": "CC[N+](=O)[O-]",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-NO2}",
+            "katex_molecular_formula": "\\ce{C2H5NO2}"
+        },
+        {
+            "iupac_name": "1-nitropropane",
+            "common_name": "1-nitropropane",
+            "local_name": "1-ニトロプロパン",
+            "skeletal_formula": "CH3-CH2-CH2-NO2",
+            "molecular_formula": "C3H7NO2",
+            "series_general_formula": "Primary nitroalkanes: CnH2n+1NO2 (n>=1)",
+            "functional_groups": [
+                {
+                    "name_en": "Nitro",
+                    "name_ja": "ニトロ基",
+                    "pattern": "–NO2"
+                }
+            ],
+            "notes": "Primary nitroalkane; appears together with 2-nitropropane in questions that compare primary and secondary nitro compounds.",
+            "smiles": "CCC[N+](=O)[O-]",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH2-NO2}",
+            "katex_molecular_formula": "\\ce{C3H7NO2}"
+        },
+        {
+            "iupac_name": "2-nitropropane",
+            "common_name": "2-nitropropane",
+            "local_name": "2-ニトロプロパン",
+            "skeletal_formula": "(CH3)2CH-NO2",
+            "molecular_formula": "C3H7NO2",
+            "series_general_formula": "Secondary nitroalkanes: general structure R1R2CH-NO2",
+            "functional_groups": [
+                {
+                    "name_en": "Nitro",
+                    "name_ja": "ニトロ基",
+                    "pattern": "–NO2"
+                }
+            ],
+            "notes": "Secondary nitroalkane; contrasted with 1-nitropropane in reactivity and physical properties; used as solvent and intermediate.",
+            "smiles": "CC(C)[N+](=O)[O-]",
+            "katex_skeletal_formula": "\\ce{(CH3)2CH-NO2}",
+            "katex_molecular_formula": "\\ce{C3H7NO2}"
+        }
+    ]
+}

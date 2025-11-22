@@ -1,0 +1,145 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "dihydrogen",
+            "common_name": "hydrogen",
+            "local_name": "水素",
+            "skeletal_formula": "H2",
+            "molecular_formula": "H2",
+            "series_general_formula": "Diatomic nonmetal molecules: X2 (X = H, N, O, F, Cl, Br, I)",
+            "functional_groups": [],
+            "notes": "Lightest element; colorless, odorless diatomic gas; burns in oxygen to form water and acts as a strong reducing agent.",
+            "smiles": "[H][H]",
+            "katex_skeletal_formula": "\\ce{H2}",
+            "katex_molecular_formula": "\\ce{H2}"
+        },
+        {
+            "iupac_name": "oxidane",
+            "common_name": "water",
+            "local_name": "水",
+            "skeletal_formula": "H2O",
+            "molecular_formula": "H2O",
+            "series_general_formula": "Hydrogen oxides: H2O, H2O2; general type H2On",
+            "functional_groups": [
+                {
+                    "name_en": "Oxide",
+                    "name_ja": "酸化物",
+                    "pattern": "O^{2-} with hydrogen"
+                }
+            ],
+            "notes": "Most abundant compound on Earth; colorless, high boiling point for its molar mass due to hydrogen bonding; universal solvent in high-school chemistry.",
+            "smiles": "O",
+            "katex_skeletal_formula": "\\ce{H2O}",
+            "katex_molecular_formula": "\\ce{H2O}"
+        },
+        {
+            "iupac_name": "dihydrogen dioxide",
+            "common_name": "hydrogen peroxide",
+            "local_name": "過酸化水素",
+            "skeletal_formula": "H-O-O-H",
+            "molecular_formula": "H2O2",
+            "series_general_formula": "Peroxides: X2O2 with peroxide ion O2^{2-}",
+            "functional_groups": [
+                {
+                    "name_en": "Peroxide",
+                    "name_ja": "過酸化物イオン",
+                    "pattern": "O2^{2-}"
+                }
+            ],
+            "notes": "Colorless liquid; stronger oxidizing agent than water; used as bleach and disinfectant; decomposes to water and oxygen.",
+            "smiles": "OO",
+            "katex_skeletal_formula": "\\ce{H-O-O-H}",
+            "katex_molecular_formula": "\\ce{H2O2}"
+        },
+        {
+            "iupac_name": "helium",
+            "common_name": "helium",
+            "local_name": "ヘリウム",
+            "skeletal_formula": "He",
+            "molecular_formula": "He",
+            "series_general_formula": "Noble gases: Group 18 monoatomic gases",
+            "functional_groups": [],
+            "notes": "Noble gas; monoatomic, very low boiling point; lighter than air and nonflammable so used for balloons and airships.",
+            "smiles": "[He]",
+            "katex_skeletal_formula": "\\ce{He}",
+            "katex_molecular_formula": "\\ce{He}"
+        },
+        {
+            "iupac_name": "neon",
+            "common_name": "neon",
+            "local_name": "ネオン",
+            "skeletal_formula": "Ne",
+            "molecular_formula": "Ne",
+            "series_general_formula": "Noble gases: Group 18 monoatomic gases",
+            "functional_groups": [],
+            "notes": "Noble gas; emits red-orange light in discharge tubes; typical example of chemically inert gas at high-school level.",
+            "smiles": "[Ne]",
+            "katex_skeletal_formula": "\\ce{Ne}",
+            "katex_molecular_formula": "\\ce{Ne}"
+        },
+        {
+            "iupac_name": "argon",
+            "common_name": "argon",
+            "local_name": "アルゴン",
+            "skeletal_formula": "Ar",
+            "molecular_formula": "Ar",
+            "series_general_formula": "Noble gases: Group 18 monoatomic gases",
+            "functional_groups": [],
+            "notes": "Noble gas used as inert atmosphere for welding and incandescent light bulbs; colorless, odorless, and very unreactive.",
+            "smiles": "[Ar]",
+            "katex_skeletal_formula": "\\ce{Ar}",
+            "katex_molecular_formula": "\\ce{Ar}"
+        },
+        {
+            "iupac_name": "xenon",
+            "common_name": "xenon",
+            "local_name": "キセノン",
+            "skeletal_formula": "Xe",
+            "molecular_formula": "Xe",
+            "series_general_formula": "Noble gases: Group 18 monoatomic gases; heavier members can form compounds with F and O",
+            "functional_groups": [],
+            "notes": "Heavy noble gas; used in high-intensity lamps and anesthesia; forms stable fluorides such as XeF2 and XeF4 under special conditions.",
+            "smiles": "[Xe]",
+            "katex_skeletal_formula": "\\ce{Xe}",
+            "katex_molecular_formula": "\\ce{Xe}"
+        },
+        {
+            "iupac_name": "xenon difluoride",
+            "common_name": "xenon difluoride",
+            "local_name": "二フッ化キセノン",
+            "skeletal_formula": "XeF2",
+            "molecular_formula": "XeF2",
+            "series_general_formula": "Xenon fluorides: XeFn (n = 2, 4, 6)",
+            "functional_groups": [
+                {
+                    "name_en": "Xenon fluoride",
+                    "name_ja": "キセノンフッ化物",
+                    "pattern": "Xe–F"
+                }
+            ],
+            "notes": "Stable xenon fluoride; strong fluorinating and oxidizing agent; typical example showing that noble gases can form compounds.",
+            "smiles": "F[Xe]F",
+            "katex_skeletal_formula": "\\ce{XeF2}",
+            "katex_molecular_formula": "\\ce{XeF2}"
+        },
+        {
+            "iupac_name": "xenon tetrafluoride",
+            "common_name": "xenon tetrafluoride",
+            "local_name": "四フッ化キセノン",
+            "skeletal_formula": "XeF4",
+            "molecular_formula": "XeF4",
+            "series_general_formula": "Xenon fluorides: XeFn (n = 2, 4, 6)",
+            "functional_groups": [
+                {
+                    "name_en": "Xenon fluoride",
+                    "name_ja": "キセノンフッ化物",
+                    "pattern": "Xe–F"
+                }
+            ],
+            "notes": "First binary noble-gas compound discovered; colorless crystalline solid with square-planar geometry; strong fluorinating and oxidizing agent.",
+            "smiles": "F[Xe](F)(F)F",
+            "katex_skeletal_formula": "\\ce{XeF4}",
+            "katex_molecular_formula": "\\ce{XeF4}"
+        }
+    ]
+}

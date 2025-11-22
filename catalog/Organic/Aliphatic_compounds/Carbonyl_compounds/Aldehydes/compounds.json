@@ -1,0 +1,99 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "methanal",
+            "common_name": "formaldehyde",
+            "local_name": "メタナール（ホルムアルデヒド）",
+            "skeletal_formula": "H-CHO",
+            "molecular_formula": "CH2O",
+            "series_general_formula": "Aliphatic aldehydes (alkanals): CnH2nO (n>=1), structural: R-CHO",
+            "functional_groups": [
+                {
+                    "name_en": "Aldehyde",
+                    "name_ja": "アルデヒド基",
+                    "pattern": "R–CHO"
+                }
+            ],
+            "notes": "Simplest aldehyde; gas at room temperature, used as aqueous solution (formalin) as a disinfectant and preservative; gives positive silver mirror and Fehling's tests.",
+            "smiles": "C=O",
+            "katex_skeletal_formula": "\\ce{H-CHO}",
+            "katex_molecular_formula": "\\ce{CH2O}"
+        },
+        {
+            "iupac_name": "ethanal",
+            "common_name": "acetaldehyde",
+            "local_name": "エタナール（アセトアルデヒド）",
+            "skeletal_formula": "CH3-CHO",
+            "molecular_formula": "C2H4O",
+            "series_general_formula": "Aliphatic aldehydes (alkanals): CnH2nO (n>=1), structural: R-CHO",
+            "functional_groups": [
+                {
+                    "name_en": "Aldehyde",
+                    "name_ja": "アルデヒド基",
+                    "pattern": "R–CHO"
+                }
+            ],
+            "notes": "Produced by mild oxidation of ethanol; gives positive silver mirror and Fehling's tests; also positive iodoform test because it contains the CH3-CHO group.",
+            "smiles": "CC=O",
+            "katex_skeletal_formula": "\\ce{CH3-CHO}",
+            "katex_molecular_formula": "\\ce{C2H4O}"
+        },
+        {
+            "iupac_name": "propanal",
+            "common_name": "propionaldehyde",
+            "local_name": "プロパナール（プロピオンアルデヒド）",
+            "skeletal_formula": "CH3-CH2-CHO",
+            "molecular_formula": "C3H6O",
+            "series_general_formula": "Aliphatic aldehydes (alkanals): CnH2nO (n>=1), structural: R-CHO",
+            "functional_groups": [
+                {
+                    "name_en": "Aldehyde",
+                    "name_ja": "アルデヒド基",
+                    "pattern": "R–CHO"
+                }
+            ],
+            "notes": "Straight-chain C3 aldehyde; typical member of the homologous series used to illustrate boiling point trends and general formula CnH2nO.",
+            "smiles": "CCC=O",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CHO}",
+            "katex_molecular_formula": "\\ce{C3H6O}"
+        },
+        {
+            "iupac_name": "butanal",
+            "common_name": "butyraldehyde",
+            "local_name": "ブタナール（酪酸アルデヒド）",
+            "skeletal_formula": "CH3-CH2-CH2-CHO",
+            "molecular_formula": "C4H8O",
+            "series_general_formula": "Aliphatic aldehydes (alkanals): CnH2nO (n>=1), structural: R-CHO",
+            "functional_groups": [
+                {
+                    "name_en": "Aldehyde",
+                    "name_ja": "アルデヒド基",
+                    "pattern": "R–CHO"
+                }
+            ],
+            "notes": "C4 aldehyde; often appears in homologous-series tables alongside methanal, ethanal and propanal; shows typical aldehyde reactions (oxidation to carboxylic acid).",
+            "smiles": "CCCC=O",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH2-CHO}",
+            "katex_molecular_formula": "\\ce{C4H8O}"
+        },
+        {
+            "iupac_name": "2-methylpropanal",
+            "common_name": "isobutyraldehyde",
+            "local_name": "2-メチルプロパナール（イソ酪酸アルデヒド）",
+            "skeletal_formula": "(CH3)2CH-CHO",
+            "molecular_formula": "C4H8O",
+            "series_general_formula": "Aliphatic aldehydes (alkanals): CnH2nO (n>=1), structural: R-CHO",
+            "functional_groups": [
+                {
+                    "name_en": "Aldehyde",
+                    "name_ja": "アルデヒド基",
+                    "pattern": "R–CHO"
+                }
+            ],
+            "notes": "Branched C4 aldehyde; useful for problems on structural isomerism and naming of branched-chain aldehydes.",
+            "smiles": "CC(C)C=O",
+            "katex_skeletal_formula": "\\ce{(CH3)2CH-CHO}",
+            "katex_molecular_formula": "\\ce{C4H8O}"
+        }
+    ]
+}

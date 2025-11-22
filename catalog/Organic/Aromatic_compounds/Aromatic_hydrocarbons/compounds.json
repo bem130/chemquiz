@@ -1,0 +1,123 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "benzene",
+            "common_name": "benzene",
+            "local_name": "ベンゼン",
+            "skeletal_formula": "C6H6 (aromatic ring)",
+            "molecular_formula": "C6H6",
+            "series_general_formula": "Benzene series (monocyclic arenes): CnH2n-6 (n>=6)",
+            "functional_groups": [
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H5–"
+                }
+            ],
+            "notes": "Parent aromatic hydrocarbon; prototypical arene; undergoes electrophilic substitution rather than addition.",
+            "smiles": "c1ccccc1",
+            "katex_skeletal_formula": "\\ce{C6H6}",
+            "katex_molecular_formula": "\\ce{C6H6}"
+        },
+        {
+            "iupac_name": "methylbenzene",
+            "common_name": "toluene",
+            "local_name": "メチルベンゼン（トルエン）",
+            "skeletal_formula": "C6H5-CH3",
+            "molecular_formula": "C7H8",
+            "series_general_formula": "Alkylbenzenes: C6H5R (benzene ring with alkyl substituent)",
+            "functional_groups": [
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H5–"
+                }
+            ],
+            "notes": "Typical alkylbenzene; industrial solvent and starting material for many aromatic compounds; methyl group is ortho/para-directing in substitution.",
+            "smiles": "Cc1ccccc1",
+            "katex_skeletal_formula": "\\ce{C6H5-CH3}",
+            "katex_molecular_formula": "\\ce{C7H8}"
+        },
+        {
+            "iupac_name": "ethylbenzene",
+            "common_name": "ethylbenzene",
+            "local_name": "エチルベンゼン",
+            "skeletal_formula": "C6H5-CH2-CH3",
+            "molecular_formula": "C8H10",
+            "series_general_formula": "Alkylbenzenes: C6H5R",
+            "functional_groups": [
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H5–"
+                }
+            ],
+            "notes": "Important industrial aromatic hydrocarbon; oxidized to styrene and then to polystyrene; typical ethyl-substituted benzene.",
+            "smiles": "CCc1ccccc1",
+            "katex_skeletal_formula": "\\ce{C6H5-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C8H10}"
+        },
+        {
+            "iupac_name": "dimethylbenzene",
+            "common_name": "xylene",
+            "local_name": "ジメチルベンゼン（キシレン）",
+            "skeletal_formula": "C6H4(CH3)2 (o-, m-, p- isomers)",
+            "molecular_formula": "C8H10",
+            "series_general_formula": "Alkylbenzenes: C6H4R2 (disubstituted benzenes)",
+            "functional_groups": [
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H4–"
+                }
+            ],
+            "notes": "Mixture of o-, m-, and p-xylene isomers; important solvent and starting material; used to introduce ortho/meta/para relationships.",
+            "smiles": "Cc1cccc(C)c1",
+            "katex_skeletal_formula": "\\ce{C6H4(CH3)2}",
+            "katex_molecular_formula": "\\ce{C8H10}"
+        },
+        {
+            "iupac_name": "ethenylbenzene",
+            "common_name": "styrene",
+            "local_name": "エテニルベンゼン（スチレン）",
+            "skeletal_formula": "C6H5-CH=CH2",
+            "molecular_formula": "C8H8",
+            "series_general_formula": "Vinyl arenes: C6H5-CH=CH2 and homologues",
+            "functional_groups": [
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H5–"
+                },
+                {
+                    "name_en": "Alkene double bond",
+                    "name_ja": "アルケン（二重結合）",
+                    "pattern": "C=C"
+                }
+            ],
+            "notes": "Monomer for polystyrene; typical example combining aromatic ring and C=C double bond; undergoes addition polymerization.",
+            "smiles": "C=CC1=CC=CC=C1",
+            "katex_skeletal_formula": "\\ce{C6H5-CH=CH2}",
+            "katex_molecular_formula": "\\ce{C8H8}"
+        },
+        {
+            "iupac_name": "naphthalene",
+            "common_name": "naphthalene",
+            "local_name": "ナフタレン",
+            "skeletal_formula": "Fused aromatic rings (C10H8)",
+            "molecular_formula": "C10H8",
+            "series_general_formula": "Polycyclic aromatic hydrocarbons (PAHs): e.g. C10H8 with two fused benzene rings",
+            "functional_groups": [
+                {
+                    "name_en": "Aromatic ring (fused)",
+                    "name_ja": "縮合芳香環",
+                    "pattern": "fused C6 rings"
+                }
+            ],
+            "notes": "Typical polycyclic aromatic hydrocarbon; main component of mothballs; more reactive than benzene in electrophilic substitution.",
+            "smiles": "c1cccc2ccccc12",
+            "katex_skeletal_formula": "\\ce{C10H8}",
+            "katex_molecular_formula": "\\ce{C10H8}"
+        }
+    ]
+}

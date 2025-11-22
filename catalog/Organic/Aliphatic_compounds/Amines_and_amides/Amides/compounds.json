@@ -1,0 +1,80 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "methanamide",
+            "common_name": "formamide",
+            "local_name": "メタナミド（ホルムアミド）",
+            "skeletal_formula": "H-CONH2",
+            "molecular_formula": "CH3NO",
+            "series_general_formula": "Primary amides from monocarboxylic acids: RCONH2 (n>=0, n=0 gives formamide)",
+            "functional_groups": [
+                {
+                    "name_en": "Amide",
+                    "name_ja": "アミド結合",
+                    "pattern": "–CONH2"
+                }
+            ],
+            "notes": "Simplest carboxylic acid amide; highly polar; used as solvent and intermediate; typical example when introducing the amide functional group.",
+            "smiles": "C(=O)N",
+            "katex_skeletal_formula": "\\ce{H-CONH2}",
+            "katex_molecular_formula": "\\ce{CH3NO}"
+        },
+        {
+            "iupac_name": "ethanamide",
+            "common_name": "acetamide",
+            "local_name": "エタナミド（アセトアミド）",
+            "skeletal_formula": "CH3-CONH2",
+            "molecular_formula": "C2H5NO",
+            "series_general_formula": "Primary amides from saturated monocarboxylic acids: CnH2n+1CONH2",
+            "functional_groups": [
+                {
+                    "name_en": "Amide",
+                    "name_ja": "アミド結合",
+                    "pattern": "–CONH2"
+                }
+            ],
+            "notes": "Most commonly discussed aliphatic amide; derived from ethanoic acid; used as example of high melting point and hydrogen bonding in amides.",
+            "smiles": "CC(=O)N",
+            "katex_skeletal_formula": "\\ce{CH3-CONH2}",
+            "katex_molecular_formula": "\\ce{C2H5NO}"
+        },
+        {
+            "iupac_name": "propanamide",
+            "common_name": "propanamide",
+            "local_name": "プロパンアミド",
+            "skeletal_formula": "CH3-CH2-CONH2",
+            "molecular_formula": "C3H7NO",
+            "series_general_formula": "Primary amides from saturated monocarboxylic acids: CnH2n+1CONH2",
+            "functional_groups": [
+                {
+                    "name_en": "Amide",
+                    "name_ja": "アミド結合",
+                    "pattern": "–CONH2"
+                }
+            ],
+            "notes": "Higher member of the aliphatic amide series; useful for homologous-series questions and for comparing physical properties with ethanamide.",
+            "smiles": "CCC(=O)N",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CONH2}",
+            "katex_molecular_formula": "\\ce{C3H7NO}"
+        },
+        {
+            "iupac_name": "urea",
+            "common_name": "urea",
+            "local_name": "尿素（カルバミド）",
+            "skeletal_formula": "H2N-CO-NH2",
+            "molecular_formula": "CH4N2O",
+            "series_general_formula": "Diamides (carbamides): general structure H2N-CO-NH2 or substituted analogs",
+            "functional_groups": [
+                {
+                    "name_en": "Amide (diamidic)",
+                    "name_ja": "二価アミド結合",
+                    "pattern": "–CONH2 ×2"
+                }
+            ],
+            "notes": "Most important biological amide; end product of protein metabolism in mammals; typical example of a diamide in high-school chemistry.",
+            "smiles": "C(=O)(N)N",
+            "katex_skeletal_formula": "\\ce{H2N-CO-NH2}",
+            "katex_molecular_formula": "\\ce{CH4N2O}"
+        }
+    ]
+}

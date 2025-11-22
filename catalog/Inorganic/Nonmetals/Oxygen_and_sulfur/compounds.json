@@ -1,0 +1,138 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "dioxygen",
+            "common_name": "oxygen",
+            "local_name": "酸素",
+            "skeletal_formula": "O2",
+            "molecular_formula": "O2",
+            "series_general_formula": "Diatomic nonmetal molecules: X2 (X = H, N, O, F, Cl, Br, I)",
+            "functional_groups": [],
+            "notes": "Colorless, odorless diatomic gas; supports combustion and respiration; makes up about 21% of air by volume.",
+            "smiles": "O=O",
+            "katex_skeletal_formula": "\\ce{O2}",
+            "katex_molecular_formula": "\\ce{O2}"
+        },
+        {
+            "iupac_name": "trioxygen",
+            "common_name": "ozone",
+            "local_name": "オゾン",
+            "skeletal_formula": "O3",
+            "molecular_formula": "O3",
+            "series_general_formula": "Allotropes of oxygen: O2 and O3",
+            "functional_groups": [],
+            "notes": "Pale blue gas with sharp smell; strong oxidizing agent; forms ozone layer that absorbs ultraviolet radiation.",
+            "smiles": "O1OO1",
+            "katex_skeletal_formula": "\\ce{O3}",
+            "katex_molecular_formula": "\\ce{O3}"
+        },
+        {
+            "iupac_name": "dihydrogen dioxide",
+            "common_name": "hydrogen peroxide",
+            "local_name": "過酸化水素",
+            "skeletal_formula": "H-O-O-H",
+            "molecular_formula": "H2O2",
+            "series_general_formula": "Peroxides: X2O2 with peroxide ion O2^{2-}",
+            "functional_groups": [
+                {
+                    "name_en": "Peroxide",
+                    "name_ja": "過酸化物イオン",
+                    "pattern": "O2^{2-}"
+                }
+            ],
+            "notes": "Colorless liquid; strong oxidizing agent; used as bleach and disinfectant; decomposes to water and oxygen, catalyzed by MnO2 and enzymes.",
+            "smiles": "OO",
+            "katex_skeletal_formula": "\\ce{H-O-O-H}",
+            "katex_molecular_formula": "\\ce{H2O2}"
+        },
+        {
+            "iupac_name": "sulfur",
+            "common_name": "sulfur",
+            "local_name": "硫黄",
+            "skeletal_formula": "S8 (ring structure)",
+            "molecular_formula": "S8",
+            "series_general_formula": "Allotropes of sulfur: rhombic, monoclinic, and plastic sulfur; molecular form S8",
+            "functional_groups": [],
+            "notes": "Yellow solid with several allotropes; burns in air with blue flame to form sulfur dioxide; important nonmetal element.",
+            "smiles": "S1SSSSSSS1",
+            "katex_skeletal_formula": "\\ce{S8}",
+            "katex_molecular_formula": "\\ce{S8}"
+        },
+        {
+            "iupac_name": "hydrogen sulfide",
+            "common_name": "hydrogen sulfide",
+            "local_name": "硫化水素",
+            "skeletal_formula": "H2S",
+            "molecular_formula": "H2S",
+            "series_general_formula": "Hydrogen chalcogenides: H2E (E = O, S, Se)",
+            "functional_groups": [
+                {
+                    "name_en": "Sulfide",
+                    "name_ja": "硫化物イオン",
+                    "pattern": "S^{2-}"
+                }
+            ],
+            "notes": "Colorless gas with rotten-egg odor; weak acid and strong reducing agent; highly toxic; prepared from metal sulfides and acids.",
+            "smiles": "S",
+            "katex_skeletal_formula": "\\ce{H2S}",
+            "katex_molecular_formula": "\\ce{H2S}"
+        },
+        {
+            "iupac_name": "sulfur dioxide",
+            "common_name": "sulfur dioxide",
+            "local_name": "二酸化硫黄",
+            "skeletal_formula": "SO2",
+            "molecular_formula": "SO2",
+            "series_general_formula": "Acidic oxides of nonmetals: EO2, EO3 (E = S, C, N, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Oxide",
+                    "name_ja": "酸化物",
+                    "pattern": "EO2"
+                }
+            ],
+            "notes": "Colorless gas with pungent smell; weakly acidic and acts as both oxidizing and reducing agent; used as preservative and in sulfuric acid production.",
+            "smiles": "O=S=O",
+            "katex_skeletal_formula": "\\ce{SO2}",
+            "katex_molecular_formula": "\\ce{SO2}"
+        },
+        {
+            "iupac_name": "sulfur trioxide",
+            "common_name": "sulfur trioxide",
+            "local_name": "三酸化硫黄",
+            "skeletal_formula": "SO3",
+            "molecular_formula": "SO3",
+            "series_general_formula": "Acidic oxides of nonmetals: EO3 (E = S, N, P, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Oxide",
+                    "name_ja": "酸性酸化物",
+                    "pattern": "EO3"
+                }
+            ],
+            "notes": "Acidic oxide of sulfur; reacts vigorously with water to form sulfuric acid; industrial intermediate in the contact process.",
+            "smiles": "O=S(=O)=O",
+            "katex_skeletal_formula": "\\ce{SO3}",
+            "katex_molecular_formula": "\\ce{SO3}"
+        },
+        {
+            "iupac_name": "sulfuric acid",
+            "common_name": "sulfuric acid",
+            "local_name": "硫酸",
+            "skeletal_formula": "H2SO4",
+            "molecular_formula": "H2SO4",
+            "series_general_formula": "Oxoacids of sulfur: H2SO4, H2SO3",
+            "functional_groups": [
+                {
+                    "name_en": "Sulfate",
+                    "name_ja": "硫酸イオン",
+                    "pattern": "SO4^{2-}"
+                }
+            ],
+            "notes": "Strong diprotic acid; concentrated sulfuric acid is dehydrating and oxidizing; one of the most important industrial chemicals.",
+            "smiles": "OS(=O)(=O)O",
+            "katex_skeletal_formula": "\\ce{H2SO4}",
+            "katex_molecular_formula": "\\ce{H2SO4}"
+        }
+    ]
+}

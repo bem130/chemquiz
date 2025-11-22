@@ -1,0 +1,157 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "carbon (graphite)",
+            "common_name": "graphite",
+            "local_name": "黒鉛",
+            "skeletal_formula": "C (layered structure)",
+            "molecular_formula": "C",
+            "series_general_formula": "Allotropes of carbon: graphite, diamond, fullerene",
+            "functional_groups": [],
+            "notes": "Soft, black solid; layers of hexagonal carbon sheets; conducts electricity; used as electrode material and lubricant.",
+            "smiles": "C",
+            "katex_skeletal_formula": "\\ce{C}",
+            "katex_molecular_formula": "\\ce{C}"
+        },
+        {
+            "iupac_name": "carbon (diamond)",
+            "common_name": "diamond",
+            "local_name": "ダイヤモンド",
+            "skeletal_formula": "C (3D network)",
+            "molecular_formula": "C",
+            "series_general_formula": "Allotropes of carbon: graphite, diamond, fullerene",
+            "functional_groups": [],
+            "notes": "Transparent, extremely hard crystal; non-conductive; each carbon is tetrahedrally bonded in a three-dimensional network.",
+            "smiles": "C",
+            "katex_skeletal_formula": "\\ce{C}",
+            "katex_molecular_formula": "\\ce{C}"
+        },
+        {
+            "iupac_name": "carbon monoxide",
+            "common_name": "carbon monoxide",
+            "local_name": "一酸化炭素",
+            "skeletal_formula": "CO",
+            "molecular_formula": "CO",
+            "series_general_formula": "Oxides of carbon: CO, CO2",
+            "functional_groups": [
+                {
+                    "name_en": "Carbon oxide",
+                    "name_ja": "炭素の酸化物",
+                    "pattern": "CO, CO2"
+                }
+            ],
+            "notes": "Colorless, odorless gas; highly toxic; reducing agent used in metal extraction from ores.",
+            "smiles": "C#O",
+            "katex_skeletal_formula": "\\ce{CO}",
+            "katex_molecular_formula": "\\ce{CO}"
+        },
+        {
+            "iupac_name": "carbon dioxide",
+            "common_name": "carbon dioxide",
+            "local_name": "二酸化炭素",
+            "skeletal_formula": "O=C=O",
+            "molecular_formula": "CO2",
+            "series_general_formula": "Acidic oxides of nonmetals: EO2, EO3 (E = C, S, N, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Carbon oxide",
+                    "name_ja": "炭素の酸化物",
+                    "pattern": "CO2"
+                }
+            ],
+            "notes": "Colorless gas; slightly soluble in water to form carbonic acid; product of combustion and respiration; used in carbonation of drinks.",
+            "smiles": "O=C=O",
+            "katex_skeletal_formula": "\\ce{CO2}",
+            "katex_molecular_formula": "\\ce{CO2}"
+        },
+        {
+            "iupac_name": "carbonic acid",
+            "common_name": "carbonic acid",
+            "local_name": "炭酸",
+            "skeletal_formula": "H2CO3",
+            "molecular_formula": "H2CO3",
+            "series_general_formula": "Oxoacids of carbon: H2CO3",
+            "functional_groups": [
+                {
+                    "name_en": "Carbonate",
+                    "name_ja": "炭酸イオン",
+                    "pattern": "CO3^{2-}"
+                }
+            ],
+            "notes": "Weak acid formed when carbon dioxide dissolves in water; unstable and exists only in solution; gives rise to carbonate and hydrogencarbonate salts.",
+            "smiles": "OC(=O)O",
+            "katex_skeletal_formula": "\\ce{H2CO3}",
+            "katex_molecular_formula": "\\ce{H2CO3}"
+        },
+        {
+            "iupac_name": "calcium carbonate",
+            "common_name": "calcium carbonate (limestone)",
+            "local_name": "炭酸カルシウム（石灰石）",
+            "skeletal_formula": "CaCO3",
+            "molecular_formula": "CaCO3",
+            "series_general_formula": "Carbonates: MCO3 (M = Ca, Mg, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Carbonate",
+                    "name_ja": "炭酸イオン",
+                    "pattern": "CO3^{2-}"
+                }
+            ],
+            "notes": "White solid found as limestone, marble, and chalk; decomposes on heating to CaO and CO2; used as building material and in cement.",
+            "smiles": "[Ca+2].[O-]C(=O)[O-]",
+            "katex_skeletal_formula": "\\ce{CaCO3}",
+            "katex_molecular_formula": "\\ce{CaCO3}"
+        },
+        {
+            "iupac_name": "silicon dioxide",
+            "common_name": "silicon dioxide (quartz)",
+            "local_name": "二酸化ケイ素（石英）",
+            "skeletal_formula": "SiO2 (network solid)",
+            "molecular_formula": "SiO2",
+            "series_general_formula": "Silicon oxides and silicates: SiO2, SiO3^{2-}",
+            "functional_groups": [
+                {
+                    "name_en": "Silicate-like oxide",
+                    "name_ja": "ケイ素の酸化物",
+                    "pattern": "SiO2"
+                }
+            ],
+            "notes": "Hard, chemically stable solid; main component of sand and quartz; used in glass and ceramics.",
+            "smiles": "O=[Si]=O",
+            "katex_skeletal_formula": "\\ce{SiO2}",
+            "katex_molecular_formula": "\\ce{SiO2}"
+        },
+        {
+            "iupac_name": "sodium metasilicate",
+            "common_name": "sodium metasilicate (water glass)",
+            "local_name": "メタケイ酸ナトリウム（水ガラス）",
+            "skeletal_formula": "Na2SiO3",
+            "molecular_formula": "Na2SiO3",
+            "series_general_formula": "Silicates: M2SiO3, M2SiO3·nH2O",
+            "functional_groups": [
+                {
+                    "name_en": "Silicate",
+                    "name_ja": "ケイ酸イオン",
+                    "pattern": "SiO3^{2-}"
+                }
+            ],
+            "notes": "Colorless aqueous solution forms a glassy solid on drying; used as adhesive, fireproofing agent, and in detergents.",
+            "smiles": "[Na+].[Na+].[O-]Si(=O)O-",
+            "katex_skeletal_formula": "\\ce{Na2SiO3}",
+            "katex_molecular_formula": "\\ce{Na2SiO3}"
+        },
+        {
+            "iupac_name": "silicon carbide",
+            "common_name": "silicon carbide",
+            "local_name": "炭化ケイ素",
+            "skeletal_formula": "SiC (network solid)",
+            "molecular_formula": "SiC",
+            "series_general_formula": "Carbides: MC, SiC",
+            "functional_groups": [],
+            "notes": "Very hard, high-melting solid; used as abrasive and refractory material; example of covalent network solid containing carbon and silicon.",
+            "smiles": "[Si]C",
+            "katex_skeletal_formula": "\\ce{SiC}",
+            "katex_molecular_formula": "\\ce{SiC}"
+        }
+    ]
+}

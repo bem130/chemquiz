@@ -1,0 +1,99 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "methyl methanoate",
+            "common_name": "methyl formate",
+            "local_name": "メチルメタン酸メチル（メチルギ酸メチル）",
+            "skeletal_formula": "H-COO-CH3",
+            "molecular_formula": "C2H4O2",
+            "series_general_formula": "Simple saturated esters: general molecular formula CnH2nO2, structure R-COOR'",
+            "functional_groups": [
+                {
+                    "name_en": "Ester linkage",
+                    "name_ja": "エステル結合",
+                    "pattern": "R–COO–R'"
+                }
+            ],
+            "notes": "Simplest aliphatic ester; used as solvent and flavoring; typical example in basic esterification reactions.",
+            "smiles": "COC=O",
+            "katex_skeletal_formula": "\\ce{H-COO-CH3}",
+            "katex_molecular_formula": "\\ce{C2H4O2}"
+        },
+        {
+            "iupac_name": "methyl ethanoate",
+            "common_name": "methyl acetate",
+            "local_name": "メチルエタン酸メチル（酢酸メチル）",
+            "skeletal_formula": "CH3-COO-CH3",
+            "molecular_formula": "C3H6O2",
+            "series_general_formula": "Simple saturated esters: CnH2nO2 (from monocarboxylic acids and alcohols)",
+            "functional_groups": [
+                {
+                    "name_en": "Ester linkage",
+                    "name_ja": "エステル結合",
+                    "pattern": "R–COO–R'"
+                }
+            ],
+            "notes": "Low-boiling ester with fruity smell; often used as example in problems comparing boiling points of acids, esters and alcohols.",
+            "smiles": "CC(=O)OC",
+            "katex_skeletal_formula": "\\ce{CH3-COO-CH3}",
+            "katex_molecular_formula": "\\ce{C3H6O2}"
+        },
+        {
+            "iupac_name": "ethyl ethanoate",
+            "common_name": "ethyl acetate",
+            "local_name": "エチルエタン酸エチル（酢酸エチル）",
+            "skeletal_formula": "CH3-COO-CH2-CH3",
+            "molecular_formula": "C4H8O2",
+            "series_general_formula": "Simple saturated esters: CnH2nO2, structure R-COO-R'",
+            "functional_groups": [
+                {
+                    "name_en": "Ester linkage",
+                    "name_ja": "エステル結合",
+                    "pattern": "R–COO–R'"
+                }
+            ],
+            "notes": "Very common solvent; prepared by esterification of ethanol and ethanoic acid; standard example for ester smell and hydrolysis.",
+            "smiles": "CC(=O)OCC",
+            "katex_skeletal_formula": "\\ce{CH3-COO-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C4H8O2}"
+        },
+        {
+            "iupac_name": "propyl ethanoate",
+            "common_name": "propyl acetate",
+            "local_name": "プロピルエタン酸プロピル（酢酸プロピル）",
+            "skeletal_formula": "CH3-COO-CH2-CH2-CH3",
+            "molecular_formula": "C5H10O2",
+            "series_general_formula": "Simple saturated esters: CnH2nO2",
+            "functional_groups": [
+                {
+                    "name_en": "Ester linkage",
+                    "name_ja": "エステル結合",
+                    "pattern": "R–COO–R'"
+                }
+            ],
+            "notes": "Fruity-smelling ester; used to exemplify how changing the alcohol changes the odor while keeping the same acid part.",
+            "smiles": "CC(=O)OCCC",
+            "katex_skeletal_formula": "\\ce{CH3-COO-CH2-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C5H10O2}"
+        },
+        {
+            "iupac_name": "methyl butanoate",
+            "common_name": "methyl butyrate",
+            "local_name": "メチルブタン酸メチル（酪酸メチル）",
+            "skeletal_formula": "CH3-CH2-CH2-COO-CH3",
+            "molecular_formula": "C5H10O2",
+            "series_general_formula": "Simple saturated esters: CnH2nO2",
+            "functional_groups": [
+                {
+                    "name_en": "Ester linkage",
+                    "name_ja": "エステル結合",
+                    "pattern": "R–COO–R'"
+                }
+            ],
+            "notes": "Has pineapple-like fruity odor; common example in questions relating smell to ester structure derived from butanoic acid.",
+            "smiles": "CCCC(=O)OC",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH2-COO-CH3}",
+            "katex_molecular_formula": "\\ce{C5H10O2}"
+        }
+    ]
+}

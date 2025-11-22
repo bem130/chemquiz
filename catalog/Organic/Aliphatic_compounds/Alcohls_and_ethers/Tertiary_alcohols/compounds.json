@@ -1,0 +1,61 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "propan-2-ol",
+            "common_name": "isopropyl alcohol",
+            "local_name": "2-プロパノール（イソプロピルアルコール）",
+            "skeletal_formula": "CH3-CH(OH)-CH3",
+            "molecular_formula": "C3H8O",
+            "series_general_formula": "Secondary alcohols (2°): general structure R1-CH(OH)-R2",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Typical secondary alcohol; used as disinfectant and solvent; gives a ketone (propanone) on oxidation and positive iodoform test.",
+            "smiles": "CC(O)C",
+            "katex_skeletal_formula": "\\ce{CH3-CH(OH)-CH3}",
+            "katex_molecular_formula": "\\ce{C3H8O}"
+        },
+        {
+            "iupac_name": "butan-2-ol",
+            "common_name": "sec-butanol",
+            "local_name": "2-ブタノール（セカンダリーブタノール）",
+            "skeletal_formula": "CH3-CH(OH)-CH2-CH3",
+            "molecular_formula": "C4H10O",
+            "series_general_formula": "Secondary alcohols (2°): general structure R1-CH(OH)-R2",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Representative secondary alcohol in many Japanese explanations of classification; oxidized to butan-2-one (a ketone).",
+            "smiles": "CCC(O)C",
+            "katex_skeletal_formula": "\\ce{CH3-CH(OH)-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C4H10O}"
+        },
+        {
+            "iupac_name": "pentan-3-ol",
+            "common_name": "3-pentanol",
+            "local_name": "3-ペンタノール",
+            "skeletal_formula": "CH3-CH2-CH(OH)-CH2-CH3",
+            "molecular_formula": "C5H12O",
+            "series_general_formula": "Secondary alcohols (2°): general structure R1-CH(OH)-R2",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Example of secondary alcohol where the OH-bearing carbon is in the middle of a longer chain; useful for naming and classification exercises.",
+            "smiles": "CCC(O)CC",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH(OH)-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C5H12O}"
+        }
+    ]
+}

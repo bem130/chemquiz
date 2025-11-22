@@ -1,0 +1,80 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "ethyne",
+            "common_name": "acetylene",
+            "local_name": "エチン（アセチレン）",
+            "skeletal_formula": "HC≡CH",
+            "molecular_formula": "C2H2",
+            "series_general_formula": "Alkynes (one C≡C): CnH2n-2 (n>=2)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkyne triple bond",
+                    "name_ja": "アルキン（三重結合）",
+                    "pattern": "C≡C"
+                }
+            ],
+            "notes": "Simplest alkyne; strong reducing agent; used in oxyacetylene welding and as a starting material for many syntheses.",
+            "smiles": "C#C",
+            "katex_skeletal_formula": "\\ce{HC#CH}",
+            "katex_molecular_formula": "\\ce{C2H2}"
+        },
+        {
+            "iupac_name": "propyne",
+            "common_name": "methylacetylene",
+            "local_name": "プロピン（メチルアセチレン）",
+            "skeletal_formula": "CH3-C≡CH",
+            "molecular_formula": "C3H4",
+            "series_general_formula": "Alkynes (one C≡C): CnH2n-2 (n>=2)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkyne triple bond",
+                    "name_ja": "アルキン（三重結合）",
+                    "pattern": "C≡C"
+                }
+            ],
+            "notes": "Simplest terminal C3 alkyne; used to illustrate substitution vs addition on terminal alkynes.",
+            "smiles": "CC#C",
+            "katex_skeletal_formula": "\\ce{CH3-C#CH}",
+            "katex_molecular_formula": "\\ce{C3H4}"
+        },
+        {
+            "iupac_name": "but-1-yne",
+            "common_name": "1-butyne",
+            "local_name": "1-ブチン",
+            "skeletal_formula": "HC≡C-CH2-CH3",
+            "molecular_formula": "C4H6",
+            "series_general_formula": "Alkynes (one C≡C): CnH2n-2 (n>=2)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkyne triple bond",
+                    "name_ja": "アルキン（三重結合）",
+                    "pattern": "C≡C"
+                }
+            ],
+            "notes": "Terminal C4 alkyne; appears in problems on general formula CnH2n-2 and position isomerism with but-2-yne.",
+            "smiles": "C#CCC",
+            "katex_skeletal_formula": "\\ce{HC#C-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C4H6}"
+        },
+        {
+            "iupac_name": "but-2-yne",
+            "common_name": "2-butyne",
+            "local_name": "2-ブチン",
+            "skeletal_formula": "CH3-C≡C-CH3",
+            "molecular_formula": "C4H6",
+            "series_general_formula": "Alkynes (one C≡C): CnH2n-2 (n>=2)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkyne triple bond",
+                    "name_ja": "アルキン（三重結合）",
+                    "pattern": "C≡C"
+                }
+            ],
+            "notes": "Internal C4 alkyne; contrasts with but-1-yne in acidity of terminal hydrogen and in some reaction patterns.",
+            "smiles": "CC#CC",
+            "katex_skeletal_formula": "\\ce{CH3-C#C-CH3}",
+            "katex_molecular_formula": "\\ce{C4H6}"
+        }
+    ]
+}

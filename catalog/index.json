@@ -1,65 +1,371 @@
 {
     "roots": [
         {
-            "label": "Organic",
+            "label": "Organic compounds",
             "slug": "Organic",
             "children": [
                 {
-                    "label": "Alcohols",
-                    "slug": "Alcohols",
+                    "label": "Aliphatic compounds",
+                    "slug": "Aliphatic_compounds",
                     "children": [
                         {
-                            "label": "Primary alcohols",
-                            "slug": "Primary_alcohols",
-                            "file": "catalog/Organic/Alcohols/Primary_alcohols/compounds.json",
+                            "label": "Hydrocarbons",
+                            "slug": "Hydrocarbons",
+                            "children": [
+                                {
+                                    "label": "Alkanes",
+                                    "slug": "Alkanes",
+                                    "file": "catalog/Organic/Aliphatic_compounds/Hydrocarbons/Alkanes/compounds.json",
+                                    "children": []
+                                },
+                                {
+                                    "label": "Cycloalkanes",
+                                    "slug": "Cycloalkanes",
+                                    "file": "catalog/Organic/Aliphatic_compounds/Hydrocarbons/Cycloalkanes/compounds.json",
+                                    "children": []
+                                },
+                                {
+                                    "label": "Alkenes",
+                                    "slug": "Alkenes",
+                                    "file": "catalog/Organic/Aliphatic_compounds/Hydrocarbons/Alkenes/compounds.json",
+                                    "children": []
+                                },
+                                {
+                                    "label": "Alkynes",
+                                    "slug": "Alkynes",
+                                    "file": "catalog/Organic/Aliphatic_compounds/Hydrocarbons/Alkynes/compounds.json",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Alcohols and ethers",
+                            "slug": "Alcohols_and_ethers",
+                            "children": [
+                                {
+                                    "label": "Primary alcohols",
+                                    "slug": "Primary_alcohols",
+                                    "file": "catalog/Organic/Aliphatic_compounds/Alcohols_and_ethers/Primary_alcohols/compounds.json",
+                                    "children": []
+                                },
+                                {
+                                    "label": "Secondary alcohols",
+                                    "slug": "Secondary_alcohols",
+                                    "file": "catalog/Organic/Aliphatic_compounds/Alcohols_and_ethers/Secondary_alcohols/compounds.json",
+                                    "children": []
+                                },
+                                {
+                                    "label": "Tertiary alcohols",
+                                    "slug": "Tertiary_alcohols",
+                                    "file": "catalog/Organic/Aliphatic_compounds/Alcohols_and_ethers/Tertiary_alcohols/compounds.json",
+                                    "children": []
+                                },
+                                {
+                                    "label": "Polyols",
+                                    "slug": "Polyols",
+                                    "file": "catalog/Organic/Aliphatic_compounds/Alcohols_and_ethers/Polyols/compounds.json",
+                                    "children": []
+                                },
+                                {
+                                    "label": "Ethers",
+                                    "slug": "Ethers",
+                                    "file": "catalog/Organic/Aliphatic_compounds/Alcohols_and_ethers/Ethers/compounds.json",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Carbonyl compounds (aldehydes and ketones)",
+                            "slug": "Carbonyl_compounds",
+                            "children": [
+                                {
+                                    "label": "Aldehydes",
+                                    "slug": "Aldehydes",
+                                    "file": "catalog/Organic/Aliphatic_compounds/Carbonyl_compounds/Aldehydes/compounds.json",
+                                    "children": []
+                                },
+                                {
+                                    "label": "Ketones",
+                                    "slug": "Ketones",
+                                    "file": "catalog/Organic/Aliphatic_compounds/Carbonyl_compounds/Ketones/compounds.json",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Carboxylic acids and esters",
+                            "slug": "Carboxylic_acids_and_esters",
+                            "children": [
+                                {
+                                    "label": "Carboxylic acids",
+                                    "slug": "Carboxylic_acids",
+                                    "file": "catalog/Organic/Aliphatic_compounds/Carboxylic_acids_and_esters/Carboxylic_acids/compounds.json",
+                                    "children": []
+                                },
+                                {
+                                    "label": "Esters",
+                                    "slug": "Esters",
+                                    "file": "catalog/Organic/Aliphatic_compounds/Carboxylic_acids_and_esters/Esters/compounds.json",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Amines and amides",
+                            "slug": "Amines_and_amides",
+                            "children": [
+                                {
+                                    "label": "Amines",
+                                    "slug": "Amines",
+                                    "file": "catalog/Organic/Aliphatic_compounds/Amines_and_amides/Amines/compounds.json",
+                                    "children": []
+                                },
+                                {
+                                    "label": "Amides",
+                                    "slug": "Amides",
+                                    "file": "catalog/Organic/Aliphatic_compounds/Amines_and_amides/Amides/compounds.json",
+                                    "children": []
+                                },
+                                {
+                                    "label": "Nitro compounds",
+                                    "slug": "Nitro_compounds",
+                                    "file": "catalog/Organic/Aliphatic_compounds/Amines_and_amides/Nitro_compounds/compounds.json",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "label": "Aromatic compounds",
+                    "slug": "Aromatic_compounds",
+                    "children": [
+                        {
+                            "label": "Aromatic hydrocarbons",
+                            "slug": "Aromatic_hydrocarbons",
+                            "file": "catalog/Organic/Aromatic_compounds/Aromatic_hydrocarbons/compounds.json",
                             "children": []
                         },
                         {
-                            "label": "Secondary alcohols",
-                            "slug": "Secondary_alcohols",
-                            "file": "catalog/Organic/Alcohols/Secondary_alcohols/compounds.json",
+                            "label": "Phenols",
+                            "slug": "Phenols",
+                            "file": "catalog/Organic/Aromatic_compounds/Phenols/compounds.json",
                             "children": []
                         },
                         {
-                            "label": "Polyols",
-                            "slug": "Polyols",
-                            "file": "catalog/Organic/Alcohols/Polyols/compounds.json",
+                            "label": "Aromatic carboxylic acids",
+                            "slug": "Aromatic_carboxylic_acids",
+                            "file": "catalog/Organic/Aromatic_compounds/Aromatic_carboxylic_acids/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Nitrogen-containing aromatics",
+                            "slug": "Nitrogen_containing_aromatics",
+                            "file": "catalog/Organic/Aromatic_compounds/Nitrogen_containing_aromatics/compounds.json",
                             "children": []
                         }
                     ]
                 },
                 {
-                    "label": "Carboxylic acids",
-                    "slug": "Carboxylic_acids",
-                    "file": "catalog/Organic/Carboxylic_acids/compounds.json",
-                    "children": []
+                    "label": "Biomolecules",
+                    "slug": "Biomolecules",
+                    "children": [
+                        {
+                            "label": "Carbohydrates",
+                            "slug": "Carbohydrates",
+                            "children": [
+                                {
+                                    "label": "Monosaccharides",
+                                    "slug": "Monosaccharides",
+                                    "file": "catalog/Organic/Biomolecules/Carbohydrates/Monosaccharides/compounds.json",
+                                    "children": []
+                                },
+                                {
+                                    "label": "Disaccharides",
+                                    "slug": "Disaccharides",
+                                    "file": "catalog/Organic/Biomolecules/Carbohydrates/Disaccharides/compounds.json",
+                                    "children": []
+                                },
+                                {
+                                    "label": "Polysaccharides",
+                                    "slug": "Polysaccharides",
+                                    "file": "catalog/Organic/Biomolecules/Carbohydrates/Polysaccharides/compounds.json",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Lipids and soaps",
+                            "slug": "Lipids_and_soaps",
+                            "children": [
+                                {
+                                    "label": "Fats and oils",
+                                    "slug": "Fats_and_oils",
+                                    "file": "catalog/Organic/Biomolecules/Lipids_and_soaps/Fats_and_oils/compounds.json",
+                                    "children": []
+                                },
+                                {
+                                    "label": "Soaps",
+                                    "slug": "Soaps",
+                                    "file": "catalog/Organic/Biomolecules/Lipids_and_soaps/Soaps/compounds.json",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Amino acids and proteins",
+                            "slug": "Amino_acids_and_proteins",
+                            "children": [
+                                {
+                                    "label": "Amino acids",
+                                    "slug": "Amino_acids",
+                                    "file": "catalog/Organic/Biomolecules/Amino_acids_and_proteins/Amino_acids/compounds.json",
+                                    "children": []
+                                },
+                                {
+                                    "label": "Peptides and proteins",
+                                    "slug": "Peptides_and_proteins",
+                                    "file": "catalog/Organic/Biomolecules/Amino_acids_and_proteins/Peptides_and_proteins/compounds.json",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "label": "Arenes",
-                    "slug": "Arenes",
-                    "file": "catalog/Organic/Arenes/compounds.json",
-                    "children": []
-                },
-                {
-                    "label": "Alkynes",
-                    "slug": "Alkynes",
-                    "file": "catalog/Organic/Alkynes/compounds.json",
-                    "children": []
-                },
-                {
-                    "label": "Alkanes",
-                    "slug": "Alkanes",
-                    "file": "catalog/Organic/Alkanes/compounds.json",
-                    "children": []
+                    "label": "Polymers",
+                    "slug": "Polymers",
+                    "children": [
+                        {
+                            "label": "Natural polymers",
+                            "slug": "Natural_polymers",
+                            "file": "catalog/Organic/Polymers/Natural_polymers/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Synthetic fibres",
+                            "slug": "Synthetic_fibres",
+                            "file": "catalog/Organic/Polymers/Synthetic_fibres/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Synthetic resins",
+                            "slug": "Synthetic_resins",
+                            "file": "catalog/Organic/Polymers/Synthetic_resins/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Synthetic rubbers",
+                            "slug": "Synthetic_rubbers",
+                            "file": "catalog/Organic/Polymers/Synthetic_rubbers/compounds.json",
+                            "children": []
+                        }
+                    ]
                 }
             ]
         },
         {
-            "label": "Inorganic",
+            "label": "Inorganic compounds",
             "slug": "Inorganic",
             "children": [
                 {
-                    "label": "Salts",
+                    "label": "Nonmetal elements and compounds",
+                    "slug": "Nonmetal_elements",
+                    "children": [
+                        {
+                            "label": "Hydrogen and noble gases",
+                            "slug": "Hydrogen_and_noble_gases",
+                            "file": "catalog/Inorganic/Nonmetals/Hydrogen_and_noble_gases/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Halogens and hydrogen halides",
+                            "slug": "Halogens",
+                            "file": "catalog/Inorganic/Nonmetals/Halogens/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Oxygen and sulfur",
+                            "slug": "Oxygen_and_sulfur",
+                            "file": "catalog/Inorganic/Nonmetals/Oxygen_and_sulfur/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Nitrogen and phosphorus",
+                            "slug": "Nitrogen_and_phosphorus",
+                            "file": "catalog/Inorganic/Nonmetals/Nitrogen_and_phosphorus/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Carbon and silicon",
+                            "slug": "Carbon_and_silicon",
+                            "file": "catalog/Inorganic/Nonmetals/Carbon_and_silicon/compounds.json",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "label": "Metal elements and compounds",
+                    "slug": "Metal_elements",
+                    "children": [
+                        {
+                            "label": "Alkali metals",
+                            "slug": "Alkali_metals",
+                            "file": "catalog/Inorganic/Metals/Alkali_metals/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Alkaline earth metals",
+                            "slug": "Alkaline_earth_metals",
+                            "file": "catalog/Inorganic/Metals/Alkaline_earth_metals/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Amphoteric metals (Al, Zn, Sn, Pb)",
+                            "slug": "Amphoteric_metals",
+                            "file": "catalog/Inorganic/Metals/Amphoteric_metals/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Iron and related metals",
+                            "slug": "Iron_family",
+                            "file": "catalog/Inorganic/Metals/Iron_family/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Copper and silver",
+                            "slug": "Copper_and_silver",
+                            "file": "catalog/Inorganic/Metals/Copper_and_silver/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Chromium and manganese",
+                            "slug": "Chromium_and_manganese",
+                            "file": "catalog/Inorganic/Metals/Chromium_and_manganese/compounds.json",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "label": "Acids and bases",
+                    "slug": "Acids_and_bases",
+                    "children": [
+                        {
+                            "label": "Acids",
+                            "slug": "Acids",
+                            "file": "catalog/Inorganic/Acids/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Bases and hydroxides",
+                            "slug": "Bases_and_hydroxides",
+                            "file": "catalog/Inorganic/Bases_and_hydroxides/compounds.json",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "label": "Salts (by anion)",
                     "slug": "Salts",
                     "children": [
                         {
@@ -73,8 +379,62 @@
                             "slug": "Carbonates",
                             "file": "catalog/Inorganic/Salts/Carbonates/compounds.json",
                             "children": []
+                        },
+                        {
+                            "label": "Sulfates",
+                            "slug": "Sulfates",
+                            "file": "catalog/Inorganic/Salts/Sulfates/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Nitrates",
+                            "slug": "Nitrates",
+                            "file": "catalog/Inorganic/Salts/Nitrates/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Phosphates",
+                            "slug": "Phosphates",
+                            "file": "catalog/Inorganic/Salts/Phosphates/compounds.json",
+                            "children": []
+                        },
+                        {
+                            "label": "Other salts",
+                            "slug": "Other_salts",
+                            "file": "catalog/Inorganic/Salts/Other_salts/compounds.json",
+                            "children": []
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "label": "Reference (formulas and functional groups)",
+            "slug": "Reference",
+            "children": [
+                {
+                    "label": "Organic functional groups",
+                    "slug": "Organic_functional_groups",
+                    "file": "dataset/organic_functional_groups.json",
+                    "children": []
+                },
+                {
+                    "label": "Organic homologous series (general formulas)",
+                    "slug": "Organic_homologous_series",
+                    "file": "dataset/organic_homologous_series.json",
+                    "children": []
+                },
+                {
+                    "label": "Inorganic polyatomic ions",
+                    "slug": "Inorganic_polyatomic_ions",
+                    "file": "dataset/inorganic_polyatomic_ions.json",
+                    "children": []
+                },
+                {
+                    "label": "Metal ions: colors and precipitates",
+                    "slug": "Metal_ions_and_colors",
+                    "file": "dataset/metal_ions_and_colors.json",
+                    "children": []
                 }
             ]
         }

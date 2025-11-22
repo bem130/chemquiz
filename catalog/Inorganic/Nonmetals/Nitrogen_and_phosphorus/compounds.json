@@ -1,0 +1,163 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "dinitrogen",
+            "common_name": "nitrogen",
+            "local_name": "窒素",
+            "skeletal_formula": "N2",
+            "molecular_formula": "N2",
+            "series_general_formula": "Diatomic nonmetal molecules: X2 (X = H, N, O, F, Cl, Br, I)",
+            "functional_groups": [],
+            "notes": "Colorless, odorless diatomic gas; makes up about 78% of air; very inert due to strong triple bond.",
+            "smiles": "N#N",
+            "katex_skeletal_formula": "\\ce{N2}",
+            "katex_molecular_formula": "\\ce{N2}"
+        },
+        {
+            "iupac_name": "azane",
+            "common_name": "ammonia",
+            "local_name": "アンモニア",
+            "skeletal_formula": "NH3",
+            "molecular_formula": "NH3",
+            "series_general_formula": "Hydrogen chalcogenides and pnictides: EH3 (E = N, P, As)",
+            "functional_groups": [
+                {
+                    "name_en": "Ammonia",
+                    "name_ja": "アンモニア分子",
+                    "pattern": "NH3"
+                }
+            ],
+            "notes": "Colorless gas with sharp smell; very soluble in water and forms weakly basic solution; important fertilizer raw material (Haber process).",
+            "smiles": "N",
+            "katex_skeletal_formula": "\\ce{NH3}",
+            "katex_molecular_formula": "\\ce{NH3}"
+        },
+        {
+            "iupac_name": "nitrogen monoxide",
+            "common_name": "nitric oxide",
+            "local_name": "一酸化窒素",
+            "skeletal_formula": "NO",
+            "molecular_formula": "NO",
+            "series_general_formula": "Oxides of nitrogen: NO, NO2, N2O, N2O3, N2O5",
+            "functional_groups": [
+                {
+                    "name_en": "Nitrogen oxide",
+                    "name_ja": "窒素酸化物",
+                    "pattern": "NOx"
+                }
+            ],
+            "notes": "Colorless gas; sparingly soluble in water; easily oxidized in air to brown nitrogen dioxide.",
+            "smiles": "[N]=O",
+            "katex_skeletal_formula": "\\ce{NO}",
+            "katex_molecular_formula": "\\ce{NO}"
+        },
+        {
+            "iupac_name": "nitrogen dioxide",
+            "common_name": "nitrogen dioxide",
+            "local_name": "二酸化窒素",
+            "skeletal_formula": "NO2",
+            "molecular_formula": "NO2",
+            "series_general_formula": "Oxides of nitrogen: NO, NO2, N2O, N2O3, N2O5",
+            "functional_groups": [
+                {
+                    "name_en": "Nitrogen oxide",
+                    "name_ja": "窒素酸化物",
+                    "pattern": "NOx"
+                }
+            ],
+            "notes": "Brown gas with pungent smell; toxic and strongly oxidizing; dissolves in water to form a mixture of nitric and nitrous acids.",
+            "smiles": "O=N=O",
+            "katex_skeletal_formula": "\\ce{NO2}",
+            "katex_molecular_formula": "\\ce{NO2}"
+        },
+        {
+            "iupac_name": "dinitrogen monoxide",
+            "common_name": "nitrous oxide",
+            "local_name": "一酸化二窒素（亜酸化窒素）",
+            "skeletal_formula": "N2O",
+            "molecular_formula": "N2O",
+            "series_general_formula": "Oxides of nitrogen: NO, NO2, N2O, N2O3, N2O5",
+            "functional_groups": [
+                {
+                    "name_en": "Nitrogen oxide",
+                    "name_ja": "窒素酸化物",
+                    "pattern": "NOx"
+                }
+            ],
+            "notes": "Colorless gas with slightly sweet odor; used as anesthetic (laughing gas); mild oxidizing agent.",
+            "smiles": "N#N[O]",
+            "katex_skeletal_formula": "\\ce{N2O}",
+            "katex_molecular_formula": "\\ce{N2O}"
+        },
+        {
+            "iupac_name": "nitric acid",
+            "common_name": "nitric acid",
+            "local_name": "硝酸",
+            "skeletal_formula": "HNO3",
+            "molecular_formula": "HNO3",
+            "series_general_formula": "Oxoacids of nitrogen: HNO2, HNO3",
+            "functional_groups": [
+                {
+                    "name_en": "Nitrate",
+                    "name_ja": "硝酸イオン",
+                    "pattern": "NO3^-"
+                }
+            ],
+            "notes": "Strong acid and powerful oxidizing agent; reacts with many metals to form nitrogen oxides; used for fertilizers and explosives.",
+            "smiles": "O=[N+](O)[O-]",
+            "katex_skeletal_formula": "\\ce{HNO3}",
+            "katex_molecular_formula": "\\ce{HNO3}"
+        },
+        {
+            "iupac_name": "tetraphosphorus",
+            "common_name": "white phosphorus",
+            "local_name": "白リン",
+            "skeletal_formula": "P4 (tetrahedral molecule)",
+            "molecular_formula": "P4",
+            "series_general_formula": "Allotropes of phosphorus: white (P4), red, black",
+            "functional_groups": [],
+            "notes": "Waxy, white-yellow solid that glows in the dark; very reactive and ignites in air; stored under water.",
+            "smiles": "P1P(P)P1",
+            "katex_skeletal_formula": "\\ce{P4}",
+            "katex_molecular_formula": "\\ce{P4}"
+        },
+        {
+            "iupac_name": "phosphoric acid",
+            "common_name": "phosphoric acid",
+            "local_name": "リン酸",
+            "skeletal_formula": "H3PO4",
+            "molecular_formula": "H3PO4",
+            "series_general_formula": "Oxoacids of phosphorus: H3PO4, H3PO3, H3PO2",
+            "functional_groups": [
+                {
+                    "name_en": "Phosphate",
+                    "name_ja": "リン酸イオン",
+                    "pattern": "PO4^{3-}"
+                }
+            ],
+            "notes": "Triprotic acid; weaker than sulfuric or nitric acid; important in fertilizers and biological energy transfer (ATP).",
+            "smiles": "OP(=O)(O)O",
+            "katex_skeletal_formula": "\\ce{H3PO4}",
+            "katex_molecular_formula": "\\ce{H3PO4}"
+        },
+        {
+            "iupac_name": "tetraphosphorus decoxide",
+            "common_name": "phosphorus(V) oxide",
+            "local_name": "五酸化二リン（四リン十酸化物）",
+            "skeletal_formula": "P4O10",
+            "molecular_formula": "P4O10",
+            "series_general_formula": "Oxides of phosphorus: P4O6, P4O10 (often written as P2O3, P2O5)",
+            "functional_groups": [
+                {
+                    "name_en": "Oxide",
+                    "name_ja": "酸性酸化物",
+                    "pattern": "E2O5"
+                }
+            ],
+            "notes": "Acidic oxide of phosphorus; strong dehydrating agent; reacts with water to give phosphoric acid; textbook example of acidic oxide.",
+            "smiles": "O=P(OP(=O)(OP(=O)(OP(=O)(O)O)O)O)(O)O",
+            "katex_skeletal_formula": "\\ce{P4O10}",
+            "katex_molecular_formula": "\\ce{P4O10}"
+        }
+    ]
+}
