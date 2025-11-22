@@ -335,6 +335,7 @@ fn StructureTile(compound: Compound, theme: ReadSignal<String>) -> impl IntoView
         <div class="structure-tile">
             {visuals.unwrap_or_else(|| {
                 view! { <p class="structure-fallback">Structure preview is unavailable for this entry.</p> }
+                    .into_view()
             })}
             {move || {
                 render_message
