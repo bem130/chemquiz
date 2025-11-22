@@ -5,14 +5,16 @@
             "common_name": "glycerol",
             "local_name": "グリセリン",
             "skeletal_formula": "HO-CH2-CH(OH)-CH2-OH",
-            "molecular_formula": "C3H8O3"
+            "molecular_formula": "C3H8O3",
+            "smiles": "OCC(O)CO"
         },
         {
             "iupac_name": "ethane-1,2-diol",
             "common_name": "ethylene glycol",
             "local_name": "エチレングリコール",
             "skeletal_formula": "HO-CH2-CH2-OH",
-            "molecular_formula": "C2H6O2"
+            "molecular_formula": "C2H6O2",
+            "smiles": "OCCO"
         }
     ]
 }

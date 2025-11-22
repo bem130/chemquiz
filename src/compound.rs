@@ -13,6 +13,9 @@ pub struct Compound {
     pub skeletal_formula: String,
     /// Molecular formula shown as a compact representation.
     pub molecular_formula: String,
+    /// SMILES string used for structure rendering when available.
+    #[serde(default)]
+    pub smiles: Option<String>,
 }
 
 impl Compound {
@@ -52,6 +55,7 @@ mod tests {
             local_name: Some("エタノール".to_string()),
             skeletal_formula: "CH3-CH2-OH".to_string(),
             molecular_formula: "C2H6O".to_string(),
+            smiles: Some("CCO".to_string()),
         }
     }
 
@@ -69,6 +73,7 @@ mod tests {
             local_name: Some("ベンゼン".to_string()),
             skeletal_formula: "C6H6".to_string(),
             molecular_formula: "C6H6".to_string(),
+            smiles: Some("c1ccccc1".to_string()),
         };
 
         let name = compound.display_name();
@@ -89,5 +94,38 @@ mod tests {
 
         assert!(formatted.contains("ethanol"));
         assert!(formatted.contains("CH3-CH2-OH (C2H6O)"));
+    }
+
+    #[test]
+    fn smiles_defaults_to_none_on_missing_field() {
+        let json = r#"{
+            "iupac_name": "acetone",
+            "common_name": "propanone",
+            "local_name": null,
+            "skeletal_formula": "(CH3)2CO",
+            "molecular_formula": "C3H6O"
+        }"#;
+
+        let parsed: Compound =
+            serde_json::from_str(json).expect("compound should parse without smiles");
+
+        assert!(parsed.smiles.is_none());
+    }
+
+    #[test]
+    fn smiles_is_preserved_when_present() {
+        let json = r#"{
+            "iupac_name": "acetic acid",
+            "common_name": null,
+            "local_name": "酢酸",
+            "skeletal_formula": "CH3COOH",
+            "molecular_formula": "C2H4O2",
+            "smiles": "CC(=O)O"
+        }"#;
+
+        let parsed: Compound =
+            serde_json::from_str(json).expect("compound should parse with smiles");
+
+        assert_eq!(parsed.smiles.as_deref(), Some("CC(=O)O"));
     }
 }

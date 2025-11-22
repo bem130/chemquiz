@@ -4,7 +4,7 @@ A Rust crate for building a chemistry quiz application. The current focus is cor
 generation logic that can be embedded into a future Leptos frontend.
 
 ## Modules
-- `compound`: Compound data model with formatted display helpers for names and structures.
+- `compound`: Compound data model with formatted display helpers for names and structures (including optional SMILES strings for rendering).
 - `catalog`: Hierarchical categorization for compounds with filtering utilities for menu-based selection.
 - `quiz`: Quiz mode definitions, quiz item structure, and randomized quiz generation.
 - `demo`: Ready-to-use dataset and catalog for UI previews and integration checks.
@@ -59,7 +59,9 @@ trunk serve --public-url /chemquiz/
 The app mounts to the page body, toggles light/dark themes, and generates sample quizzes using the
 `demo` module. Users can switch between "Name → Structure" and "Structure → Name" prompts, browse
 a tree of organic and inorganic folders, and load JSON datasets directly from the published catalog.
-The `--public-url` flag keeps asset paths compatible with GitHub Pages.
+Structural prompts render both a skeletal canvas (RDKit MinimalLib) and a full structural formula
+using Kekule.js; entries without SMILES fall back to textual formulas. The `--public-url` flag keeps
+asset paths compatible with GitHub Pages.
 
 ## Deploy to GitHub Pages
 

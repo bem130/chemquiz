@@ -47,3 +47,13 @@ fn loads_catalog_from_json_directory() {
         .expect("alcohol list exists");
     assert!(alcohols.len() >= 2);
 }
+
+#[test]
+fn smiles_are_loaded_when_present() {
+    let catalog = Catalog::from_directory("catalog").expect("catalog folder should load");
+    let arenes = catalog
+        .compounds_for(&vec!["Organic".to_string(), "Arenes".to_string()])
+        .expect("arenes category should exist");
+
+    assert!(arenes.iter().any(|compound| compound.smiles.is_some()));
+}
