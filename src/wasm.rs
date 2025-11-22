@@ -517,49 +517,96 @@ fn StructureTile(
 fn CatalogTreeNode(
     node: CatalogNode,
     prefix: Vec<String>,
+    selected: ReadSignal<Vec<CatalogLeaf>>,
     on_select: Callback<CatalogLeaf>,
 ) -> impl IntoView {
+    // Sort children for stable order
     let mut children = node.children.clone();
     children.sort_by(|left, right| left.label.cmp(&right.label));
 
+    // Build full path like ["Inorganic compounds", "Metals", "Alkali metals"]
     let mut path = prefix.clone();
     path.push(node.label.clone());
 
-    let trigger = node.file.as_ref().map(|file| {
-        let leaf = CatalogLeaf {
-            path: path.clone(),
-            file: file.clone(),
-        };
-        let callback = on_select.clone();
-
-        view! { <button class="btn" on:click=move |_| callback.call(leaf.clone())>"Select"</button> }
+    // If this node has a file, it can be selected
+    let leaf_for_node = node.file.as_ref().map(|file| CatalogLeaf {
+        path: path.clone(),
+        file: file.clone(),
     });
 
-    view! {
-        <li class="tree-item">
-            <div class="tree-row">
-                <span class="tree-label">{node.label.clone()}</span>
-                {trigger}
-            </div>
-            {(!children.is_empty())
-                .then(|| {
-                    view! {
-                        <ul class="tree-children">
-                            {children
-                                .into_iter()
-                                .map(|child| {
-                                    view! { <CatalogTreeNode node=child prefix=path.clone() on_select=on_select.clone() /> }
-                                })
-                                .collect_view()}
-                        </ul>
+    // Button view (None → no button, Some → Select button)
+    let button_view = leaf_for_node.clone().map(|leaf| {
+        let on_select = on_select.clone();
+        let class_leaf = leaf.clone();
+        let click_leaf = leaf.clone();
+
+        view! {
+            <button
+                type="button"
+                class=move || {
+                    let list = selected.get();
+                    if list.iter().any(|current| current == &class_leaf) {
+                        "mode-btn active".to_string()
+                    } else {
+                        "mode-btn".to_string()
                     }
-                })}
+                }
+                on:click=move |_| {
+                    on_select.call(click_leaf.clone());
+                }
+            >
+                "Select"
+            </button>
+        }
+    });
+
+    // Children list (for tree structure)
+    let children_view = if children.is_empty() {
+        None
+    } else {
+        let path_for_children = path.clone();
+
+        Some(
+            view! {
+                <ul class="catalog-children">
+                    {children
+                        .into_iter()
+                        .map(move |child| {
+                            let prefix_for_child = path_for_children.clone();
+                            view! {
+                                <CatalogTreeNode
+                                    node=child
+                                    prefix=prefix_for_child
+                                    selected=selected
+                                    on_select=on_select.clone()
+                                />
+                            }
+                        })
+                        .collect_view()}
+                </ul>
+            },
+        )
+    };
+
+    view! {
+        <li class="catalog-node">
+            <div class="catalog-row">
+                <div class="catalog-label">{node.label.clone()}</div>
+                <div class="catalog-actions">
+                    {button_view}
+                </div>
+            </div>
+            {children_view}
         </li>
     }
 }
 
 #[component]
-fn CatalogTree(manifest: CatalogManifest, on_select: Callback<CatalogLeaf>) -> impl IntoView {
+fn CatalogTree(
+    manifest: CatalogManifest,
+    selected: ReadSignal<Vec<CatalogLeaf>>,
+    on_select: Callback<CatalogLeaf>,
+) -> impl IntoView {
     let mut roots = manifest.roots.clone();
     roots.sort_by(|left, right| left.label.cmp(&right.label));
 
@@ -568,7 +615,14 @@ fn CatalogTree(manifest: CatalogManifest, on_select: Callback<CatalogLeaf>) -> i
             {roots
                 .into_iter()
                 .map(|root| {
-                    view! { <CatalogTreeNode node=root prefix=Vec::new() on_select=on_select.clone() /> }
+                    view! {
+                        <CatalogTreeNode
+                            node=root
+                            prefix=Vec::new()
+                            selected=selected
+                            on_select=on_select.clone()
+                        />
+                    }
                 })
                 .collect_view()}
         </ul>
@@ -788,8 +842,6 @@ fn App() -> impl IntoView {
     let (view_mode, set_view_mode) = create_signal(ViewMode::Skeletal);
     let (quiz, set_quiz) = create_signal::<Option<QuizItem>>(None);
     let (error, set_error) = create_signal::<Option<String>>(None);
-    let (selected_leaf, set_selected_leaf) = create_signal::<Option<CatalogLeaf>>(None);
-    let (compounds, set_compounds) = create_signal::<Option<Vec<Compound>>>(None);
     let (active_dataset, set_active_dataset) = create_signal::<Vec<Compound>>(demo_compounds());
     let (scene, set_scene) = create_signal(Scene::Menu);
     let (selected_option, set_selected_option) = create_signal::<Option<usize>>(None);
@@ -800,6 +852,17 @@ fn App() -> impl IntoView {
     ));
     let (hint, set_hint) = create_signal::<Option<String>>(None);
     let (hint_visible, set_hint_visible) = create_signal(false);
+
+    // Quiz uses “last clicked leaf” only
+    let (selected_leaf, set_selected_leaf) =
+        create_signal::<Option<CatalogLeaf>>(None);
+
+    // UI can highlight multiple selected nodes
+    let (selected_nodes, set_selected_nodes) =
+        create_signal::<Vec<CatalogLeaf>>(Vec::new());
+
+    let (compounds, set_compounds) =
+        create_signal::<Option<Vec<Compound>>>(None);
 
     let manifest = create_resource(|| (), |_| async { fetch_manifest().await });
 
@@ -955,6 +1018,8 @@ fn App() -> impl IntoView {
     };
 
     let handle_selection = {
+        let selected_nodes = selected_nodes.clone();
+        let set_selected_nodes = set_selected_nodes.clone();
         let set_selected_leaf = set_selected_leaf.clone();
         let set_error = set_error.clone();
         let set_quiz = set_quiz.clone();
@@ -965,7 +1030,23 @@ fn App() -> impl IntoView {
         let set_hint_visible = set_hint_visible.clone();
 
         Callback::new(move |leaf: CatalogLeaf| {
+            // --- UI: トグル ---
+            let mut list = selected_nodes.get();
+            if let Some(idx) = list.iter().position(|item| item == &leaf) {
+                // すでに選ばれているなら解除
+                list.remove(idx);
+            } else {
+                // 新規に選択
+                list.push(leaf.clone());
+            }
             set_selected_leaf.set(Some(leaf.clone()));
+
+            // --- クイズ用: 「最後に押したもの」を保存 ---
+            // ここでは仕様をシンプルに保つため、
+            // 実際に問題を出すのは「最後に押した葉ノード 1つだけ」のままにしています。
+            set_selected_leaf.set(Some(leaf.clone()));
+
+            // 以降は今まで通り、leaf.file から 1つの compounds.json を読み込む
             set_error.set(None);
             set_quiz.set(None);
             set_scene.set(Scene::Menu);
@@ -977,6 +1058,7 @@ fn App() -> impl IntoView {
             let setter = set_compounds.clone();
             let error_setter = set_error.clone();
             let feedback_setter = set_feedback.clone();
+
             spawn_local(async move {
                 match fetch_compound_file(&leaf.file).await {
                     Ok(list) => {
@@ -1159,8 +1241,13 @@ fn App() -> impl IntoView {
                             <div class="prompt-heading">"Catalog"</div>
                             {move || match manifest.get() {
                                 Some(Ok(listing)) => {
-                                    view! { <CatalogTree manifest=listing.clone() on_select=handle_selection.clone() /> }
-                                        .into_view()
+                                    view! {
+                                        <CatalogTree
+                                            manifest=listing.clone()
+                                            selected=selected_nodes
+                                            on_select=handle_selection.clone()
+                                        />
+                                    }.into_view()
                                 }
                                 Some(Err(message)) => view! { <p class="error-body">{message}</p> }.into_view(),
                                 None => view! { <p class="prompt-formula-text">"Loading catalog index..."</p> }.into_view(),

@@ -497,12 +497,68 @@ body {
     border: 1px solid var(--border);
 }
 
+/* Catalog tree root list */
 .catalog-tree {
     list-style: none;
     padding-left: 0;
     margin: 0;
     display: grid;
     gap: 8px;
+}
+
+/* Each node (大分類・中分類・小分類のブロック) */
+.catalog-node {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 10px 12px;
+    background: rgba(15, 23, 42, 0.85);
+}
+
+/* Row with label + Select button */
+.catalog-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Node label text */
+.catalog-label {
+    font-weight: 700;
+}
+
+/* Right-side actions area (Select ボタン置き場) */
+.catalog-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Children list (インデントされるツリー部分) */
+.catalog-children {
+    list-style: none;
+    padding-left: 14px;
+    margin: 10px 0 0;
+    display: grid;
+    gap: 8px;
+}
+
+/* Catalog panel: style the Select buttons */
+.catalog-actions .mode-btn {
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    padding: 4px 12px;
+    font-size: 0.78rem;
+    background: rgba(15, 23, 42, 0.95);
+    color: var(--text-primary);
+}
+
+/* Selected catalog item */
+.catalog-actions .mode-btn.active {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    color: var(--accent);
 }
 
 .tree-item {
