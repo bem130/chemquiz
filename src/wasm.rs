@@ -8,6 +8,7 @@ use gloo_net::http::Request;
 use js_sys::Reflect;
 use leptos::{html, *};
 use rand::SeedableRng;
+use std::rc::Rc;
 use wasm_bindgen::JsCast;
 use wasm_bindgen::prelude::*;
 use web_sys::{HtmlCanvasElement, HtmlDivElement, HtmlElement};
@@ -24,6 +25,31 @@ enum Scene {
     Result,
 }
 
+#[derive(Clone, Copy, PartialEq, Eq)]
+enum ViewMode {
+    Skeletal,
+    Full,
+}
+
+#[derive(Clone, Copy, PartialEq, Eq)]
+enum FeedbackKind {
+    Neutral,
+    Correct,
+    Wrong,
+}
+
+#[derive(Clone, Copy, PartialEq, Eq)]
+enum StructureViewSize {
+    Prompt,
+    Option,
+}
+
+#[derive(Clone, PartialEq, Eq)]
+struct FeedbackState {
+    message: String,
+    kind: FeedbackKind,
+}
+
 #[derive(Clone, Copy, Default, PartialEq, Eq)]
 struct SessionScore {
     total: usize,
@@ -35,6 +61,29 @@ struct ResultView {
     quiz: QuizItem,
     dataset: Vec<Compound>,
     selected: usize,
+}
+
+impl FeedbackState {
+    fn neutral(message: impl Into<String>) -> Self {
+        Self {
+            message: message.into(),
+            kind: FeedbackKind::Neutral,
+        }
+    }
+
+    fn correct(message: impl Into<String>) -> Self {
+        Self {
+            message: message.into(),
+            kind: FeedbackKind::Correct,
+        }
+    }
+
+    fn wrong(message: impl Into<String>) -> Self {
+        Self {
+            message: message.into(),
+            kind: FeedbackKind::Wrong,
+        }
+    }
 }
 
 fn set_body_theme(theme: &str) {
@@ -86,6 +135,44 @@ fn find_by_structure(dataset: &[Compound], label: &str) -> Option<Compound> {
         .iter()
         .find(|compound| compound.display_structure() == label)
         .cloned()
+}
+
+fn english_label(compound: &Compound) -> String {
+    match &compound.common_name {
+        Some(common) if common != &compound.iupac_name => {
+            format!("{} ({})", compound.iupac_name, common)
+        }
+        _ => compound.iupac_name.clone(),
+    }
+}
+
+fn japanese_label(compound: &Compound) -> Option<String> {
+    compound.local_name.clone()
+}
+
+fn hint_from_compound(compound: &Compound) -> Option<String> {
+    if let Some(series) = &compound.series_general_formula {
+        return Some(format!("Series formula: {}", series));
+    }
+
+    if !compound.functional_groups.is_empty() {
+        let groups: Vec<String> = compound
+            .functional_groups
+            .iter()
+            .map(|group| format!("{} ({})", group.name_en, group.pattern))
+            .collect();
+        return Some(format!("Functional groups: {}", groups.join(", ")));
+    }
+
+    if let Some(notes) = &compound.notes {
+        return Some(notes.clone());
+    }
+
+    if !compound.molecular_formula.is_empty() {
+        return Some(format!("Molecular formula: {}", compound.molecular_formula));
+    }
+
+    None
 }
 
 fn katex_render_available() -> Option<js_sys::Function> {
@@ -315,23 +402,6 @@ fn generate_from_dataset(dataset: &[Compound], mode: QuizMode) -> Result<QuizIte
 }
 
 #[component]
-fn NameTile(compound: Compound) -> impl IntoView {
-    view! {
-        <div class="name-tile">
-            <p class="iupac">{compound.iupac_name}</p>
-            {compound
-                .common_name
-                .as_ref()
-                .map(|common| view! { <p class="common-name">{common.clone()}</p> })}
-            {compound
-                .local_name
-                .as_ref()
-                .map(|local| view! { <p class="local-name">{local.clone()}</p> })}
-        </div>
-    }
-}
-
-#[component]
 fn FormulaBadge(formula: String) -> impl IntoView {
     let node_ref = create_node_ref::<html::Div>();
 
@@ -345,11 +415,16 @@ fn FormulaBadge(formula: String) -> impl IntoView {
         }
     });
 
-    view! { <div class="formula-badge" node_ref=node_ref></div> }
+    view! { <div class="molformula-badge" node_ref=node_ref></div> }
 }
 
 #[component]
-fn StructureTile(compound: Compound, theme: ReadSignal<String>) -> impl IntoView {
+fn StructureTile(
+    compound: Compound,
+    theme: ReadSignal<String>,
+    view_mode: ReadSignal<ViewMode>,
+    size: StructureViewSize,
+) -> impl IntoView {
     let skeletal_ref = create_node_ref::<html::Canvas>();
     let full_ref = create_node_ref::<html::Div>();
     let (render_message, set_render_message) = create_signal::<Option<String>>(None);
@@ -359,12 +434,6 @@ fn StructureTile(compound: Compound, theme: ReadSignal<String>) -> impl IntoView
     let iupac_name = compound.iupac_name.clone();
     let skeletal_formula = compound.skeletal_formula.clone();
     let molecular_formula = compound.molecular_formula.clone();
-
-    let badge = if molecular_formula.is_empty() {
-        None
-    } else {
-        Some(view! { <FormulaBadge formula=molecular_formula.clone() /> })
-    };
 
     create_effect(move |_| {
         let current_theme = theme.get();
@@ -390,49 +459,60 @@ fn StructureTile(compound: Compound, theme: ReadSignal<String>) -> impl IntoView
         }
     });
 
+    let container_class = match size {
+        StructureViewSize::Prompt => "viewer-inner prompt-large",
+        StructureViewSize::Option => "option-structure-inner",
+    };
+
     let visuals = smiles.map(|_| {
         view! {
-            <div class="structure-visual">
-                <div class="structure-frame with-badge">
-                    <p class="structure-label">Skeletal formula</p>
-                    <canvas
-                        node_ref=skeletal_ref
-                        class="structure-canvas"
-                        role="img"
-                        aria-label=format!("Skeletal depiction for {}", iupac_name.clone())
-                    ></canvas>
-                    {badge.clone().unwrap_or_default()}
-                </div>
-                <div class="structure-frame">
-                    <p class="structure-label">Structural formula</p>
-                    <div
-                        node_ref=full_ref
-                        class="full-structure"
-                        role="img"
-                        aria-label=format!("Full structural formula for {}", iupac_name.clone())
-                    ></div>
-                </div>
+            <div class=container_class>
+                <canvas
+                    node_ref=skeletal_ref
+                    style=move || {
+                        if view_mode.get() == ViewMode::Skeletal {
+                            "display:block".to_string()
+                        } else {
+                            "display:none".to_string()
+                        }
+                    }
+                    role="img"
+                    aria-label=format!("Skeletal depiction for {}", iupac_name.clone())
+                ></canvas>
+                <div
+                    node_ref=full_ref
+                    class="kekule-container"
+                    style=move || {
+                        if view_mode.get() == ViewMode::Full {
+                            "display:block".to_string()
+                        } else {
+                            "display:none".to_string()
+                        }
+                    }
+                    role="img"
+                    aria-label=format!("Full structural formula for {}", iupac_name.clone())
+                ></div>
+                {(size == StructureViewSize::Option && !molecular_formula.is_empty())
+                    .then(|| view! { <FormulaBadge formula=molecular_formula.clone() /> })}
             </div>
         }
         .into_view()
     });
 
     view! {
-        <div class="structure-tile">
-            {visuals.unwrap_or_else(|| {
-                view! { <p class="structure-fallback">Structure preview is unavailable for this entry.</p> }
-                    .into_view()
-            })}
-            {move || {
-                render_message
-                    .get()
-                    .map(|message| view! { <p class="structure-fallback">{message}</p> })
-            }}
-            <div class="structure-meta">
-                <p class="skeletal">{format!("Skeletal: {}", skeletal_formula.clone())}</p>
-                <p class="molecular">{format!("Molecular: {}", molecular_formula.clone())}</p>
-            </div>
-        </div>
+        {visuals.unwrap_or_else(|| {
+            view! {
+                <div class=container_class>
+                    <p class="prompt-formula-text">{format!("{}", skeletal_formula.clone())}</p>
+                </div>
+            }
+            .into_view()
+        })}
+        {move || {
+            render_message
+                .get()
+                .map(|message| view! { <p class="prompt-formula-text">{message}</p> })
+        }}
     }
 }
 
@@ -455,11 +535,7 @@ fn CatalogTreeNode(
         };
         let callback = on_select.clone();
 
-        view! {
-            <button class="pill" on:click=move |_| callback.call(leaf.clone())>
-                "Select"
-            </button>
-        }
+        view! { <button class="btn" on:click=move |_| callback.call(leaf.clone())>"Select"</button> }
     });
 
     view! {
@@ -507,13 +583,20 @@ fn QuizCard(
     quiz: QuizItem,
     dataset: Vec<Compound>,
     theme: ReadSignal<String>,
+    view_mode: ReadSignal<ViewMode>,
     selected: Option<usize>,
+    feedback: FeedbackState,
+    hint: Option<String>,
+    hint_visible: bool,
     reveal: bool,
+    next_enabled: bool,
     on_select: Option<Callback<usize>>,
+    on_next: Callback<()>,
+    on_toggle_hint: Callback<()>,
 ) -> impl IntoView {
-    let mode_label = match quiz.mode {
-        QuizMode::NameToStructure => "Name → Structure",
-        QuizMode::StructureToName => "Structure → Name",
+    let heading_label = match quiz.mode {
+        QuizMode::NameToStructure => "Choose the correct structure",
+        QuizMode::StructureToName => "Choose the correct name",
     };
 
     let prompt_compound = match quiz.mode {
@@ -521,31 +604,70 @@ fn QuizCard(
         QuizMode::StructureToName => find_by_structure(&dataset, &quiz.prompt),
     };
 
+    let feedback_class = match feedback.kind {
+        FeedbackKind::Neutral => "feedback-text feedback-neutral",
+        FeedbackKind::Correct => "feedback-text feedback-correct",
+        FeedbackKind::Wrong => "feedback-text feedback-wrong",
+    };
+
     view! {
-        <section class="quiz-card">
-            <div class="quiz-card-header">
-                <div>
-                    <p class="eyebrow">Quiz mode</p>
-                    <p class="lede">{mode_label}</p>
+        <div class="grid-main">
+            <div class="prompt-card">
+                <div class="prompt-card-header">
+                    <div class="prompt-heading">Prompt</div>
                 </div>
-                <div class="pill muted">
-                    {format!("{} options", quiz.options.len())}
+                <div class="prompt-body">
+                    {prompt_compound
+                        .map(|compound| match quiz.mode {
+                            QuizMode::NameToStructure => {
+                                let english = english_label(&compound);
+                                let japanese = japanese_label(&compound);
+                                let molecular = (!compound.molecular_formula.is_empty())
+                                    .then(|| compound.molecular_formula.clone());
+
+                                view! {
+                                    <div>
+                                        <div class="prompt-name-main">{english}</div>
+                                        {japanese
+                                            .map(|name| view! { <div class="prompt-name-ja">{name}</div> })
+                                            .unwrap_or_default()}
+                                        {molecular
+                                            .map(|formula| {
+                                                view! { <div class="prompt-formula-text">{formula}</div> }
+                                            })
+                                            .unwrap_or_default()}
+                                    </div>
+                                }
+                                .into_view()
+                            }
+                            QuizMode::StructureToName => {
+                                view! {
+                                    <div class="structure-container">
+                                        <div class="viewer-card">
+                                            <div class="viewer-title-row">
+                                                <div class="viewer-label">Skeletal / full structure</div>
+                                                <div class="viewer-badge">Prompt</div>
+                                            </div>
+                                            <StructureTile
+                                                compound=compound
+                                                theme=theme
+                                                view_mode=view_mode
+                                                size=StructureViewSize::Prompt
+                                            />
+                                        </div>
+                                    </div>
+                                }
+                                .into_view()
+                            }
+                        })
+                        .unwrap_or_else(|| view! { <p class="prompt-formula-text">{quiz.prompt.clone()}</p> }.into_view())}
                 </div>
             </div>
 
-            <div class="quiz-layout">
-                <div class="prompt-card card-surface">
-                    <p class="eyebrow">Prompt</p>
-                    {prompt_compound
-                        .map(|compound| match quiz.mode {
-                            QuizMode::NameToStructure => view! { <NameTile compound=compound /> }.into_view(),
-                            QuizMode::StructureToName => {
-                                view! { <StructureTile compound=compound theme=theme /> }.into_view()
-                            }
-                        })
-                        .unwrap_or_else(|| view! { <p class="prompt">{quiz.prompt.clone()}</p> }.into_view())}
+            <div class="options-card">
+                <div class="prompt-card-header" style="margin-bottom:6px;">
+                    <div class="prompt-heading">{heading_label}</div>
                 </div>
-
                 <div class="options-grid">
                     {quiz
                         .options
@@ -555,17 +677,15 @@ fn QuizCard(
                             let is_selected = selected == Some(index);
                             let is_correct = index == quiz.correct_index;
 
-                            let mut classes = vec!["option-card".to_string()];
+                            let mut classes = vec!["option-btn".to_string()];
                             if reveal {
+                                classes.push("option-disabled".to_string());
+
                                 if is_correct {
-                                    classes.push("correct".to_string());
+                                    classes.push("option-correct".to_string());
                                 } else if is_selected {
-                                    classes.push("wrong".to_string());
-                                } else {
-                                    classes.push("muted".to_string());
+                                    classes.push("option-wrong".to_string());
                                 }
-                            } else if is_selected {
-                                classes.push("active".to_string());
                             }
 
                             let compound = match quiz.mode {
@@ -591,29 +711,88 @@ fn QuizCard(
                                     on:click=click_handler
                                     disabled=reveal || on_select.is_none()
                                 >
-                                    <span class="option-index">{(index + 1).to_string()}</span>
+                                    <div class="option-row-top">
+                                        <span class="option-tag">{format!("Option {}", index + 1)}</span>
+                                        {is_correct
+                                            .then(|| view! { <span class="option-tag">Correct</span> })
+                                            .unwrap_or_default()}
+                                    </div>
                                     {compound
                                         .map(|compound| match quiz.mode {
                                             QuizMode::NameToStructure => {
-                                                view! { <StructureTile compound=compound theme=theme /> }.into_view()
+                                                view! {
+                                                    <div class="option-structure-box">
+                                                        <StructureTile
+                                                            compound=compound
+                                                            theme=theme
+                                                            view_mode=view_mode
+                                                            size=StructureViewSize::Option
+                                                        />
+                                                    </div>
+                                                }
+                                                .into_view()
                                             }
-                                            QuizMode::StructureToName => view! { <NameTile compound=compound /> }.into_view(),
+                                            QuizMode::StructureToName => {
+                                                let english = english_label(&compound);
+                                                let japanese = japanese_label(&compound);
+
+                                                view! {
+                                                    <div class="option-name-inner">
+                                                        <p class="option-name-main">{english}</p>
+                                                        {japanese
+                                                            .map(|name| view! { <p class="option-name-ja">{name}</p> })
+                                                            .unwrap_or_default()}
+                                                    </div>
+                                                }
+                                                .into_view()
+                                            }
                                         })
-                                        .unwrap_or_else(|| view! { <p class="option-body">{option.clone()}</p> }.into_view())}
+                                        .unwrap_or_else(|| view! { <p class="prompt-formula-text">{option.clone()}</p> }
+                                            .into_view())}
                                 </button>
                             }
                         })
                         .collect_view()}
                 </div>
+
+                <div class="controls-row">
+                    <div class=feedback_class>{feedback.message}</div>
+                    <div class="controls-buttons">
+                        <button
+                            class="btn"
+                            type="button"
+                            on:click=move |_| on_toggle_hint.call(())
+                            disabled=hint.is_none()
+                        >
+                            {if hint_visible { "Hide hint" } else { "Show hint" }}
+                        </button>
+                        <button
+                            class="btn btn-primary"
+                            type="button"
+                            disabled=!next_enabled
+                            on:click=move |_| on_next.call(())
+                        >
+                            "Next"
+                        </button>
+                    </div>
+                </div>
+
+                <Show when=move || hint_visible>
+                    <div class="hint-box">
+                        "Hint: "
+                        {hint.unwrap_or_else(|| "–".to_string())}
+                    </div>
+                </Show>
             </div>
-        </section>
+        </div>
     }
 }
 
 #[component]
 fn App() -> impl IntoView {
-    let (theme, set_theme) = create_signal(String::from("dark"));
+    let (theme, _set_theme) = create_signal(String::from("dark"));
     let (mode, set_mode) = create_signal(QuizMode::NameToStructure);
+    let (view_mode, set_view_mode) = create_signal(ViewMode::Skeletal);
     let (quiz, set_quiz) = create_signal::<Option<QuizItem>>(None);
     let (error, set_error) = create_signal::<Option<String>>(None);
     let (selected_leaf, set_selected_leaf) = create_signal::<Option<CatalogLeaf>>(None);
@@ -623,171 +802,380 @@ fn App() -> impl IntoView {
     let (selected_option, set_selected_option) = create_signal::<Option<usize>>(None);
     let (score, set_score) = create_signal(SessionScore::default());
     let (result_view, set_result_view) = create_signal::<Option<ResultView>>(None);
+    let (feedback, set_feedback) = create_signal(FeedbackState::neutral(
+        "Load a catalog entry and start a quiz.",
+    ));
+    let (hint, set_hint) = create_signal::<Option<String>>(None);
+    let (hint_visible, set_hint_visible) = create_signal(false);
 
     let manifest = create_resource(|| (), |_| async { fetch_manifest().await });
 
     create_effect(move |_| set_body_theme(&theme.get()));
 
-    let regenerate = move || -> bool {
-        set_selected_option.set(None);
-        set_result_view.set(None);
+    let toggle_hint = {
+        let hint = hint.clone();
+        let set_hint_visible = set_hint_visible.clone();
 
-        let dataset = compounds.get().unwrap_or_else(|| active_dataset.get());
-
-        match generate_from_dataset(&dataset, mode.get()) {
-            Ok(item) => {
-                set_error.set(None);
-                set_active_dataset.set(dataset.clone());
-                set_quiz.set(Some(item));
-                true
+        Callback::new(move |_| {
+            if hint.get().is_some() {
+                set_hint_visible.update(|flag| *flag = !*flag);
             }
-            Err(message) => {
-                set_quiz.set(None);
-                set_error.set(Some(message));
-                false
+        })
+    };
+
+    let regenerate = {
+        let mode = mode.clone();
+        let set_error = set_error.clone();
+        let set_hint = set_hint.clone();
+        let set_feedback = set_feedback.clone();
+        let set_quiz = set_quiz.clone();
+        let set_active_dataset = set_active_dataset.clone();
+        let set_selected_option = set_selected_option.clone();
+        let set_result_view = set_result_view.clone();
+        let set_hint_visible = set_hint_visible.clone();
+        let compounds = compounds.clone();
+        let active_dataset = active_dataset.clone();
+
+        Rc::new(move || -> bool {
+            set_selected_option.set(None);
+            set_result_view.set(None);
+            set_hint_visible.set(false);
+
+            let dataset = compounds.get().unwrap_or_else(|| active_dataset.get());
+
+            match generate_from_dataset(&dataset, mode.get()) {
+                Ok(item) => {
+                    set_error.set(None);
+                    set_active_dataset.set(dataset.clone());
+
+                    let prompt_compound = match item.mode {
+                        QuizMode::NameToStructure => find_by_name(&dataset, &item.prompt),
+                        QuizMode::StructureToName => find_by_structure(&dataset, &item.prompt),
+                    };
+
+                    set_hint
+                        .set(prompt_compound.and_then(|compound| hint_from_compound(&compound)));
+                    set_feedback.set(FeedbackState::neutral(
+                        "Select an option to submit your answer.",
+                    ));
+                    set_quiz.set(Some(item));
+                    true
+                }
+                Err(message) => {
+                    set_quiz.set(None);
+                    set_hint.set(None);
+                    set_feedback.set(FeedbackState::wrong(message.clone()));
+                    set_error.set(Some(message));
+                    false
+                }
             }
-        }
+        })
     };
 
-    let toggle_theme = move |_| {
-        let next = if theme.get() == "dark" {
-            "light"
-        } else {
-            "dark"
-        };
-        set_theme.set(String::from(next));
+    let start_game = {
+        let regenerate = regenerate.clone();
+        let set_scene = set_scene.clone();
+        let set_score = set_score.clone();
+
+        Callback::new(move |_| {
+            set_score.set(SessionScore::default());
+            if regenerate() {
+                set_scene.set(Scene::Game);
+            }
+        })
     };
 
-    let start_game = move |_| {
-        set_score.set(SessionScore::default());
-        if regenerate() {
-            set_scene.set(Scene::Game);
-        }
+    let next_question = {
+        let regenerate = regenerate.clone();
+        let set_scene = set_scene.clone();
+
+        Callback::new(move |_| {
+            if regenerate() {
+                set_scene.set(Scene::Game);
+            }
+        })
     };
 
-    let next_question = move |_| {
-        if regenerate() {
-            set_scene.set(Scene::Game);
-        }
+    let return_to_menu = {
+        let set_scene = set_scene.clone();
+        let set_quiz = set_quiz.clone();
+        let set_selected_option = set_selected_option.clone();
+        let set_result_view = set_result_view.clone();
+        let set_feedback = set_feedback.clone();
+        let set_hint = set_hint.clone();
+        let set_hint_visible = set_hint_visible.clone();
+
+        Callback::new(move |_| {
+            set_scene.set(Scene::Menu);
+            set_quiz.set(None);
+            set_selected_option.set(None);
+            set_result_view.set(None);
+            set_feedback.set(FeedbackState::neutral(
+                "Load a catalog entry and start a quiz.",
+            ));
+            set_hint.set(None);
+            set_hint_visible.set(false);
+        })
     };
 
-    let return_to_menu = move |_| {
-        set_scene.set(Scene::Menu);
+    let choose_option = {
+        let scene = scene.clone();
+        let selected_option = selected_option.clone();
+        let quiz = quiz.clone();
+        let set_selected_option = set_selected_option.clone();
+        let set_score = set_score.clone();
+        let set_result_view = set_result_view.clone();
+        let active_dataset = active_dataset.clone();
+        let set_scene = set_scene.clone();
+        let set_feedback = set_feedback.clone();
+
+        Callback::new(move |index: usize| {
+            if scene.get() != Scene::Game || selected_option.get().is_some() {
+                return;
+            }
+
+            if let Some(item) = quiz.get() {
+                set_selected_option.set(Some(index));
+                set_score.update(|state| {
+                    state.total += 1;
+                    if index == item.correct_index {
+                        state.correct += 1;
+                    }
+                });
+
+                let is_correct = index == item.correct_index;
+                let feedback_message = if is_correct {
+                    FeedbackState::correct("Correct! Tap Next to continue.")
+                } else {
+                    FeedbackState::wrong("Not quite. Review the highlighted answer and tap Next.")
+                };
+                set_feedback.set(feedback_message);
+
+                set_result_view.set(Some(ResultView {
+                    quiz: item.clone(),
+                    dataset: active_dataset.get(),
+                    selected: index,
+                }));
+                set_scene.set(Scene::Result);
+            }
+        })
     };
 
-    let choose_option = Callback::new(move |index: usize| {
-        if scene.get() != Scene::Game || selected_option.get().is_some() {
-            return;
-        }
+    let handle_selection = {
+        let set_selected_leaf = set_selected_leaf.clone();
+        let set_error = set_error.clone();
+        let set_quiz = set_quiz.clone();
+        let set_scene = set_scene.clone();
+        let set_compounds = set_compounds.clone();
+        let set_feedback = set_feedback.clone();
+        let set_hint = set_hint.clone();
+        let set_hint_visible = set_hint_visible.clone();
 
-        if let Some(item) = quiz.get() {
-            set_selected_option.set(Some(index));
-            set_score.update(|state| {
-                state.total += 1;
-                if index == item.correct_index {
-                    state.correct += 1;
+        Callback::new(move |leaf: CatalogLeaf| {
+            set_selected_leaf.set(Some(leaf.clone()));
+            set_error.set(None);
+            set_quiz.set(None);
+            set_scene.set(Scene::Menu);
+            set_compounds.set(None);
+            set_hint.set(None);
+            set_hint_visible.set(false);
+            set_feedback.set(FeedbackState::neutral("Loading selected catalog entry..."));
+
+            let setter = set_compounds.clone();
+            let error_setter = set_error.clone();
+            let feedback_setter = set_feedback.clone();
+            spawn_local(async move {
+                match fetch_compound_file(&leaf.file).await {
+                    Ok(list) => {
+                        feedback_setter.set(FeedbackState::neutral(format!(
+                            "Loaded {} compounds.",
+                            list.len()
+                        )));
+                        setter.set(Some(list));
+                    }
+                    Err(message) => {
+                        feedback_setter.set(FeedbackState::wrong(message.clone()));
+                        error_setter.set(Some(message));
+                    }
                 }
             });
-            set_result_view.set(Some(ResultView {
-                quiz: item.clone(),
-                dataset: active_dataset.get(),
-                selected: index,
-            }));
-            set_scene.set(Scene::Result);
+        })
+    };
+
+    let question_total = move || active_dataset.get().len();
+    let question_position = move || match scene.get() {
+        Scene::Menu => 0,
+        Scene::Game => score.get().total + 1,
+        Scene::Result => score.get().total,
+    };
+    let progress = move || {
+        let total = question_total();
+        if total == 0 {
+            0.0
+        } else {
+            let position = question_position().min(total);
+            (position as f64 / total as f64) * 100.0
         }
-    });
-
-    let handle_selection = Callback::new(move |leaf: CatalogLeaf| {
-        set_selected_leaf.set(Some(leaf.clone()));
-        set_error.set(None);
-        set_quiz.set(None);
-        set_scene.set(Scene::Menu);
-        set_compounds.set(None);
-
-        let setter = set_compounds.clone();
-        let error_setter = set_error.clone();
-        spawn_local(async move {
-            match fetch_compound_file(&leaf.file).await {
-                Ok(list) => setter.set(Some(list)),
-                Err(message) => error_setter.set(Some(message)),
-            }
-        });
-    });
+    };
 
     view! {
-        <main class="page">
-            <header class="page-header">
-                <div>
-                    <p class="eyebrow">Chemistry practice</p>
-                    <h1 class="headline">{"Name ⇄ Structure quiz"}</h1>
-                    <p class="lede">Pick a catalog folder and generate four-choice prompts for IUPAC names and skeletal formulas.</p>
-                </div>
-                <div class="header-actions">
-                    <button class="pill" on:click=toggle_theme>
-                        {move || if theme.get() == "dark" { "Switch to light" } else { "Switch to dark" }}
-                    </button>
-                    <div class="pill muted">
-                        {move || format!("Score {} / {}", score.get().correct, score.get().total)}
-                    </div>
+        <div class="app">
+            <header class="app-header">
+                <div class="app-title">"Molecular Structure Quiz (compounds.json)"</div>
+                <div class="app-subtitle">
+                    "Structure → Name / Name → Structure, using Kekule.js where SMILES are available."
                 </div>
             </header>
-            <Show when=move || scene.get() == Scene::Menu>
-                <section class="control-panel">
-                    <div class="control-group">
-                        <p class="label">Quiz mode</p>
-                        <div class="segmented">
+
+            <section class="panel">
+                <div class="panel-title">"Quiz settings & progress"</div>
+                <div class="top-row">
+                    <div>
+                        <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:3px;">
+                            "Quiz mode"
+                        </div>
+                        <div class="mode-switch">
                             <button
-                                class:active=move || mode.get() == QuizMode::NameToStructure
-                                on:click=move |_| set_mode.set(QuizMode::NameToStructure)
-                            >
-                                "Name → Structure"
-                            </button>
-                            <button
-                                class:active=move || mode.get() == QuizMode::StructureToName
+                                class=move || {
+                                    if mode.get() == QuizMode::StructureToName {
+                                        "mode-btn active".to_string()
+                                    } else {
+                                        "mode-btn".to_string()
+                                    }
+                                }
+                                type="button"
                                 on:click=move |_| set_mode.set(QuizMode::StructureToName)
                             >
                                 "Structure → Name"
                             </button>
+                            <button
+                                class=move || {
+                                    if mode.get() == QuizMode::NameToStructure {
+                                        "mode-btn active".to_string()
+                                    } else {
+                                        "mode-btn".to_string()
+                                    }
+                                }
+                                type="button"
+                                on:click=move |_| set_mode.set(QuizMode::NameToStructure)
+                            >
+                                "Name → Structure"
+                            </button>
+                        </div>
+                        <div style="display:inline-block;margin-left:10px;vertical-align:middle;">
+                            <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:3px;">"Structure view"</div>
+                            <div class="mode-switch" id="viewModeSwitch" style="--gap:6px;">
+                                <button
+                                    class=move || {
+                                        if view_mode.get() == ViewMode::Skeletal {
+                                            "mode-btn active".to_string()
+                                        } else {
+                                            "mode-btn".to_string()
+                                        }
+                                    }
+                                    type="button"
+                                    on:click=move |_| set_view_mode.set(ViewMode::Skeletal)
+                                >
+                                    "Skeletal"
+                                </button>
+                                <button
+                                    class=move || {
+                                        if view_mode.get() == ViewMode::Full {
+                                            "mode-btn active".to_string()
+                                        } else {
+                                            "mode-btn".to_string()
+                                        }
+                                    }
+                                    type="button"
+                                    on:click=move |_| set_view_mode.set(ViewMode::Full)
+                                >
+                                    "Full"
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <div class="status-group">
-                        <div>
-                            <p class="label">Selected path</p>
-                            <p class="value">{move || selected_leaf.get().map(|leaf| format_path(&leaf.path)).unwrap_or_else(|| "Not selected".to_string())}</p>
-                        </div>
-                        <div>
-                            <p class="label">Loaded compounds</p>
-                            <p class="value">{move || compounds.get().as_ref().map(|items| items.len().to_string()).unwrap_or_else(|| active_dataset.get().len().to_string())}</p>
-                        </div>
-                        <div>
-                            <p class="label">Options per quiz</p>
-                            <p class="value">{DEMO_OPTION_COUNT.to_string()}</p>
-                        </div>
+                    <div class="score-badge">
+                        <span>"Score:"</span>
+                        <strong><span>{move || score.get().correct}</span></strong>
+                        <span>"/ "<span>{move || score.get().total}</span></span>
                     </div>
-                    <div class="menu-actions">
-                        <button class="primary" on:click=start_game>
-                            "Start quiz"
-                        </button>
-                    </div>
-                </section>
+                </div>
 
-                <section class="dataset-panel">
-                    <div class="panel-header">
-                        <p class="eyebrow">Catalog</p>
-                        <h2 class="headline">Browse compound folders</h2>
-                        <p class="lede">Tap or click through the tree to load a JSON dataset before generating a quiz.</p>
+                <div class="progress-wrap">
+                    <div class="progress-bar">
+                        <div
+                            class="progress-bar-inner"
+                            style=move || format!("width: {:.2}%;", progress())
+                        ></div>
                     </div>
-                    {move || match manifest.get() {
-                        Some(Ok(listing)) => view! { <CatalogTree manifest=listing.clone() on_select=handle_selection.clone() /> }
-                            .into_view(),
-                        Some(Err(message)) => view! { <p class="error-body">{message}</p> }.into_view(),
-                        None => view! { <p class="lede">Loading catalog index...</p> }.into_view(),
-                    }}
+                    <div class="progress-meta">
+                        <span>
+                            "Question "
+                            <span>{question_position}</span>
+                            "/"
+                            <span>{question_total}</span>
+                        </span>
+                        <span style="font-size:0.72rem;color:var(--text-muted);">
+                            {move || match mode.get() {
+                                QuizMode::StructureToName => "Structure → Name".to_string(),
+                                QuizMode::NameToStructure => "Name → Structure".to_string(),
+                            }}
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <Show when=move || scene.get() == Scene::Menu>
+                <section class="panel">
+                    <div class="panel-title">"Menu"</div>
+                    <div class="catalog-grid">
+                        <div class="catalog-card">
+                            <div class="prompt-heading">"Dataset status"</div>
+                            <div class="menu-status">
+                                <div class="menu-chip">
+                                    <div class="prompt-heading">"Selected path"</div>
+                                    <div>{move || selected_leaf
+                                        .get()
+                                        .map(|leaf| format_path(&leaf.path))
+                                        .unwrap_or_else(|| "Not selected".to_string())}</div>
+                                </div>
+                                <div class="menu-chip">
+                                    <div class="prompt-heading">"Loaded compounds"</div>
+                                    <div>{move || compounds
+                                        .get()
+                                        .as_ref()
+                                        .map(|items| items.len().to_string())
+                                        .unwrap_or_else(|| active_dataset.get().len().to_string())}</div>
+                                </div>
+                                <div class="menu-chip">
+                                    <div class="prompt-heading">"Options per quiz"</div>
+                                    <div>{DEMO_OPTION_COUNT.to_string()}</div>
+                                </div>
+                            </div>
+                            <div class="menu-actions">
+                                <button class="btn btn-primary" type="button" on:click=start_game>
+                                    "Start quiz"
+                                </button>
+                            </div>
+                        </div>
+                        <div class="catalog-card">
+                            <div class="prompt-heading">"Catalog"</div>
+                            {move || match manifest.get() {
+                                Some(Ok(listing)) => {
+                                    view! { <CatalogTree manifest=listing.clone() on_select=handle_selection.clone() /> }
+                                        .into_view()
+                                }
+                                Some(Err(message)) => view! { <p class="error-body">{message}</p> }.into_view(),
+                                None => view! { <p class="prompt-formula-text">"Loading catalog index..."</p> }.into_view(),
+                            }}
+                        </div>
+                    </div>
                 </section>
             </Show>
 
             <Show when=move || scene.get() == Scene::Game>
-                <section class="quiz-shell">
+                <section class="panel">
+                    <div class="panel-title">"Current question"</div>
                     {move || {
                         if let Some(item) = quiz.get() {
                             view! {
@@ -795,34 +1183,41 @@ fn App() -> impl IntoView {
                                     quiz=item
                                     dataset=active_dataset.get()
                                     theme=theme
+                                    view_mode=view_mode
                                     selected=selected_option.get()
+                                    feedback=feedback.get()
+                                    hint=hint.get()
+                                    hint_visible=hint_visible.get()
                                     reveal=false
+                                    next_enabled=false
                                     on_select=Some(choose_option.clone())
+                                    on_next=next_question.clone()
+                                    on_toggle_hint=toggle_hint.clone()
                                 />
                             }
                             .into_view()
                         } else if let Some(message) = error.get() {
                             view! {
-                                <section class="error-card card-surface">
-                                    <p class="eyebrow">Generator error</p>
+                                <section class="error-card">
+                                    <p class="prompt-heading">"Generator error"</p>
                                     <p class="error-body">{message}</p>
                                 </section>
                             }
                             .into_view()
                         } else {
                             view! {
-                                <section class="placeholder-card card-surface">
-                                    <p class="eyebrow">Awaiting prompt</p>
-                                    <p class="lede">Load a catalog entry and start a quiz from the menu.</p>
+                                <section class="placeholder-card">
+                                    <p class="prompt-heading">"Awaiting prompt"</p>
+                                    <p class="prompt-formula-text">"Load a catalog entry and start a quiz from the menu."</p>
                                 </section>
                             }
                             .into_view()
                         }
                     }}
+                    <div class="footer-note">
+                        "Names are IUPAC + common (English) with smaller Japanese annotation. Structures use Kekule.js when smiles data is available; otherwise skeletal formula text is shown."
+                    </div>
                 </section>
-                <div class="action-row">
-                    <button class="pill" on:click=return_to_menu>"Back to menu"</button>
-                </div>
             </Show>
 
             <Show when=move || scene.get() == Scene::Result>
@@ -833,40 +1228,57 @@ fn App() -> impl IntoView {
                             let is_correct = result.selected == result.quiz.correct_index;
 
                             view! {
-                                <section class="result-card card-surface">
-                                    <p class="eyebrow">Result</p>
-                                    <p class="lede">{if is_correct { "Correct answer" } else { "Not quite" }}</p>
-                                    <p class="score-line">{move || format!("Score {} / {}", score.get().correct, score.get().total)}</p>
-                                    <div class="action-row">
-                                        <button class="primary" on:click=next_question>"Next question"</button>
-                                        <button class="pill" on:click=return_to_menu>"Back to menu"</button>
+                                <section class="panel result-panel">
+                                    <div class="result-summary">
+                                        <div class="prompt-heading">"Result"</div>
+                                        <div class="prompt-name-main">{if is_correct {
+                                            "Correct answer"
+                                        } else {
+                                            "Not quite"
+                                        }}</div>
+                                        <p class="result-score">{move || format!("Score {} / {}", score.get().correct, score.get().total)}</p>
+                                        <div class="menu-actions">
+                                            <button class="btn btn-primary" type="button" on:click=next_question.clone()>
+                                                "Next question"
+                                            </button>
+                                            <button class="btn" type="button" on:click=return_to_menu.clone()>
+                                                "Back to menu"
+                                            </button>
+                                        </div>
                                     </div>
-                                </section>
-                                <section class="quiz-shell">
-                                    <QuizCard
-                                        quiz=result.quiz.clone()
-                                        dataset=result.dataset.clone()
-                                        theme=theme
-                                        selected=Some(result.selected)
-                                        reveal=true
-                                        on_select=None
-                                    />
+                                    <div>
+                                        <QuizCard
+                                            quiz=result.quiz.clone()
+                                            dataset=result.dataset.clone()
+                                            theme=theme
+                                            view_mode=view_mode
+                                            selected=Some(result.selected)
+                                            feedback=feedback.get()
+                                            hint=hint.get()
+                                            hint_visible=hint_visible.get()
+                                            reveal=true
+                                            next_enabled=true
+                                            on_select=None
+                                            on_next=next_question.clone()
+                                            on_toggle_hint=toggle_hint.clone()
+                                        />
+                                    </div>
                                 </section>
                             }
                             .into_view()
                         })
                         .unwrap_or_else(|| {
                             view! {
-                                <section class="placeholder-card card-surface">
-                                    <p class="eyebrow">Awaiting result</p>
-                                    <p class="lede">Answer a quiz to see the outcome.</p>
+                                <section class="panel">
+                                    <div class="prompt-heading">"Awaiting result"</div>
+                                    <p class="prompt-formula-text">"Answer a quiz to see the outcome."</p>
                                 </section>
                             }
                             .into_view()
                         })
                 }}
             </Show>
-        </main>
+        </div>
     }
 }
 
