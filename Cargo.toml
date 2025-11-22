@@ -3,6 +3,9 @@ name = "chemquiz"
 version = "0.1.0"
 edition = "2024"
 
+[lib]
+crate-type = ["cdylib", "rlib"]
+
 [dependencies]
 console_error_panic_hook = "0.1"
 getrandom = { version = "0.2", features = ["js"] }
