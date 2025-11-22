@@ -351,7 +351,9 @@
         }
 
         .option-structure-inner {
-            height: 180px;
+            width: 100%;
+            /* RDKit のデフォルト 260x220 と同じ比率 (13:11) を固定 */
+            aspect-ratio: 13 / 11;
             display: flex;
             align-items: stretch;
             justify-content: center;
@@ -721,32 +723,30 @@
         const canvas = document.getElementById(canvasId);
         if (!canvas) return;
 
-        // Measure displayed size (CSS pixels)
+        // ---------- hi-res & aspect-ratio-safe size ----------
         const rect = canvas.getBoundingClientRect();
         let cssWidth  = rect.width  || canvas.clientWidth  || 260;
         let cssHeight = rect.height || canvas.clientHeight || 220;
 
-        // Fallback: if height is 0 (very early layout), assume original aspect ratio
+        // 万一高さが 0 の場合は、元の 260x220 の比率を仮定
         if (!cssHeight) {
-            cssHeight = cssWidth * (220 / 260); // same ratio as before
+            cssHeight = cssWidth * (220 / 260);
         }
 
-        // High-resolution scale (at least 2×, or devicePixelRatio if larger)
         const dpr   = window.devicePixelRatio || 1;
-        const scale = Math.max(2, dpr);
+        const scale = Math.max(2, dpr);  // 2x 以上で描画
 
-        // Internal pixel size (hi-res, keeps aspect ratio)
         const w = Math.round(cssWidth  * scale);
         const h = Math.round(cssHeight * scale);
 
         canvas.width  = w;
         canvas.height = h;
 
-        // RDKit draws on an off-screen canvas with the same hi-res size
         const canvasRaw = document.createElement("canvas");
         canvasRaw.width  = w;
         canvasRaw.height = h;
 
+        // ---------- RDKit で骨格構造を高解像度描画 ----------
         let mol = null;
         try {
             mol = RDKitModuleInstance.get_mol(smiles);
@@ -760,6 +760,8 @@
                 ctx.fillText("Invalid SMILES", w / 2, h / 2);
                 return;
             }
+
+            // 標準の描画（背景は白）
             mol.draw_to_canvas(canvasRaw, -1, -1);
         } catch (e) {
             console.error("[drawSkeletalWithRDKit] error:", e);
@@ -767,13 +769,13 @@
         }
 
         const rctx = canvasRaw.getContext("2d");
-        // in drawSkeletalWithRDKit, keep everything above until you get img/data/vctx
         const img = rctx.getImageData(0, 0, w, h);
         const data = img.data;
         const vctx = canvas.getContext("2d");
 
-        // Dark mode post-processing: make *pure* white transparent,
-        // recolor dark strokes to white, but keep anti-aliased edges.
+        // ---------- Dark mode 用ポストプロセス ----------
+        // * 純白だけを透明化（アンチエイリアスを温存）
+        // * 暗いグレーの線は完全な白線にする
         for (let i = 0; i < data.length; i += 4) {
             const r = data[i];
             const g = data[i + 1];
@@ -785,11 +787,11 @@
                 continue;
             }
 
-            // nearly gray, fairly dark → treat as bond and turn to white
             const maxRGB = Math.max(r, g, b);
             const minRGB = Math.min(r, g, b);
             const isNearGray = (maxRGB - minRGB) < 10;
 
+            // fairly dark gray → stroke
             if (maxRGB < 80 && isNearGray) {
                 data[i]     = 255;
                 data[i + 1] = 255;
@@ -801,8 +803,11 @@
         vctx.clearRect(0, 0, w, h);
         vctx.putImageData(img, 0, 0);
 
-        mol.delete();
+        if (mol) {
+            mol.delete();
+        }
     }
+
 
     function loadFullStructureIntoKekule(containerId, molblock) {
         if (!molblock) {
@@ -919,7 +924,7 @@ function renderSmilesInPrompt(smiles, skeletalFormula, molFormula, katexSkeletal
         const canvas = document.createElement("canvas");
         canvas.id = "promptSkeletalCanvas";
         canvas.style.width = "100%";
-        canvas.style.height = "100%";
+        canvas.style.height = "auto";
         canvas.style.display = "block";
         container.appendChild(canvas);
 
@@ -1046,7 +1051,7 @@ function renderSmilesInPrompt(smiles, skeletalFormula, molFormula, katexSkeletal
             const skeletalCanvasId = containerId + "_skeletal_canvas";
             canvas.id = skeletalCanvasId;
             canvas.style.width = "100%";
-            canvas.style.height = "100%";
+            canvas.style.height = "auto";   // ← preserve aspect ratio
             canvas.style.display = "block";
             skeletalDiv.appendChild(canvas);
             drawSkeletalWithRDKit(skeletalCanvasId, smiles);
