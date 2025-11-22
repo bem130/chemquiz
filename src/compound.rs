@@ -1,7 +1,7 @@
 use std::fmt;
 
 /// Represents a chemical compound used for quiz questions.
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
 pub struct Compound {
     /// IUPAC name of the compound.
     pub iupac_name: String,

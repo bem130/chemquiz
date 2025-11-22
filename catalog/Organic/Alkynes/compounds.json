@@ -1,0 +1,11 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "ethyne",
+            "common_name": "acetylene",
+            "local_name": "アセチレン",
+            "skeletal_formula": "HC≡CH",
+            "molecular_formula": "C2H2"
+        }
+    ]
+}

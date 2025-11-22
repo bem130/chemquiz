@@ -1,0 +1,11 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "2-methylpropane",
+            "common_name": "isobutane",
+            "local_name": "イソブタン",
+            "skeletal_formula": "(CH3)2CH-CH3",
+            "molecular_formula": "C4H10"
+        }
+    ]
+}

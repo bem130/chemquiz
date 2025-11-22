@@ -1,5 +1,5 @@
 [build]
-target = "wasm32-unknown-unknown"
+target = "index.html"
 public_url = "/chemquiz/"
 
 [watch]

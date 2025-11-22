@@ -1,0 +1,52 @@
+{
+    "roots": [
+        {
+            "label": "Organic",
+            "slug": "Organic",
+            "children": [
+                {
+                    "label": "Alcohols",
+                    "slug": "Alcohols",
+                    "file": "catalog/Organic/Alcohols/compounds.json",
+                    "children": []
+                },
+                {
+                    "label": "Carboxylic acids",
+                    "slug": "Carboxylic_acids",
+                    "file": "catalog/Organic/Carboxylic_acids/compounds.json",
+                    "children": []
+                },
+                {
+                    "label": "Arenes",
+                    "slug": "Arenes",
+                    "file": "catalog/Organic/Arenes/compounds.json",
+                    "children": []
+                },
+                {
+                    "label": "Alkynes",
+                    "slug": "Alkynes",
+                    "file": "catalog/Organic/Alkynes/compounds.json",
+                    "children": []
+                },
+                {
+                    "label": "Alkanes",
+                    "slug": "Alkanes",
+                    "file": "catalog/Organic/Alkanes/compounds.json",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "label": "Inorganic",
+            "slug": "Inorganic",
+            "children": [
+                {
+                    "label": "Salts",
+                    "slug": "Salts",
+                    "file": "catalog/Inorganic/Salts/compounds.json",
+                    "children": []
+                }
+            ]
+        }
+    ]
+}
