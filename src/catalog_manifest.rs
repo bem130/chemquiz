@@ -1,0 +1,77 @@
+#[derive(Debug, Clone, PartialEq, Eq, serde::Deserialize)]
+pub struct CatalogManifest {
+    pub roots: Vec<CatalogNode>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, serde::Deserialize)]
+pub struct CatalogNode {
+    pub label: String,
+    pub slug: String,
+    #[serde(default)]
+    pub file: Option<String>,
+    #[serde(default)]
+    pub children: Vec<CatalogNode>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct CatalogLeaf {
+    pub path: Vec<String>,
+    pub file: String,
+}
+
+impl CatalogManifest {
+    pub fn leaves(&self) -> Vec<CatalogLeaf> {
+        let mut leaves = Vec::new();
+
+        for node in &self.roots {
+            gather_leaves(node, Vec::new(), &mut leaves);
+        }
+
+        leaves
+    }
+}
+
+fn gather_leaves(node: &CatalogNode, mut prefix: Vec<String>, leaves: &mut Vec<CatalogLeaf>) {
+    prefix.push(node.label.clone());
+
+    if let Some(file) = &node.file {
+        leaves.push(CatalogLeaf {
+            path: prefix.clone(),
+            file: file.clone(),
+        });
+    }
+
+    for child in &node.children {
+        gather_leaves(child, prefix.clone(), leaves);
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn flattens_manifest_into_leaves() {
+        let manifest = CatalogManifest {
+            roots: vec![CatalogNode {
+                label: "Organic".to_string(),
+                slug: "Organic".to_string(),
+                file: None,
+                children: vec![CatalogNode {
+                    label: "Alcohols".to_string(),
+                    slug: "Alcohols".to_string(),
+                    file: Some("catalog/Organic/Alcohols/compounds.json".to_string()),
+                    children: vec![],
+                }],
+            }],
+        };
+
+        let leaves = manifest.leaves();
+        assert_eq!(leaves.len(), 1);
+        assert_eq!(
+            leaves[0].path,
+            vec!["Organic".to_string(), "Alcohols".to_string()]
+        );
+        assert_eq!(leaves[0].file, "catalog/Organic/Alcohols/compounds.json");
+    }
+}

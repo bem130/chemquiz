@@ -1,4 +1,4 @@
-use chemquiz::{CatalogError, QuizMode, demo_catalog, generate_quiz};
+use chemquiz::{Catalog, CatalogError, QuizMode, demo_catalog, generate_quiz};
 use rand::SeedableRng;
 
 fn organic_alcohols_path() -> Vec<String> {
@@ -32,4 +32,18 @@ fn category_errors_surface() {
             path: "Organic / Nonexistent".to_string(),
         }
     );
+}
+
+#[test]
+fn loads_catalog_from_json_directory() {
+    let catalog = Catalog::from_directory("catalog").expect("catalog folder should load");
+    let paths = catalog.available_paths();
+
+    assert!(paths.contains(&vec!["Organic".to_string(), "Alcohols".to_string()]));
+    assert!(paths.contains(&vec!["Inorganic".to_string(), "Salts".to_string()]));
+
+    let alcohols = catalog
+        .compounds_for(&vec!["Organic".to_string(), "Alcohols".to_string()])
+        .expect("alcohol list exists");
+    assert!(alcohols.len() >= 2);
 }

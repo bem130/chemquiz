@@ -40,6 +40,12 @@ Unit tests cover the compound formatting helpers, catalog filtering, and quiz ed
 Integration tests validate end-to-end quiz generation from catalog slices alongside typical and
 edge configurations.
 
+## JSON catalog
+
+Compound lists live under `catalog/` as JSON files organized by folder hierarchy. The
+`catalog/index.json` manifest exposes the available paths for the WASM frontend, which fetches and
+deserializes the selected file at runtime using `serde`.
+
 ## Frontend preview (WASM)
 
 A Leptos client app is available for GitHub Pages. Build it locally with Trunk:

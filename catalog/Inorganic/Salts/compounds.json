@@ -1,0 +1,11 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "sodium chloride",
+            "common_name": "table salt",
+            "local_name": "塩化ナトリウム",
+            "skeletal_formula": "NaCl",
+            "molecular_formula": "NaCl"
+        }
+    ]
+}

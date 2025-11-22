@@ -1,0 +1,18 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "ethanol",
+            "common_name": "ethyl alcohol",
+            "local_name": "エタノール",
+            "skeletal_formula": "CH3-CH2-OH",
+            "molecular_formula": "C2H6O"
+        },
+        {
+            "iupac_name": "propan-2-ol",
+            "common_name": "isopropyl alcohol",
+            "local_name": "イソプロパノール",
+            "skeletal_formula": "(CH3)2CHOH",
+            "molecular_formula": "C3H8O"
+        }
+    ]
+}

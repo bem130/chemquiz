@@ -1,0 +1,11 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "ethanoic acid",
+            "common_name": "acetic acid",
+            "local_name": "酢酸",
+            "skeletal_formula": "CH3COOH",
+            "molecular_formula": "C2H4O2"
+        }
+    ]
+}
