@@ -1,0 +1,156 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "sodium",
+            "common_name": "sodium (metal)",
+            "local_name": "ナトリウム（単体）",
+            "skeletal_formula": "Na",
+            "molecular_formula": "Na",
+            "series_general_formula": "Alkali metals (Group 1): M (M = Li, Na, K, Rb, Cs)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkali metal cation",
+                    "name_ja": "アルカリ金属イオン",
+                    "pattern": "M^+"
+                }
+            ],
+            "notes": "Soft, silvery metal; highly reactive; stored under kerosene; reacts vigorously with water to form sodium hydroxide and hydrogen.",
+            "smiles": "[Na]",
+            "katex_skeletal_formula": "\\ce{Na}",
+            "katex_molecular_formula": "\\ce{Na}"
+        },
+        {
+            "iupac_name": "potassium",
+            "common_name": "potassium (metal)",
+            "local_name": "カリウム（単体）",
+            "skeletal_formula": "K",
+            "molecular_formula": "K",
+            "series_general_formula": "Alkali metals (Group 1): M (M = Li, Na, K, Rb, Cs)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkali metal cation",
+                    "name_ja": "アルカリ金属イオン",
+                    "pattern": "M^+"
+                }
+            ],
+            "notes": "Very soft, silvery metal; reacts more vigorously with water than sodium; gives violet flame in flame test.",
+            "smiles": "[K]",
+            "katex_skeletal_formula": "\\ce{K}",
+            "katex_molecular_formula": "\\ce{K}"
+        },
+        {
+            "iupac_name": "sodium chloride",
+            "common_name": "sodium chloride (table salt)",
+            "local_name": "塩化ナトリウム（食塩）",
+            "skeletal_formula": "NaCl",
+            "molecular_formula": "NaCl",
+            "series_general_formula": "Alkali metal halides: MX (M = Li, Na, K; X = F, Cl, Br, I)",
+            "functional_groups": [
+                {
+                    "name_en": "Chloride",
+                    "name_ja": "塩化物イオン",
+                    "pattern": "Cl^-"
+                }
+            ],
+            "notes": "Colorless ionic crystal; main component of seawater and rock salt; important raw material in chloro-alkali industry.",
+            "smiles": "[Na+].[Cl-]",
+            "katex_skeletal_formula": "\\ce{NaCl}",
+            "katex_molecular_formula": "\\ce{NaCl}"
+        },
+        {
+            "iupac_name": "sodium hydroxide",
+            "common_name": "sodium hydroxide (caustic soda)",
+            "local_name": "水酸化ナトリウム（苛性ソーダ）",
+            "skeletal_formula": "NaOH",
+            "molecular_formula": "NaOH",
+            "series_general_formula": "Alkali metal hydroxides: MOH (M = Li, Na, K)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxide",
+                    "name_ja": "水酸化物イオン",
+                    "pattern": "OH^-"
+                }
+            ],
+            "notes": "White hygroscopic solid; strong base; deliquescent and used as basic drying agent; produced industrially by ion-exchange membrane process.",
+            "smiles": "[Na+].[OH-]",
+            "katex_skeletal_formula": "\\ce{NaOH}",
+            "katex_molecular_formula": "\\ce{NaOH}"
+        },
+        {
+            "iupac_name": "potassium hydroxide",
+            "common_name": "potassium hydroxide (caustic potash)",
+            "local_name": "水酸化カリウム（苛性カリ）",
+            "skeletal_formula": "KOH",
+            "molecular_formula": "KOH",
+            "series_general_formula": "Alkali metal hydroxides: MOH (M = Li, Na, K)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxide",
+                    "name_ja": "水酸化物イオン",
+                    "pattern": "OH^-"
+                }
+            ],
+            "notes": "White hygroscopic solid; very strong base; absorbs CO2 and H2O from air; used in alkaline batteries and as a drying agent.",
+            "smiles": "[K+].[OH-]",
+            "katex_skeletal_formula": "\\ce{KOH}",
+            "katex_molecular_formula": "\\ce{KOH}"
+        },
+        {
+            "iupac_name": "sodium carbonate",
+            "common_name": "sodium carbonate (soda ash)",
+            "local_name": "炭酸ナトリウム",
+            "skeletal_formula": "Na2CO3",
+            "molecular_formula": "Na2CO3",
+            "series_general_formula": "Alkali metal carbonates: M2CO3 (M = Li, Na, K)",
+            "functional_groups": [
+                {
+                    "name_en": "Carbonate",
+                    "name_ja": "炭酸イオン",
+                    "pattern": "CO3^{2-}"
+                }
+            ],
+            "notes": "White crystalline solid; basic salt; used in glass manufacturing, water softening, and as washing soda (decahydrate).",
+            "smiles": "[Na+].[Na+].[O-]C(=O)[O-]",
+            "katex_skeletal_formula": "\\ce{Na2CO3}",
+            "katex_molecular_formula": "\\ce{Na2CO3}"
+        },
+        {
+            "iupac_name": "sodium hydrogencarbonate",
+            "common_name": "sodium bicarbonate (baking soda)",
+            "local_name": "炭酸水素ナトリウム（重曹）",
+            "skeletal_formula": "NaHCO3",
+            "molecular_formula": "NaHCO3",
+            "series_general_formula": "Hydrogencarbonates: MHCO3 (M = Na, K)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydrogencarbonate",
+                    "name_ja": "炭酸水素イオン",
+                    "pattern": "HCO3^-"
+                }
+            ],
+            "notes": "White crystalline powder; weakly basic; decomposes on heating to Na2CO3, CO2 and H2O; used in baking powders and fire extinguishers.",
+            "smiles": "[Na+].[O-]C(=O)O",
+            "katex_skeletal_formula": "\\ce{NaHCO3}",
+            "katex_molecular_formula": "\\ce{NaHCO3}"
+        },
+        {
+            "iupac_name": "potassium nitrate",
+            "common_name": "potassium nitrate (saltpeter)",
+            "local_name": "硝酸カリウム",
+            "skeletal_formula": "KNO3",
+            "molecular_formula": "KNO3",
+            "series_general_formula": "Nitrates: MNO3 (M = alkali or alkaline-earth metal)",
+            "functional_groups": [
+                {
+                    "name_en": "Nitrate",
+                    "name_ja": "硝酸イオン",
+                    "pattern": "NO3^-"
+                }
+            ],
+            "notes": "Colorless crystalline solid; strong oxidizing salt; used in fertilizers, gunpowder, and as a source of K+ and NO3^- ions.",
+            "smiles": "[K+].[O-][N+](=O)O",
+            "katex_skeletal_formula": "\\ce{KNO3}",
+            "katex_molecular_formula": "\\ce{KNO3}"
+        }
+    ]
+}

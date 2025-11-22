@@ -1,0 +1,156 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "chromium",
+            "common_name": "chromium (metal)",
+            "local_name": "クロム（単体）",
+            "skeletal_formula": "Cr",
+            "molecular_formula": "Cr",
+            "series_general_formula": "Chromium and its ions: Cr^{2+}, Cr^{3+}, CrO4^{2-}, Cr2O7^{2-}",
+            "functional_groups": [
+                {
+                    "name_en": "Chromium(III) ion",
+                    "name_ja": "クロム(III)イオン",
+                    "pattern": "Cr^{3+}"
+                }
+            ],
+            "notes": "Hard, shiny metal; used for plating (chrome plating); forms many colored compounds and ions.",
+            "smiles": "[Cr]",
+            "katex_skeletal_formula": "\\ce{Cr}",
+            "katex_molecular_formula": "\\ce{Cr}"
+        },
+        {
+            "iupac_name": "potassium chromate(VI)",
+            "common_name": "potassium chromate",
+            "local_name": "クロム酸カリウム",
+            "skeletal_formula": "K2CrO4",
+            "molecular_formula": "K2CrO4",
+            "series_general_formula": "Chromates: M2CrO4 (M = alkali metal)",
+            "functional_groups": [
+                {
+                    "name_en": "Chromate",
+                    "name_ja": "クロム酸イオン",
+                    "pattern": "CrO4^{2-}"
+                }
+            ],
+            "notes": "Yellow crystals; aqueous solution is yellow due to chromate ion; interconverts with dichromate depending on pH.",
+            "smiles": "[K+].[K+].[O-]Cr(=O)(=O)[O-]",
+            "katex_skeletal_formula": "\\ce{K2CrO4}",
+            "katex_molecular_formula": "\\ce{K2CrO4}"
+        },
+        {
+            "iupac_name": "potassium dichromate(VI)",
+            "common_name": "potassium dichromate",
+            "local_name": "二クロム酸カリウム",
+            "skeletal_formula": "K2Cr2O7",
+            "molecular_formula": "K2Cr2O7",
+            "series_general_formula": "Dichromates: M2Cr2O7 (M = alkali metal)",
+            "functional_groups": [
+                {
+                    "name_en": "Dichromate",
+                    "name_ja": "二クロム酸イオン",
+                    "pattern": "Cr2O7^{2-}"
+                }
+            ],
+            "notes": "Orange-red crystals; strong oxidizing agent; aqueous solution is orange; interconverts with chromate in acid–base equilibrium.",
+            "smiles": "[K+].[K+].[O-]Cr(=O)OCr(=O)(=O)[O-]",
+            "katex_skeletal_formula": "\\ce{K2Cr2O7}",
+            "katex_molecular_formula": "\\ce{K2Cr2O7}"
+        },
+        {
+            "iupac_name": "chromium(III) oxide",
+            "common_name": "chromium(III) oxide",
+            "local_name": "酸化クロム(III)",
+            "skeletal_formula": "Cr2O3",
+            "molecular_formula": "Cr2O3",
+            "series_general_formula": "Transition metal oxides: M2O3 (M = Cr, Fe, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Oxide",
+                    "name_ja": "酸化物イオン",
+                    "pattern": "O^{2-}"
+                }
+            ],
+            "notes": "Green solid; used as green pigment and in polishing powders; amphoteric character; common Cr(III) oxide.",
+            "smiles": "[Cr+3].[Cr+3].[O-2].[O-2].[O-2]",
+            "katex_skeletal_formula": "\\ce{Cr2O3}",
+            "katex_molecular_formula": "\\ce{Cr2O3}"
+        },
+        {
+            "iupac_name": "manganese",
+            "common_name": "manganese (metal)",
+            "local_name": "マンガン（単体）",
+            "skeletal_formula": "Mn",
+            "molecular_formula": "Mn",
+            "series_general_formula": "Manganese and its ions: Mn^{2+}, Mn^{4+}, MnO4^-",
+            "functional_groups": [
+                {
+                    "name_en": "Manganese(II) ion",
+                    "name_ja": "マンガン(II)イオン",
+                    "pattern": "Mn^{2+}"
+                }
+            ],
+            "notes": "Gray hard metal; used in steel production; forms many colored compounds with different oxidation states.",
+            "smiles": "[Mn]",
+            "katex_skeletal_formula": "\\ce{Mn}",
+            "katex_molecular_formula": "\\ce{Mn}"
+        },
+        {
+            "iupac_name": "manganese(IV) oxide",
+            "common_name": "manganese(IV) oxide",
+            "local_name": "酸化マンガン(IV)（二酸化マンガン）",
+            "skeletal_formula": "MnO2",
+            "molecular_formula": "MnO2",
+            "series_general_formula": "Transition metal oxides: MO2 (M = Mn, Sn, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Oxide",
+                    "name_ja": "酸化物イオン",
+                    "pattern": "O^{2-}"
+                }
+            ],
+            "notes": "Black solid; used as catalyst in decomposition of hydrogen peroxide and as depolarizer in dry cells.",
+            "smiles": "O=[Mn]=O",
+            "katex_skeletal_formula": "\\ce{MnO2}",
+            "katex_molecular_formula": "\\ce{MnO2}"
+        },
+        {
+            "iupac_name": "potassium permanganate",
+            "common_name": "potassium permanganate",
+            "local_name": "過マンガン酸カリウム",
+            "skeletal_formula": "KMnO4",
+            "molecular_formula": "KMnO4",
+            "series_general_formula": "Permanganates: M MnO4 (M = alkali metal)",
+            "functional_groups": [
+                {
+                    "name_en": "Permanganate",
+                    "name_ja": "過マンガン酸イオン",
+                    "pattern": "MnO4^-"
+                }
+            ],
+            "notes": "Dark purple crystals; strong oxidizing agent; in acidic solution MnO4^- is reduced to Mn^{2+}; classic oxidizing agent in high-school chemistry.",
+            "smiles": "[K+].[O-][Mn](=O)(=O)=O",
+            "katex_skeletal_formula": "\\ce{KMnO4}",
+            "katex_molecular_formula": "\\ce{KMnO4}"
+        },
+        {
+            "iupac_name": "manganese(II) sulfate",
+            "common_name": "manganese(II) sulfate",
+            "local_name": "硫酸マンガン(II)",
+            "skeletal_formula": "MnSO4",
+            "molecular_formula": "MnSO4",
+            "series_general_formula": "Metal sulfates: MSO4 (M = Mn, Fe, Cu, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Sulfate",
+                    "name_ja": "硫酸イオン",
+                    "pattern": "SO4^{2-}"
+                }
+            ],
+            "notes": "Colorless to pale pink crystals; product of reduction of permanganate in acidic solution; used as fertilizer and in industry.",
+            "smiles": "[Mn+2].[O-]S(=O)(=O)[O-]",
+            "katex_skeletal_formula": "\\ce{MnSO4}",
+            "katex_molecular_formula": "\\ce{MnSO4}"
+        }
+    ]
+}

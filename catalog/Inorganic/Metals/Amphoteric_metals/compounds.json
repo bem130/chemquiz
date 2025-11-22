@@ -1,0 +1,137 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "aluminium",
+            "common_name": "aluminium (metal)",
+            "local_name": "アルミニウム（単体）",
+            "skeletal_formula": "Al",
+            "molecular_formula": "Al",
+            "series_general_formula": "Amphoteric metals: Al, Zn, Sn, Pb",
+            "functional_groups": [
+                {
+                    "name_en": "Amphoteric metal",
+                    "name_ja": "両性金属",
+                    "pattern": "M (Al, Zn, Sn, Pb)"
+                }
+            ],
+            "notes": "Light, silvery metal; covered with protective oxide film; reacts with both acids and bases when oxide film is removed; important structural material.",
+            "smiles": "[Al]",
+            "katex_skeletal_formula": "\\ce{Al}",
+            "katex_molecular_formula": "\\ce{Al}"
+        },
+        {
+            "iupac_name": "aluminium oxide",
+            "common_name": "aluminium oxide",
+            "local_name": "酸化アルミニウム",
+            "skeletal_formula": "Al2O3",
+            "molecular_formula": "Al2O3",
+            "series_general_formula": "Amphoteric oxides: M2O3 or MO (M = Al, Zn, Sn, Pb)",
+            "functional_groups": [
+                {
+                    "name_en": "Amphoteric oxide",
+                    "name_ja": "両性酸化物",
+                    "pattern": "Al2O3"
+                }
+            ],
+            "notes": "White, very hard solid; amphoteric oxide that reacts with both acids and bases; main component of bauxite and corundum.",
+            "smiles": "[Al+3].[Al+3].[O-2].[O-2].[O-2]",
+            "katex_skeletal_formula": "\\ce{Al2O3}",
+            "katex_molecular_formula": "\\ce{Al2O3}"
+        },
+        {
+            "iupac_name": "aluminium hydroxide",
+            "common_name": "aluminium hydroxide",
+            "local_name": "水酸化アルミニウム",
+            "skeletal_formula": "Al(OH)3",
+            "molecular_formula": "Al(OH)3",
+            "series_general_formula": "Amphoteric hydroxides: M(OH)n (M = Al, Zn, Sn, Pb)",
+            "functional_groups": [
+                {
+                    "name_en": "Amphoteric hydroxide",
+                    "name_ja": "両性水酸化物",
+                    "pattern": "Al(OH)3"
+                }
+            ],
+            "notes": "White gelatinous precipitate; amphoteric; dissolves in both acids and bases to form aluminate and aluminium salts.",
+            "smiles": "[Al+3].[OH-].[OH-].[OH-]",
+            "katex_skeletal_formula": "\\ce{Al(OH)3}",
+            "katex_molecular_formula": "\\ce{Al(OH)3}"
+        },
+        {
+            "iupac_name": "zinc oxide",
+            "common_name": "zinc oxide",
+            "local_name": "酸化亜鉛",
+            "skeletal_formula": "ZnO",
+            "molecular_formula": "ZnO",
+            "series_general_formula": "Amphoteric oxides: MO (M = Zn, Sn, Pb)",
+            "functional_groups": [
+                {
+                    "name_en": "Amphoteric oxide",
+                    "name_ja": "両性酸化物",
+                    "pattern": "ZnO"
+                }
+            ],
+            "notes": "White solid that turns yellow on heating; amphoteric; reacts with both acids and bases; used in ointments, pigments, and rubber industry.",
+            "smiles": "[Zn+2].[O-2]",
+            "katex_skeletal_formula": "\\ce{ZnO}",
+            "katex_molecular_formula": "\\ce{ZnO}"
+        },
+        {
+            "iupac_name": "zinc hydroxide",
+            "common_name": "zinc hydroxide",
+            "local_name": "水酸化亜鉛",
+            "skeletal_formula": "Zn(OH)2",
+            "molecular_formula": "Zn(OH)2",
+            "series_general_formula": "Amphoteric hydroxides: M(OH)2 (M = Zn, Sn, Pb)",
+            "functional_groups": [
+                {
+                    "name_en": "Amphoteric hydroxide",
+                    "name_ja": "両性水酸化物",
+                    "pattern": "Zn(OH)2"
+                }
+            ],
+            "notes": "White gelatinous precipitate; dissolves in excess strong base to form complex zincate ions and in acids to form zinc salts.",
+            "smiles": "[Zn+2].[OH-].[OH-]",
+            "katex_skeletal_formula": "\\ce{Zn(OH)2}",
+            "katex_molecular_formula": "\\ce{Zn(OH)2}"
+        },
+        {
+            "iupac_name": "tin(IV) oxide",
+            "common_name": "stannic oxide",
+            "local_name": "酸化スズ(IV)",
+            "skeletal_formula": "SnO2",
+            "molecular_formula": "SnO2",
+            "series_general_formula": "Amphoteric oxides: MO2 (M = Sn, Pb)",
+            "functional_groups": [
+                {
+                    "name_en": "Amphoteric oxide",
+                    "name_ja": "両性酸化物",
+                    "pattern": "SnO2"
+                }
+            ],
+            "notes": "White solid; amphoteric; reacts with acids to form stannic salts and with bases to form stannate ions.",
+            "smiles": "O=[Sn]=O",
+            "katex_skeletal_formula": "\\ce{SnO2}",
+            "katex_molecular_formula": "\\ce{SnO2}"
+        },
+        {
+            "iupac_name": "lead(II) oxide",
+            "common_name": "lead(II) oxide",
+            "local_name": "酸化鉛(II)",
+            "skeletal_formula": "PbO",
+            "molecular_formula": "PbO",
+            "series_general_formula": "Amphoteric oxides: MO (M = Pb, Sn, Zn)",
+            "functional_groups": [
+                {
+                    "name_en": "Amphoteric oxide",
+                    "name_ja": "両性酸化物",
+                    "pattern": "PbO"
+                }
+            ],
+            "notes": "Yellow or red solid; amphoteric; reacts with acids and concentrated bases; used historically in glass and ceramics.",
+            "smiles": "[Pb+2].[O-2]",
+            "katex_skeletal_formula": "\\ce{PbO}",
+            "katex_molecular_formula": "\\ce{PbO}"
+        }
+    ]
+}

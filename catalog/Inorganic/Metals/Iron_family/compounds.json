@@ -1,0 +1,171 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "iron",
+            "common_name": "iron (metal)",
+            "local_name": "鉄（単体）",
+            "skeletal_formula": "Fe",
+            "molecular_formula": "Fe",
+            "series_general_formula": "Transition metals (iron family): Fe and its ions Fe^{2+}, Fe^{3+}",
+            "functional_groups": [
+                {
+                    "name_en": "Iron(II) ion",
+                    "name_ja": "鉄(II)イオン",
+                    "pattern": "Fe^{2+}"
+                },
+                {
+                    "name_en": "Iron(III) ion",
+                    "name_ja": "鉄(III)イオン",
+                    "pattern": "Fe^{3+}"
+                }
+            ],
+            "notes": "Gray, relatively soft metal; rusts in moist air; forms both +2 and +3 oxidation states; most important structural metal.",
+            "smiles": "[Fe]",
+            "katex_skeletal_formula": "\\ce{Fe}",
+            "katex_molecular_formula": "\\ce{Fe}"
+        },
+        {
+            "iupac_name": "iron(II) oxide",
+            "common_name": "iron(II) oxide",
+            "local_name": "酸化鉄(II)",
+            "skeletal_formula": "FeO",
+            "molecular_formula": "FeO",
+            "series_general_formula": "Iron oxides: FeO, Fe2O3, Fe3O4",
+            "functional_groups": [
+                {
+                    "name_en": "Oxide",
+                    "name_ja": "酸化物イオン",
+                    "pattern": "O^{2-}"
+                }
+            ],
+            "notes": "Black solid; iron in +2 state; one of the iron oxides; used in pigments and steelmaking.",
+            "smiles": "[Fe+2].[O-2]",
+            "katex_skeletal_formula": "\\ce{FeO}",
+            "katex_molecular_formula": "\\ce{FeO}"
+        },
+        {
+            "iupac_name": "iron(III) oxide",
+            "common_name": "iron(III) oxide",
+            "local_name": "酸化鉄(III)（赤さび）",
+            "skeletal_formula": "Fe2O3",
+            "molecular_formula": "Fe2O3",
+            "series_general_formula": "Iron oxides: FeO, Fe2O3, Fe3O4",
+            "functional_groups": [
+                {
+                    "name_en": "Oxide",
+                    "name_ja": "酸化物イオン",
+                    "pattern": "O^{2-}"
+                }
+            ],
+            "notes": "Reddish-brown solid; main component of rust; iron in +3 state; used as pigment and in magnetic materials.",
+            "smiles": "[Fe+3].[Fe+3].[O-2].[O-2].[O-2]",
+            "katex_skeletal_formula": "\\ce{Fe2O3}",
+            "katex_molecular_formula": "\\ce{Fe2O3}"
+        },
+        {
+            "iupac_name": "iron(II,III) oxide",
+            "common_name": "magnetite (iron(II,III) oxide)",
+            "local_name": "四酸化三鉄（磁鉄鉱）",
+            "skeletal_formula": "Fe3O4",
+            "molecular_formula": "Fe3O4",
+            "series_general_formula": "Mixed-valence iron oxides: Fe3O4",
+            "functional_groups": [
+                {
+                    "name_en": "Oxide",
+                    "name_ja": "酸化物イオン",
+                    "pattern": "O^{2-}"
+                }
+            ],
+            "notes": "Black solid; contains both Fe^{2+} and Fe^{3+}; strongly magnetic; occurs as mineral magnetite.",
+            "smiles": "[Fe+2].[Fe+3].[Fe+3].[O-2].[O-2].[O-2].[O-2]",
+            "katex_skeletal_formula": "\\ce{Fe3O4}",
+            "katex_molecular_formula": "\\ce{Fe3O4}"
+        },
+        {
+            "iupac_name": "iron(II) chloride",
+            "common_name": "iron(II) chloride",
+            "local_name": "塩化鉄(II)",
+            "skeletal_formula": "FeCl2",
+            "molecular_formula": "FeCl2",
+            "series_general_formula": "Iron(II) halides: FeX2 (X = Cl, Br, I)",
+            "functional_groups": [
+                {
+                    "name_en": "Iron(II) ion",
+                    "name_ja": "鉄(II)イオン",
+                    "pattern": "Fe^{2+}"
+                },
+                {
+                    "name_en": "Chloride",
+                    "name_ja": "塩化物イオン",
+                    "pattern": "Cl^-"
+                }
+            ],
+            "notes": "Pale green solid; Fe^{2+} salt; used as reducing agent and in water treatment.",
+            "smiles": "[Fe+2].[Cl-].[Cl-]",
+            "katex_skeletal_formula": "\\ce{FeCl2}",
+            "katex_molecular_formula": "\\ce{FeCl2}"
+        },
+        {
+            "iupac_name": "iron(III) chloride",
+            "common_name": "iron(III) chloride",
+            "local_name": "塩化鉄(III)",
+            "skeletal_formula": "FeCl3",
+            "molecular_formula": "FeCl3",
+            "series_general_formula": "Iron(III) halides: FeX3 (X = Cl, Br)",
+            "functional_groups": [
+                {
+                    "name_en": "Iron(III) ion",
+                    "name_ja": "鉄(III)イオン",
+                    "pattern": "Fe^{3+}"
+                },
+                {
+                    "name_en": "Chloride",
+                    "name_ja": "塩化物イオン",
+                    "pattern": "Cl^-"
+                }
+            ],
+            "notes": "Brown solid; Fe^{3+} salt; hydrolyzes in water; used in etching of printed circuit boards and as coagulant in water treatment.",
+            "smiles": "[Fe+3].[Cl-].[Cl-].[Cl-]",
+            "katex_skeletal_formula": "\\ce{FeCl3}",
+            "katex_molecular_formula": "\\ce{FeCl3}"
+        },
+        {
+            "iupac_name": "potassium hexacyanidoferrate(II)",
+            "common_name": "potassium ferrocyanide",
+            "local_name": "ヘキサシアノ鉄(II)酸カリウム",
+            "skeletal_formula": "K4[Fe(CN)6]",
+            "molecular_formula": "K4Fe(CN)6",
+            "series_general_formula": "Hexacyanidoferrate complexes: [Fe(CN)6]^{4-}, [Fe(CN)6]^{3-}",
+            "functional_groups": [
+                {
+                    "name_en": "Complex cyanide",
+                    "name_ja": "シアン錯イオン",
+                    "pattern": "[Fe(CN)6]^{4-}"
+                }
+            ],
+            "notes": "Colorless to yellow crystals; forms Prussian blue with Fe^{3+}; used to detect Fe^{3+} and in pigment production.",
+            "smiles": "[K+].[K+].[K+].[K+].[Fe-2](C#N)(C#N)(C#N)(C#N)(C#N)C#N",
+            "katex_skeletal_formula": "\\ce{K4[Fe(CN)6]}",
+            "katex_molecular_formula": "\\ce{K4Fe(CN)6}"
+        },
+        {
+            "iupac_name": "potassium hexacyanidoferrate(III)",
+            "common_name": "potassium ferricyanide",
+            "local_name": "ヘキサシアノ鉄(III)酸カリウム",
+            "skeletal_formula": "K3[Fe(CN)6]",
+            "molecular_formula": "K3Fe(CN)6",
+            "series_general_formula": "Hexacyanidoferrate complexes: [Fe(CN)6]^{3-}",
+            "functional_groups": [
+                {
+                    "name_en": "Complex cyanide",
+                    "name_ja": "シアン錯イオン",
+                    "pattern": "[Fe(CN)6]^{3-}"
+                }
+            ],
+            "notes": "Red crystals; forms Turnbull's blue with Fe^{2+}; used as oxidizing agent and analytical reagent.",
+            "smiles": "[K+].[K+].[K+].[Fe-3](C#N)(C#N)(C#N)(C#N)(C#N)C#N",
+            "katex_skeletal_formula": "\\ce{K3[Fe(CN)6]}",
+            "katex_molecular_formula": "\\ce{K3Fe(CN)6}"
+        }
+    ]
+}

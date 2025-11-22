@@ -1,0 +1,137 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "magnesium",
+            "common_name": "magnesium (metal)",
+            "local_name": "マグネシウム（単体）",
+            "skeletal_formula": "Mg",
+            "molecular_formula": "Mg",
+            "series_general_formula": "Alkaline earth metals (Group 2): M (M = Be, Mg, Ca, Sr, Ba)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkaline earth metal cation",
+                    "name_ja": "アルカリ土類金属イオン",
+                    "pattern": "M^{2+}"
+                }
+            ],
+            "notes": "Light silvery metal; burns with dazzling white flame; used in fireworks and flares; relatively reactive for a metal.",
+            "smiles": "[Mg]",
+            "katex_skeletal_formula": "\\ce{Mg}",
+            "katex_molecular_formula": "\\ce{Mg}"
+        },
+        {
+            "iupac_name": "calcium",
+            "common_name": "calcium (metal)",
+            "local_name": "カルシウム（単体）",
+            "skeletal_formula": "Ca",
+            "molecular_formula": "Ca",
+            "series_general_formula": "Alkaline earth metals (Group 2): M (M = Be, Mg, Ca, Sr, Ba)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkaline earth metal cation",
+                    "name_ja": "アルカリ土類金属イオン",
+                    "pattern": "M^{2+}"
+                }
+            ],
+            "notes": "Soft, silvery metal; reacts with cold water to form calcium hydroxide and hydrogen; gives brick-red flame.",
+            "smiles": "[Ca]",
+            "katex_skeletal_formula": "\\ce{Ca}",
+            "katex_molecular_formula": "\\ce{Ca}"
+        },
+        {
+            "iupac_name": "magnesium oxide",
+            "common_name": "magnesium oxide",
+            "local_name": "酸化マグネシウム",
+            "skeletal_formula": "MgO",
+            "molecular_formula": "MgO",
+            "series_general_formula": "Alkaline earth metal oxides: MO (M = Mg, Ca, Sr, Ba)",
+            "functional_groups": [
+                {
+                    "name_en": "Oxide",
+                    "name_ja": "酸化物イオン",
+                    "pattern": "O^{2-}"
+                }
+            ],
+            "notes": "White solid; basic oxide; used as refractory material and in medicine (antacid); formed by burning magnesium in oxygen.",
+            "smiles": "[Mg+2].[O-2]",
+            "katex_skeletal_formula": "\\ce{MgO}",
+            "katex_molecular_formula": "\\ce{MgO}"
+        },
+        {
+            "iupac_name": "calcium oxide",
+            "common_name": "calcium oxide (quicklime)",
+            "local_name": "酸化カルシウム（生石灰）",
+            "skeletal_formula": "CaO",
+            "molecular_formula": "CaO",
+            "series_general_formula": "Alkaline earth metal oxides: MO (M = Ca, Sr, Ba)",
+            "functional_groups": [
+                {
+                    "name_en": "Oxide",
+                    "name_ja": "酸化物イオン",
+                    "pattern": "O^{2-}"
+                }
+            ],
+            "notes": "White solid; reacts vigorously with water to form calcium hydroxide and release heat; used as basic drying agent and in cement.",
+            "smiles": "[Ca+2].[O-2]",
+            "katex_skeletal_formula": "\\ce{CaO}",
+            "katex_molecular_formula": "\\ce{CaO}"
+        },
+        {
+            "iupac_name": "magnesium hydroxide",
+            "common_name": "magnesium hydroxide",
+            "local_name": "水酸化マグネシウム",
+            "skeletal_formula": "Mg(OH)2",
+            "molecular_formula": "Mg(OH)2",
+            "series_general_formula": "Alkaline earth metal hydroxides: M(OH)2 (M = Mg, Ca, Sr, Ba)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxide",
+                    "name_ja": "水酸化物イオン",
+                    "pattern": "OH^-"
+                }
+            ],
+            "notes": "White, sparingly soluble solid; weak base; used as antacid and flame retardant; forms a precipitate in many reactions.",
+            "smiles": "[Mg+2].[OH-].[OH-]",
+            "katex_skeletal_formula": "\\ce{Mg(OH)2}",
+            "katex_molecular_formula": "\\ce{Mg(OH)2}"
+        },
+        {
+            "iupac_name": "calcium hydroxide",
+            "common_name": "calcium hydroxide (slaked lime)",
+            "local_name": "水酸化カルシウム（消石灰）",
+            "skeletal_formula": "Ca(OH)2",
+            "molecular_formula": "Ca(OH)2",
+            "series_general_formula": "Alkaline earth metal hydroxides: M(OH)2 (M = Ca, Sr, Ba)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxide",
+                    "name_ja": "水酸化物イオン",
+                    "pattern": "OH^-"
+                }
+            ],
+            "notes": "Slightly soluble base; saturated solution is limewater; used to test for CO2 (forms CaCO3 precipitate).",
+            "smiles": "[Ca+2].[OH-].[OH-]",
+            "katex_skeletal_formula": "\\ce{Ca(OH)2}",
+            "katex_molecular_formula": "\\ce{Ca(OH)2}"
+        },
+        {
+            "iupac_name": "calcium carbonate",
+            "common_name": "calcium carbonate",
+            "local_name": "炭酸カルシウム",
+            "skeletal_formula": "CaCO3",
+            "molecular_formula": "CaCO3",
+            "series_general_formula": "Alkaline-earth carbonates: MCO3 (M = Mg, Ca, Sr, Ba)",
+            "functional_groups": [
+                {
+                    "name_en": "Carbonate",
+                    "name_ja": "炭酸イオン",
+                    "pattern": "CO3^{2-}"
+                }
+            ],
+            "notes": "White solid; main component of limestone, marble, shells; decomposes on heating to quicklime and CO2; used in cement and construction.",
+            "smiles": "[Ca+2].[O-]C(=O)[O-]",
+            "katex_skeletal_formula": "\\ce{CaCO3}",
+            "katex_molecular_formula": "\\ce{CaCO3}"
+        }
+    ]
+}
