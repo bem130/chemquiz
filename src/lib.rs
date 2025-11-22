@@ -3,6 +3,8 @@ pub mod catalog_manifest;
 pub mod compound;
 pub mod demo;
 pub mod quiz;
+#[cfg(target_arch = "wasm32")]
+pub mod wasm;
 
 pub use catalog::{Catalog, CatalogEntry, CatalogError, CatalogLoadError};
 pub use catalog_manifest::{CatalogLeaf, CatalogManifest, CatalogNode};
