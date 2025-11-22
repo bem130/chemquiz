@@ -41,8 +41,9 @@ fn demo_entries() -> Vec<(Compound, Vec<String>)> {
             ),
             vec![
                 "Organic".to_string(),
-                "Alcohols".to_string(),
-                "Primary alcohols".to_string(),
+                "Aliphatic_compounds".to_string(),
+                "Alcohols_and_ethers".to_string(),
+                "Primary_alcohols".to_string(),
             ],
         ),
         (
@@ -56,8 +57,9 @@ fn demo_entries() -> Vec<(Compound, Vec<String>)> {
             ),
             vec![
                 "Organic".to_string(),
-                "Alcohols".to_string(),
-                "Primary alcohols".to_string(),
+                "Aliphatic_compounds".to_string(),
+                "Alcohols_and_ethers".to_string(),
+                "Primary_alcohols".to_string(),
             ],
         ),
         (
@@ -71,8 +73,9 @@ fn demo_entries() -> Vec<(Compound, Vec<String>)> {
             ),
             vec![
                 "Organic".to_string(),
-                "Alcohols".to_string(),
-                "Secondary alcohols".to_string(),
+                "Aliphatic_compounds".to_string(),
+                "Alcohols_and_ethers".to_string(),
+                "Secondary_alcohols".to_string(),
             ],
         ),
         (
@@ -84,7 +87,12 @@ fn demo_entries() -> Vec<(Compound, Vec<String>)> {
                 "C2H4O2",
                 Some("CC(=O)O"),
             ),
-            vec!["Organic".to_string(), "Carboxylic acids".to_string()],
+            vec![
+                "Organic".to_string(),
+                "Aliphatic_compounds".to_string(),
+                "Carboxylic_acids_and_esters".to_string(),
+                "Carboxylic_acids".to_string(),
+            ],
         ),
         (
             build_compound(
@@ -95,11 +103,27 @@ fn demo_entries() -> Vec<(Compound, Vec<String>)> {
                 "C3H6O2",
                 Some("CCC(=O)O"),
             ),
-            vec!["Organic".to_string(), "Carboxylic acids".to_string()],
+            vec![
+                "Organic".to_string(),
+                "Aliphatic_compounds".to_string(),
+                "Carboxylic_acids_and_esters".to_string(),
+                "Carboxylic_acids".to_string(),
+            ],
         ),
         (
-            build_compound("benzene", None, Some("ベンゼン"), "C6H6", "C6H6", Some("c1ccccc1")),
-            vec!["Organic".to_string(), "Arenes".to_string()],
+            build_compound(
+                "benzene",
+                None,
+                Some("ベンゼン"),
+                "C6H6",
+                "C6H6",
+                Some("c1ccccc1"),
+            ),
+            vec![
+                "Organic".to_string(),
+                "Aromatic_compounds".to_string(),
+                "Aromatic_hydrocarbons".to_string(),
+            ],
         ),
         (
             build_compound(
@@ -110,7 +134,11 @@ fn demo_entries() -> Vec<(Compound, Vec<String>)> {
                 "C7H8",
                 Some("Cc1ccccc1"),
             ),
-            vec!["Organic".to_string(), "Arenes".to_string()],
+            vec![
+                "Organic".to_string(),
+                "Aromatic_compounds".to_string(),
+                "Aromatic_hydrocarbons".to_string(),
+            ],
         ),
         (
             build_compound(
@@ -121,7 +149,12 @@ fn demo_entries() -> Vec<(Compound, Vec<String>)> {
                 "C2H2",
                 Some("C#C"),
             ),
-            vec!["Organic".to_string(), "Alkynes".to_string()],
+            vec![
+                "Organic".to_string(),
+                "Aliphatic_compounds".to_string(),
+                "Hydrocarbons".to_string(),
+                "Alkynes".to_string(),
+            ],
         ),
         (
             build_compound(
@@ -132,7 +165,12 @@ fn demo_entries() -> Vec<(Compound, Vec<String>)> {
                 "C4H6",
                 Some("CC#CC"),
             ),
-            vec!["Organic".to_string(), "Alkynes".to_string()],
+            vec![
+                "Organic".to_string(),
+                "Aliphatic_compounds".to_string(),
+                "Hydrocarbons".to_string(),
+                "Alkynes".to_string(),
+            ],
         ),
         (
             build_compound(
@@ -143,11 +181,28 @@ fn demo_entries() -> Vec<(Compound, Vec<String>)> {
                 "C4H10",
                 Some("CC(C)C"),
             ),
-            vec!["Organic".to_string(), "Alkanes".to_string()],
+            vec![
+                "Organic".to_string(),
+                "Aliphatic_compounds".to_string(),
+                "Hydrocarbons".to_string(),
+                "Alkanes".to_string(),
+            ],
         ),
         (
-            build_compound("hexane", None, Some("ヘキサン"), "CH3-(CH2)4-CH3", "C6H14", Some("CCCCCC")),
-            vec!["Organic".to_string(), "Alkanes".to_string()],
+            build_compound(
+                "hexane",
+                None,
+                Some("ヘキサン"),
+                "CH3-(CH2)4-CH3",
+                "C6H14",
+                Some("CCCCCC"),
+            ),
+            vec![
+                "Organic".to_string(),
+                "Aliphatic_compounds".to_string(),
+                "Hydrocarbons".to_string(),
+                "Alkanes".to_string(),
+            ],
         ),
         (
             build_compound(
@@ -160,7 +215,8 @@ fn demo_entries() -> Vec<(Compound, Vec<String>)> {
             ),
             vec![
                 "Organic".to_string(),
-                "Alcohols".to_string(),
+                "Aliphatic_compounds".to_string(),
+                "Alcohols_and_ethers".to_string(),
                 "Polyols".to_string(),
             ],
         ),
@@ -256,27 +312,39 @@ mod tests {
 
         assert!(paths.contains(&vec![
             "Organic".to_string(),
-            "Alcohols".to_string(),
-            "Primary alcohols".to_string(),
+            "Aliphatic_compounds".to_string(),
+            "Alcohols_and_ethers".to_string(),
+            "Primary_alcohols".to_string(),
         ]));
         assert!(paths.contains(&vec![
             "Organic".to_string(),
-            "Alcohols".to_string(),
-            "Secondary alcohols".to_string(),
+            "Aliphatic_compounds".to_string(),
+            "Alcohols_and_ethers".to_string(),
+            "Secondary_alcohols".to_string(),
         ]));
         assert!(paths.contains(&vec![
             "Organic".to_string(),
-            "Alcohols".to_string(),
+            "Aliphatic_compounds".to_string(),
+            "Alcohols_and_ethers".to_string(),
             "Polyols".to_string(),
         ]));
-        assert!(paths.contains(&vec!["Organic".to_string(), "Carboxylic acids".to_string()]));
+        assert!(paths.contains(&vec![
+            "Organic".to_string(),
+            "Aliphatic_compounds".to_string(),
+            "Carboxylic_acids_and_esters".to_string(),
+            "Carboxylic_acids".to_string(),
+        ]));
     }
 
     #[test]
     fn catalog_filters_by_prefix() {
         let catalog = demo_catalog();
         let alcohols = catalog
-            .compounds_for(&vec!["Organic".to_string(), "Alcohols".to_string()])
+            .compounds_for(&vec![
+                "Organic".to_string(),
+                "Aliphatic_compounds".to_string(),
+                "Alcohols_and_ethers".to_string(),
+            ])
             .expect("alcohol category exists");
 
         assert_eq!(alcohols.len(), 4);
