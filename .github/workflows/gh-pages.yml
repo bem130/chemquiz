@@ -56,6 +56,7 @@ jobs:
 
             - name: Build static site
               run: |
+                  set -e
                   trunk build --release --public-url /chemquiz/
                   touch dist/.nojekyll
 
@@ -69,6 +70,8 @@ jobs:
             name: github-pages
             url: ${{ steps.deployment.outputs.page_url }}
         needs: build
+        # build が成功したときだけデプロイする
+        if: ${{ needs.build.result == 'success' }}
         runs-on: ubuntu-latest
         steps:
             - name: Deploy
