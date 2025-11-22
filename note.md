@@ -1,0 +1,3 @@
+- Fixed wasm.rs option rendering by relying on Option into view without unwrap_or_default.
+- Updated click handlers to wrap Callback usage in MouseEvent closures for Leptos buttons.
+- cargo test now passes locally; wasm32 test still blocked due to missing target download in environment.

@@ -626,13 +626,11 @@ fn QuizCard(
                                     <div>
                                         <div class="prompt-name-main">{english}</div>
                                         {japanese
-                                            .map(|name| view! { <div class="prompt-name-ja">{name}</div> })
-                                            .unwrap_or_default()}
+                                            .map(|name| view! { <div class="prompt-name-ja">{name}</div> })}
                                         {molecular
                                             .map(|formula| {
                                                 view! { <div class="prompt-formula-text">{formula}</div> }
-                                            })
-                                            .unwrap_or_default()}
+                                            })}
                                     </div>
                                 }
                                 .into_view()
@@ -711,8 +709,7 @@ fn QuizCard(
                                     <div class="option-row-top">
                                         <span class="option-tag">{format!("Option {}", index + 1)}</span>
                                         {is_correct
-                                            .then(|| view! { <span class="option-tag">Correct</span> })
-                                            .unwrap_or_default()}
+                                            .then(|| view! { <span class="option-tag">Correct</span> })}
                                     </div>
                                     {compound
                                         .map(|compound| match quiz.mode {
@@ -737,8 +734,7 @@ fn QuizCard(
                                                     <div class="option-name-inner">
                                                         <p class="option-name-main">{english}</p>
                                                         {japanese
-                                                            .map(|name| view! { <p class="option-name-ja">{name}</p> })
-                                                            .unwrap_or_default()}
+                                                            .map(|name| view! { <p class="option-name-ja">{name}</p> })}
                                                     </div>
                                                 }
                                                 .into_view()
@@ -1150,7 +1146,11 @@ fn App() -> impl IntoView {
                                 </div>
                             </div>
                             <div class="menu-actions">
-                                <button class="btn btn-primary" type="button" on:click=start_game>
+                                <button
+                                    class="btn btn-primary"
+                                    type="button"
+                                    on:click=move |_| start_game.call(())
+                                >
                                     "Start quiz"
                                 </button>
                             </div>
@@ -1235,10 +1235,18 @@ fn App() -> impl IntoView {
                                         }}</div>
                                         <p class="result-score">{move || format!("Score {} / {}", score.get().correct, score.get().total)}</p>
                                         <div class="menu-actions">
-                                            <button class="btn btn-primary" type="button" on:click=next_question.clone()>
+                                            <button
+                                                class="btn btn-primary"
+                                                type="button"
+                                                on:click=move |_| next_question.call(())
+                                            >
                                                 "Next question"
                                             </button>
-                                            <button class="btn" type="button" on:click=return_to_menu.clone()>
+                                            <button
+                                                class="btn"
+                                                type="button"
+                                                on:click=move |_| return_to_menu.call(())
+                                            >
                                                 "Back to menu"
                                             </button>
                                         </div>
