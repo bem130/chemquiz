@@ -18,3 +18,4 @@ note.mdは自由に書き換えて構いません
 ## test
 cargo test
 cargo test --target wasm32-unknown-unknown --no-run
+
