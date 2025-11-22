@@ -1,6 +1,6 @@
 #![cfg(target_arch = "wasm32")]
 
-use chemquiz::{
+use crate::{
     CatalogLeaf, CatalogManifest, Compound, DEMO_OPTION_COUNT, QuizItem, QuizMode, demo_compounds,
     generate_quiz,
 };
