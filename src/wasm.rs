@@ -773,7 +773,7 @@ fn QuizCard(
                 <Show when=move || hint_visible>
                     <div class="hint-box">
                         "Hint: "
-                        {hint.unwrap_or_else(|| "–".to_string())}
+                        {hint.as_deref().unwrap_or("–")}
                     </div>
                 </Show>
             </div>
