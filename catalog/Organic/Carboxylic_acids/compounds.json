@@ -1,25 +1,73 @@
 {
     "compounds": [
         {
+            "iupac_name": "methanoic acid",
+            "common_name": "formic acid",
+            "local_name": "ギ酸",
+            "skeletal_formula": "H-COOH",
+            "molecular_formula": "CH2O2",
+            "series_general_formula": "Saturated monocarboxylic acids: CnH2n+1COOH",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                }
+            ],
+            "notes": "Strongest among simple carboxylic acids; shows both aldehyde-like and acid behavior."
+        },
+        {
             "iupac_name": "ethanoic acid",
             "common_name": "acetic acid",
             "local_name": "酢酸",
-            "skeletal_formula": "CH3COOH",
-            "molecular_formula": "C2H4O2"
+            "skeletal_formula": "CH3-COOH",
+            "molecular_formula": "C2H4O2",
+            "series_general_formula": "Saturated monocarboxylic acids: CnH2n+1COOH",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                }
+            ],
+            "notes": "Main component of vinegar; forms esters with alcohols (fruity smell)."
         },
         {
             "iupac_name": "propanoic acid",
             "common_name": "propionic acid",
             "local_name": "プロピオン酸",
             "skeletal_formula": "CH3-CH2-COOH",
-            "molecular_formula": "C3H6O2"
+            "molecular_formula": "C3H6O2",
+            "series_general_formula": "Saturated monocarboxylic acids: CnH2n+1COOH",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                }
+            ],
+            "notes": "Typical carboxylic acid; used as preservative."
         },
         {
             "iupac_name": "benzoic acid",
-            "common_name": null,
+            "common_name": "benzoic acid",
             "local_name": "安息香酸",
-            "skeletal_formula": "C6H5COOH",
-            "molecular_formula": "C7H6O2"
+            "skeletal_formula": "C6H5-COOH",
+            "molecular_formula": "C7H6O2",
+            "series_general_formula": "Aromatic carboxylic acids: Ar-COOH",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                },
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H5–"
+                }
+            ],
+            "notes": "Weak acid; used as food preservative; typical aromatic carboxylic acid."
         }
     ]
 }

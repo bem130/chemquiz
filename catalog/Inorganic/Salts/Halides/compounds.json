@@ -5,14 +5,80 @@
             "common_name": "table salt",
             "local_name": "塩化ナトリウム",
             "skeletal_formula": "NaCl",
-            "molecular_formula": "NaCl"
+            "molecular_formula": "NaCl",
+            "series_general_formula": "Alkali metal halides: MX (M+)",
+            "functional_groups": [
+                {
+                    "name_en": "Chloride ion",
+                    "name_ja": "塩化物イオン",
+                    "pattern": "Cl^-"
+                }
+            ],
+            "notes": "Typical ionic crystal; highly soluble; neutral aqueous solution."
         },
         {
             "iupac_name": "potassium chloride",
-            "common_name": null,
+            "common_name": "potassium chloride",
             "local_name": "塩化カリウム",
             "skeletal_formula": "KCl",
-            "molecular_formula": "KCl"
+            "molecular_formula": "KCl",
+            "series_general_formula": "Alkali metal halides: MX (M+)",
+            "functional_groups": [
+                {
+                    "name_en": "Chloride ion",
+                    "name_ja": "塩化物イオン",
+                    "pattern": "Cl^-"
+                }
+            ],
+            "notes": "Gives violet flame in flame test; used as fertilizer component."
+        },
+        {
+            "iupac_name": "calcium chloride",
+            "common_name": "calcium chloride",
+            "local_name": "塩化カルシウム",
+            "skeletal_formula": "CaCl2",
+            "molecular_formula": "CaCl2",
+            "series_general_formula": "Alkaline-earth metal halides: MX2 (M2+)",
+            "functional_groups": [
+                {
+                    "name_en": "Chloride ion",
+                    "name_ja": "塩化物イオン",
+                    "pattern": "Cl^-"
+                }
+            ],
+            "notes": "Highly hygroscopic; used as drying agent and for de-icing."
+        },
+        {
+            "iupac_name": "barium chloride",
+            "common_name": "barium chloride",
+            "local_name": "塩化バリウム",
+            "skeletal_formula": "BaCl2",
+            "molecular_formula": "BaCl2",
+            "series_general_formula": "Alkaline-earth metal halides: MX2 (M2+)",
+            "functional_groups": [
+                {
+                    "name_en": "Chloride ion",
+                    "name_ja": "塩化物イオン",
+                    "pattern": "Cl^-"
+                }
+            ],
+            "notes": "Used to test for sulfate ion (BaSO4 white precipitate); toxic."
+        },
+        {
+            "iupac_name": "silver chloride",
+            "common_name": "silver chloride",
+            "local_name": "塩化銀",
+            "skeletal_formula": "AgCl",
+            "molecular_formula": "AgCl",
+            "series_general_formula": "Silver halides: AgX",
+            "functional_groups": [
+                {
+                    "name_en": "Chloride ion",
+                    "name_ja": "塩化物イオン",
+                    "pattern": "Cl^-"
+                }
+            ],
+            "notes": "White precipitate; photosensitive (darkens in light); typical example in qualitative analysis."
         }
     ]
 }
