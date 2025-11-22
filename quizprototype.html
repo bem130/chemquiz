@@ -813,7 +813,8 @@
         if (!molblock) {
             const container = document.getElementById(containerId);
             if (container) {
-                container.innerHTML = '<div style="font-size:11px;color:#9ca3af;text-align:center;">Cannot render structure</div>';
+                container.innerHTML =
+                    '<div style="font-size:11px;color:#9ca3af;text-align:center;">Cannot render structure</div>';
             }
             return;
         }
@@ -840,21 +841,40 @@
                 return;
             }
 
+            // ensure the container itself has explicit CSS size
             container.innerHTML = "";
+            container.style.position = container.style.position || "relative";
+            container.style.width = container.style.width || "100%";
+            container.style.height = container.style.height || "100%";
+            container.style.overflow = container.style.overflow || "hidden";
+
+            // === measure BOTH width and height of the box ===
+            const rect = container.getBoundingClientRect();
+            let width = rect.width || container.clientWidth || 260;
+            let height = rect.height || container.clientHeight || 220;
+
+            // if height is zero (very early layout), approximate from width
+            if (!height) {
+                height = width * (11 / 13); // same 13:11 aspect ratio you use for options
+            }
+
             const V = Kekule.ChemWidget;
             const R = Kekule.Render;
 
             const viewer = new V.Viewer(container);
             console.log("[loadFullStructureIntoKekule] created Viewer for", containerId);
-            
+
             viewer.setRenderType(R.RendererType.R2D);
             viewer.setMoleculeDisplayType(R.Molecule2DDisplayType.CONDENSED);
             viewer.setEnableToolbar(false);
             viewer.setEnableDirectInteraction(false);
             viewer.setEnableEdit(false);
-            viewer.setAutoSize(true);
+
+            // ★ important: use explicit width + height, not AutoSize
+            viewer.setAutoSize(false);
+            viewer.setDimension(width, height);   // now Kekule knows both dimensions
             viewer.setAutofit(true);
-            viewer.setPadding(6);
+            viewer.setPadding(12);
             viewer.setBackgroundColor("transparent");
 
             const HDL = R.HydrogenDisplayLevel;
@@ -869,12 +889,17 @@
             colorCfg.setLabelColor("#ffffff");
 
             viewer.setChemObj(mol);
-            console.log("[loadFullStructureIntoKekule] successfully set molecule for", containerId);
+
+            if (typeof viewer.zoomToFit === "function") {
+                viewer.zoomToFit();
+            }
         } catch (e) {
             console.error("[loadFullStructureIntoKekule] error:", e);
             container.textContent = "Render error: " + e.message;
         }
     }
+
+
 let structureViewMode = 'skeletal';
 
 function setStructureViewMode(mode) {
