@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>RDKit × Kekule.js – Skeletal vs Full</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Kekule.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/kekule/dist/themes/default/kekule.css" />
+    <script src="https://cdn.jsdelivr.net/npm/kekule/dist/kekule.min.js"></script>
+
+    <!-- RDKit.js (MinimalLib) -->
+    <script src="https://unpkg.com/@rdkit/rdkit/dist/RDKit_minimal.js"></script>
+
+    <style>
+        :root {
+            --accent: #38bdf8;
+            --accent-soft: rgba(56, 189, 248, 0.2);
+            --radius-lg: 18px;
+            --radius-md: 12px;
+            --radius-pill: 999px;
+            --shadow-dark: 0 18px 45px rgba(15, 23, 42, 0.8);
+            --shadow-light: 0 18px 40px rgba(15, 23, 42, 0.15);
+            --font-code: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body[data-theme="dark"] {
+            background: radial-gradient(circle at top, #0f172a 0, #020617 55%, #000 100%);
+            color: #e5e7eb;
+        }
+
+        body[data-theme="light"] {
+            background: radial-gradient(circle at top, #ffffff 0, #e5e7eb 55%, #dbeafe 100%);
+            color: #111827;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        .shell {
+            max-width: 1200px;
+            margin: 20px auto 40px;
+            padding: 20px 22px 22px;
+            border-radius: 28px;
+        }
+
+        body[data-theme="dark"] .shell {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.96));
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            box-shadow: var(--shadow-dark);
+        }
+
+        body[data-theme="light"] .shell {
+            background: rgba(248, 250, 252, 0.98);
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            box-shadow: var(--shadow-light);
+        }
+
+        header.app-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .title-block h1 {
+            margin: 0;
+            font-size: 1.4rem;
+        }
+
+        .title-block p {
+            margin: 4px 0 0;
+            font-size: 0.84rem;
+            opacity: 0.9;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 3px 9px;
+            border-radius: var(--radius-pill);
+            background: var(--accent-soft);
+            color: #e0f2fe;
+            border: 1px solid rgba(56, 189, 248, 0.6);
+            font-size: 0.72rem;
+        }
+
+        .theme-toggle {
+            border-radius: var(--radius-pill);
+            border: 1px solid rgba(148, 163, 184, 0.55);
+            padding: 4px 10px;
+            font-size: 0.78rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        body[data-theme="light"] .theme-toggle {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .theme-toggle span.mode {
+            padding: 2px 7px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.15);
+        }
+
+        body[data-theme="light"] .theme-toggle span.mode {
+            background: rgba(15, 23, 42, 0.08);
+        }
+
+        .grid-main {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 2fr);
+            gap: 16px;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 960px) {
+            .grid-main {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+        .panel {
+            border-radius: 20px;
+            padding: 12px 14px 12px;
+        }
+
+        body[data-theme="dark"] .panel {
+            background: #020617;
+            border: 1px solid rgba(55, 65, 81, 0.9);
+        }
+
+        body[data-theme="light"] .panel {
+            background: #ffffff;
+            border: 1px solid rgba(148, 163, 184, 0.4);
+        }
+
+        .panel h2 {
+            margin: 0 0 8px;
+            font-size: 0.9rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+
+        .panel-sub {
+            font-size: 0.78rem;
+            opacity: 0.85;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.76rem;
+            margin-bottom: 3px;
+            opacity: 0.85;
+        }
+
+        select,
+        textarea {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid rgba(148, 163, 184, 0.65);
+            padding: 6px 8px;
+            font-size: 0.84rem;
+            background: rgba(15, 23, 42, 0.45);
+            color: inherit;
+        }
+
+        body[data-theme="light"] select,
+        body[data-theme="light"] textarea {
+            background: #f9fafb;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 64px;
+            max-height: 120px;
+            font-family: var(--font-code);
+            font-size: 0.78rem;
+        }
+
+        .btn {
+            border-radius: var(--radius-pill);
+            padding: 4px 12px;
+            font-size: 0.78rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #38bdf8;
+            color: #0b1120;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .meta-card {
+            border-radius: 12px;
+            padding: 6px 8px;
+        }
+
+        body[data-theme="dark"] .meta-card {
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.4);
+        }
+
+        body[data-theme="light"] .meta-card {
+            background: #f9fafb;
+            border: 1px solid rgba(148, 163, 184, 0.4);
+        }
+
+        .meta-title {
+            font-size: 0.74rem;
+            opacity: 0.85;
+        }
+
+        .meta-value {
+            font-size: 0.82rem;
+            margin-top: 2px;
+        }
+
+        .meta-value code {
+            font-family: var(--font-code);
+            font-size: 0.78rem;
+            padding: 2px 4px;
+            border-radius: 6px;
+            background: rgba(15, 23, 42, 0.7);
+        }
+
+        body[data-theme="light"] .meta-value code {
+            background: rgba(15, 23, 42, 0.07);
+        }
+
+        .viewers-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        @media (max-width: 960px) {
+            .viewers-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        .viewer-card {
+            border-radius: 16px;
+            padding: 7px 8px 9px;
+        }
+
+        body[data-theme="dark"] .viewer-card {
+            background: #020617;
+            border: 1px solid rgba(55, 65, 81, 0.9);
+        }
+
+        body[data-theme="light"] .viewer-card {
+            background: #f1f5f9;
+            border: 1px solid rgba(148, 163, 184, 0.6);
+        }
+
+        .viewer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+
+        .viewer-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .viewer-badge {
+            font-size: 0.7rem;
+            padding: 1px 7px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.7);
+        }
+
+        .viewer-body {
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .viewer-inner {
+            width: 100%;
+            height: 280px;
+        }
+
+        #rdkitCanvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .kekule-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .viewer-caption {
+            margin-top: 4px;
+            font-size: 0.72rem;
+            opacity: 0.85;
+        }
+
+        .debug {
+            margin-top: 12px;
+            padding: 7px 8px;
+            border-radius: 14px;
+        }
+
+        body[data-theme="dark"] .debug {
+            background: rgba(15, 23, 42, 0.96);
+            border: 1px solid rgba(148, 163, 184, 0.6);
+        }
+
+        body[data-theme="light"] .debug {
+            background: rgba(15, 23, 42, 0.04);
+            border: 1px solid rgba(148, 163, 184, 0.5);
+        }
+
+        .debug-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .debug-body {
+            margin-top: 4px;
+            max-height: 160px;
+            overflow-y: auto;
+            font-size: 0.7rem;
+            font-family: var(--font-code);
+            white-space: pre-wrap;
+        }
+
+        .debug-clear {
+            border-radius: 999px;
+            padding: 2px 8px;
+            font-size: 0.7rem;
+            border: 1px solid rgba(148, 163, 184, 0.7);
+            background: transparent;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body data-theme="dark">
+    <div class="shell">
+        <header class="app-header">
+            <div class="title-block">
+                <div style="display:flex;align-items:center;gap:8px;">
+                    <h1>RDKit × Kekule.js — Skeletal vs Full</h1>
+                    <span class="badge">Molfile bridge</span>
+                </div>
+                <p>
+                    RDKit parses <strong>SMILES</strong> and draws a skeletal formula. The same RDKit Molfile
+                    is then rendered by Kekule.js as a full structural formula.
+                </p>
+            </div>
+            <button id="themeToggle" class="theme-toggle" type="button">
+                <span>Theme</span>
+                <span class="mode">Dark</span>
+            </button>
+        </header>
+
+        <section class="grid-main">
+            <!-- LEFT: selection -->
+            <div class="panel">
+                <h2>Molecule selection</h2>
+                <div class="panel-sub">
+                    Choose a preset molecule or type a SMILES. RDKit and Kekule.js always share the same RDKit Molfile.
+                </div>
+
+                <div>
+                    <label for="presetSelect">Preset examples</label>
+                    <select id="presetSelect">
+                        <option value="lactic">Lactic acid — CC(O)C(=O)O</option>
+                        <option value="benzene">Benzene — c1ccccc1</option>
+                        <option value="naphthalene">Naphthalene — c1ccc2ccccc2c1</option>
+                        <option value="phenanthrene">Phenanthrene — c1ccc2c(c1)ccc3ccccc23</option>
+                        <option value="cu_nh3_4">[Cu(NH3)4]2+</option>
+                        <option value="c16_acid">C16 fatty acid — CCCCCCCCCCCCCCCC(=O)O</option>
+                        <option value="acetonitrile">Acetonitrile — CC#N</option>
+                        <option value="nitrobenzene">Nitrobenzene — O=[N+]([O-])c1ccccc1</option>
+                        <option value="acetanilide">Acetanilide — CC(=O)Nc1ccccc1</option>
+                        <option value="chlorobenzene">Chlorobenzene — Clc1ccccc1</option>
+                        <option value="methanesulfonic">Methanesulfonic acid — CS(=O)2O</option>
+                        <option value="ethanolamine">Ethanolamine — OCCN</option>
+                    </select>
+                </div>
+
+                <div style="margin-top:10px;">
+                    <label for="smilesInput">Override SMILES (RDKit only)</label>
+                    <textarea id="smilesInput" placeholder="e.g. CC(O)C(=O)O"></textarea>
+                    <div style="display:flex;justify-content:flex-end;margin-top:6px;">
+                        <button id="applySmiles" class="btn btn-primary" type="button">Apply</button>
+                    </div>
+                </div>
+
+                <div class="meta-grid">
+                    <div class="meta-card">
+                        <div class="meta-title">Name / Category</div>
+                        <div class="meta-value">
+                            <div id="infoName">–</div>
+                            <div id="infoCategory" style="font-size:0.74rem;opacity:0.8;margin-top:2px;">–</div>
+                        </div>
+                    </div>
+                    <div class="meta-card">
+                        <div class="meta-title">Formula / SMILES</div>
+                        <div class="meta-value" id="infoFormula">–</div>
+                        <div class="meta-value" style="margin-top:2px;">
+                            <code id="infoSmiles">–</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: viewers -->
+            <div class="panel">
+                <h2>Viewers</h2>
+                <div class="panel-sub">
+                    Left: RDKit skeletal (cheminformatics style). Right: Kekule full structural formula (all hydrogens).
+                </div>
+
+                <div class="viewers-grid">
+                    <!-- RDKit skeletal -->
+                    <div class="viewer-card">
+                        <div class="viewer-header">
+                            <div class="viewer-title">RDKit — Skeletal</div>
+                            <span class="viewer-badge">draw_to_canvas</span>
+                        </div>
+                        <div class="viewer-body">
+                            <div class="viewer-inner">
+                                <canvas id="rdkitCanvas"></canvas>
+                            </div>
+                        </div>
+                        <div class="viewer-caption">
+                            SMILES → RDKit.JSMol → HTML5 canvas. Cheminformatics-style skeletal depiction.
+                            In dark mode, the white background is made transparent and black strokes are converted to
+                            white.
+                        </div>
+                    </div>
+
+                    <!-- Kekule full structural -->
+                    <div class="viewer-card">
+                        <div class="viewer-header">
+                            <div class="viewer-title">Kekule — Full</div>
+                            <span class="viewer-badge">2D / FULL (H = ALL)</span>
+                        </div>
+                        <div class="viewer-body">
+                            <div class="viewer-inner">
+                                <div id="kekuleFull" class="kekule-container"></div>
+                            </div>
+                        </div>
+                        <div class="viewer-caption">
+                            Same Molfile from RDKit, rendered as a full structural formula with all hydrogens visible.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Debug log -->
+        <section class="debug">
+            <div class="debug-header">
+                <div style="font-size:0.8rem;font-weight:500;">Debug log</div>
+                <button id="clearLog" class="debug-clear" type="button">Clear</button>
+            </div>
+            <div id="log" class="debug-body"></div>
+        </section>
+    </div>
+
+    <script>
+    // ------------------ debug log ------------------
+    function log(msg) {
+        const el = document.getElementById("log");
+        const t = new Date().toLocaleTimeString();
+        el.textContent += `[${t}] ${msg}\n`;
+        el.scrollTop = el.scrollHeight;
+        console.log(msg);
+    }
+
+    document.getElementById("clearLog").addEventListener("click", () => {
+        document.getElementById("log").textContent = "";
+    });
+
+    // ------------------ molecule metadata ------------------
+    const MOLECULES = {
+        lactic: {
+            name: "Lactic acid",
+            category: "Chiral α-hydroxy acid",
+            smiles: "CC(O)C(=O)O",
+            formula: "C3H6O3 / CH3–CH(OH)–COOH"
+        },
+        benzene: {
+            name: "Benzene",
+            category: "Aromatic monocycle",
+            smiles: "c1ccccc1",
+            formula: "C6H6"
+        },
+        naphthalene: {
+            name: "Naphthalene",
+            category: "Polycyclic aromatic hydrocarbon",
+            smiles: "c1ccc2ccccc2c1",
+            formula: "C10H8"
+        },
+        phenanthrene: {
+            name: "Phenanthrene",
+            category: "PAH (3 fused rings)",
+            smiles: "c1ccc2c(c1)ccc3ccccc23",
+            formula: "C14H10"
+        },
+        cu_nh3_4: {
+            name: "[Cu(NH3)4]2+ (approx)",
+            category: "Tetraamminecopper(II) complex",
+            smiles: "[NH3][Cu+2]([NH3])([NH3])[NH3]",
+            formula: "[Cu(NH3)4]2+"
+        },
+        c16_acid: {
+            name: "C16 fatty acid (palmitic-like)",
+            category: "Long-chain fatty acid",
+            smiles: "CCCCCCCCCCCCCCCC(=O)O",
+            formula: "C16H32O2 / C15H31–COOH"
+        },
+        acetonitrile: {
+            name: "Acetonitrile",
+            category: "Nitrile (polar aprotic)",
+            smiles: "CC#N",
+            formula: "C2H3N"
+        },
+        nitrobenzene: {
+            name: "Nitrobenzene",
+            category: "Aromatic nitro compound",
+            smiles: "O=[N+]([O-])c1ccccc1",
+            formula: "C6H5NO2"
+        },
+        acetanilide: {
+            name: "Acetanilide",
+            category: "Anilide (amide)",
+            smiles: "CC(=O)Nc1ccccc1",
+            formula: "C8H9NO"
+        },
+        chlorobenzene: {
+            name: "Chlorobenzene",
+            category: "Aryl chloride",
+            smiles: "Clc1ccccc1",
+            formula: "C6H5Cl"
+        },
+        methanesulfonic: {
+            name: "Methanesulfonic acid",
+            category: "Sulfonic acid",
+            smiles: "CS(=O)2O",
+            formula: "CH4O3S"
+        },
+        ethanolamine: {
+            name: "Ethanolamine",
+            category: "Amino alcohol",
+            smiles: "OCCN",
+            formula: "C2H7NO"
+        }
+    };
+
+    // ------------------ global state ------------------
+    let RDKitModuleInstance = null;
+    let kekuleFullViewer = null;
+    let lastSmiles = null;  // keep track of last drawn molecule for theme toggling
+
+    // ------------------ theme helpers ------------------
+    function currentTheme() {
+        return document.body.getAttribute("data-theme") || "dark";
+    }
+
+    function applyTheme(theme) {
+        document.body.setAttribute("data-theme", theme);
+        document.querySelector("#themeToggle .mode").textContent =
+            theme === "dark" ? "Dark" : "Light";
+
+        // Update Kekule viewer colors only. RDKit canvas is post-processed per draw.
+        if (kekuleFullViewer) {
+            const cfg = kekuleFullViewer.getRenderConfigs();
+            const colorCfg = cfg.getColorConfigs();
+            if (theme === "dark") {
+                colorCfg.setAtomColor("#ffffff");
+                colorCfg.setBondColor("#ffffff");
+                colorCfg.setLabelColor("#ffffff");
+            } else {
+                colorCfg.setAtomColor("#000000");
+                colorCfg.setBondColor("#000000");
+                colorCfg.setLabelColor("#000000");
+            }
+            kekuleFullViewer.setBackgroundColor("transparent");
+            kekuleFullViewer.requestRepaint();
+        }
+
+        // Redraw RDKit canvas with the new theme so that pixel post-processing is reapplied
+        if (lastSmiles) {
+            drawWithRDKit(lastSmiles);
+        }
+
+        log(`[OK] Theme set to ${theme}`);
+    }
+
+    document.getElementById("themeToggle").addEventListener("click", () => {
+        const next = currentTheme() === "dark" ? "light" : "dark";
+        applyTheme(next);
+    });
+
+    // ------------------ Kekule viewer (full structural) ------------------
+    function initKekuleViewers() {
+        const V = Kekule.ChemWidget;
+        const R = Kekule.Render;
+
+        const fullDiv = document.getElementById("kekuleFull");
+
+        kekuleFullViewer = new V.Viewer(fullDiv);
+        kekuleFullViewer.setRenderType(R.RendererType.R2D);
+        kekuleFullViewer.setMoleculeDisplayType(R.Molecule2DDisplayType.CONDENSED);
+        kekuleFullViewer.setEnableToolbar(false);
+        kekuleFullViewer.setEnableDirectInteraction(false);
+        kekuleFullViewer.setEnableEdit(false);
+        kekuleFullViewer.setAutoSize(true);
+        kekuleFullViewer.setAutofit(true);
+        kekuleFullViewer.setPadding(20);  // extra margin so labels do not get clipped
+
+        const HDL = R.HydrogenDisplayLevel;
+        const NDM = R.NodeLabelDisplayMode;
+
+        // Full structural formula: all hydrogens visible, all atom labels shown
+        const fullMolCfg = kekuleFullViewer.getRenderConfigs().getMoleculeDisplayConfigs();
+        fullMolCfg.setDefHydrogenDisplayLevel(HDL.ALL);
+        fullMolCfg.setDefNodeDisplayMode(NDM.SHOWN);
+
+        applyTheme(currentTheme());
+        log("[OK] Kekule viewer created (full structural: H=ALL, labels=SHOWN).");
+    }
+
+    function loadMolfileIntoKekule(molfile) {
+        try {
+            const molObj = Kekule.IO.loadFormatData(molfile, "mol");
+            if (!molObj) {
+                log("[ERR] Kekule.IO.loadFormatData returned null");
+                return;
+            }
+            kekuleFullViewer.setChemObj(molObj);
+            kekuleFullViewer.requestRepaint();
+            log("[OK] Molfile loaded into Kekule (full structural).");
+        } catch (e) {
+            log("[ERR] Failed to load Molfile into Kekule: " + e);
+        }
+    }
+
+    // ------------------ RDKit drawing (with dark-mode post processing) ------------------
+    function drawWithRDKit(smiles) {
+        if (!RDKitModuleInstance) {
+            log("[ERR] RDKit not initialized.");
+            return null;
+        }
+        lastSmiles = smiles;
+
+        const canvasVisible = document.getElementById("rdkitCanvas");
+        const w = canvasVisible.clientWidth || canvasVisible.parentElement.clientWidth || 260;
+        const h = 280;  // match .viewer-inner height for best quality
+        canvasVisible.width = w;
+        canvasVisible.height = h;
+
+        // Offscreen canvas where RDKit draws in its normal (light) style
+        const canvasRaw = document.createElement("canvas");
+        canvasRaw.width = w;
+        canvasRaw.height = h;
+
+        let mol = null;
+        try {
+            mol = RDKitModuleInstance.get_mol(smiles);
+        } catch (e) {
+            log("[ERR] RDKit get_mol error: " + e);
+            return null;
+        }
+
+        try {
+            mol.draw_to_canvas(canvasRaw, -1, -1);
+            log("[OK] RDKit drew molecule to offscreen canvas.");
+        } catch (e) {
+            log("[ERR] draw_to_canvas failed: " + e);
+        }
+
+        const theme = currentTheme();
+        const vctx = canvasVisible.getContext("2d");
+
+        if (theme === "dark") {
+            const rctx = canvasRaw.getContext("2d");
+            const img = rctx.getImageData(0, 0, w, h);
+            const data = img.data;
+
+            for (let i = 0; i < data.length; i += 4) {
+                const r = data[i];
+                const g = data[i + 1];
+                const b = data[i + 2];
+
+                // nearly white background -> transparent
+                if (r > 245 && g > 245 && b > 245) {
+                    data[i + 3] = 0;
+                    continue;
+                }
+
+                // nearly black / dark gray (low chroma) -> treat as stroke and make it white
+                const maxRGB = Math.max(r, g, b);
+                const minRGB = Math.min(r, g, b);
+                const isNearGray = (maxRGB - minRGB) < 10;
+
+                if (maxRGB < 60 && isNearGray) {
+                    data[i] = 255;
+                    data[i + 1] = 255;
+                    data[i + 2] = 255;
+                }
+                // any other colored pixel (O red, N blue, etc.) is left unchanged
+            }
+
+            vctx.clearRect(0, 0, w, h);
+            vctx.putImageData(img, 0, 0);
+            log("[OK] Dark-mode post processing applied (white bg -> transparent, black/gray strokes -> white).");
+        } else {
+            // light theme: just copy with white background
+            const rctx = canvasRaw.getContext("2d");
+            const img = rctx.getImageData(0, 0, w, h);
+            vctx.fillStyle = "#ffffff";
+            vctx.fillRect(0, 0, w, h);
+            vctx.putImageData(img, 0, 0);
+            log("[OK] Light-mode copy of RDKit canvas.");
+        }
+
+        let molblock = "";
+        try {
+            molblock = mol.get_molblock();
+            log("[OK] RDKit produced Molfile via get_molblock().");
+        } catch (e) {
+            log("[ERR] get_molblock failed: " + e);
+        }
+        mol.delete();
+        return molblock;
+    }
+
+    // ------------------ UI & loading ------------------
+    function updateInfo(meta, smiles) {
+        document.getElementById("infoName").textContent = meta.name;
+        document.getElementById("infoCategory").textContent = meta.category;
+        document.getElementById("infoFormula").textContent = meta.formula;
+        document.getElementById("infoSmiles").textContent = smiles;
+    }
+
+    function loadPreset(key) {
+        const meta = MOLECULES[key];
+        if (!meta) return;
+        document.getElementById("smilesInput").value = meta.smiles;
+        updateInfo(meta, meta.smiles);
+
+        const molblock = drawWithRDKit(meta.smiles);
+        if (molblock) {
+            loadMolfileIntoKekule(molblock);
+        }
+    }
+
+    function initUI() {
+        const select = document.getElementById("presetSelect");
+        select.addEventListener("change", () => {
+            loadPreset(select.value);
+        });
+
+        document.getElementById("applySmiles").addEventListener("click", () => {
+            const raw = document.getElementById("smilesInput").value.trim();
+            if (!raw) {
+                log("[WARN] Empty SMILES; using current preset.");
+                loadPreset(select.value);
+                return;
+            }
+            const key = select.value;
+            const meta = MOLECULES[key] || {
+                name: "Custom molecule",
+                category: "User-defined",
+                formula: "–"
+            };
+            updateInfo(meta, raw);
+            const molblock = drawWithRDKit(raw);
+            if (molblock) {
+                loadMolfileIntoKekule(molblock);
+                log("[OK] Custom SMILES applied.");
+            }
+        });
+    }
+
+    // ------------------ bootstrap ------------------
+    window.addEventListener("load", async () => {
+        // 1. init Kekule viewer (sync)
+        initKekuleViewers();
+
+        // 2. init RDKit
+        if (typeof initRDKitModule !== "function") {
+            log("[ERR] initRDKitModule not found. RDKit_minimal.js failed to load?");
+            return;
+        }
+        log("[..] Initializing RDKit.js …");
+        RDKitModuleInstance = await initRDKitModule();
+        log("[OK] RDKit.js initialized, version: " + RDKitModuleInstance.version());
+
+        // 3. UI + initial molecule
+        initUI();
+        applyTheme("dark");
+        loadPreset("lactic");
+    });
+</script>
+
+    
+</body>
+
+</html>
