@@ -1,0 +1,104 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "sodium nitrate",
+            "common_name": "sodium nitrate",
+            "local_name": "硝酸ナトリウム",
+            "skeletal_formula": "NaNO3",
+            "molecular_formula": "NaNO3",
+            "series_general_formula": "Nitrates: MNO3 (M = metal, NH4)",
+            "functional_groups": [
+                {
+                    "name_en": "Nitrate",
+                    "name_ja": "硝酸イオン",
+                    "pattern": "NO3^-"
+                }
+            ],
+            "notes": "Colorless crystals; highly soluble; used in fertilizers and explosives; example of \"all nitrates are soluble\" rule.",
+            "smiles": "[Na+].[O-][N+](=O)O",
+            "katex_skeletal_formula": "\\ce{NaNO3}",
+            "katex_molecular_formula": "\\ce{NaNO3}"
+        },
+        {
+            "iupac_name": "potassium nitrate",
+            "common_name": "potassium nitrate (saltpeter)",
+            "local_name": "硝酸カリウム",
+            "skeletal_formula": "KNO3",
+            "molecular_formula": "KNO3",
+            "series_general_formula": "Nitrates: MNO3 (M = metal, NH4)",
+            "functional_groups": [
+                {
+                    "name_en": "Nitrate",
+                    "name_ja": "硝酸イオン",
+                    "pattern": "NO3^-"
+                }
+            ],
+            "notes": "Colorless crystalline solid; strongly oxidizing; used in gunpowder and fertilizers; classic nitrate example.",
+            "smiles": "[K+].[O-][N+](=O)O",
+            "katex_skeletal_formula": "\\ce{KNO3}",
+            "katex_molecular_formula": "\\ce{KNO3}"
+        },
+        {
+            "iupac_name": "ammonium nitrate",
+            "common_name": "ammonium nitrate",
+            "local_name": "硝酸アンモニウム",
+            "skeletal_formula": "NH4NO3",
+            "molecular_formula": "NH4NO3",
+            "series_general_formula": "Ammonium nitrates: NH4NO3",
+            "functional_groups": [
+                {
+                    "name_en": "Ammonium",
+                    "name_ja": "アンモニウムイオン",
+                    "pattern": "NH4^+"
+                },
+                {
+                    "name_en": "Nitrate",
+                    "name_ja": "硝酸イオン",
+                    "pattern": "NO3^-"
+                }
+            ],
+            "notes": "Highly soluble solid; important nitrogen fertilizer and component of some explosives; typical salt combining NH4^+ and NO3^-.",
+            "smiles": "[NH4+].[O-][N+](=O)O",
+            "katex_skeletal_formula": "\\ce{NH4NO3}",
+            "katex_molecular_formula": "\\ce{NH4NO3}"
+        },
+        {
+            "iupac_name": "silver nitrate",
+            "common_name": "silver nitrate",
+            "local_name": "硝酸銀",
+            "skeletal_formula": "AgNO3",
+            "molecular_formula": "AgNO3",
+            "series_general_formula": "Nitrates: MNO3 (M = Ag, Cu, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Nitrate",
+                    "name_ja": "硝酸イオン",
+                    "pattern": "NO3^-"
+                }
+            ],
+            "notes": "Colorless crystals; highly soluble; used in analytical chemistry to precipitate halides (AgCl, AgBr, AgI) and as disinfectant.",
+            "smiles": "[Ag+].[O-][N+](=O)O",
+            "katex_skeletal_formula": "\\ce{AgNO3}",
+            "katex_molecular_formula": "\\ce{AgNO3}"
+        },
+        {
+            "iupac_name": "copper(II) nitrate",
+            "common_name": "copper(II) nitrate",
+            "local_name": "硝酸銅(II)",
+            "skeletal_formula": "Cu(NO3)2",
+            "molecular_formula": "Cu(NO3)2",
+            "series_general_formula": "Metal nitrates: M(NO3)n",
+            "functional_groups": [
+                {
+                    "name_en": "Nitrate",
+                    "name_ja": "硝酸イオン",
+                    "pattern": "NO3^-"
+                }
+            ],
+            "notes": "Blue crystals (hydrates); typical colored nitrate; used in preparation of copper compounds and as oxidizing agent.",
+            "smiles": "[Cu+2].[O-][N+](=O)O.[O-][N+](=O)O",
+            "katex_skeletal_formula": "\\ce{Cu(NO3)2}",
+            "katex_molecular_formula": "\\ce{Cu(NO3)2}"
+        }
+    ]
+}

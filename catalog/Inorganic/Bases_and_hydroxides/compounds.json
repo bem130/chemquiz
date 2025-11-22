@@ -1,0 +1,194 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "sodium hydroxide",
+            "common_name": "sodium hydroxide",
+            "local_name": "水酸化ナトリウム",
+            "skeletal_formula": "NaOH",
+            "molecular_formula": "NaOH",
+            "series_general_formula": "Strong bases: MOH (M = alkali metal)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxide",
+                    "name_ja": "水酸化物イオン",
+                    "pattern": "OH^-"
+                }
+            ],
+            "notes": "Typical strong base; white, deliquescent solid; highly soluble in water and strongly alkaline; used in many neutralization and saponification reactions.",
+            "smiles": "[Na+].[OH-]",
+            "katex_skeletal_formula": "\\ce{NaOH}",
+            "katex_molecular_formula": "\\ce{NaOH}"
+        },
+        {
+            "iupac_name": "potassium hydroxide",
+            "common_name": "potassium hydroxide",
+            "local_name": "水酸化カリウム",
+            "skeletal_formula": "KOH",
+            "molecular_formula": "KOH",
+            "series_general_formula": "Strong bases: MOH (M = alkali metal)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxide",
+                    "name_ja": "水酸化物イオン",
+                    "pattern": "OH^-"
+                }
+            ],
+            "notes": "Strong base similar to NaOH; used in alkaline batteries and as absorbent for CO2; representative K+ alkali.",
+            "smiles": "[K+].[OH-]",
+            "katex_skeletal_formula": "\\ce{KOH}",
+            "katex_molecular_formula": "\\ce{KOH}"
+        },
+        {
+            "iupac_name": "calcium hydroxide",
+            "common_name": "calcium hydroxide (slaked lime)",
+            "local_name": "水酸化カルシウム（消石灰）",
+            "skeletal_formula": "Ca(OH)2",
+            "molecular_formula": "Ca(OH)2",
+            "series_general_formula": "Strong bases (sparingly soluble): M(OH)2 (M = Ca, Sr, Ba)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxide",
+                    "name_ja": "水酸化物イオン",
+                    "pattern": "OH^-"
+                }
+            ],
+            "notes": "Slightly soluble strong base; saturated solution is limewater; used to detect CO2 and in construction.",
+            "smiles": "[Ca+2].[OH-].[OH-]",
+            "katex_skeletal_formula": "\\ce{Ca(OH)2}",
+            "katex_molecular_formula": "\\ce{Ca(OH)2}"
+        },
+        {
+            "iupac_name": "barium hydroxide",
+            "common_name": "barium hydroxide",
+            "local_name": "水酸化バリウム",
+            "skeletal_formula": "Ba(OH)2",
+            "molecular_formula": "Ba(OH)2",
+            "series_general_formula": "Strong bases: M(OH)2 (M = Ba)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxide",
+                    "name_ja": "水酸化物イオン",
+                    "pattern": "OH^-"
+                }
+            ],
+            "notes": "Strong base; more soluble than Ca(OH)2; used in titrations and analysis involving sulfate precipitation (BaSO4).",
+            "smiles": "[Ba+2].[OH-].[OH-]",
+            "katex_skeletal_formula": "\\ce{Ba(OH)2}",
+            "katex_molecular_formula": "\\ce{Ba(OH)2}"
+        },
+        {
+            "iupac_name": "magnesium hydroxide",
+            "common_name": "magnesium hydroxide",
+            "local_name": "水酸化マグネシウム",
+            "skeletal_formula": "Mg(OH)2",
+            "molecular_formula": "Mg(OH)2",
+            "series_general_formula": "Weak bases (sparingly soluble): M(OH)2 (M = Mg, many transition metals)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxide",
+                    "name_ja": "水酸化物イオン",
+                    "pattern": "OH^-"
+                }
+            ],
+            "notes": "White, almost insoluble solid; weak base; used as antacid and flame retardant.",
+            "smiles": "[Mg+2].[OH-].[OH-]",
+            "katex_skeletal_formula": "\\ce{Mg(OH)2}",
+            "katex_molecular_formula": "\\ce{Mg(OH)2}"
+        },
+        {
+            "iupac_name": "ammonia",
+            "common_name": "ammonia (aqueous ammonia)",
+            "local_name": "アンモニア（アンモニア水）",
+            "skeletal_formula": "NH3 (aq)",
+            "molecular_formula": "NH3",
+            "series_general_formula": "Molecular bases: NH3 and organic amines",
+            "functional_groups": [
+                {
+                    "name_en": "Ammonia",
+                    "name_ja": "アンモニア分子",
+                    "pattern": "NH3"
+                }
+            ],
+            "notes": "Weak base; accepts protons from water to form NH4^+ and OH^-; typical weak base in high school problems.",
+            "smiles": "N",
+            "katex_skeletal_formula": "\\ce{NH3 (aq)}",
+            "katex_molecular_formula": "\\ce{NH3}"
+        },
+        {
+            "iupac_name": "aluminium hydroxide",
+            "common_name": "aluminium hydroxide",
+            "local_name": "水酸化アルミニウム",
+            "skeletal_formula": "Al(OH)3",
+            "molecular_formula": "Al(OH)3",
+            "series_general_formula": "Amphoteric hydroxides: M(OH)n (M = Al, Zn, Sn, Pb)",
+            "functional_groups": [
+                {
+                    "name_en": "Amphoteric hydroxide",
+                    "name_ja": "両性水酸化物",
+                    "pattern": "Al(OH)3"
+                }
+            ],
+            "notes": "White gelatinous precipitate; amphoteric; dissolves in both acids and concentrated bases; weak base in water.",
+            "smiles": "[Al+3].[OH-].[OH-].[OH-]",
+            "katex_skeletal_formula": "\\ce{Al(OH)3}",
+            "katex_molecular_formula": "\\ce{Al(OH)3}"
+        },
+        {
+            "iupac_name": "zinc hydroxide",
+            "common_name": "zinc hydroxide",
+            "local_name": "水酸化亜鉛",
+            "skeletal_formula": "Zn(OH)2",
+            "molecular_formula": "Zn(OH)2",
+            "series_general_formula": "Amphoteric hydroxides: M(OH)2 (M = Zn, Sn, Pb)",
+            "functional_groups": [
+                {
+                    "name_en": "Amphoteric hydroxide",
+                    "name_ja": "両性水酸化物",
+                    "pattern": "Zn(OH)2"
+                }
+            ],
+            "notes": "White gelatinous precipitate; amphoteric; dissolves in excess strong base to form zincate ions and in acids to form zinc salts.",
+            "smiles": "[Zn+2].[OH-].[OH-]",
+            "katex_skeletal_formula": "\\ce{Zn(OH)2}",
+            "katex_molecular_formula": "\\ce{Zn(OH)2}"
+        },
+        {
+            "iupac_name": "copper(II) hydroxide",
+            "common_name": "copper(II) hydroxide",
+            "local_name": "水酸化銅(II)",
+            "skeletal_formula": "Cu(OH)2",
+            "molecular_formula": "Cu(OH)2",
+            "series_general_formula": "Weak bases: many transition metal hydroxides M(OH)n",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxide",
+                    "name_ja": "水酸化物イオン",
+                    "pattern": "OH^-"
+                }
+            ],
+            "notes": "Blue gelatinous precipitate; typical weak base and sparingly soluble hydroxide; used in qualitative analysis.",
+            "smiles": "[Cu+2].[OH-].[OH-]",
+            "katex_skeletal_formula": "\\ce{Cu(OH)2}",
+            "katex_molecular_formula": "\\ce{Cu(OH)2}"
+        },
+        {
+            "iupac_name": "iron(III) hydroxide",
+            "common_name": "iron(III) hydroxide",
+            "local_name": "水酸化鉄(III)",
+            "skeletal_formula": "Fe(OH)3",
+            "molecular_formula": "Fe(OH)3",
+            "series_general_formula": "Weak bases: many transition metal hydroxides M(OH)n",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxide",
+                    "name_ja": "水酸化物イオン",
+                    "pattern": "OH^-"
+                }
+            ],
+            "notes": "Brown gelatinous precipitate; weak base; appears in qualitative analysis and weak-base lists.",
+            "smiles": "[Fe+3].[OH-].[OH-].[OH-]",
+            "katex_skeletal_formula": "\\ce{Fe(OH)3}",
+            "katex_molecular_formula": "\\ce{Fe(OH)3}"
+        }
+    ]
+}

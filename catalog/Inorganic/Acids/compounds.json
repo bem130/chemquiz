@@ -1,0 +1,210 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "hydrogen chloride",
+            "common_name": "hydrochloric acid (aqueous hydrogen chloride)",
+            "local_name": "塩酸（塩化水素水溶液）",
+            "skeletal_formula": "HCl (aq)",
+            "molecular_formula": "HCl",
+            "series_general_formula": "Strong monoprotic mineral acids: HX (X = Cl, Br, I)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydrogen halide",
+                    "name_ja": "ハロゲン化水素",
+                    "pattern": "HX"
+                },
+                {
+                    "name_en": "Chloride",
+                    "name_ja": "塩化物イオン",
+                    "pattern": "Cl^-"
+                }
+            ],
+            "notes": "Typical strong acid; almost completely dissociated in water; widely used in labs and industry; colorless, pungent solution.",
+            "smiles": "Cl",
+            "katex_skeletal_formula": "\\ce{HCl (aq)}",
+            "katex_molecular_formula": "\\ce{HCl}"
+        },
+        {
+            "iupac_name": "hydrogen bromide",
+            "common_name": "hydrobromic acid (aqueous hydrogen bromide)",
+            "local_name": "臭化水素酸",
+            "skeletal_formula": "HBr (aq)",
+            "molecular_formula": "HBr",
+            "series_general_formula": "Strong monoprotic mineral acids: HX (X = Cl, Br, I)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydrogen halide",
+                    "name_ja": "ハロゲン化水素",
+                    "pattern": "HX"
+                },
+                {
+                    "name_en": "Bromide",
+                    "name_ja": "臭化物イオン",
+                    "pattern": "Br^-"
+                }
+            ],
+            "notes": "Strong acid similar to hydrochloric acid; almost completely dissociated; appears in lists of strong acids in exam prep.",
+            "smiles": "Br",
+            "katex_skeletal_formula": "\\ce{HBr (aq)}",
+            "katex_molecular_formula": "\\ce{HBr}"
+        },
+        {
+            "iupac_name": "hydrogen iodide",
+            "common_name": "hydroiodic acid (aqueous hydrogen iodide)",
+            "local_name": "ヨウ化水素酸",
+            "skeletal_formula": "HI (aq)",
+            "molecular_formula": "HI",
+            "series_general_formula": "Strong monoprotic mineral acids: HX (X = Cl, Br, I)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydrogen halide",
+                    "name_ja": "ハロゲン化水素",
+                    "pattern": "HX"
+                },
+                {
+                    "name_en": "Iodide",
+                    "name_ja": "ヨウ化物イオン",
+                    "pattern": "I^-"
+                }
+            ],
+            "notes": "Very strong acid; strong reducing properties due to I^-; included among strong acids in many high school lists.",
+            "smiles": "I",
+            "katex_skeletal_formula": "\\ce{HI (aq)}",
+            "katex_molecular_formula": "\\ce{HI}"
+        },
+        {
+            "iupac_name": "nitric acid",
+            "common_name": "nitric acid",
+            "local_name": "硝酸",
+            "skeletal_formula": "HNO3",
+            "molecular_formula": "HNO3",
+            "series_general_formula": "Oxoacids of nitrogen: HNO2, HNO3",
+            "functional_groups": [
+                {
+                    "name_en": "Nitrate",
+                    "name_ja": "硝酸イオン",
+                    "pattern": "NO3^-"
+                }
+            ],
+            "notes": "Strong monoprotic acid and powerful oxidizing agent (especially when concentrated); reacts with many metals to form nitrogen oxides.",
+            "smiles": "O=[N+](O)[O-]",
+            "katex_skeletal_formula": "\\ce{HNO3}",
+            "katex_molecular_formula": "\\ce{HNO3}"
+        },
+        {
+            "iupac_name": "sulfuric acid",
+            "common_name": "sulfuric acid",
+            "local_name": "硫酸",
+            "skeletal_formula": "H2SO4",
+            "molecular_formula": "H2SO4",
+            "series_general_formula": "Oxoacids of sulfur: H2SO4 (strong), H2SO3 (weak)",
+            "functional_groups": [
+                {
+                    "name_en": "Sulfate",
+                    "name_ja": "硫酸イオン",
+                    "pattern": "SO4^{2-}"
+                }
+            ],
+            "notes": "Strong diprotic acid; concentrated H2SO4 is highly dehydrating and oxidizing; extremely important industrial chemical.",
+            "smiles": "OS(=O)(=O)O",
+            "katex_skeletal_formula": "\\ce{H2SO4}",
+            "katex_molecular_formula": "\\ce{H2SO4}"
+        },
+        {
+            "iupac_name": "sulfurous acid",
+            "common_name": "sulfurous acid",
+            "local_name": "亜硫酸",
+            "skeletal_formula": "H2SO3",
+            "molecular_formula": "H2SO3",
+            "series_general_formula": "Oxoacids of sulfur: H2SO3 (weak), H2SO4 (strong)",
+            "functional_groups": [
+                {
+                    "name_en": "Sulfite",
+                    "name_ja": "亜硫酸イオン",
+                    "pattern": "SO3^{2-}"
+                }
+            ],
+            "notes": "Weak diprotic acid; exists only in solution; formed by dissolving SO2 in water; reducing agent in redox reactions.",
+            "smiles": "O=S(=O)O",
+            "katex_skeletal_formula": "\\ce{H2SO3}",
+            "katex_molecular_formula": "\\ce{H2SO3}"
+        },
+        {
+            "iupac_name": "carbonic acid",
+            "common_name": "carbonic acid",
+            "local_name": "炭酸",
+            "skeletal_formula": "H2CO3",
+            "molecular_formula": "H2CO3",
+            "series_general_formula": "Oxoacids of carbon: H2CO3 (weak, diprotic)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydrogencarbonate",
+                    "name_ja": "炭酸水素イオン",
+                    "pattern": "HCO3^-"
+                },
+                {
+                    "name_en": "Carbonate",
+                    "name_ja": "炭酸イオン",
+                    "pattern": "CO3^{2-}"
+                }
+            ],
+            "notes": "Weak diprotic acid; forms when CO2 dissolves in water; unstable and exists in solution; gives hydrogencarbonates and carbonates.",
+            "smiles": "OC(=O)O",
+            "katex_skeletal_formula": "\\ce{H2CO3}",
+            "katex_molecular_formula": "\\ce{H2CO3}"
+        },
+        {
+            "iupac_name": "phosphoric acid",
+            "common_name": "phosphoric acid",
+            "local_name": "リン酸",
+            "skeletal_formula": "H3PO4",
+            "molecular_formula": "H3PO4",
+            "series_general_formula": "Oxoacids of phosphorus: H3PO4 (triprotic)",
+            "functional_groups": [
+                {
+                    "name_en": "Dihydrogen phosphate",
+                    "name_ja": "二水素リン酸イオン",
+                    "pattern": "H2PO4^-"
+                },
+                {
+                    "name_en": "Hydrogen phosphate",
+                    "name_ja": "水素リン酸イオン",
+                    "pattern": "HPO4^{2-}"
+                },
+                {
+                    "name_en": "Phosphate",
+                    "name_ja": "リン酸イオン",
+                    "pattern": "PO4^{3-}"
+                }
+            ],
+            "notes": "Triprotic weak acid; important in fertilizers and biochemistry; gives a series of acid salts and normal phosphate salts.",
+            "smiles": "OP(=O)(O)O",
+            "katex_skeletal_formula": "\\ce{H3PO4}",
+            "katex_molecular_formula": "\\ce{H3PO4}"
+        },
+        {
+            "iupac_name": "hydrogen fluoride",
+            "common_name": "hydrofluoric acid (aqueous hydrogen fluoride)",
+            "local_name": "フッ化水素酸",
+            "skeletal_formula": "HF (aq)",
+            "molecular_formula": "HF",
+            "series_general_formula": "Hydrogen halides: HF (weak acid), HCl, HBr, HI (strong acids)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydrogen halide",
+                    "name_ja": "ハロゲン化水素",
+                    "pattern": "HX"
+                },
+                {
+                    "name_en": "Fluoride",
+                    "name_ja": "フッ化物イオン",
+                    "pattern": "F^-"
+                }
+            ],
+            "notes": "Weak acid in water but highly corrosive; attacks glass by forming SiF4; handled in plastic containers.",
+            "smiles": "F",
+            "katex_skeletal_formula": "\\ce{HF (aq)}",
+            "katex_molecular_formula": "\\ce{HF}"
+        }
+    ]
+}

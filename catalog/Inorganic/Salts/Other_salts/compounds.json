@@ -1,0 +1,142 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "sodium hydrogensulfate",
+            "common_name": "sodium bisulfate (sodium hydrogen sulfate)",
+            "local_name": "硫酸水素ナトリウム",
+            "skeletal_formula": "NaHSO4",
+            "molecular_formula": "NaHSO4",
+            "series_general_formula": "Acid sulfates: MHSO4 (M = Na, K)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydrogensulfate",
+                    "name_ja": "硫酸水素イオン",
+                    "pattern": "HSO4^-"
+                }
+            ],
+            "notes": "Acid salt of sulfuric acid; forms acidic aqueous solution; typical example of acid salt in neutralization problems.",
+            "smiles": "[Na+].[O-]S(=O)(=O)O",
+            "katex_skeletal_formula": "\\ce{NaHSO4}",
+            "katex_molecular_formula": "\\ce{NaHSO4}"
+        },
+        {
+            "iupac_name": "sodium hypochlorite",
+            "common_name": "sodium hypochlorite",
+            "local_name": "次亜塩素酸ナトリウム",
+            "skeletal_formula": "NaClO",
+            "molecular_formula": "NaClO",
+            "series_general_formula": "Hypochlorites: MClO (M = Na, Ca, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Hypochlorite",
+                    "name_ja": "次亜塩素酸イオン",
+                    "pattern": "ClO^-"
+                }
+            ],
+            "notes": "Active component of bleach; strong oxidizing and disinfecting agent; produced by reacting Cl2 with cold dilute NaOH.",
+            "smiles": "[Na+].[O-]Cl",
+            "katex_skeletal_formula": "\\ce{NaClO}",
+            "katex_molecular_formula": "\\ce{NaClO}"
+        },
+        {
+            "iupac_name": "sodium nitrite",
+            "common_name": "sodium nitrite",
+            "local_name": "亜硝酸ナトリウム",
+            "skeletal_formula": "NaNO2",
+            "molecular_formula": "NaNO2",
+            "series_general_formula": "Nitrites: MNO2 (M = Na, K, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Nitrite",
+                    "name_ja": "亜硝酸イオン",
+                    "pattern": "NO2^-"
+                }
+            ],
+            "notes": "White to pale yellow solid; used in food preservation and as intermediate in diazotization reactions; contrasts with nitrates NO3^-.",
+            "smiles": "[Na+].[O-]N=O",
+            "katex_skeletal_formula": "\\ce{NaNO2}",
+            "katex_molecular_formula": "\\ce{NaNO2}"
+        },
+        {
+            "iupac_name": "sodium sulfide",
+            "common_name": "sodium sulfide",
+            "local_name": "硫化ナトリウム",
+            "skeletal_formula": "Na2S",
+            "molecular_formula": "Na2S",
+            "series_general_formula": "Metal sulfides: M2S (M = alkali metal), MS (M = many metals)",
+            "functional_groups": [
+                {
+                    "name_en": "Sulfide",
+                    "name_ja": "硫化物イオン",
+                    "pattern": "S^{2-}"
+                }
+            ],
+            "notes": "Colorless to yellow solid; strongly basic and reducing; used in qualitative inorganic chemistry for sulfide precipitation.",
+            "smiles": "[Na+].[Na+].[S-2]",
+            "katex_skeletal_formula": "\\ce{Na2S}",
+            "katex_molecular_formula": "\\ce{Na2S}"
+        },
+        {
+            "iupac_name": "ammonium chloride",
+            "common_name": "ammonium chloride",
+            "local_name": "塩化アンモニウム",
+            "skeletal_formula": "NH4Cl",
+            "molecular_formula": "NH4Cl",
+            "series_general_formula": "Ammonium salts: NH4X (X = Cl, NO3, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Ammonium",
+                    "name_ja": "アンモニウムイオン",
+                    "pattern": "NH4^+"
+                },
+                {
+                    "name_en": "Chloride",
+                    "name_ja": "塩化物イオン",
+                    "pattern": "Cl^-"
+                }
+            ],
+            "notes": "Colorless crystals; solution is weakly acidic due to NH4^+ hydrolysis; used in dry cells and as fertilizer.",
+            "smiles": "[NH4+].[Cl-]",
+            "katex_skeletal_formula": "\\ce{NH4Cl}",
+            "katex_molecular_formula": "\\ce{NH4Cl}"
+        },
+        {
+            "iupac_name": "potassium aluminium sulfate dodecahydrate",
+            "common_name": "potassium alum",
+            "local_name": "ミョウバン（硫酸カリウムアルミニウム十二水和物）",
+            "skeletal_formula": "KAl(SO4)2·12H2O",
+            "molecular_formula": "KAl(SO4)2·12H2O",
+            "series_general_formula": "Alums (double sulfates): MAl(SO4)2·12H2O (M = K, NH4, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Sulfate",
+                    "name_ja": "硫酸イオン",
+                    "pattern": "SO4^{2-}"
+                }
+            ],
+            "notes": "Colorless crystals; double salt of K+, Al3+ and SO4^{2-}; used in water purification, mordant dyeing, and as common \"alum\" in daily life.",
+            "smiles": "[K+].[Al+3].[O-]S(=O)(=O)[O-].[O-]S(=O)(=O)[O-].O.O.O.O.O.O.O.O.O.O.O.O",
+            "katex_skeletal_formula": "\\ce{KAl(SO4)2\\cdot 12H2O}",
+            "katex_molecular_formula": "\\ce{KAl(SO4)2\\cdot 12H2O}"
+        },
+        {
+            "iupac_name": "sodium thiosulfate pentahydrate",
+            "common_name": "sodium thiosulfate (hypo)",
+            "local_name": "チオ硫酸ナトリウム五水和物（ハイポ）",
+            "skeletal_formula": "Na2S2O3·5H2O",
+            "molecular_formula": "Na2S2O3·5H2O",
+            "series_general_formula": "Thiosulfates: M2S2O3 (M = Na, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Thiosulfate",
+                    "name_ja": "チオ硫酸イオン",
+                    "pattern": "S2O3^{2-}"
+                }
+            ],
+            "notes": "Colorless crystals; used in photography as fixing agent and in iodine titrations; typical complex anion salt.",
+            "smiles": "[Na+].[Na+].[O-]S(=O)SS(=O)[O-].O.O.O.O.O",
+            "katex_skeletal_formula": "\\ce{Na2S2O3\\cdot 5H2O}",
+            "katex_molecular_formula": "\\ce{Na2S2O3\\cdot 5H2O}"
+        }
+    ]
+}

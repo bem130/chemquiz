@@ -1,0 +1,104 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "sodium dihydrogen phosphate",
+            "common_name": "sodium dihydrogen phosphate",
+            "local_name": "二水素リン酸ナトリウム",
+            "skeletal_formula": "NaH2PO4",
+            "molecular_formula": "NaH2PO4",
+            "series_general_formula": "Acid phosphates: MH2PO4 (M = Na, K, NH4)",
+            "functional_groups": [
+                {
+                    "name_en": "Dihydrogen phosphate",
+                    "name_ja": "二水素リン酸イオン",
+                    "pattern": "H2PO4^-"
+                }
+            ],
+            "notes": "Acid salt of phosphoric acid; used in buffer solutions; typical example of acid phosphate.",
+            "smiles": "[Na+].OP(=O)(O)O",
+            "katex_skeletal_formula": "\\ce{NaH2PO4}",
+            "katex_molecular_formula": "\\ce{NaH2PO4}"
+        },
+        {
+            "iupac_name": "disodium hydrogen phosphate",
+            "common_name": "disodium hydrogen phosphate",
+            "local_name": "水素リン酸ナトリウム",
+            "skeletal_formula": "Na2HPO4",
+            "molecular_formula": "Na2HPO4",
+            "series_general_formula": "Acid phosphates: M2HPO4 (M = Na, K)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydrogen phosphate",
+                    "name_ja": "水素リン酸イオン",
+                    "pattern": "HPO4^{2-}"
+                }
+            ],
+            "notes": "Another acid salt of phosphoric acid; used together with NaH2PO4 to make buffer solutions.",
+            "smiles": "[Na+].[Na+].O=P(O)([O-])O",
+            "katex_skeletal_formula": "\\ce{Na2HPO4}",
+            "katex_molecular_formula": "\\ce{Na2HPO4}"
+        },
+        {
+            "iupac_name": "trisodium phosphate",
+            "common_name": "trisodium phosphate",
+            "local_name": "リン酸ナトリウム",
+            "skeletal_formula": "Na3PO4",
+            "molecular_formula": "Na3PO4",
+            "series_general_formula": "Normal phosphates: M3PO4 (M = alkali metal)",
+            "functional_groups": [
+                {
+                    "name_en": "Phosphate",
+                    "name_ja": "リン酸イオン",
+                    "pattern": "PO4^{3-}"
+                }
+            ],
+            "notes": "Strongly basic salt; used in detergents and water softening; typical normal phosphate.",
+            "smiles": "[Na+].[Na+].[Na+].[O-]P(=O)([O-])[O-]",
+            "katex_skeletal_formula": "\\ce{Na3PO4}",
+            "katex_molecular_formula": "\\ce{Na3PO4}"
+        },
+        {
+            "iupac_name": "tricalcium phosphate",
+            "common_name": "calcium phosphate",
+            "local_name": "リン酸カルシウム",
+            "skeletal_formula": "Ca3(PO4)2",
+            "molecular_formula": "Ca3(PO4)2",
+            "series_general_formula": "Insoluble phosphates: M3(PO4)2 (M = Ca, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Phosphate",
+                    "name_ja": "リン酸イオン",
+                    "pattern": "PO4^{3-}"
+                }
+            ],
+            "notes": "White, poorly soluble solid; main component of bones and apatite minerals; used in fertilizers.",
+            "smiles": "[Ca+2].[Ca+2].[Ca+2].[O-]P(=O)([O-])O.[O-]P(=O)([O-])O",
+            "katex_skeletal_formula": "\\ce{Ca3(PO4)2}",
+            "katex_molecular_formula": "\\ce{Ca3(PO4)2}"
+        },
+        {
+            "iupac_name": "ammonium dihydrogen phosphate",
+            "common_name": "ammonium dihydrogen phosphate",
+            "local_name": "二水素リン酸アンモニウム",
+            "skeletal_formula": "NH4H2PO4",
+            "molecular_formula": "NH4H2PO4",
+            "series_general_formula": "Ammonium acid phosphates: NH4H2PO4",
+            "functional_groups": [
+                {
+                    "name_en": "Ammonium",
+                    "name_ja": "アンモニウムイオン",
+                    "pattern": "NH4^+"
+                },
+                {
+                    "name_en": "Dihydrogen phosphate",
+                    "name_ja": "二水素リン酸イオン",
+                    "pattern": "H2PO4^-"
+                }
+            ],
+            "notes": "Soluble phosphate fertilizer; provides both nitrogen and phosphorus; typical ammonium phosphate salt.",
+            "smiles": "[NH4+].OP(=O)(O)O",
+            "katex_skeletal_formula": "\\ce{NH4H2PO4}",
+            "katex_molecular_formula": "\\ce{NH4H2PO4}"
+        }
+    ]
+}

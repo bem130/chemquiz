@@ -1,0 +1,123 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "sodium carbonate",
+            "common_name": "sodium carbonate (soda ash)",
+            "local_name": "炭酸ナトリウム",
+            "skeletal_formula": "Na2CO3",
+            "molecular_formula": "Na2CO3",
+            "series_general_formula": "Carbonates: M2CO3 (M = alkali metal), MCO3 (M = alkaline-earth metal)",
+            "functional_groups": [
+                {
+                    "name_en": "Carbonate",
+                    "name_ja": "炭酸イオン",
+                    "pattern": "CO3^{2-}"
+                }
+            ],
+            "notes": "White crystalline solid; basic salt; highly soluble in water; used in glass manufacturing and as washing soda (decahydrate).",
+            "smiles": "[Na+].[Na+].[O-]C(=O)[O-]",
+            "katex_skeletal_formula": "\\ce{Na2CO3}",
+            "katex_molecular_formula": "\\ce{Na2CO3}"
+        },
+        {
+            "iupac_name": "sodium hydrogencarbonate",
+            "common_name": "sodium bicarbonate (baking soda)",
+            "local_name": "炭酸水素ナトリウム（重曹）",
+            "skeletal_formula": "NaHCO3",
+            "molecular_formula": "NaHCO3",
+            "series_general_formula": "Hydrogencarbonates: MHCO3 (M = Na, K, NH4)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydrogencarbonate",
+                    "name_ja": "炭酸水素イオン",
+                    "pattern": "HCO3^-"
+                }
+            ],
+            "notes": "White crystalline powder; weakly basic; used in baking powders and fire extinguishers; decomposes on heating to Na2CO3, CO2, and H2O.",
+            "smiles": "[Na+].[O-]C(=O)O",
+            "katex_skeletal_formula": "\\ce{NaHCO3}",
+            "katex_molecular_formula": "\\ce{NaHCO3}"
+        },
+        {
+            "iupac_name": "potassium carbonate",
+            "common_name": "potassium carbonate",
+            "local_name": "炭酸カリウム",
+            "skeletal_formula": "K2CO3",
+            "molecular_formula": "K2CO3",
+            "series_general_formula": "Alkali metal carbonates: M2CO3 (M = Na, K, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Carbonate",
+                    "name_ja": "炭酸イオン",
+                    "pattern": "CO3^{2-}"
+                }
+            ],
+            "notes": "White solid; strongly basic; highly soluble in water; used in glass making, detergents, and as desiccant for organic solvents.",
+            "smiles": "[K+].[K+].[O-]C(=O)[O-]",
+            "katex_skeletal_formula": "\\ce{K2CO3}",
+            "katex_molecular_formula": "\\ce{K2CO3}"
+        },
+        {
+            "iupac_name": "calcium carbonate",
+            "common_name": "calcium carbonate",
+            "local_name": "炭酸カルシウム",
+            "skeletal_formula": "CaCO3",
+            "molecular_formula": "CaCO3",
+            "series_general_formula": "Alkaline-earth carbonates: MCO3 (M = Mg, Ca, Sr, Ba)",
+            "functional_groups": [
+                {
+                    "name_en": "Carbonate",
+                    "name_ja": "炭酸イオン",
+                    "pattern": "CO3^{2-}"
+                }
+            ],
+            "notes": "White solid; poorly soluble; main component of limestone, marble, shells; decomposes by heating to CaO and CO2.",
+            "smiles": "[Ca+2].[O-]C(=O)[O-]",
+            "katex_skeletal_formula": "\\ce{CaCO3}",
+            "katex_molecular_formula": "\\ce{CaCO3}"
+        },
+        {
+            "iupac_name": "magnesium carbonate",
+            "common_name": "magnesium carbonate",
+            "local_name": "炭酸マグネシウム",
+            "skeletal_formula": "MgCO3",
+            "molecular_formula": "MgCO3",
+            "series_general_formula": "Alkaline-earth carbonates: MCO3 (M = Mg, Ca, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Carbonate",
+                    "name_ja": "炭酸イオン",
+                    "pattern": "CO3^{2-}"
+                }
+            ],
+            "notes": "White solid; poorly soluble; used as drying agent and in gymnastics and climbing chalk.",
+            "smiles": "[Mg+2].[O-]C(=O)[O-]",
+            "katex_skeletal_formula": "\\ce{MgCO3}",
+            "katex_molecular_formula": "\\ce{MgCO3}"
+        },
+        {
+            "iupac_name": "diammonium carbonate",
+            "common_name": "ammonium carbonate",
+            "local_name": "炭酸アンモニウム",
+            "skeletal_formula": "(NH4)2CO3",
+            "molecular_formula": "(NH4)2CO3",
+            "series_general_formula": "Ammonium carbonates: (NH4)2CO3, NH4HCO3",
+            "functional_groups": [
+                {
+                    "name_en": "Ammonium",
+                    "name_ja": "アンモニウムイオン",
+                    "pattern": "NH4^+"
+                },
+                {
+                    "name_en": "Carbonate",
+                    "name_ja": "炭酸イオン",
+                    "pattern": "CO3^{2-}"
+                }
+            ],
+            "notes": "White solid; decomposes easily to NH3, CO2 and H2O; used historically as smelling salts and in baking.",
+            "smiles": "[NH4+].[NH4+].[O-]C(=O)[O-]",
+            "katex_skeletal_formula": "\\ce{(NH4)2CO3}",
+            "katex_molecular_formula": "\\ce{(NH4)2CO3}"
+        }
+    ]
+}

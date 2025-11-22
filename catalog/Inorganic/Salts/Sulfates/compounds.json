@@ -1,0 +1,123 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "sodium sulfate",
+            "common_name": "sodium sulfate",
+            "local_name": "硫酸ナトリウム",
+            "skeletal_formula": "Na2SO4",
+            "molecular_formula": "Na2SO4",
+            "series_general_formula": "Sulfates: M2SO4 (M = alkali metal), MSO4 (M = alkaline-earth, transition metal)",
+            "functional_groups": [
+                {
+                    "name_en": "Sulfate",
+                    "name_ja": "硫酸イオン",
+                    "pattern": "SO4^{2-}"
+                }
+            ],
+            "notes": "Colorless crystals; highly soluble in water; neutral salt used in labs (Glauber's salt is decahydrate).",
+            "smiles": "[Na+].[Na+].[O-]S(=O)(=O)[O-]",
+            "katex_skeletal_formula": "\\ce{Na2SO4}",
+            "katex_molecular_formula": "\\ce{Na2SO4}"
+        },
+        {
+            "iupac_name": "calcium sulfate",
+            "common_name": "calcium sulfate",
+            "local_name": "硫酸カルシウム",
+            "skeletal_formula": "CaSO4",
+            "molecular_formula": "CaSO4",
+            "series_general_formula": "Sulfates: MSO4 (M = Ca, Ba, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Sulfate",
+                    "name_ja": "硫酸イオン",
+                    "pattern": "SO4^{2-}"
+                }
+            ],
+            "notes": "Slightly soluble white solid; occurs as gypsum (CaSO4·2H2O); used in plaster and as example of limited solubility of sulfates.",
+            "smiles": "[Ca+2].[O-]S(=O)(=O)[O-]",
+            "katex_skeletal_formula": "\\ce{CaSO4}",
+            "katex_molecular_formula": "\\ce{CaSO4}"
+        },
+        {
+            "iupac_name": "barium sulfate",
+            "common_name": "barium sulfate",
+            "local_name": "硫酸バリウム",
+            "skeletal_formula": "BaSO4",
+            "molecular_formula": "BaSO4",
+            "series_general_formula": "Insoluble sulfates: BaSO4, PbSO4, SrSO4",
+            "functional_groups": [
+                {
+                    "name_en": "Sulfate",
+                    "name_ja": "硫酸イオン",
+                    "pattern": "SO4^{2-}"
+                }
+            ],
+            "notes": "White solid; very insoluble; used as contrast agent in X-ray imaging and as classic example of sulfate precipitate.",
+            "smiles": "[Ba+2].[O-]S(=O)(=O)[O-]",
+            "katex_skeletal_formula": "\\ce{BaSO4}",
+            "katex_molecular_formula": "\\ce{BaSO4}"
+        },
+        {
+            "iupac_name": "copper(II) sulfate pentahydrate",
+            "common_name": "copper(II) sulfate pentahydrate",
+            "local_name": "硫酸銅(II)五水和物",
+            "skeletal_formula": "CuSO4·5H2O",
+            "molecular_formula": "CuSO4·5H2O",
+            "series_general_formula": "Hydrated metal sulfates: MSO4·nH2O",
+            "functional_groups": [
+                {
+                    "name_en": "Sulfate",
+                    "name_ja": "硫酸イオン",
+                    "pattern": "SO4^{2-}"
+                }
+            ],
+            "notes": "Blue crystals; typical colored salt; used in electroplating, agriculture (fungicide), and as teaching reagent.",
+            "smiles": "[Cu+2].[O-]S(=O)(=O)[O-].O.O.O.O.O",
+            "katex_skeletal_formula": "\\ce{CuSO4\\cdot 5H2O}",
+            "katex_molecular_formula": "\\ce{CuSO4\\cdot 5H2O}"
+        },
+        {
+            "iupac_name": "magnesium sulfate heptahydrate",
+            "common_name": "magnesium sulfate (Epsom salt)",
+            "local_name": "硫酸マグネシウム七水和物",
+            "skeletal_formula": "MgSO4·7H2O",
+            "molecular_formula": "MgSO4·7H2O",
+            "series_general_formula": "Hydrated metal sulfates: MSO4·nH2O",
+            "functional_groups": [
+                {
+                    "name_en": "Sulfate",
+                    "name_ja": "硫酸イオン",
+                    "pattern": "SO4^{2-}"
+                }
+            ],
+            "notes": "Colorless crystals; used in medicine and agriculture; typical example of hydrated sulfate.",
+            "smiles": "[Mg+2].[O-]S(=O)(=O)[O-].O.O.O.O.O.O.O",
+            "katex_skeletal_formula": "\\ce{MgSO4\\cdot 7H2O}",
+            "katex_molecular_formula": "\\ce{MgSO4\\cdot 7H2O}"
+        },
+        {
+            "iupac_name": "diammonium sulfate",
+            "common_name": "ammonium sulfate",
+            "local_name": "硫酸アンモニウム",
+            "skeletal_formula": "(NH4)2SO4",
+            "molecular_formula": "(NH4)2SO4",
+            "series_general_formula": "Ammonium sulfates: (NH4)2SO4",
+            "functional_groups": [
+                {
+                    "name_en": "Ammonium",
+                    "name_ja": "アンモニウムイオン",
+                    "pattern": "NH4^+"
+                },
+                {
+                    "name_en": "Sulfate",
+                    "name_ja": "硫酸イオン",
+                    "pattern": "SO4^{2-}"
+                }
+            ],
+            "notes": "Colorless crystals; widely used nitrogen fertilizer; typical salt containing both NH4^+ and SO4^{2-}.",
+            "smiles": "[NH4+].[NH4+].[O-]S(=O)(=O)[O-]",
+            "katex_skeletal_formula": "\\ce{(NH4)2SO4}",
+            "katex_molecular_formula": "\\ce{(NH4)2SO4}"
+        }
+    ]
+}
