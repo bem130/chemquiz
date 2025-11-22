@@ -36,14 +36,23 @@ jobs:
               with:
                   path: |
                       ~/.cargo/bin/trunk
-                      ~/.cargo/registry/index
-                      ~/.cargo/registry/cache
-                      ~/.cargo/git/db
                   key: trunk-${{ runner.os }}-${{ env.TRUNK_VERSION }}
 
             - name: Install trunk
               if: steps.cache-trunk.outputs.cache-hit != 'true'
               run: cargo install trunk --locked --version ${TRUNK_VERSION}
+
+            - name: Cache cargo build artifacts
+              uses: actions/cache@v4
+              with:
+                  path: |
+                      ~/.cargo/registry/index
+                      ~/.cargo/registry/cache
+                      ~/.cargo/git/db
+                      target
+                  key: cargo-${{ runner.os }}-${{ hashFiles('Cargo.lock') }}
+                  restore-keys: |
+                      cargo-${{ runner.os }}-
 
             - name: Build static site
               run: |
