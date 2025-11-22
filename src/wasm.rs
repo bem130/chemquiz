@@ -1039,7 +1039,7 @@ fn App() -> impl IntoView {
                 // 新規に選択
                 list.push(leaf.clone());
             }
-            set_selected_leaf.set(Some(leaf.clone()));
+            set_selected_nodes.set(list);
 
             // --- クイズ用: 「最後に押したもの」を保存 ---
             // ここでは仕様をシンプルに保つため、
