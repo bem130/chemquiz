@@ -56,15 +56,18 @@ mod tests {
             roots: vec![CatalogNode {
                 label: "Organic".to_string(),
                 slug: "Organic".to_string(),
-                file: None,
+                file: Some("catalog/Organic/compounds.json".to_string()),
                 children: vec![CatalogNode {
                     label: "Aliphatic compounds".to_string(),
                     slug: "Aliphatic_compounds".to_string(),
-                    file: None,
+                    file: Some("catalog/Organic/Aliphatic_compounds/compounds.json".to_string()),
                     children: vec![CatalogNode {
                         label: "Alcohols and ethers".to_string(),
                         slug: "Alcohols_and_ethers".to_string(),
-                        file: None,
+                        file: Some(
+                            "catalog/Organic/Aliphatic_compounds/Alcohols_and_ethers/compounds.json"
+                                .to_string(),
+                        ),
                         children: vec![CatalogNode {
                             label: "Primary alcohols".to_string(),
                             slug: "Primary_alcohols".to_string(),
@@ -80,20 +83,34 @@ mod tests {
         };
 
         let leaves = manifest.leaves();
-        assert_eq!(leaves.len(), 1);
-        assert_eq!(
-            leaves[0].path,
-            vec![
+        assert_eq!(leaves.len(), 4);
+        assert!(leaves.contains(&CatalogLeaf {
+            path: vec!["Organic".to_string()],
+            file: "catalog/Organic/compounds.json".to_string(),
+        }));
+        assert!(leaves.contains(&CatalogLeaf {
+            path: vec!["Organic".to_string(), "Aliphatic compounds".to_string()],
+            file: "catalog/Organic/Aliphatic_compounds/compounds.json".to_string(),
+        }));
+        assert!(leaves.contains(&CatalogLeaf {
+            path: vec![
+                "Organic".to_string(),
+                "Aliphatic compounds".to_string(),
+                "Alcohols and ethers".to_string(),
+            ],
+            file: "catalog/Organic/Aliphatic_compounds/Alcohols_and_ethers/compounds.json"
+                .to_string(),
+        }));
+        assert!(leaves.contains(&CatalogLeaf {
+            path: vec![
                 "Organic".to_string(),
                 "Aliphatic compounds".to_string(),
                 "Alcohols and ethers".to_string(),
                 "Primary alcohols".to_string(),
-            ]
-        );
-        assert_eq!(
-            leaves[0].file,
-            "catalog/Organic/Aliphatic_compounds/Alcohols_and_ethers/Primary_alcohols/compounds.json"
-        );
+            ],
+            file: "catalog/Organic/Aliphatic_compounds/Alcohols_and_ethers/Primary_alcohols/compounds.json"
+                .to_string(),
+        }));
     }
 
     #[test]
