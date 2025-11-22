@@ -21,7 +21,7 @@ pub struct Catalog {
     entries: Vec<CatalogEntry>,
 }
 
-#[derive(Debug, thiserror::Error, PartialEq, Eq)]
+#[derive(Debug, thiserror::Error)]
 pub enum CatalogLoadError {
     #[error("category path must contain at least one segment")]
     EmptyCategoryPath,
@@ -36,6 +36,23 @@ pub enum CatalogLoadError {
         source: serde_json::Error,
     },
 }
+
+impl PartialEq for CatalogLoadError {
+    fn eq(&self, other: &Self) -> bool {
+        match (self, other) {
+            (Self::EmptyCategoryPath, Self::EmptyCategoryPath) => true,
+            (Self::ReadError { path: left, .. }, Self::ReadError { path: right, .. }) => {
+                left == right
+            }
+            (Self::ParseError { path: left, .. }, Self::ParseError { path: right, .. }) => {
+                left == right
+            }
+            _ => false,
+        }
+    }
+}
+
+impl Eq for CatalogLoadError {}
 
 #[derive(Debug, thiserror::Error, PartialEq, Eq)]
 pub enum CatalogError {

@@ -18,6 +18,8 @@ concurrency:
 jobs:
     build:
         runs-on: ubuntu-latest
+        env:
+            TRUNK_VERSION: "0.20.3"
         steps:
             - name: Checkout
               uses: actions/checkout@v4
@@ -28,8 +30,20 @@ jobs:
             - name: Install wasm target
               run: rustup target add wasm32-unknown-unknown
 
+            - name: Cache trunk installation
+              id: cache-trunk
+              uses: actions/cache@v4
+              with:
+                  path: |
+                      ~/.cargo/bin/trunk
+                      ~/.cargo/registry/index
+                      ~/.cargo/registry/cache
+                      ~/.cargo/git/db
+                  key: trunk-${{ runner.os }}-${{ env.TRUNK_VERSION }}
+
             - name: Install trunk
-              run: cargo install trunk
+              if: steps.cache-trunk.outputs.cache-hit != 'true'
+              run: cargo install trunk --locked --version ${TRUNK_VERSION}
 
             - name: Build static site
               run: |
