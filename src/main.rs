@@ -84,7 +84,7 @@ fn CatalogMenu(manifest: CatalogManifest, on_select: Callback<CatalogLeaf>) -> i
                         </li>
                     }
                 })
-                .collect_view::<Vec<_>>()}
+                .collect_view()}
         </ul>
     }
 }
@@ -116,7 +116,7 @@ fn QuizCard(quiz: QuizItem) -> impl IntoView {
                             </button>
                         }
                     })
-                    .collect_view::<Vec<_>>()}
+                    .collect_view()}
             </div>
         </section>
     }
@@ -140,12 +140,12 @@ fn App() -> impl IntoView {
         let dataset = compounds.get().unwrap_or_else(demo_compounds);
         match generate_from_dataset(&dataset) {
             Ok(item) => {
-                set_error(None);
-                set_quiz(Some(item));
+                set_error.set(None);
+                set_quiz.set(Some(item));
             }
             Err(message) => {
-                set_quiz(None);
-                set_error(Some(message));
+                set_quiz.set(None);
+                set_error.set(Some(message));
             }
         }
     };
@@ -156,21 +156,21 @@ fn App() -> impl IntoView {
         } else {
             "dark"
         };
-        set_theme(String::from(next));
+        set_theme.set(String::from(next));
     };
 
     let handle_selection = Callback::new(move |leaf: CatalogLeaf| {
-        set_selected_leaf(Some(leaf.clone()));
-        set_error(None);
-        set_quiz(None);
-        set_compounds(None);
+        set_selected_leaf.set(Some(leaf.clone()));
+        set_error.set(None);
+        set_quiz.set(None);
+        set_compounds.set(None);
 
         let setter = set_compounds.clone();
         let error_setter = set_error.clone();
         spawn_local(async move {
             match fetch_compound_file(&leaf.file).await {
-                Ok(list) => setter(Some(list)),
-                Err(message) => error_setter(Some(message)),
+                Ok(list) => setter.set(Some(list)),
+                Err(message) => error_setter.set(Some(message)),
             }
         });
     });
@@ -229,16 +229,17 @@ fn App() -> impl IntoView {
                     <h2 class="headline">Browse compound folders</h2>
                     <p class="lede">Files live in the public catalog directory and load on demand via serde deserialization.</p>
                 </div>
-                {move || match manifest.read() {
-                    Some(Ok(listing)) => view! { <CatalogMenu manifest=listing.clone() on_select=handle_selection.clone() /> },
-                    Some(Err(message)) => view! { <p class="error-body">{message}</p> },
-                    None => view! { <p class="lede">Loading catalog index...</p> },
+                {move || match manifest.get() {
+                    Some(Ok(listing)) => view! { <CatalogMenu manifest=listing.clone() on_select=handle_selection.clone() /> }
+                        .into_view(),
+                    Some(Err(message)) => view! { <p class="error-body">{message}</p> }.into_view(),
+                    None => view! { <p class="lede">Loading catalog index...</p> }.into_view(),
                 }}
             </section>
 
             {move || {
                 if let Some(item) = quiz.get() {
-                    view! { <QuizCard quiz=item /> }
+                    view! { <QuizCard quiz=item /> }.into_view()
                 } else if let Some(message) = error.get() {
                     view! {
                         <section class="error-card">
@@ -246,6 +247,7 @@ fn App() -> impl IntoView {
                             <p class="error-body">{message}</p>
                         </section>
                     }
+                    .into_view()
                 } else {
                     view! {
                         <section class="placeholder-card">
@@ -253,6 +255,7 @@ fn App() -> impl IntoView {
                             <p class="lede">Load a catalog entry and generate a sample quiz.</p>
                         </section>
                     }
+                    .into_view()
                 }
             }}
         </main>

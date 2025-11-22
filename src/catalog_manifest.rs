@@ -1,9 +1,9 @@
-#[derive(Debug, Clone, PartialEq, Eq, serde::Deserialize)]
+#[derive(Debug, Clone, PartialEq, Eq, serde::Deserialize, serde::Serialize)]
 pub struct CatalogManifest {
     pub roots: Vec<CatalogNode>,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, serde::Deserialize)]
+#[derive(Debug, Clone, PartialEq, Eq, serde::Deserialize, serde::Serialize)]
 pub struct CatalogNode {
     pub label: String,
     pub slug: String,
@@ -13,7 +13,7 @@ pub struct CatalogNode {
     pub children: Vec<CatalogNode>,
 }
 
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, serde::Serialize)]
 pub struct CatalogLeaf {
     pub path: Vec<String>,
     pub file: String,
@@ -73,5 +73,23 @@ mod tests {
             vec!["Organic".to_string(), "Alcohols".to_string()]
         );
         assert_eq!(leaves[0].file, "catalog/Organic/Alcohols/compounds.json");
+    }
+
+    #[test]
+    fn serializes_and_deserializes_manifest() {
+        let manifest = CatalogManifest {
+            roots: vec![CatalogNode {
+                label: "Inorganic".to_string(),
+                slug: "inorganic".to_string(),
+                file: Some("catalog/Inorganic/compounds.json".to_string()),
+                children: vec![],
+            }],
+        };
+
+        let json = serde_json::to_string(&manifest).expect("manifest should serialize");
+        let decoded: CatalogManifest =
+            serde_json::from_str(&json).expect("manifest should round-trip through JSON");
+
+        assert_eq!(decoded, manifest);
     }
 }
