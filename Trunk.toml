@@ -1,0 +1,6 @@
+[build]
+target = "wasm32-unknown-unknown"
+public_url = "/chemquiz/"
+
+[watch]
+ignore = ["dist/**"]
