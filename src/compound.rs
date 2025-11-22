@@ -39,12 +39,20 @@ pub struct Compound {
 }
 
 impl Compound {
-    pub fn display_name(&self) -> String {
-        let mut parts = vec![self.iupac_name.clone()];
-
-        if let Some(common) = &self.common_name {
-            parts.push(format!("({})", common));
+    /// Returns an English display label that prefers the IUPAC name
+    /// and appends the common name in parentheses when available and
+    /// distinct.
+    pub fn english_label(&self) -> String {
+        match &self.common_name {
+            Some(common) if common != &self.iupac_name => {
+                format!("{} ({})", self.iupac_name, common)
+            }
+            _ => self.iupac_name.clone(),
         }
+    }
+
+    pub fn display_name(&self) -> String {
+        let mut parts = vec![self.english_label()];
 
         if let Some(local) = &self.local_name {
             parts.push(format!("/ {}", local));
@@ -80,6 +88,29 @@ mod tests {
             notes: None,
             smiles: Some("CCO".to_string()),
         }
+    }
+
+    #[test]
+    fn english_label_prefers_common_name() {
+        let label = ethanol().english_label();
+        assert_eq!(label, "ethanol (ethyl alcohol)");
+    }
+
+    #[test]
+    fn english_label_avoids_duplicate_common_name() {
+        let compound = Compound {
+            iupac_name: "benzene".to_string(),
+            common_name: Some("benzene".to_string()),
+            local_name: None,
+            skeletal_formula: "C6H6".to_string(),
+            molecular_formula: "C6H6".to_string(),
+            series_general_formula: None,
+            functional_groups: Vec::new(),
+            notes: None,
+            smiles: Some("c1ccccc1".to_string()),
+        };
+
+        assert_eq!(compound.english_label(), "benzene");
     }
 
     #[test]
