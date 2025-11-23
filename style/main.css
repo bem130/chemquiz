@@ -40,6 +40,30 @@ body {
     margin: auto;
 }
 
+.play-page {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    min-height: calc(100vh - 32px);
+    display: flex;
+    flex-direction: column;
+}
+
+.play-main {
+    position: relative;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 72px;
+}
+
+.play-panel {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+}
+
 .app-header {
     text-align: center;
     margin-bottom: 16px;
@@ -162,6 +186,10 @@ body {
     grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.7fr);
     gap: 14px;
     margin-top: 6px;
+}
+
+.grid-main.grid-horizontal {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.2fr);
 }
 
 @media (max-width: 900px) {
@@ -637,4 +665,68 @@ body {
 .error-body {
     margin: 0;
     color: #fca5a5;
+}
+
+.play-progress-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 12px;
+    padding: 0 10px;
+    pointer-events: none;
+}
+
+.play-progress-overlay .progress-bar,
+.play-progress-overlay .progress-meta {
+    pointer-events: auto;
+}
+
+.result-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 60;
+    padding: 12px;
+}
+
+.result-popup {
+    width: min(520px, 92%);
+    border-radius: 18px;
+    background: var(--panel-soft);
+    border: 1px solid var(--border-strong);
+    box-shadow: var(--shadow);
+    padding: 16px;
+}
+
+.result-title {
+    margin: 0 0 4px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.result-title.correct {
+    color: var(--accent);
+}
+
+.result-title.incorrect {
+    color: var(--danger);
+}
+
+.result-subtitle {
+    margin: 0 0 10px;
+    color: var(--text-muted);
+}
+
+.result-body {
+    font-size: 0.9rem;
+}
+
+.overlay-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 12px;
 }
