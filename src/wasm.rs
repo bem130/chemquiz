@@ -5,6 +5,7 @@ use crate::{
     demo_compounds, generate_quiz,
 };
 use gloo_net::http::Request;
+use gloo_timers::callback::Interval;
 use js_sys::Reflect;
 use leptos::{ev, html, *};
 use rand::SeedableRng;
@@ -46,6 +47,28 @@ enum OptionContent {
 enum LayoutKind {
     StandardVertical,
     WideHorizontal,
+}
+
+#[derive(Clone, Copy, PartialEq, Eq)]
+enum Theme {
+    Light,
+    Dark,
+}
+
+impl Theme {
+    fn as_str(&self) -> &'static str {
+        match self {
+            Theme::Light => "light",
+            Theme::Dark => "dark",
+        }
+    }
+
+    fn toggle(&self) -> Self {
+        match self {
+            Theme::Light => Theme::Dark,
+            Theme::Dark => Theme::Light,
+        }
+    }
 }
 
 #[derive(Clone, Copy, PartialEq, Eq)]
@@ -111,10 +134,28 @@ impl FeedbackState {
     }
 }
 
-fn set_body_theme(theme: &str) {
+fn load_theme_preference() -> Theme {
+    if let Some(window) = leptos::window().local_storage().ok().flatten() {
+        if let Ok(Some(value)) = window.get_item("theme") {
+            if value == "light" {
+                return Theme::Light;
+            }
+        }
+    }
+
+    Theme::Dark
+}
+
+fn persist_theme(theme: Theme) {
+    if let Some(storage) = leptos::window().local_storage().ok().flatten() {
+        let _ = storage.set_item("theme", theme.as_str());
+    }
+}
+
+fn set_document_theme(theme: Theme) {
     if let Some(document) = leptos::window().document() {
-        if let Some(body) = document.body() {
-            let _ = body.set_attribute("data-theme", theme);
+        if let Some(root) = document.document_element() {
+            let _ = root.set_attribute("data-theme", theme.as_str());
         }
     }
 }
@@ -146,6 +187,24 @@ fn format_path(path: &[String]) -> String {
     } else {
         path.join(" / ")
     }
+}
+
+fn format_leaf_list(leaves: &[CatalogLeaf]) -> String {
+    if leaves.is_empty() {
+        return "Not selected".to_string();
+    }
+
+    let labels: Vec<String> = leaves
+        .iter()
+        .map(|leaf| {
+            leaf.path
+                .last()
+                .cloned()
+                .unwrap_or_else(|| format_path(&leaf.path))
+        })
+        .collect();
+
+    labels.join(", ")
 }
 
 fn find_by_name(dataset: &[Compound], label: &str) -> Option<Compound> {
@@ -429,17 +488,17 @@ fn generate_from_dataset(dataset: &[Compound], mode: QuizMode) -> Result<QuizIte
     generate_quiz(&mut rng, dataset, mode, DEMO_OPTION_COUNT).map_err(|error| error.to_string())
 }
 
-fn layout_for_quiz(quiz: &QuizItem) -> QuestionLayout {
+fn layout_for_quiz(quiz: &QuizItem, layout_kind: LayoutKind) -> QuestionLayout {
     match quiz.mode {
         QuizMode::NameToStructure => QuestionLayout {
             prompt: PromptContent::Name,
             options: [OptionContent::Structure; 4],
-            layout_kind: LayoutKind::StandardVertical,
+            layout_kind,
         },
         QuizMode::StructureToName => QuestionLayout {
             prompt: PromptContent::Structure,
             options: [OptionContent::Name; 4],
-            layout_kind: LayoutKind::StandardVertical,
+            layout_kind,
         },
     }
 }
@@ -471,7 +530,7 @@ fn FormulaBadge(formula: String) -> impl IntoView {
 #[component]
 fn StructureTile(
     compound: Compound,
-    theme: ReadSignal<String>,
+    theme: ReadSignal<Theme>,
     view_mode: ReadSignal<ViewMode>,
     size: StructureViewSize,
 ) -> impl IntoView {
@@ -483,9 +542,8 @@ fn StructureTile(
     let effect_smiles = smiles.clone();
     let iupac_name = compound.iupac_name.clone();
     let skeletal_formula = compound.skeletal_formula.clone();
-    let molecular_formula = compound.molecular_formula.clone();
-    let formula_badge = (!molecular_formula.is_empty())
-        .then(|| view! { <FormulaBadge formula=molecular_formula.clone() /> });
+    let formula_badge = (!skeletal_formula.is_empty())
+        .then(|| view! { <FormulaBadge formula=skeletal_formula.clone() /> });
 
     create_effect(move |_| {
         let current_theme = theme.get();
@@ -501,7 +559,7 @@ fn StructureTile(
             spawn_local(async move {
                 let result = render_structure(
                     &smiles_value,
-                    &current_theme,
+                    current_theme.as_str(),
                     skeletal_element,
                     full_element,
                 )
@@ -686,7 +744,7 @@ fn CatalogTree(
 fn QuizCard(
     quiz: QuizItem,
     dataset: Vec<Compound>,
-    theme: ReadSignal<String>,
+    theme: ReadSignal<Theme>,
     view_mode: ReadSignal<ViewMode>,
     selected: Option<usize>,
     feedback: FeedbackState,
@@ -812,11 +870,27 @@ fn QuizCard(
                                 }
                             };
 
+                            let key_handler = {
+                                let on_select = on_select.clone();
+                                let idx = index;
+
+                                move |ev: ev::KeyboardEvent| {
+                                    if matches!(ev.key().as_str(), "Enter" | " ") {
+                                        ev.prevent_default();
+                                        if let Some(ref callback) = on_select {
+                                            callback.call(idx);
+                                        }
+                                    }
+                                }
+                            };
+
                             view! {
                                 <button
+                                    type="button"
                                     class=classes.join(" ")
                                     aria-pressed=is_selected
                                     on:click=click_handler
+                                    on:keydown=key_handler
                                     disabled=reveal || on_select.is_none()
                                 >
                                     <div class="option-row-top">
@@ -888,7 +962,7 @@ fn QuizCard(
 
 #[component]
 fn App() -> impl IntoView {
-    let (theme, _set_theme) = create_signal(String::from("dark"));
+    let (theme, set_theme) = create_signal(load_theme_preference());
     let (mode, set_mode) = create_signal(QuizMode::NameToStructure);
     let (active_mode, set_active_mode) = create_signal(QuizMode::NameToStructure);
     let (view_mode, set_view_mode) = create_signal(ViewMode::Skeletal);
@@ -913,10 +987,54 @@ fn App() -> impl IntoView {
     let (selected_nodes, set_selected_nodes) = create_signal::<Vec<CatalogLeaf>>(Vec::new());
 
     let (compounds, set_compounds) = create_signal::<Option<Vec<Compound>>>(None);
+    let (layout_kind, set_layout_kind) = create_signal(LayoutKind::StandardVertical);
+    let (aspect_ratio, set_aspect_ratio) = create_signal(1.0);
 
     let manifest = create_resource(|| (), |_| async { fetch_manifest().await });
 
-    create_effect(move |_| set_body_theme(&theme.get()));
+    let update_aspect_ratio = {
+        let set_aspect_ratio = set_aspect_ratio.clone();
+
+        move || {
+            if let Some(window) = web_sys::window() {
+                if let (Ok(width), Ok(height)) = (window.inner_width(), window.inner_height()) {
+                    let w = width.as_f64().unwrap_or(1.0);
+                    let h = height.as_f64().unwrap_or(1.0);
+
+                    if h > 0.0 {
+                        set_aspect_ratio.set(w / h);
+                    }
+                }
+            }
+        }
+    };
+
+    update_aspect_ratio();
+
+    let resize_guard = store_value(Interval::new(400, {
+        let update = update_aspect_ratio.clone();
+
+        move || update()
+    }));
+
+    create_effect(move |_| {
+        let ratio = aspect_ratio.get();
+        if ratio > 1.8 {
+            set_layout_kind.set(LayoutKind::WideHorizontal);
+        } else {
+            set_layout_kind.set(LayoutKind::StandardVertical);
+        }
+    });
+
+    on_cleanup(move || {
+        resize_guard.with_value(|guard| drop(guard));
+    });
+
+    create_effect(move |_| {
+        let current = theme.get();
+        set_document_theme(current);
+        persist_theme(current);
+    });
 
     let toggle_hint = {
         let hint = hint.clone();
@@ -926,6 +1044,14 @@ fn App() -> impl IntoView {
             if hint.get().is_some() {
                 set_hint_visible.update(|flag| *flag = !*flag);
             }
+        })
+    };
+
+    let toggle_theme = {
+        let set_theme = set_theme.clone();
+
+        Callback::new(move |_| {
+            set_theme.update(|current| *current = current.toggle());
         })
     };
 
@@ -981,14 +1107,74 @@ fn App() -> impl IntoView {
         let set_score = set_score.clone();
         let set_active_mode = set_active_mode.clone();
         let set_answer_overlay = set_answer_overlay.clone();
+        let selected_nodes = selected_nodes.clone();
+        let set_error = set_error.clone();
+        let set_quiz = set_quiz.clone();
+        let set_hint = set_hint.clone();
+        let set_hint_visible = set_hint_visible.clone();
+        let set_compounds = set_compounds.clone();
+        let set_feedback = set_feedback.clone();
+        let set_active_dataset = set_active_dataset.clone();
 
         Callback::new(move |_| {
             set_score.set(SessionScore::default());
             set_active_mode.set(mode.get());
             set_answer_overlay.set(None);
-            if regenerate() {
-                set_scene.set(Scene::Game);
+
+            let selections = selected_nodes.get();
+
+            if selections.is_empty() {
+                if regenerate() {
+                    set_scene.set(Scene::Game);
+                }
+                return;
             }
+
+            set_error.set(None);
+            set_quiz.set(None);
+            set_scene.set(Scene::Menu);
+            set_hint.set(None);
+            set_hint_visible.set(false);
+            set_feedback.set(FeedbackState::neutral("Loading selected datasets..."));
+
+            let set_scene = set_scene.clone();
+            let regenerate = regenerate.clone();
+            let set_compounds = set_compounds.clone();
+            let set_active_dataset = set_active_dataset.clone();
+            let set_feedback = set_feedback.clone();
+            let set_error = set_error.clone();
+
+            spawn_local(async move {
+                let mut combined = Vec::new();
+
+                for leaf in selections {
+                    match fetch_compound_file(&leaf.file).await {
+                        Ok(mut list) => combined.append(&mut list),
+                        Err(message) => {
+                            set_feedback.set(FeedbackState::wrong(message.clone()));
+                            set_error.set(Some(message));
+                            return;
+                        }
+                    }
+                }
+
+                if combined.is_empty() {
+                    set_feedback.set(FeedbackState::wrong(
+                        "Selected datasets did not contain any compounds.",
+                    ));
+                    set_error.set(Some(
+                        "Selected datasets did not contain any compounds.".to_string(),
+                    ));
+                    return;
+                }
+
+                set_compounds.set(Some(combined.clone()));
+                set_active_dataset.set(combined.clone());
+
+                if regenerate() {
+                    set_scene.set(Scene::Game);
+                }
+            });
         })
     };
 
@@ -1060,6 +1246,37 @@ fn App() -> impl IntoView {
         })
     };
 
+    let handle_game_key = {
+        let choose_option = choose_option.clone();
+        let answer_overlay = answer_overlay.clone();
+
+        Callback::new(move |ev: ev::KeyboardEvent| {
+            if answer_overlay.get().is_some() {
+                return;
+            }
+
+            match ev.key().as_str() {
+                "1" | "Digit1" | "Numpad1" => {
+                    ev.prevent_default();
+                    choose_option.call(0);
+                }
+                "2" | "Digit2" | "Numpad2" => {
+                    ev.prevent_default();
+                    choose_option.call(1);
+                }
+                "3" | "Digit3" | "Numpad3" => {
+                    ev.prevent_default();
+                    choose_option.call(2);
+                }
+                "4" | "Digit4" | "Numpad4" => {
+                    ev.prevent_default();
+                    choose_option.call(3);
+                }
+                _ => {}
+            }
+        })
+    };
+
     let next_question = {
         let regenerate = regenerate.clone();
         let set_scene = set_scene.clone();
@@ -1093,45 +1310,27 @@ fn App() -> impl IntoView {
             if let Some(idx) = list.iter().position(|item| item == &leaf) {
                 // すでに選ばれているなら解除
                 list.remove(idx);
+                if list.is_empty() {
+                    set_selected_leaf.set(None);
+                } else {
+                    set_selected_leaf.set(list.last().cloned());
+                }
             } else {
                 // 新規に選択
                 list.push(leaf.clone());
+                set_selected_leaf.set(Some(leaf.clone()));
             }
             set_selected_nodes.set(list);
 
-            // --- クイズ用: 「最後に押したもの」を保存 ---
-            // ここでは仕様をシンプルに保つため、
-            // 実際に問題を出すのは「最後に押した葉ノード 1つだけ」のままにしています。
-            set_selected_leaf.set(Some(leaf.clone()));
-
-            // 以降は今まで通り、leaf.file から 1つの compounds.json を読み込む
             set_error.set(None);
             set_quiz.set(None);
             set_scene.set(Scene::Menu);
             set_compounds.set(None);
             set_hint.set(None);
             set_hint_visible.set(false);
-            set_feedback.set(FeedbackState::neutral("Loading selected catalog entry..."));
-
-            let setter = set_compounds.clone();
-            let error_setter = set_error.clone();
-            let feedback_setter = set_feedback.clone();
-
-            spawn_local(async move {
-                match fetch_compound_file(&leaf.file).await {
-                    Ok(list) => {
-                        feedback_setter.set(FeedbackState::neutral(format!(
-                            "Loaded {} compounds.",
-                            list.len()
-                        )));
-                        setter.set(Some(list));
-                    }
-                    Err(message) => {
-                        feedback_setter.set(FeedbackState::wrong(message.clone()));
-                        error_setter.set(Some(message));
-                    }
-                }
-            });
+            set_feedback.set(FeedbackState::neutral(
+                "Selection updated. Press Start quiz to load the datasets.",
+            ));
         })
     };
 
@@ -1174,9 +1373,29 @@ fn App() -> impl IntoView {
             <Show when=move || scene.get() == Scene::Menu>
                 <div>
                     <header class="app-header">
-                        <div class="app-title">"Molecular Structure Quiz (compounds.json)"</div>
-                        <div class="app-subtitle">
-                            "Structure → Name / Name → Structure, using Kekule.js where SMILES are available."
+                        <div class="app-title-row">
+                            <div>
+                                <div class="app-title">"Molecular Structure Quiz (compounds.json)"</div>
+                                <div class="app-subtitle">
+                                    "Structure → Name / Name → Structure, using Kekule.js where SMILES are available."
+                                </div>
+                            </div>
+                            <div class="header-actions">
+                                <button
+                                    class="btn"
+                                    type="button"
+                                    on:click=move |_| toggle_theme.call(())
+                                    aria-pressed=move || theme.get() == Theme::Light
+                                >
+                                    {move || {
+                                        if theme.get() == Theme::Dark {
+                                            "Switch to light"
+                                        } else {
+                                            "Switch to dark"
+                                        }
+                                    }}
+                                </button>
+                            </div>
                         </div>
                     </header>
 
@@ -1260,7 +1479,11 @@ fn App() -> impl IntoView {
                                 <div class="prompt-heading">"Dataset status"</div>
                                 <div class="menu-status">
                                     <div class="menu-chip">
-                                        <div class="prompt-heading">"Selected path"</div>
+                                        <div class="prompt-heading">"Selected datasets"</div>
+                                        <div>{move || format_leaf_list(&selected_nodes.get())}</div>
+                                    </div>
+                                    <div class="menu-chip">
+                                        <div class="prompt-heading">"Last clicked"</div>
                                         <div>{move || selected_leaf
                                             .get()
                                             .map(|leaf| format_path(&leaf.path))
@@ -1311,13 +1534,27 @@ fn App() -> impl IntoView {
             </Show>
 
             <Show when=move || scene.get() == Scene::Game>
-                <div class="play-page">
+                <div class="play-page" tabindex="0" on:keydown=handle_game_key>
                     <div class="play-topbar">
                         <div>
                             <div class="app-title">"Molecular Structure Quiz (compounds.json)"</div>
                             <div class="app-subtitle">"Tap outside the result card to move to the next question."</div>
                         </div>
                         <div class="play-topbar-actions">
+                            <button
+                                class="btn"
+                                type="button"
+                                on:click=move |_| toggle_theme.call(())
+                                aria-pressed=move || theme.get() == Theme::Light
+                            >
+                                {move || {
+                                    if theme.get() == Theme::Dark {
+                                        "Light theme"
+                                    } else {
+                                        "Dark theme"
+                                    }
+                                }}
+                            </button>
                             <button class="btn" type="button" on:click=move |_| return_to_menu.call(())>
                                 "Menu"
                             </button>
@@ -1326,7 +1563,7 @@ fn App() -> impl IntoView {
                     <div class="play-main">
                         {move || {
                             if let Some(item) = quiz.get() {
-                                let layout = layout_for_quiz(&item);
+                                let layout = layout_for_quiz(&item, layout_kind.get());
                                 let reveal = selected_option.get().is_some();
                                 let on_select = if answer_overlay.get().is_some() {
                                     None
@@ -1395,6 +1632,9 @@ fn App() -> impl IntoView {
                                 )}
                             </span>
                         </div>
+                        <p class="keyboard-hint">
+                            "Keys: 1–4 select options. Enter or Space activates the focused control."
+                        </p>
                     </div>
 
                     <Show when=move || answer_overlay.get().is_some()>
@@ -1431,6 +1671,11 @@ fn App() -> impl IntoView {
                                 } else {
                                     "result-title incorrect"
                                 };
+                                let review_hint = if overlay.is_correct {
+                                    "Review the key features of this compound."
+                                } else {
+                                    "Study the correct answer and review its identifying details."
+                                };
 
                                 let compound_view = overlay
                                     .compound
@@ -1462,9 +1707,11 @@ fn App() -> impl IntoView {
                                     });
 
                                 let detail_view = if detail_sections.is_empty() {
-                                    view! {}.into_view()
+                                    view! { <p class="overlay-hint">{"No additional details provided for this compound."}</p> }
+                                        .into_view()
                                 } else {
                                     view! {
+                                        <div class="result-divider"></div>
                                         <div class="result-details">
                                             {detail_sections
                                                 .into_iter()
@@ -1501,6 +1748,7 @@ fn App() -> impl IntoView {
                                         <div class="result-popup" on:click=stop_click>
                                             <h2 class=outcome_class>{message}</h2>
                                             <p class="result-subtitle">{subtitle}</p>
+                                            <p class="result-body">{review_hint}</p>
                                             {compound_view}
                                             {detail_view}
                                             <p class="overlay-hint">{"Tap outside this card or press Enter / Space to continue."}</p>
