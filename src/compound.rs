@@ -95,7 +95,11 @@ impl Compound {
             }
         }
 
-        add_section_if_present(&mut sections, "Series formula", &self.series_general_formula);
+        add_section_if_present(
+            &mut sections,
+            "Series formula",
+            &self.series_general_formula,
+        );
 
         if !self.functional_groups.is_empty() {
             let groups = self
@@ -275,7 +279,10 @@ mod tests {
             ]
         );
         assert_eq!(sections[2].label, "Notes");
-        assert_eq!(sections[2].entries, vec!["Weak acid found in vinegar".to_string()]);
+        assert_eq!(
+            sections[2].entries,
+            vec!["Weak acid found in vinegar".to_string()]
+        );
     }
 
     #[test]
