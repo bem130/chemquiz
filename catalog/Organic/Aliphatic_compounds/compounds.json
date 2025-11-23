@@ -1,0 +1,1344 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "methoxymethane",
+            "common_name": "dimethyl ether",
+            "local_name": "メトキシメタン（ジメチルエーテル）",
+            "skeletal_formula": "CH3-O-CH3",
+            "molecular_formula": "C2H6O",
+            "series_general_formula": "Simple ethers: CnH2n+2O (same as monohydric alcohols)",
+            "functional_groups": [
+                {
+                    "name_en": "Ether linkage",
+                    "name_ja": "エーテル結合",
+                    "pattern": "R–O–R'"
+                }
+            ],
+            "notes": "Simplest ether; structural isomer of ethanol; typical example in questions on isomerism and boiling-point comparison with alcohols.",
+            "smiles": "COC",
+            "katex_skeletal_formula": "\\ce{CH3-O-CH3}",
+            "katex_molecular_formula": "\\ce{C2H6O}"
+        },
+        {
+            "iupac_name": "ethoxyethane",
+            "common_name": "diethyl ether",
+            "local_name": "エトキシエタン（ジエチルエーテル）",
+            "skeletal_formula": "CH3-CH2-O-CH2-CH3",
+            "molecular_formula": "C4H10O",
+            "series_general_formula": "Simple ethers: CnH2n+2O",
+            "functional_groups": [
+                {
+                    "name_en": "Ether linkage",
+                    "name_ja": "エーテル結合",
+                    "pattern": "R–O–R'"
+                }
+            ],
+            "notes": "Representative ether produced by intermolecular dehydration of ethanol; volatile, flammable solvent; appears in many textbook examples.",
+            "smiles": "CCOCC",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-O-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C4H10O}"
+        },
+        {
+            "iupac_name": "methoxyethane",
+            "common_name": "methyl ethyl ether",
+            "local_name": "メトキシエタン（メチルエチルエーテル）",
+            "skeletal_formula": "CH3-O-CH2-CH3",
+            "molecular_formula": "C3H8O",
+            "series_general_formula": "Simple ethers: CnH2n+2O",
+            "functional_groups": [
+                {
+                    "name_en": "Ether linkage",
+                    "name_ja": "エーテル結合",
+                    "pattern": "R–O–R'"
+                }
+            ],
+            "notes": "Unsymmetrical ether; good for practice of IUPAC naming and for isomerism problems with C3H8O alcohols (propanols).",
+            "smiles": "COCC",
+            "katex_skeletal_formula": "\\ce{CH3-O-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C3H8O}"
+        },
+        {
+            "iupac_name": "ethane-1,2-diol",
+            "common_name": "ethylene glycol",
+            "local_name": "エタンド-1,2-ジオール（エチレングリコール）",
+            "skeletal_formula": "HO-CH2-CH2-OH",
+            "molecular_formula": "C2H6O2",
+            "series_general_formula": "Polyols (dihydric): CnH2n+2On, n>=2 (two hydroxyl groups)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Dihydric alcohol; used as antifreeze and in polyester production; typical example of 2-valent alcohol.",
+            "smiles": "OCCO",
+            "katex_skeletal_formula": "\\ce{HO-CH2-CH2-OH}",
+            "katex_molecular_formula": "\\ce{C2H6O2}"
+        },
+        {
+            "iupac_name": "propane-1,2-diol",
+            "common_name": "propylene glycol",
+            "local_name": "プロパン-1,2-ジオール（プロピレングリコール）",
+            "skeletal_formula": "HO-CH2-CH(OH)-CH3",
+            "molecular_formula": "C3H8O2",
+            "series_general_formula": "Polyols (dihydric): CnH2n+2On, n>=2 (two hydroxyl groups)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Dihydric alcohol; used as solvent and humectant; often contrasted with more toxic ethylene glycol.",
+            "smiles": "CC(O)CO",
+            "katex_skeletal_formula": "\\ce{HO-CH2-CH(OH)-CH3}",
+            "katex_molecular_formula": "\\ce{C3H8O2}"
+        },
+        {
+            "iupac_name": "propane-1,2,3-triol",
+            "common_name": "glycerol",
+            "local_name": "プロパン-1,2,3-トリオール（グリセリン）",
+            "skeletal_formula": "HO-CH2-CH(OH)-CH2-OH",
+            "molecular_formula": "C3H8O3",
+            "series_general_formula": "Polyols (trihydric): CnH2n+2On, n>=3 (three hydroxyl groups)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Trihydric alcohol; viscous, sweet-tasting liquid; important in fats, soaps, and many biomolecules; typical 3-valent alcohol in exams.",
+            "smiles": "OCC(O)CO",
+            "katex_skeletal_formula": "\\ce{HO-CH2-CH(OH)-CH2-OH}",
+            "katex_molecular_formula": "\\ce{C3H8O3}"
+        },
+        {
+            "iupac_name": "methanol",
+            "common_name": "methyl alcohol",
+            "local_name": "メタノール",
+            "skeletal_formula": "CH3-OH",
+            "molecular_formula": "CH4O",
+            "series_general_formula": "Primary alcohols (1°): CnH2n+1OH (n>=1)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Simplest aliphatic alcohol; toxic; used as industrial solvent and fuel; often compared with ethanol in exams.",
+            "smiles": "CO",
+            "katex_skeletal_formula": "\\ce{CH3-OH}",
+            "katex_molecular_formula": "\\ce{CH4O}"
+        },
+        {
+            "iupac_name": "ethanol",
+            "common_name": "ethyl alcohol",
+            "local_name": "エタノール",
+            "skeletal_formula": "CH3-CH2-OH",
+            "molecular_formula": "C2H6O",
+            "series_general_formula": "Primary alcohols (1°): CnH2n+1OH (n>=1)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Typical primary alcohol; produced by fermentation; oxidized to ethanal then ethanoic acid; starting material for diethyl ether and ethene via dehydration.",
+            "smiles": "CCO",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-OH}",
+            "katex_molecular_formula": "\\ce{C2H6O}"
+        },
+        {
+            "iupac_name": "propan-1-ol",
+            "common_name": "n-propyl alcohol",
+            "local_name": "1-プロパノール",
+            "skeletal_formula": "CH3-CH2-CH2-OH",
+            "molecular_formula": "C3H8O",
+            "series_general_formula": "Primary alcohols (1°): CnH2n+1OH (n>=1)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Straight-chain C3 primary alcohol; used as example of homologous series extension from ethanol.",
+            "smiles": "CCCO",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH2-OH}",
+            "katex_molecular_formula": "\\ce{C3H8O}"
+        },
+        {
+            "iupac_name": "butan-1-ol",
+            "common_name": "n-butyl alcohol",
+            "local_name": "1-ブタノール",
+            "skeletal_formula": "CH3-CH2-CH2-CH2-OH",
+            "molecular_formula": "C4H10O",
+            "series_general_formula": "Primary alcohols (1°): CnH2n+1OH (n>=1)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Representative higher primary alcohol; often appears as example in classification tables (消防法区分などとともに).",
+            "smiles": "CCCCO",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH2-CH2-OH}",
+            "katex_molecular_formula": "\\ce{C4H10O}"
+        },
+        {
+            "iupac_name": "2-methylpropan-1-ol",
+            "common_name": "isobutyl alcohol",
+            "local_name": "2-メチルプロパン-1-オール（イソブチルアルコール）",
+            "skeletal_formula": "(CH3)2CH-CH2-OH",
+            "molecular_formula": "C4H10O",
+            "series_general_formula": "Primary alcohols (1°): CnH2n+1OH (n>=1)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Branched primary alcohol; useful for questions comparing boiling points and reactivity of isomeric alcohols.",
+            "smiles": "CC(C)CO",
+            "katex_skeletal_formula": "\\ce{(CH3)2CH-CH2-OH}",
+            "katex_molecular_formula": "\\ce{C4H10O}"
+        },
+        {
+            "iupac_name": "2-methylpropan-2-ol",
+            "common_name": "tert-butanol",
+            "local_name": "2-メチルプロパン-2-オール（tert-ブチルアルコール）",
+            "skeletal_formula": "(CH3)3C-OH",
+            "molecular_formula": "C4H10O",
+            "series_general_formula": "Tertiary alcohols (3°): general structure R3C-OH",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Prototypical tertiary alcohol; OH-bearing carbon is attached to three other carbons; resists oxidation under conditions where primary and secondary alcohols oxidize.",
+            "smiles": "CC(C)(C)O",
+            "katex_skeletal_formula": "\\ce{(CH3)3C-OH}",
+            "katex_molecular_formula": "\\ce{C4H10O}"
+        },
+        {
+            "iupac_name": "2-methylbutan-2-ol",
+            "common_name": "tert-amyl alcohol",
+            "local_name": "2-メチルブタン-2-オール（tert-アミルアルコール）",
+            "skeletal_formula": "CH3-C(CH3)(OH)-CH2-CH3",
+            "molecular_formula": "C5H12O",
+            "series_general_formula": "Tertiary alcohols (3°): general structure R3C-OH",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Tertiary alcohol with five carbons; useful for advanced naming and classification, showing branching and tertiary carbon.",
+            "smiles": "CCC(C)(C)O",
+            "katex_skeletal_formula": "\\ce{CH3-C(CH3)(OH)-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C5H12O}"
+        },
+        {
+            "iupac_name": "propan-2-ol",
+            "common_name": "isopropyl alcohol",
+            "local_name": "2-プロパノール（イソプロピルアルコール）",
+            "skeletal_formula": "CH3-CH(OH)-CH3",
+            "molecular_formula": "C3H8O",
+            "series_general_formula": "Secondary alcohols (2°): general structure R1-CH(OH)-R2",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Typical secondary alcohol; used as disinfectant and solvent; gives a ketone (propanone) on oxidation and positive iodoform test.",
+            "smiles": "CC(O)C",
+            "katex_skeletal_formula": "\\ce{CH3-CH(OH)-CH3}",
+            "katex_molecular_formula": "\\ce{C3H8O}"
+        },
+        {
+            "iupac_name": "butan-2-ol",
+            "common_name": "sec-butanol",
+            "local_name": "2-ブタノール（セカンダリーブタノール）",
+            "skeletal_formula": "CH3-CH(OH)-CH2-CH3",
+            "molecular_formula": "C4H10O",
+            "series_general_formula": "Secondary alcohols (2°): general structure R1-CH(OH)-R2",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Representative secondary alcohol in many Japanese explanations of classification; oxidized to butan-2-one (a ketone).",
+            "smiles": "CCC(O)C",
+            "katex_skeletal_formula": "\\ce{CH3-CH(OH)-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C4H10O}"
+        },
+        {
+            "iupac_name": "pentan-3-ol",
+            "common_name": "3-pentanol",
+            "local_name": "3-ペンタノール",
+            "skeletal_formula": "CH3-CH2-CH(OH)-CH2-CH3",
+            "molecular_formula": "C5H12O",
+            "series_general_formula": "Secondary alcohols (2°): general structure R1-CH(OH)-R2",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Example of secondary alcohol where the OH-bearing carbon is in the middle of a longer chain; useful for naming and classification exercises.",
+            "smiles": "CCC(O)CC",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH(OH)-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C5H12O}"
+        },
+        {
+            "iupac_name": "methanamide",
+            "common_name": "formamide",
+            "local_name": "メタナミド（ホルムアミド）",
+            "skeletal_formula": "H-CONH2",
+            "molecular_formula": "CH3NO",
+            "series_general_formula": "Primary amides from monocarboxylic acids: RCONH2 (n>=0, n=0 gives formamide)",
+            "functional_groups": [
+                {
+                    "name_en": "Amide",
+                    "name_ja": "アミド結合",
+                    "pattern": "–CONH2"
+                }
+            ],
+            "notes": "Simplest carboxylic acid amide; highly polar; used as solvent and intermediate; typical example when introducing the amide functional group.",
+            "smiles": "C(=O)N",
+            "katex_skeletal_formula": "\\ce{H-CONH2}",
+            "katex_molecular_formula": "\\ce{CH3NO}"
+        },
+        {
+            "iupac_name": "ethanamide",
+            "common_name": "acetamide",
+            "local_name": "エタナミド（アセトアミド）",
+            "skeletal_formula": "CH3-CONH2",
+            "molecular_formula": "C2H5NO",
+            "series_general_formula": "Primary amides from saturated monocarboxylic acids: CnH2n+1CONH2",
+            "functional_groups": [
+                {
+                    "name_en": "Amide",
+                    "name_ja": "アミド結合",
+                    "pattern": "–CONH2"
+                }
+            ],
+            "notes": "Most commonly discussed aliphatic amide; derived from ethanoic acid; used as example of high melting point and hydrogen bonding in amides.",
+            "smiles": "CC(=O)N",
+            "katex_skeletal_formula": "\\ce{CH3-CONH2}",
+            "katex_molecular_formula": "\\ce{C2H5NO}"
+        },
+        {
+            "iupac_name": "propanamide",
+            "common_name": "propanamide",
+            "local_name": "プロパンアミド",
+            "skeletal_formula": "CH3-CH2-CONH2",
+            "molecular_formula": "C3H7NO",
+            "series_general_formula": "Primary amides from saturated monocarboxylic acids: CnH2n+1CONH2",
+            "functional_groups": [
+                {
+                    "name_en": "Amide",
+                    "name_ja": "アミド結合",
+                    "pattern": "–CONH2"
+                }
+            ],
+            "notes": "Higher member of the aliphatic amide series; useful for homologous-series questions and for comparing physical properties with ethanamide.",
+            "smiles": "CCC(=O)N",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CONH2}",
+            "katex_molecular_formula": "\\ce{C3H7NO}"
+        },
+        {
+            "iupac_name": "urea",
+            "common_name": "urea",
+            "local_name": "尿素（カルバミド）",
+            "skeletal_formula": "H2N-CO-NH2",
+            "molecular_formula": "CH4N2O",
+            "series_general_formula": "Diamides (carbamides): general structure H2N-CO-NH2 or substituted analogs",
+            "functional_groups": [
+                {
+                    "name_en": "Amide (diamidic)",
+                    "name_ja": "二価アミド結合",
+                    "pattern": "–CONH2 ×2"
+                }
+            ],
+            "notes": "Most important biological amide; end product of protein metabolism in mammals; typical example of a diamide in high-school chemistry.",
+            "smiles": "C(=O)(N)N",
+            "katex_skeletal_formula": "\\ce{H2N-CO-NH2}",
+            "katex_molecular_formula": "\\ce{CH4N2O}"
+        },
+        {
+            "iupac_name": "methanamine",
+            "common_name": "methylamine",
+            "local_name": "メタンアミン（メチルアミン）",
+            "skeletal_formula": "CH3-NH2",
+            "molecular_formula": "CH5N",
+            "series_general_formula": "Primary aliphatic amines: RNH2, CnH2n+3N (n>=1)",
+            "functional_groups": [
+                {
+                    "name_en": "Amino",
+                    "name_ja": "アミノ基",
+                    "pattern": "–NH2"
+                }
+            ],
+            "notes": "Simplest primary aliphatic amine; gas with ammonia-like smell; basic; typical example in tests distinguishing primary, secondary and tertiary amines.",
+            "smiles": "CN",
+            "katex_skeletal_formula": "\\ce{CH3-NH2}",
+            "katex_molecular_formula": "\\ce{CH5N}"
+        },
+        {
+            "iupac_name": "ethanamine",
+            "common_name": "ethylamine",
+            "local_name": "エタンアミン（エチルアミン）",
+            "skeletal_formula": "CH3-CH2-NH2",
+            "molecular_formula": "C2H7N",
+            "series_general_formula": "Primary aliphatic amines: RNH2, CnH2n+3N (n>=1)",
+            "functional_groups": [
+                {
+                    "name_en": "Amino",
+                    "name_ja": "アミノ基",
+                    "pattern": "–NH2"
+                }
+            ],
+            "notes": "Typical lower primary amine; basic and water-soluble; smells like ammonia; standard example in many exam problems.",
+            "smiles": "CCN",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-NH2}",
+            "katex_molecular_formula": "\\ce{C2H7N}"
+        },
+        {
+            "iupac_name": "propan-1-amine",
+            "common_name": "n-propylamine",
+            "local_name": "プロパン-1-アミン（n-プロピルアミン）",
+            "skeletal_formula": "CH3-CH2-CH2-NH2",
+            "molecular_formula": "C3H9N",
+            "series_general_formula": "Primary aliphatic amines: RNH2, CnH2n+3N (n>=1)",
+            "functional_groups": [
+                {
+                    "name_en": "Amino",
+                    "name_ja": "アミノ基",
+                    "pattern": "–NH2"
+                }
+            ],
+            "notes": "Higher primary amine; used for homologous series questions and comparison of basicity and solubility trends.",
+            "smiles": "CCCN",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH2-NH2}",
+            "katex_molecular_formula": "\\ce{C3H9N}"
+        },
+        {
+            "iupac_name": "dimethylamine",
+            "common_name": "dimethylamine",
+            "local_name": "ジメチルアミン",
+            "skeletal_formula": "CH3-NH-CH3",
+            "molecular_formula": "C2H7N",
+            "series_general_formula": "Secondary aliphatic amines: R2NH",
+            "functional_groups": [
+                {
+                    "name_en": "Amino (secondary)",
+                    "name_ja": "二級アミノ基",
+                    "pattern": "R2NH"
+                }
+            ],
+            "notes": "Simple secondary amine; used to illustrate classification (primary vs secondary vs tertiary) and differences in reactivity with nitrous acid.",
+            "smiles": "CN(C)H",
+            "katex_skeletal_formula": "\\ce{CH3-NH-CH3}",
+            "katex_molecular_formula": "\\ce{C2H7N}"
+        },
+        {
+            "iupac_name": "trimethylamine",
+            "common_name": "trimethylamine",
+            "local_name": "トリメチルアミン",
+            "skeletal_formula": "N(CH3)3",
+            "molecular_formula": "C3H9N",
+            "series_general_formula": "Tertiary aliphatic amines: R3N",
+            "functional_groups": [
+                {
+                    "name_en": "Amino (tertiary)",
+                    "name_ja": "三級アミノ基",
+                    "pattern": "R3N"
+                }
+            ],
+            "notes": "Typical tertiary amine; has strong fishy smell; appears in questions about classification, basicity, and solubility of amines.",
+            "smiles": "CN(C)C",
+            "katex_skeletal_formula": "\\ce{N(CH3)3}",
+            "katex_molecular_formula": "\\ce{C3H9N}"
+        },
+        {
+            "iupac_name": "nitromethane",
+            "common_name": "nitromethane",
+            "local_name": "ニトロメタン",
+            "skeletal_formula": "CH3-NO2",
+            "molecular_formula": "CH3NO2",
+            "series_general_formula": "Primary nitroalkanes: RNO2 (R = alkyl), simplest CnH2n+1NO2",
+            "functional_groups": [
+                {
+                    "name_en": "Nitro",
+                    "name_ja": "ニトロ基",
+                    "pattern": "–NO2"
+                }
+            ],
+            "notes": "Simplest nitroalkane; used as solvent and in fuels; classic example of a nitro compound in high-school texts.",
+            "smiles": "C[N+](=O)[O-]",
+            "katex_skeletal_formula": "\\ce{CH3-NO2}",
+            "katex_molecular_formula": "\\ce{CH3NO2}"
+        },
+        {
+            "iupac_name": "nitroethane",
+            "common_name": "nitroethane",
+            "local_name": "ニトロエタン",
+            "skeletal_formula": "CH3-CH2-NO2",
+            "molecular_formula": "C2H5NO2",
+            "series_general_formula": "Primary nitroalkanes: CnH2n+1NO2 (n>=1)",
+            "functional_groups": [
+                {
+                    "name_en": "Nitro",
+                    "name_ja": "ニトロ基",
+                    "pattern": "–NO2"
+                }
+            ],
+            "notes": "Primary nitroalkane; used industrially as solvent and intermediate; typical example in classification of nitro compounds.",
+            "smiles": "CC[N+](=O)[O-]",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-NO2}",
+            "katex_molecular_formula": "\\ce{C2H5NO2}"
+        },
+        {
+            "iupac_name": "1-nitropropane",
+            "common_name": "1-nitropropane",
+            "local_name": "1-ニトロプロパン",
+            "skeletal_formula": "CH3-CH2-CH2-NO2",
+            "molecular_formula": "C3H7NO2",
+            "series_general_formula": "Primary nitroalkanes: CnH2n+1NO2 (n>=1)",
+            "functional_groups": [
+                {
+                    "name_en": "Nitro",
+                    "name_ja": "ニトロ基",
+                    "pattern": "–NO2"
+                }
+            ],
+            "notes": "Primary nitroalkane; appears together with 2-nitropropane in questions that compare primary and secondary nitro compounds.",
+            "smiles": "CCC[N+](=O)[O-]",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH2-NO2}",
+            "katex_molecular_formula": "\\ce{C3H7NO2}"
+        },
+        {
+            "iupac_name": "2-nitropropane",
+            "common_name": "2-nitropropane",
+            "local_name": "2-ニトロプロパン",
+            "skeletal_formula": "(CH3)2CH-NO2",
+            "molecular_formula": "C3H7NO2",
+            "series_general_formula": "Secondary nitroalkanes: general structure R1R2CH-NO2",
+            "functional_groups": [
+                {
+                    "name_en": "Nitro",
+                    "name_ja": "ニトロ基",
+                    "pattern": "–NO2"
+                }
+            ],
+            "notes": "Secondary nitroalkane; contrasted with 1-nitropropane in reactivity and physical properties; used as solvent and intermediate.",
+            "smiles": "CC(C)[N+](=O)[O-]",
+            "katex_skeletal_formula": "\\ce{(CH3)2CH-NO2}",
+            "katex_molecular_formula": "\\ce{C3H7NO2}"
+        },
+        {
+            "iupac_name": "methanal",
+            "common_name": "formaldehyde",
+            "local_name": "メタナール（ホルムアルデヒド）",
+            "skeletal_formula": "H-CHO",
+            "molecular_formula": "CH2O",
+            "series_general_formula": "Aliphatic aldehydes (alkanals): CnH2nO (n>=1), structural: R-CHO",
+            "functional_groups": [
+                {
+                    "name_en": "Aldehyde",
+                    "name_ja": "アルデヒド基",
+                    "pattern": "R–CHO"
+                }
+            ],
+            "notes": "Simplest aldehyde; gas at room temperature, used as aqueous solution (formalin) as a disinfectant and preservative; gives positive silver mirror and Fehling's tests.",
+            "smiles": "C=O",
+            "katex_skeletal_formula": "\\ce{H-CHO}",
+            "katex_molecular_formula": "\\ce{CH2O}"
+        },
+        {
+            "iupac_name": "ethanal",
+            "common_name": "acetaldehyde",
+            "local_name": "エタナール（アセトアルデヒド）",
+            "skeletal_formula": "CH3-CHO",
+            "molecular_formula": "C2H4O",
+            "series_general_formula": "Aliphatic aldehydes (alkanals): CnH2nO (n>=1), structural: R-CHO",
+            "functional_groups": [
+                {
+                    "name_en": "Aldehyde",
+                    "name_ja": "アルデヒド基",
+                    "pattern": "R–CHO"
+                }
+            ],
+            "notes": "Produced by mild oxidation of ethanol; gives positive silver mirror and Fehling's tests; also positive iodoform test because it contains the CH3-CHO group.",
+            "smiles": "CC=O",
+            "katex_skeletal_formula": "\\ce{CH3-CHO}",
+            "katex_molecular_formula": "\\ce{C2H4O}"
+        },
+        {
+            "iupac_name": "propanal",
+            "common_name": "propionaldehyde",
+            "local_name": "プロパナール（プロピオンアルデヒド）",
+            "skeletal_formula": "CH3-CH2-CHO",
+            "molecular_formula": "C3H6O",
+            "series_general_formula": "Aliphatic aldehydes (alkanals): CnH2nO (n>=1), structural: R-CHO",
+            "functional_groups": [
+                {
+                    "name_en": "Aldehyde",
+                    "name_ja": "アルデヒド基",
+                    "pattern": "R–CHO"
+                }
+            ],
+            "notes": "Straight-chain C3 aldehyde; typical member of the homologous series used to illustrate boiling point trends and general formula CnH2nO.",
+            "smiles": "CCC=O",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CHO}",
+            "katex_molecular_formula": "\\ce{C3H6O}"
+        },
+        {
+            "iupac_name": "butanal",
+            "common_name": "butyraldehyde",
+            "local_name": "ブタナール（酪酸アルデヒド）",
+            "skeletal_formula": "CH3-CH2-CH2-CHO",
+            "molecular_formula": "C4H8O",
+            "series_general_formula": "Aliphatic aldehydes (alkanals): CnH2nO (n>=1), structural: R-CHO",
+            "functional_groups": [
+                {
+                    "name_en": "Aldehyde",
+                    "name_ja": "アルデヒド基",
+                    "pattern": "R–CHO"
+                }
+            ],
+            "notes": "C4 aldehyde; often appears in homologous-series tables alongside methanal, ethanal and propanal; shows typical aldehyde reactions (oxidation to carboxylic acid).",
+            "smiles": "CCCC=O",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH2-CHO}",
+            "katex_molecular_formula": "\\ce{C4H8O}"
+        },
+        {
+            "iupac_name": "2-methylpropanal",
+            "common_name": "isobutyraldehyde",
+            "local_name": "2-メチルプロパナール（イソ酪酸アルデヒド）",
+            "skeletal_formula": "(CH3)2CH-CHO",
+            "molecular_formula": "C4H8O",
+            "series_general_formula": "Aliphatic aldehydes (alkanals): CnH2nO (n>=1), structural: R-CHO",
+            "functional_groups": [
+                {
+                    "name_en": "Aldehyde",
+                    "name_ja": "アルデヒド基",
+                    "pattern": "R–CHO"
+                }
+            ],
+            "notes": "Branched C4 aldehyde; useful for problems on structural isomerism and naming of branched-chain aldehydes.",
+            "smiles": "CC(C)C=O",
+            "katex_skeletal_formula": "\\ce{(CH3)2CH-CHO}",
+            "katex_molecular_formula": "\\ce{C4H8O}"
+        },
+        {
+            "iupac_name": "propanone",
+            "common_name": "acetone",
+            "local_name": "プロパノン（アセトン）",
+            "skeletal_formula": "CH3-CO-CH3",
+            "molecular_formula": "C3H6O",
+            "series_general_formula": "Aliphatic ketones (alkanones): CnH2nO (n>=3), structural: R-CO-R'",
+            "functional_groups": [
+                {
+                    "name_en": "Ketone (carbonyl)",
+                    "name_ja": "ケトン基（カルボニル基）",
+                    "pattern": "R–CO–R'"
+                }
+            ],
+            "notes": "Simplest ketone; very common solvent; classic example of a methyl ketone that gives a positive iodoform test (R-CO-CH3).",
+            "smiles": "CC(=O)C",
+            "katex_skeletal_formula": "\\ce{CH3-CO-CH3}",
+            "katex_molecular_formula": "\\ce{C3H6O}"
+        },
+        {
+            "iupac_name": "butan-2-one",
+            "common_name": "methyl ethyl ketone",
+            "local_name": "ブタノン（メチルエチルケトン）",
+            "skeletal_formula": "CH3-CO-CH2-CH3",
+            "molecular_formula": "C4H8O",
+            "series_general_formula": "Aliphatic ketones (alkanones): CnH2nO (n>=3), structural: R-CO-R'",
+            "functional_groups": [
+                {
+                    "name_en": "Ketone (carbonyl)",
+                    "name_ja": "ケトン基（カルボニル基）",
+                    "pattern": "R–CO–R'"
+                }
+            ],
+            "notes": "Typical C4 ketone; used industrially as solvent; another methyl ketone giving a positive iodoform test; often paired with propanone in exam questions.",
+            "smiles": "CCC(=O)C",
+            "katex_skeletal_formula": "\\ce{CH3-CO-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C4H8O}"
+        },
+        {
+            "iupac_name": "pentan-2-one",
+            "common_name": "methyl propyl ketone",
+            "local_name": "ペンタン-2-オン（メチルプロピルケトン）",
+            "skeletal_formula": "CH3-CO-CH2-CH2-CH3",
+            "molecular_formula": "C5H10O",
+            "series_general_formula": "Aliphatic ketones (alkanones): CnH2nO (n>=3), structural: R-CO-R'",
+            "functional_groups": [
+                {
+                    "name_en": "Ketone (carbonyl)",
+                    "name_ja": "ケトン基（カルボニル基）",
+                    "pattern": "R–CO–R'"
+                }
+            ],
+            "notes": "Higher methyl ketone; good for practicing naming, homologous-series relations, and comparing physical properties with shorter ketones.",
+            "smiles": "CCCC(=O)C",
+            "katex_skeletal_formula": "\\ce{CH3-CO-CH2-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C5H10O}"
+        },
+        {
+            "iupac_name": "pentan-3-one",
+            "common_name": "3-pentanone",
+            "local_name": "ペンタン-3-オン",
+            "skeletal_formula": "CH3-CH2-CO-CH2-CH3",
+            "molecular_formula": "C5H10O",
+            "series_general_formula": "Aliphatic ketones (alkanones): CnH2nO (n>=3), structural: R-CO-R'",
+            "functional_groups": [
+                {
+                    "name_en": "Ketone (carbonyl)",
+                    "name_ja": "ケトン基（カルボニル基）",
+                    "pattern": "R–CO–R'"
+                }
+            ],
+            "notes": "Symmetrical C5 ketone; contrasted with pentan-2-one in isomerism questions and in reactivity of methyl ketones (iodoform test: negative for pentan-3-one).",
+            "smiles": "CCC(=O)CC",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CO-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C5H10O}"
+        },
+        {
+            "iupac_name": "methanoic acid",
+            "common_name": "formic acid",
+            "local_name": "メタン酸（ギ酸）",
+            "skeletal_formula": "H-COOH",
+            "molecular_formula": "CH2O2",
+            "series_general_formula": "Saturated monocarboxylic acids: CnH2n+1COOH (n>=0, n=0 gives HCOOH)",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                }
+            ],
+            "notes": "Simplest carboxylic acid; present in ant stings; stronger than acetic acid; can act both as a reducing agent and an acid.",
+            "smiles": "OC=O",
+            "katex_skeletal_formula": "\\ce{H-COOH}",
+            "katex_molecular_formula": "\\ce{CH2O2}"
+        },
+        {
+            "iupac_name": "ethanoic acid",
+            "common_name": "acetic acid",
+            "local_name": "エタン酸（酢酸）",
+            "skeletal_formula": "CH3-COOH",
+            "molecular_formula": "C2H4O2",
+            "series_general_formula": "Saturated monocarboxylic acids: CnH2n+1COOH (n>=0)",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                }
+            ],
+            "notes": "Main acid in vinegar; typical monobasic carboxylic acid; used to define many esterification examples such as ethyl ethanoate.",
+            "smiles": "CC(=O)O",
+            "katex_skeletal_formula": "\\ce{CH3-COOH}",
+            "katex_molecular_formula": "\\ce{C2H4O2}"
+        },
+        {
+            "iupac_name": "propanoic acid",
+            "common_name": "propionic acid",
+            "local_name": "プロパン酸（プロピオン酸）",
+            "skeletal_formula": "CH3-CH2-COOH",
+            "molecular_formula": "C3H6O2",
+            "series_general_formula": "Saturated monocarboxylic acids: CnH2n+1COOH (n>=0)",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                }
+            ],
+            "notes": "Third member of the saturated monocarboxylic acid series; used as preservative; standard example in homologous-series problems.",
+            "smiles": "CCC(=O)O",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-COOH}",
+            "katex_molecular_formula": "\\ce{C3H6O2}"
+        },
+        {
+            "iupac_name": "butanoic acid",
+            "common_name": "butyric acid",
+            "local_name": "ブタン酸（酪酸）",
+            "skeletal_formula": "CH3-CH2-CH2-COOH",
+            "molecular_formula": "C4H8O2",
+            "series_general_formula": "Saturated monocarboxylic acids: CnH2n+1COOH (n>=0)",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                }
+            ],
+            "notes": "Has strong rancid-butter odor; often used as example for characteristic smells of carboxylic acids and their esters.",
+            "smiles": "CCCC(=O)O",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH2-COOH}",
+            "katex_molecular_formula": "\\ce{C4H8O2}"
+        },
+        {
+            "iupac_name": "ethanedioic acid",
+            "common_name": "oxalic acid",
+            "local_name": "エタン二酸（シュウ酸）",
+            "skeletal_formula": "HOOC-COOH",
+            "molecular_formula": "C2H2O4",
+            "series_general_formula": "Saturated dicarboxylic acids: HOOC-(CH2)n-COOH (n>=0, n=0 gives oxalic acid)",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl (dicarboxylic)",
+                    "name_ja": "二価カルボキシ基",
+                    "pattern": "–COOH ×2"
+                }
+            ],
+            "notes": "Simplest dicarboxylic acid; found in rhubarb and spinach; typical example of dibasic carboxylic acid in high-school texts.",
+            "smiles": "OC(=O)C(=O)O",
+            "katex_skeletal_formula": "\\ce{HOOC-COOH}",
+            "katex_molecular_formula": "\\ce{C2H2O4}"
+        },
+        {
+            "iupac_name": "methyl methanoate",
+            "common_name": "methyl formate",
+            "local_name": "メチルメタン酸メチル（メチルギ酸メチル）",
+            "skeletal_formula": "H-COO-CH3",
+            "molecular_formula": "C2H4O2",
+            "series_general_formula": "Simple saturated esters: general molecular formula CnH2nO2, structure R-COOR'",
+            "functional_groups": [
+                {
+                    "name_en": "Ester linkage",
+                    "name_ja": "エステル結合",
+                    "pattern": "R–COO–R'"
+                }
+            ],
+            "notes": "Simplest aliphatic ester; used as solvent and flavoring; typical example in basic esterification reactions.",
+            "smiles": "COC=O",
+            "katex_skeletal_formula": "\\ce{H-COO-CH3}",
+            "katex_molecular_formula": "\\ce{C2H4O2}"
+        },
+        {
+            "iupac_name": "methyl ethanoate",
+            "common_name": "methyl acetate",
+            "local_name": "メチルエタン酸メチル（酢酸メチル）",
+            "skeletal_formula": "CH3-COO-CH3",
+            "molecular_formula": "C3H6O2",
+            "series_general_formula": "Simple saturated esters: CnH2nO2 (from monocarboxylic acids and alcohols)",
+            "functional_groups": [
+                {
+                    "name_en": "Ester linkage",
+                    "name_ja": "エステル結合",
+                    "pattern": "R–COO–R'"
+                }
+            ],
+            "notes": "Low-boiling ester with fruity smell; often used as example in problems comparing boiling points of acids, esters and alcohols.",
+            "smiles": "CC(=O)OC",
+            "katex_skeletal_formula": "\\ce{CH3-COO-CH3}",
+            "katex_molecular_formula": "\\ce{C3H6O2}"
+        },
+        {
+            "iupac_name": "ethyl ethanoate",
+            "common_name": "ethyl acetate",
+            "local_name": "エチルエタン酸エチル（酢酸エチル）",
+            "skeletal_formula": "CH3-COO-CH2-CH3",
+            "molecular_formula": "C4H8O2",
+            "series_general_formula": "Simple saturated esters: CnH2nO2, structure R-COO-R'",
+            "functional_groups": [
+                {
+                    "name_en": "Ester linkage",
+                    "name_ja": "エステル結合",
+                    "pattern": "R–COO–R'"
+                }
+            ],
+            "notes": "Very common solvent; prepared by esterification of ethanol and ethanoic acid; standard example for ester smell and hydrolysis.",
+            "smiles": "CC(=O)OCC",
+            "katex_skeletal_formula": "\\ce{CH3-COO-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C4H8O2}"
+        },
+        {
+            "iupac_name": "propyl ethanoate",
+            "common_name": "propyl acetate",
+            "local_name": "プロピルエタン酸プロピル（酢酸プロピル）",
+            "skeletal_formula": "CH3-COO-CH2-CH2-CH3",
+            "molecular_formula": "C5H10O2",
+            "series_general_formula": "Simple saturated esters: CnH2nO2",
+            "functional_groups": [
+                {
+                    "name_en": "Ester linkage",
+                    "name_ja": "エステル結合",
+                    "pattern": "R–COO–R'"
+                }
+            ],
+            "notes": "Fruity-smelling ester; used to exemplify how changing the alcohol changes the odor while keeping the same acid part.",
+            "smiles": "CC(=O)OCCC",
+            "katex_skeletal_formula": "\\ce{CH3-COO-CH2-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C5H10O2}"
+        },
+        {
+            "iupac_name": "methyl butanoate",
+            "common_name": "methyl butyrate",
+            "local_name": "メチルブタン酸メチル（酪酸メチル）",
+            "skeletal_formula": "CH3-CH2-CH2-COO-CH3",
+            "molecular_formula": "C5H10O2",
+            "series_general_formula": "Simple saturated esters: CnH2nO2",
+            "functional_groups": [
+                {
+                    "name_en": "Ester linkage",
+                    "name_ja": "エステル結合",
+                    "pattern": "R–COO–R'"
+                }
+            ],
+            "notes": "Has pineapple-like fruity odor; common example in questions relating smell to ester structure derived from butanoic acid.",
+            "smiles": "CCCC(=O)OC",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH2-COO-CH3}",
+            "katex_molecular_formula": "\\ce{C5H10O2}"
+        },
+        {
+            "iupac_name": "methane",
+            "common_name": "methane",
+            "local_name": "メタン",
+            "skeletal_formula": "CH4",
+            "molecular_formula": "CH4",
+            "series_general_formula": "Alkanes: CnH2n+2 (n>=1)",
+            "functional_groups": [],
+            "notes": "Simplest alkane; main component of natural gas; typical saturated hydrocarbon showing substitution and combustion reactions.",
+            "smiles": "C",
+            "katex_skeletal_formula": "\\ce{CH4}",
+            "katex_molecular_formula": "\\ce{CH4}"
+        },
+        {
+            "iupac_name": "ethane",
+            "common_name": "ethane",
+            "local_name": "エタン",
+            "skeletal_formula": "CH3-CH3",
+            "molecular_formula": "C2H6",
+            "series_general_formula": "Alkanes: CnH2n+2 (n>=1)",
+            "functional_groups": [],
+            "notes": "Straight-chain alkane; gas at room temperature; used as a component of natural gas and as a feedstock for ethene.",
+            "smiles": "CC",
+            "katex_skeletal_formula": "\\ce{CH3-CH3}",
+            "katex_molecular_formula": "\\ce{C2H6}"
+        },
+        {
+            "iupac_name": "propane",
+            "common_name": "propane",
+            "local_name": "プロパン",
+            "skeletal_formula": "CH3-CH2-CH3",
+            "molecular_formula": "C3H8",
+            "series_general_formula": "Alkanes: CnH2n+2 (n>=1)",
+            "functional_groups": [],
+            "notes": "Fuel gas; major component of liquefied petroleum gas (LPG); standard example of combustion and substitution reactions.",
+            "smiles": "CCC",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C3H8}"
+        },
+        {
+            "iupac_name": "butane",
+            "common_name": "n-butane",
+            "local_name": "ブタン（正ブタン）",
+            "skeletal_formula": "CH3-CH2-CH2-CH3",
+            "molecular_formula": "C4H10",
+            "series_general_formula": "Alkanes: CnH2n+2 (n>=1)",
+            "functional_groups": [],
+            "notes": "Straight-chain isomer of C4H10; used as fuel gas; contrasted with isobutane (2-methylpropane) in isomer questions.",
+            "smiles": "CCCC",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C4H10}"
+        },
+        {
+            "iupac_name": "2-methylpropane",
+            "common_name": "isobutane",
+            "local_name": "2-メチルプロパン（イソブタン）",
+            "skeletal_formula": "(CH3)3CH",
+            "molecular_formula": "C4H10",
+            "series_general_formula": "Alkanes: CnH2n+2 (n>=1)",
+            "functional_groups": [],
+            "notes": "Branched-chain isomer of butane; important example of structural isomerism; used as refrigerant and propellant.",
+            "smiles": "CC(C)C",
+            "katex_skeletal_formula": "\\ce{(CH3)3CH}",
+            "katex_molecular_formula": "\\ce{C4H10}"
+        },
+        {
+            "iupac_name": "pentane",
+            "common_name": "n-pentane",
+            "local_name": "ペンタン",
+            "skeletal_formula": "CH3-CH2-CH2-CH2-CH3",
+            "molecular_formula": "C5H12",
+            "series_general_formula": "Alkanes: CnH2n+2 (n>=1)",
+            "functional_groups": [],
+            "notes": "Straight-chain C5 alkane; typical example when studying multiple structural isomers (n-pentane, isopentane, neopentane).",
+            "smiles": "CCCCC",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH2-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C5H12}"
+        },
+        {
+            "iupac_name": "2-methylbutane",
+            "common_name": "isopentane",
+            "local_name": "2-メチルブタン（イソペンタン）",
+            "skeletal_formula": "CH3-CH(CH3)-CH2-CH3",
+            "molecular_formula": "C5H12",
+            "series_general_formula": "Alkanes: CnH2n+2 (n>=1)",
+            "functional_groups": [],
+            "notes": "Branched C5 alkane; classic example of structural isomerism and boiling point comparison among C5H12 isomers.",
+            "smiles": "CCC(C)C",
+            "katex_skeletal_formula": "\\ce{CH3-CH(CH3)-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C5H12}"
+        },
+        {
+            "iupac_name": "2,2-dimethylpropane",
+            "common_name": "neopentane",
+            "local_name": "2,2-ジメチルプロパン（ネオペンタン）",
+            "skeletal_formula": "C(CH3)4",
+            "molecular_formula": "C5H12",
+            "series_general_formula": "Alkanes: CnH2n+2 (n>=1)",
+            "functional_groups": [],
+            "notes": "Most highly branched C5H12 isomer; very low boiling point; emphasized in problems on branching vs boiling point.",
+            "smiles": "CC(C)(C)C",
+            "katex_skeletal_formula": "\\ce{C(CH3)4}",
+            "katex_molecular_formula": "\\ce{C5H12}"
+        },
+        {
+            "iupac_name": "hexane",
+            "common_name": "hexane",
+            "local_name": "ヘキサン",
+            "skeletal_formula": "CH3-(CH2)4-CH3",
+            "molecular_formula": "C6H14",
+            "series_general_formula": "Alkanes: CnH2n+2 (n>=1)",
+            "functional_groups": [],
+            "notes": "Straight-chain C6 alkane; common non-polar solvent; basis for many C6 isomer questions.",
+            "smiles": "CCCCCC",
+            "katex_skeletal_formula": "\\ce{CH3-(CH2)4-CH3}",
+            "katex_molecular_formula": "\\ce{C6H14}"
+        },
+        {
+            "iupac_name": "heptane",
+            "common_name": "heptane",
+            "local_name": "ヘプタン",
+            "skeletal_formula": "CH3-(CH2)5-CH3",
+            "molecular_formula": "C7H16",
+            "series_general_formula": "Alkanes: CnH2n+2 (n>=1)",
+            "functional_groups": [],
+            "notes": "Straight-chain C7 alkane; appears in questions on boiling points and combustion.",
+            "smiles": "CCCCCCC",
+            "katex_skeletal_formula": "\\ce{CH3-(CH2)5-CH3}",
+            "katex_molecular_formula": "\\ce{C7H16}"
+        },
+        {
+            "iupac_name": "octane",
+            "common_name": "octane",
+            "local_name": "オクタン",
+            "skeletal_formula": "CH3-(CH2)6-CH3",
+            "molecular_formula": "C8H18",
+            "series_general_formula": "Alkanes: CnH2n+2 (n>=1)",
+            "functional_groups": [],
+            "notes": "Straight-chain C8 alkane; octane number in gasoline quality is defined using its isomers (notably 2,2,4-trimethylpentane).",
+            "smiles": "CCCCCCCC",
+            "katex_skeletal_formula": "\\ce{CH3-(CH2)6-CH3}",
+            "katex_molecular_formula": "\\ce{C8H18}"
+        },
+        {
+            "iupac_name": "ethene",
+            "common_name": "ethylene",
+            "local_name": "エチレン",
+            "skeletal_formula": "CH2=CH2",
+            "molecular_formula": "C2H4",
+            "series_general_formula": "Alkenes (one C=C): CnH2n (n>=2)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkene double bond",
+                    "name_ja": "アルケン（二重結合）",
+                    "pattern": "C=C"
+                }
+            ],
+            "notes": "Simplest alkene; industrially very important; basis for polyethylene via addition polymerization.",
+            "smiles": "C=C",
+            "katex_skeletal_formula": "\\ce{CH2=CH2}",
+            "katex_molecular_formula": "\\ce{C2H4}"
+        },
+        {
+            "iupac_name": "propene",
+            "common_name": "propylene",
+            "local_name": "プロペン（プロピレン）",
+            "skeletal_formula": "CH2=CH-CH3",
+            "molecular_formula": "C3H6",
+            "series_general_formula": "Alkenes (one C=C): CnH2n (n>=2)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkene double bond",
+                    "name_ja": "アルケン（二重結合）",
+                    "pattern": "C=C"
+                }
+            ],
+            "notes": "Typical terminal alkene; starting material for polypropylene and many addition reactions.",
+            "smiles": "C=CC",
+            "katex_skeletal_formula": "\\ce{CH2=CH-CH3}",
+            "katex_molecular_formula": "\\ce{C3H6}"
+        },
+        {
+            "iupac_name": "but-1-ene",
+            "common_name": "1-butene",
+            "local_name": "1-ブテン",
+            "skeletal_formula": "CH2=CH-CH2-CH3",
+            "molecular_formula": "C4H8",
+            "series_general_formula": "Alkenes (one C=C): CnH2n (n>=2)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkene double bond",
+                    "name_ja": "アルケン（二重結合）",
+                    "pattern": "C=C"
+                }
+            ],
+            "notes": "Terminal C4 alkene; used to illustrate position isomerism with but-2-ene in textbooks.",
+            "smiles": "C=CCC",
+            "katex_skeletal_formula": "\\ce{CH2=CH-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C4H8}"
+        },
+        {
+            "iupac_name": "but-2-ene",
+            "common_name": "2-butene",
+            "local_name": "2-ブテン",
+            "skeletal_formula": "CH3-CH=CH-CH3",
+            "molecular_formula": "C4H8",
+            "series_general_formula": "Alkenes (one C=C): CnH2n (n>=2)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkene double bond",
+                    "name_ja": "アルケン（二重結合）",
+                    "pattern": "C=C"
+                }
+            ],
+            "notes": "Internal C4 alkene; example of position isomerism with but-1-ene and of cis–trans (E/Z) isomerism.",
+            "smiles": "CC=CC",
+            "katex_skeletal_formula": "\\ce{CH3-CH=CH-CH3}",
+            "katex_molecular_formula": "\\ce{C4H8}"
+        },
+        {
+            "iupac_name": "2-methylpropene",
+            "common_name": "isobutene",
+            "local_name": "2-メチルプロペン（イソブテン）",
+            "skeletal_formula": "CH2=C(CH3)2",
+            "molecular_formula": "C4H8",
+            "series_general_formula": "Alkenes (one C=C): CnH2n (n>=2)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkene double bond",
+                    "name_ja": "アルケン（二重結合）",
+                    "pattern": "C=C"
+                }
+            ],
+            "notes": "Highly substituted alkene; used industrially to make polyisobutene and MTBE; good example of Markovnikov addition.",
+            "smiles": "C=C(C)C",
+            "katex_skeletal_formula": "\\ce{CH2=C(CH3)2}",
+            "katex_molecular_formula": "\\ce{C4H8}"
+        },
+        {
+            "iupac_name": "pent-1-ene",
+            "common_name": "1-pentene",
+            "local_name": "1-ペンテン",
+            "skeletal_formula": "CH2=CH-CH2-CH2-CH3",
+            "molecular_formula": "C5H10",
+            "series_general_formula": "Alkenes (one C=C): CnH2n (n>=2)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkene double bond",
+                    "name_ja": "アルケン（二重結合）",
+                    "pattern": "C=C"
+                }
+            ],
+            "notes": "Representative higher terminal alkene; used in problems on general formula CnH2n and homologous series.",
+            "smiles": "C=CCCC",
+            "katex_skeletal_formula": "\\ce{CH2=CH-CH2-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C5H10}"
+        },
+        {
+            "iupac_name": "buta-1,3-diene",
+            "common_name": "1,3-butadiene",
+            "local_name": "1,3-ブタジエン",
+            "skeletal_formula": "CH2=CH-CH=CH2",
+            "molecular_formula": "C4H6",
+            "series_general_formula": "Conjugated dienes: CnH2n-2 (two C=C)",
+            "functional_groups": [
+                {
+                    "name_en": "Conjugated diene",
+                    "name_ja": "共役ジエン",
+                    "pattern": "C=C–C=C"
+                }
+            ],
+            "notes": "Conjugated diene; important monomer for synthetic rubber (e.g. polybutadiene, styrene-butadiene rubber).",
+            "smiles": "C=CC=C",
+            "katex_skeletal_formula": "\\ce{CH2=CH-CH=CH2}",
+            "katex_molecular_formula": "\\ce{C4H6}"
+        },
+        {
+            "iupac_name": "ethyne",
+            "common_name": "acetylene",
+            "local_name": "エチン（アセチレン）",
+            "skeletal_formula": "HC≡CH",
+            "molecular_formula": "C2H2",
+            "series_general_formula": "Alkynes (one C≡C): CnH2n-2 (n>=2)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkyne triple bond",
+                    "name_ja": "アルキン（三重結合）",
+                    "pattern": "C≡C"
+                }
+            ],
+            "notes": "Simplest alkyne; strong reducing agent; used in oxyacetylene welding and as a starting material for many syntheses.",
+            "smiles": "C#C",
+            "katex_skeletal_formula": "\\ce{HC#CH}",
+            "katex_molecular_formula": "\\ce{C2H2}"
+        },
+        {
+            "iupac_name": "propyne",
+            "common_name": "methylacetylene",
+            "local_name": "プロピン（メチルアセチレン）",
+            "skeletal_formula": "CH3-C≡CH",
+            "molecular_formula": "C3H4",
+            "series_general_formula": "Alkynes (one C≡C): CnH2n-2 (n>=2)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkyne triple bond",
+                    "name_ja": "アルキン（三重結合）",
+                    "pattern": "C≡C"
+                }
+            ],
+            "notes": "Simplest terminal C3 alkyne; used to illustrate substitution vs addition on terminal alkynes.",
+            "smiles": "CC#C",
+            "katex_skeletal_formula": "\\ce{CH3-C#CH}",
+            "katex_molecular_formula": "\\ce{C3H4}"
+        },
+        {
+            "iupac_name": "but-1-yne",
+            "common_name": "1-butyne",
+            "local_name": "1-ブチン",
+            "skeletal_formula": "HC≡C-CH2-CH3",
+            "molecular_formula": "C4H6",
+            "series_general_formula": "Alkynes (one C≡C): CnH2n-2 (n>=2)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkyne triple bond",
+                    "name_ja": "アルキン（三重結合）",
+                    "pattern": "C≡C"
+                }
+            ],
+            "notes": "Terminal C4 alkyne; appears in problems on general formula CnH2n-2 and position isomerism with but-2-yne.",
+            "smiles": "C#CCC",
+            "katex_skeletal_formula": "\\ce{HC#C-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C4H6}"
+        },
+        {
+            "iupac_name": "but-2-yne",
+            "common_name": "2-butyne",
+            "local_name": "2-ブチン",
+            "skeletal_formula": "CH3-C≡C-CH3",
+            "molecular_formula": "C4H6",
+            "series_general_formula": "Alkynes (one C≡C): CnH2n-2 (n>=2)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkyne triple bond",
+                    "name_ja": "アルキン（三重結合）",
+                    "pattern": "C≡C"
+                }
+            ],
+            "notes": "Internal C4 alkyne; contrasts with but-1-yne in acidity of terminal hydrogen and in some reaction patterns.",
+            "smiles": "CC#CC",
+            "katex_skeletal_formula": "\\ce{CH3-C#C-CH3}",
+            "katex_molecular_formula": "\\ce{C4H6}"
+        },
+        {
+            "iupac_name": "cyclopropane",
+            "common_name": "cyclopropane",
+            "local_name": "シクロプロパン",
+            "skeletal_formula": "(-CH2-)3 (three-membered ring)",
+            "molecular_formula": "C3H6",
+            "series_general_formula": "Cycloalkanes: CnH2n (n>=3)",
+            "functional_groups": [
+                {
+                    "name_en": "Cycloalkane ring",
+                    "name_ja": "シクロアルカン環",
+                    "pattern": "saturated C3 ring"
+                }
+            ],
+            "notes": "Smallest cycloalkane; large ring strain and relatively reactive; used as example of angle strain.",
+            "smiles": "C1CC1",
+            "katex_skeletal_formula": "\\ce{(CH2)3}",
+            "katex_molecular_formula": "\\ce{C3H6}"
+        },
+        {
+            "iupac_name": "cyclobutane",
+            "common_name": "cyclobutane",
+            "local_name": "シクロブタン",
+            "skeletal_formula": "(-CH2-)4 (four-membered ring)",
+            "molecular_formula": "C4H8",
+            "series_general_formula": "Cycloalkanes: CnH2n (n>=3)",
+            "functional_groups": [
+                {
+                    "name_en": "Cycloalkane ring",
+                    "name_ja": "シクロアルカン環",
+                    "pattern": "saturated C4 ring"
+                }
+            ],
+            "notes": "Four-membered cycloalkane; still strained and more reactive than larger rings.",
+            "smiles": "C1CCC1",
+            "katex_skeletal_formula": "\\ce{(CH2)4}",
+            "katex_molecular_formula": "\\ce{C4H8}"
+        },
+        {
+            "iupac_name": "cyclopentane",
+            "common_name": "cyclopentane",
+            "local_name": "シクロペンタン",
+            "skeletal_formula": "(-CH2-)5 (five-membered ring)",
+            "molecular_formula": "C5H10",
+            "series_general_formula": "Cycloalkanes: CnH2n (n>=3)",
+            "functional_groups": [
+                {
+                    "name_en": "Cycloalkane ring",
+                    "name_ja": "シクロアルカン環",
+                    "pattern": "saturated C5 ring"
+                }
+            ],
+            "notes": "Relatively low ring strain; together with cyclohexane, used as example of stable cycloalkanes in textbooks.",
+            "smiles": "C1CCCC1",
+            "katex_skeletal_formula": "\\ce{(CH2)5}",
+            "katex_molecular_formula": "\\ce{C5H10}"
+        },
+        {
+            "iupac_name": "cyclohexane",
+            "common_name": "cyclohexane",
+            "local_name": "シクロヘキサン",
+            "skeletal_formula": "(-CH2-)6 (six-membered ring)",
+            "molecular_formula": "C6H12",
+            "series_general_formula": "Cycloalkanes: CnH2n (n>=3)",
+            "functional_groups": [
+                {
+                    "name_en": "Cycloalkane ring",
+                    "name_ja": "シクロアルカン環",
+                    "pattern": "saturated C6 ring"
+                }
+            ],
+            "notes": "Most stable cycloalkane; adopts chair conformation with minimal strain; key example for conformational analysis.",
+            "smiles": "C1CCCCC1",
+            "katex_skeletal_formula": "\\ce{(CH2)6}",
+            "katex_molecular_formula": "\\ce{C6H12}"
+        }
+    ]
+}

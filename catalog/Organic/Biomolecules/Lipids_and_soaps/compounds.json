@@ -1,0 +1,219 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "octadecanoic acid",
+            "common_name": "stearic acid",
+            "local_name": "ステアリン酸",
+            "skeletal_formula": "CH3-(CH2)16-COOH",
+            "molecular_formula": "C18H36O2",
+            "series_general_formula": "Saturated higher fatty acids: CH3-(CH2)n-COOH (n ≈ 10–18)",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                },
+                {
+                    "name_en": "Alkyl chain",
+                    "name_ja": "アルキル鎖",
+                    "pattern": "–(CH2)n–"
+                }
+            ],
+            "notes": "Typical saturated higher fatty acid; solid at room temperature; used as component of fats and soaps.",
+            "smiles": "CCCCCCCCCCCCCCCCC(=O)O",
+            "katex_skeletal_formula": "\\ce{CH3-(CH2)16-COOH}",
+            "katex_molecular_formula": "\\ce{C18H36O2}"
+        },
+        {
+            "iupac_name": "cis-9-octadecenoic acid",
+            "common_name": "oleic acid",
+            "local_name": "オレイン酸",
+            "skeletal_formula": "CH3-(CH2)7-CH=CH-(CH2)7-COOH",
+            "molecular_formula": "C18H34O2",
+            "series_general_formula": "Monounsaturated higher fatty acids: CnH2n-2O2",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                },
+                {
+                    "name_en": "Alkene",
+                    "name_ja": "二重結合（アルケン）",
+                    "pattern": "C=C"
+                }
+            ],
+            "notes": "Unsaturated fatty acid; liquid at room temperature; major component of many vegetable oils.",
+            "smiles": "CCCCCCCCC=CCCCCCCC(=O)O",
+            "katex_skeletal_formula": "\\ce{CH3-(CH2)7-CH=CH-(CH2)7-COOH}",
+            "katex_molecular_formula": "\\ce{C18H34O2}"
+        },
+        {
+            "iupac_name": "glycerol tristearate",
+            "common_name": "tristearin (a typical fat)",
+            "local_name": "トリステアリン（代表的な脂肪）",
+            "skeletal_formula": "glycerol triester of stearic acid",
+            "molecular_formula": "C57H110O6",
+            "series_general_formula": "Triglycerides (fats and oils): glycerol triesters of higher fatty acids",
+            "functional_groups": [
+                {
+                    "name_en": "Ester",
+                    "name_ja": "エステル結合",
+                    "pattern": "R-COO-R'"
+                },
+                {
+                    "name_en": "Alkyl chains",
+                    "name_ja": "高級アルキル鎖",
+                    "pattern": "long –(CH2)n–"
+                }
+            ],
+            "notes": "Example of solid fat; formed from glycerol and stearic acid; hydrolysis (saponification) yields glycerol and sodium stearate (soap).",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{(C17H35COO)3C3H5}",
+            "katex_molecular_formula": "\\ce{C57H110O6}"
+        },
+        {
+            "iupac_name": "glycerol trioleate",
+            "common_name": "triolein (a typical oil)",
+            "local_name": "トリオレイン（代表的な油脂）",
+            "skeletal_formula": "glycerol triester of oleic acid",
+            "molecular_formula": "C57H104O6",
+            "series_general_formula": "Triglycerides (oils): glycerol triesters of unsaturated fatty acids",
+            "functional_groups": [
+                {
+                    "name_en": "Ester",
+                    "name_ja": "エステル結合",
+                    "pattern": "R-COO-R'"
+                },
+                {
+                    "name_en": "Alkene",
+                    "name_ja": "二重結合",
+                    "pattern": "C=C (in fatty acid chains)"
+                }
+            ],
+            "notes": "Liquid oil at room temperature; typical component of vegetable oils; more double bonds → lower melting point.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{(C17H33COO)3C3H5}",
+            "katex_molecular_formula": "\\ce{C57H104O6}"
+        },
+        {
+            "iupac_name": "triacylglycerol (generic fat/oil)",
+            "common_name": "fat or oil (triglyceride)",
+            "local_name": "脂肪・油脂（トリアシルグリセロール）",
+            "skeletal_formula": "glycerol triester of higher fatty acids R1COOH, R2COOH, R3COOH",
+            "molecular_formula": "approx. C55–C57H100–H110O6",
+            "series_general_formula": "Triacylglycerols: \\ce{C3H5(OCO-R)3} (R = C11–C17 alkyl)",
+            "functional_groups": [
+                {
+                    "name_en": "Ester",
+                    "name_ja": "エステル結合",
+                    "pattern": "–COO– (3 per molecule)"
+                }
+            ],
+            "notes": "General structure of fats and oils; hydrolyzed by alkali to glycerol and soap; saturation of R affects melting point (fat vs oil).",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{C3H5(OOCR)3}",
+            "katex_molecular_formula": "\\ce{C3H5(OOCR)3}"
+        },
+        {
+            "iupac_name": "sodium octadecanoate",
+            "common_name": "sodium stearate",
+            "local_name": "ステアリン酸ナトリウム",
+            "skeletal_formula": "C17H35COO^- Na^+",
+            "molecular_formula": "C18H35NaO2",
+            "series_general_formula": "Soaps (fatty acid salts): RCOO^- M^+ (R ≈ C11–C17; M = Na, K)",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxylate",
+                    "name_ja": "カルボキシラート（カルボン酸イオン）",
+                    "pattern": "RCOO^-"
+                }
+            ],
+            "notes": "Typical solid soap; sodium salt of stearic acid; forms micelles in water and emulsifies oils.",
+            "smiles": "[Na+].[O-]C(=O)CCCCCCCCCCCCCCCCC",
+            "katex_skeletal_formula": "\\ce{C17H35COONa}",
+            "katex_molecular_formula": "\\ce{C18H35NaO2}"
+        },
+        {
+            "iupac_name": "sodium hexadecanoate",
+            "common_name": "sodium palmitate",
+            "local_name": "パルミチン酸ナトリウム",
+            "skeletal_formula": "C15H31COO^- Na^+",
+            "molecular_formula": "C16H31NaO2",
+            "series_general_formula": "Sodium soaps: CnH2n+1COONa",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxylate",
+                    "name_ja": "カルボキシラート",
+                    "pattern": "RCOO^-"
+                }
+            ],
+            "notes": "Another common sodium soap; from palmitic acid; used in many soap bars and detergents.",
+            "smiles": "[Na+].[O-]C(=O)CCCCCCCCCCCCCCCC",
+            "katex_skeletal_formula": "\\ce{C15H31COONa}",
+            "katex_molecular_formula": "\\ce{C16H31NaO2}"
+        },
+        {
+            "iupac_name": "sodium (9Z-octadec-9-enoate)",
+            "common_name": "sodium oleate",
+            "local_name": "オレイン酸ナトリウム",
+            "skeletal_formula": "C17H33COO^- Na^+",
+            "molecular_formula": "C18H33NaO2",
+            "series_general_formula": "Unsaturated soaps: RCOO^- Na^+ with C=C",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxylate",
+                    "name_ja": "カルボキシラート",
+                    "pattern": "RCOO^-"
+                },
+                {
+                    "name_en": "Alkene",
+                    "name_ja": "二重結合",
+                    "pattern": "C=C in R"
+                }
+            ],
+            "notes": "Soap containing unsaturated hydrocarbon chain; tends to be softer; improves lathering properties.",
+            "smiles": "[Na+].[O-]C(=O)CCCCCCCCC=CCCCCCCCC",
+            "katex_skeletal_formula": "\\ce{C17H33COONa}",
+            "katex_molecular_formula": "\\ce{C18H33NaO2}"
+        },
+        {
+            "iupac_name": "potassium octadecanoate",
+            "common_name": "potassium stearate",
+            "local_name": "ステアリン酸カリウム",
+            "skeletal_formula": "C17H35COO^- K^+",
+            "molecular_formula": "C18H35KO2",
+            "series_general_formula": "Potassium soaps: CnH2n+1COOK",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxylate",
+                    "name_ja": "カルボキシラート",
+                    "pattern": "RCOO^-"
+                }
+            ],
+            "notes": "Potassium soap; softer than sodium soaps; used in liquid soaps and shaving creams.",
+            "smiles": "[K+].[O-]C(=O)CCCCCCCCCCCCCCCCC",
+            "katex_skeletal_formula": "\\ce{C17H35COOK}",
+            "katex_molecular_formula": "\\ce{C18H35KO2}"
+        },
+        {
+            "iupac_name": "fatty acid soap (generic)",
+            "common_name": "soap (generic)",
+            "local_name": "石けん（一般式）",
+            "skeletal_formula": "R–COO^- M^+ (R = C11–C17 alkyl, M = Na or K)",
+            "molecular_formula": "RCOOM (generic)",
+            "series_general_formula": "Soaps: RCOO^- M^+ produced by saponification of fats/oils",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxylate",
+                    "name_ja": "カルボキシラート",
+                    "pattern": "RCOO^-"
+                }
+            ],
+            "notes": "Anionic surfactant; hydrophilic head (COO^- M^+), hydrophobic tail (R); forms micelles in water and emulsifies oils and fats.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{RCOO^- M^+}",
+            "katex_molecular_formula": "\\ce{RCOOM}"
+        }
+    ]
+}

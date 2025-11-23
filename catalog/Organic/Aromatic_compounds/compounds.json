@@ -1,0 +1,488 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "benzoic acid",
+            "common_name": "benzoic acid",
+            "local_name": "安息香酸",
+            "skeletal_formula": "C6H5-COOH",
+            "molecular_formula": "C7H6O2",
+            "series_general_formula": "Aromatic monocarboxylic acids: Ar-COOH (Ar = aromatic ring)",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                },
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H5–"
+                }
+            ],
+            "notes": "Simplest aromatic carboxylic acid; used as food preservative and important intermediate; typical example of Ar-COOH.",
+            "smiles": "OC(=O)c1ccccc1",
+            "katex_skeletal_formula": "\\ce{C6H5-COOH}",
+            "katex_molecular_formula": "\\ce{C7H6O2}"
+        },
+        {
+            "iupac_name": "benzene-1,2-dicarboxylic acid",
+            "common_name": "phthalic acid",
+            "local_name": "ベンゼン-1,2-ジカルボン酸（フタル酸）",
+            "skeletal_formula": "HOOC-C6H4-COOH (1,2-)",
+            "molecular_formula": "C8H6O4",
+            "series_general_formula": "Aromatic dicarboxylic acids: C6H4(COOH)2",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl (dicarboxylic)",
+                    "name_ja": "二価カルボキシ基",
+                    "pattern": "–COOH ×2"
+                },
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H4–"
+                }
+            ],
+            "notes": "Ortho-dicarboxylic acid; used to prepare phthalic anhydride and dyes; appears in phenolphthalein synthesis schemes in textbooks.",
+            "smiles": "O=C(O)c1ccccc1C(=O)O",
+            "katex_skeletal_formula": "\\ce{HOOC-C6H4-COOH}",
+            "katex_molecular_formula": "\\ce{C8H6O4}"
+        },
+        {
+            "iupac_name": "benzene-1,4-dicarboxylic acid",
+            "common_name": "terephthalic acid",
+            "local_name": "ベンゼン-1,4-ジカルボン酸（テレフタル酸）",
+            "skeletal_formula": "HOOC-C6H4-COOH (1,4-)",
+            "molecular_formula": "C8H6O4",
+            "series_general_formula": "Aromatic dicarboxylic acids: C6H4(COOH)2",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl (dicarboxylic)",
+                    "name_ja": "二価カルボキシ基",
+                    "pattern": "–COOH ×2"
+                },
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H4–"
+                }
+            ],
+            "notes": "Para-dicarboxylic acid; key monomer for PET (polyethylene terephthalate) together with ethylene glycol; very important industrial aromatic acid.",
+            "smiles": "O=C(O)c1ccc(cc1)C(=O)O",
+            "katex_skeletal_formula": "\\ce{HOOC-C6H4-COOH}",
+            "katex_molecular_formula": "\\ce{C8H6O4}"
+        },
+        {
+            "iupac_name": "2-hydroxybenzoic acid",
+            "common_name": "salicylic acid",
+            "local_name": "2-ヒドロキシ安息香酸（サリチル酸）",
+            "skeletal_formula": "HO-C6H4-COOH (ortho OH/COOH)",
+            "molecular_formula": "C7H6O3",
+            "series_general_formula": "Hydroxybenzoic acids: HO–C6H4–COOH",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                },
+                {
+                    "name_en": "Phenolic hydroxyl",
+                    "name_ja": "フェノール性ヒドロキシ基",
+                    "pattern": "Ar–OH"
+                },
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H4–"
+                }
+            ],
+            "notes": "Aromatic hydroxy acid; precursor of aspirin (acetylsalicylic acid) and methyl salicylate; often appears in problems linking phenols and carboxylic acids.",
+            "smiles": "O=C(O)c1ccccc1O",
+            "katex_skeletal_formula": "\\ce{HO-C6H4-COOH}",
+            "katex_molecular_formula": "\\ce{C7H6O3}"
+        },
+        {
+            "iupac_name": "benzene",
+            "common_name": "benzene",
+            "local_name": "ベンゼン",
+            "skeletal_formula": "C6H6 (aromatic ring)",
+            "molecular_formula": "C6H6",
+            "series_general_formula": "Benzene series (monocyclic arenes): CnH2n-6 (n>=6)",
+            "functional_groups": [
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H5–"
+                }
+            ],
+            "notes": "Parent aromatic hydrocarbon; prototypical arene; undergoes electrophilic substitution rather than addition.",
+            "smiles": "c1ccccc1",
+            "katex_skeletal_formula": "\\ce{C6H6}",
+            "katex_molecular_formula": "\\ce{C6H6}"
+        },
+        {
+            "iupac_name": "methylbenzene",
+            "common_name": "toluene",
+            "local_name": "メチルベンゼン（トルエン）",
+            "skeletal_formula": "C6H5-CH3",
+            "molecular_formula": "C7H8",
+            "series_general_formula": "Alkylbenzenes: C6H5R (benzene ring with alkyl substituent)",
+            "functional_groups": [
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H5–"
+                }
+            ],
+            "notes": "Typical alkylbenzene; industrial solvent and starting material for many aromatic compounds; methyl group is ortho/para-directing in substitution.",
+            "smiles": "Cc1ccccc1",
+            "katex_skeletal_formula": "\\ce{C6H5-CH3}",
+            "katex_molecular_formula": "\\ce{C7H8}"
+        },
+        {
+            "iupac_name": "ethylbenzene",
+            "common_name": "ethylbenzene",
+            "local_name": "エチルベンゼン",
+            "skeletal_formula": "C6H5-CH2-CH3",
+            "molecular_formula": "C8H10",
+            "series_general_formula": "Alkylbenzenes: C6H5R",
+            "functional_groups": [
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H5–"
+                }
+            ],
+            "notes": "Important industrial aromatic hydrocarbon; oxidized to styrene and then to polystyrene; typical ethyl-substituted benzene.",
+            "smiles": "CCc1ccccc1",
+            "katex_skeletal_formula": "\\ce{C6H5-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C8H10}"
+        },
+        {
+            "iupac_name": "dimethylbenzene",
+            "common_name": "xylene",
+            "local_name": "ジメチルベンゼン（キシレン）",
+            "skeletal_formula": "C6H4(CH3)2 (o-, m-, p- isomers)",
+            "molecular_formula": "C8H10",
+            "series_general_formula": "Alkylbenzenes: C6H4R2 (disubstituted benzenes)",
+            "functional_groups": [
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H4–"
+                }
+            ],
+            "notes": "Mixture of o-, m-, and p-xylene isomers; important solvent and starting material; used to introduce ortho/meta/para relationships.",
+            "smiles": "Cc1cccc(C)c1",
+            "katex_skeletal_formula": "\\ce{C6H4(CH3)2}",
+            "katex_molecular_formula": "\\ce{C8H10}"
+        },
+        {
+            "iupac_name": "ethenylbenzene",
+            "common_name": "styrene",
+            "local_name": "エテニルベンゼン（スチレン）",
+            "skeletal_formula": "C6H5-CH=CH2",
+            "molecular_formula": "C8H8",
+            "series_general_formula": "Vinyl arenes: C6H5-CH=CH2 and homologues",
+            "functional_groups": [
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H5–"
+                },
+                {
+                    "name_en": "Alkene double bond",
+                    "name_ja": "アルケン（二重結合）",
+                    "pattern": "C=C"
+                }
+            ],
+            "notes": "Monomer for polystyrene; typical example combining aromatic ring and C=C double bond; undergoes addition polymerization.",
+            "smiles": "C=CC1=CC=CC=C1",
+            "katex_skeletal_formula": "\\ce{C6H5-CH=CH2}",
+            "katex_molecular_formula": "\\ce{C8H8}"
+        },
+        {
+            "iupac_name": "naphthalene",
+            "common_name": "naphthalene",
+            "local_name": "ナフタレン",
+            "skeletal_formula": "Fused aromatic rings (C10H8)",
+            "molecular_formula": "C10H8",
+            "series_general_formula": "Polycyclic aromatic hydrocarbons (PAHs): e.g. C10H8 with two fused benzene rings",
+            "functional_groups": [
+                {
+                    "name_en": "Aromatic ring (fused)",
+                    "name_ja": "縮合芳香環",
+                    "pattern": "fused C6 rings"
+                }
+            ],
+            "notes": "Typical polycyclic aromatic hydrocarbon; main component of mothballs; more reactive than benzene in electrophilic substitution.",
+            "smiles": "c1cccc2ccccc12",
+            "katex_skeletal_formula": "\\ce{C10H8}",
+            "katex_molecular_formula": "\\ce{C10H8}"
+        },
+        {
+            "iupac_name": "benzenamine",
+            "common_name": "aniline",
+            "local_name": "ベンゼンアミン（アニリン）",
+            "skeletal_formula": "C6H5-NH2",
+            "molecular_formula": "C6H7N",
+            "series_general_formula": "Aromatic amines: ArNH2 (Ar = aromatic ring)",
+            "functional_groups": [
+                {
+                    "name_en": "Amino",
+                    "name_ja": "アミノ基",
+                    "pattern": "–NH2"
+                },
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H5–"
+                }
+            ],
+            "notes": "Simplest aromatic amine; weak base; important starting material for dyes and pharmaceuticals; classic example in aromatic amine questions.",
+            "smiles": "Nc1ccccc1",
+            "katex_skeletal_formula": "\\ce{C6H5-NH2}",
+            "katex_molecular_formula": "\\ce{C6H7N}"
+        },
+        {
+            "iupac_name": "nitrobenzene",
+            "common_name": "nitrobenzene",
+            "local_name": "ニトロベンゼン",
+            "skeletal_formula": "C6H5-NO2",
+            "molecular_formula": "C6H5NO2",
+            "series_general_formula": "Aromatic nitro compounds: ArNO2",
+            "functional_groups": [
+                {
+                    "name_en": "Nitro",
+                    "name_ja": "ニトロ基",
+                    "pattern": "–NO2"
+                },
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H5–"
+                }
+            ],
+            "notes": "Simplest aromatic nitro compound; starting material for aniline by reduction; typical electrophilic aromatic substitution product of benzene with HNO3/H2SO4.",
+            "smiles": "[O-][N+](=O)c1ccccc1",
+            "katex_skeletal_formula": "\\ce{C6H5-NO2}",
+            "katex_molecular_formula": "\\ce{C6H5NO2}"
+        },
+        {
+            "iupac_name": "4-nitrophenol",
+            "common_name": "p-nitrophenol",
+            "local_name": "4-ニトロフェノール（p-ニトロフェノール）",
+            "skeletal_formula": "HO-C6H4-NO2 (para)",
+            "molecular_formula": "C6H5NO3",
+            "series_general_formula": "Nitrophenols: HO–C6H4–NO2",
+            "functional_groups": [
+                {
+                    "name_en": "Phenolic hydroxyl",
+                    "name_ja": "フェノール性ヒドロキシ基",
+                    "pattern": "Ar–OH"
+                },
+                {
+                    "name_en": "Nitro",
+                    "name_ja": "ニトロ基",
+                    "pattern": "–NO2"
+                },
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H4–"
+                }
+            ],
+            "notes": "Nitro-substituted phenol; used in environmental chemistry and kinetics experiments; typical example of electron-withdrawing substituent on phenol.",
+            "smiles": "O=[N+]([O-])c1ccc(O)cc1",
+            "katex_skeletal_formula": "\\ce{HO-C6H4-NO2}",
+            "katex_molecular_formula": "\\ce{C6H5NO3}"
+        },
+        {
+            "iupac_name": "pyridine",
+            "common_name": "pyridine",
+            "local_name": "ピリジン",
+            "skeletal_formula": "C5H5N (aromatic ring with N)",
+            "molecular_formula": "C5H5N",
+            "series_general_formula": "Heteroaromatic amines: six-membered aromatic ring containing one nitrogen",
+            "functional_groups": [
+                {
+                    "name_en": "Aromatic ring (heteroaromatic)",
+                    "name_ja": "複素芳香環",
+                    "pattern": "C5H5N ring"
+                }
+            ],
+            "notes": "Simplest six-membered nitrogen-containing aromatic ring; weak base; often cited as typical heteroaromatic compound.",
+            "smiles": "n1ccccc1",
+            "katex_skeletal_formula": "\\ce{C5H5N}",
+            "katex_molecular_formula": "\\ce{C5H5N}"
+        },
+        {
+            "iupac_name": "phenol",
+            "common_name": "phenol",
+            "local_name": "フェノール",
+            "skeletal_formula": "C6H5-OH",
+            "molecular_formula": "C6H6O",
+            "series_general_formula": "Monohydric phenols: ArOH (Ar = aromatic ring, typically C6H5)",
+            "functional_groups": [
+                {
+                    "name_en": "Phenolic hydroxyl",
+                    "name_ja": "フェノール性ヒドロキシ基",
+                    "pattern": "Ar–OH"
+                },
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H5–"
+                }
+            ],
+            "notes": "Simplest phenol; weak acid; used as disinfectant and starting material for many aromatic compounds; typical example of ArOH.",
+            "smiles": "Oc1ccccc1",
+            "katex_skeletal_formula": "\\ce{C6H5-OH}",
+            "katex_molecular_formula": "\\ce{C6H6O}"
+        },
+        {
+            "iupac_name": "methylphenol (2-methylphenol)",
+            "common_name": "o-cresol",
+            "local_name": "2-メチルフェノール（o-クレゾール）",
+            "skeletal_formula": "CH3-C6H4-OH (ortho)",
+            "molecular_formula": "C7H8O",
+            "series_general_formula": "Alkylphenols (monohydric phenols): ArOH with alkyl substituent",
+            "functional_groups": [
+                {
+                    "name_en": "Phenolic hydroxyl",
+                    "name_ja": "フェノール性ヒドロキシ基",
+                    "pattern": "Ar–OH"
+                },
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H4–"
+                }
+            ],
+            "notes": "Typical alkyl-substituted phenol; one of the cresol isomers; used to illustrate ortho/meta/para relationships on the ring.",
+            "smiles": "Cc1ccccc1O",
+            "katex_skeletal_formula": "\\ce{CH3-C6H4-OH}",
+            "katex_molecular_formula": "\\ce{C7H8O}"
+        },
+        {
+            "iupac_name": "methylphenol (3-methylphenol)",
+            "common_name": "m-cresol",
+            "local_name": "3-メチルフェノール（m-クレゾール）",
+            "skeletal_formula": "CH3-C6H4-OH (meta)",
+            "molecular_formula": "C7H8O",
+            "series_general_formula": "Alkylphenols: ArOH with alkyl substituent",
+            "functional_groups": [
+                {
+                    "name_en": "Phenolic hydroxyl",
+                    "name_ja": "フェノール性ヒドロキシ基",
+                    "pattern": "Ar–OH"
+                },
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H4–"
+                }
+            ],
+            "notes": "Meta isomer of cresol; appears with o- and p-cresol to demonstrate directing effects and isomerism of substituted phenols.",
+            "smiles": "Cc1cccc(O)c1",
+            "katex_skeletal_formula": "\\ce{CH3-C6H4-OH}",
+            "katex_molecular_formula": "\\ce{C7H8O}"
+        },
+        {
+            "iupac_name": "methylphenol (4-methylphenol)",
+            "common_name": "p-cresol",
+            "local_name": "4-メチルフェノール（p-クレゾール）",
+            "skeletal_formula": "CH3-C6H4-OH (para)",
+            "molecular_formula": "C7H8O",
+            "series_general_formula": "Alkylphenols: ArOH with alkyl substituent",
+            "functional_groups": [
+                {
+                    "name_en": "Phenolic hydroxyl",
+                    "name_ja": "フェノール性ヒドロキシ基",
+                    "pattern": "Ar–OH"
+                },
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H4–"
+                }
+            ],
+            "notes": "Para isomer of cresol; used in many classification examples as monohydric phenol with para-substitution.",
+            "smiles": "Cc1ccc(O)cc1",
+            "katex_skeletal_formula": "\\ce{CH3-C6H4-OH}",
+            "katex_molecular_formula": "\\ce{C7H8O}"
+        },
+        {
+            "iupac_name": "benzene-1,2-diol",
+            "common_name": "catechol",
+            "local_name": "ベンゼン-1,2-ジオール（カテコール）",
+            "skeletal_formula": "HO-C6H4-OH (1,2-)",
+            "molecular_formula": "C6H6O2",
+            "series_general_formula": "Dihydric phenols: Ar(OH)2",
+            "functional_groups": [
+                {
+                    "name_en": "Phenolic hydroxyl (dihydric)",
+                    "name_ja": "二価フェノール性ヒドロキシ基",
+                    "pattern": "Ar(OH)2"
+                },
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H4–"
+                }
+            ],
+            "notes": "1,2-dihydric phenol; typical example of dihydric phenols; used to illustrate intramolecular hydrogen bonding and reactivity.",
+            "smiles": "Oc1ccccc1O",
+            "katex_skeletal_formula": "\\ce{HO-C6H4-OH}",
+            "katex_molecular_formula": "\\ce{C6H6O2}"
+        },
+        {
+            "iupac_name": "benzene-1,3-diol",
+            "common_name": "resorcinol",
+            "local_name": "ベンゼン-1,3-ジオール（レゾルシノール）",
+            "skeletal_formula": "HO-C6H4-OH (1,3-)",
+            "molecular_formula": "C6H6O2",
+            "series_general_formula": "Dihydric phenols: Ar(OH)2",
+            "functional_groups": [
+                {
+                    "name_en": "Phenolic hydroxyl (dihydric)",
+                    "name_ja": "二価フェノール性ヒドロキシ基",
+                    "pattern": "Ar(OH)2"
+                },
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H4–"
+                }
+            ],
+            "notes": "1,3-dihydric phenol; appears in classification of dihydric phenols together with catechol and hydroquinone.",
+            "smiles": "Oc1cccc(O)c1",
+            "katex_skeletal_formula": "\\ce{HO-C6H4-OH}",
+            "katex_molecular_formula": "\\ce{C6H6O2}"
+        },
+        {
+            "iupac_name": "benzene-1,4-diol",
+            "common_name": "hydroquinone",
+            "local_name": "ベンゼン-1,4-ジオール（ヒドロキノン）",
+            "skeletal_formula": "HO-C6H4-OH (1,4-)",
+            "molecular_formula": "C6H6O2",
+            "series_general_formula": "Dihydric phenols: Ar(OH)2",
+            "functional_groups": [
+                {
+                    "name_en": "Phenolic hydroxyl (dihydric)",
+                    "name_ja": "二価フェノール性ヒドロキシ基",
+                    "pattern": "Ar(OH)2"
+                },
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香環",
+                    "pattern": "C6H4–"
+                }
+            ],
+            "notes": "Important dihydric phenol; used as photographic developer and antioxidant; easily oxidized to p-benzoquinone.",
+            "smiles": "Oc1ccc(O)cc1",
+            "katex_skeletal_formula": "\\ce{HO-C6H4-OH}",
+            "katex_molecular_formula": "\\ce{C6H6O2}"
+        }
+    ]
+}

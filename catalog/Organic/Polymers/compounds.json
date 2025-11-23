@@ -1,0 +1,486 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "starch (amylose and amylopectin)",
+            "common_name": "starch",
+            "local_name": "デンプン",
+            "skeletal_formula": "[-C6H10O5-]n (α-1,4 / α-1,6 linked D-glucose)",
+            "molecular_formula": "(C6H10O5)n",
+            "series_general_formula": "Natural polysaccharides: (C6H10O5)n",
+            "functional_groups": [
+                {
+                    "name_en": "Acetal bonds",
+                    "name_ja": "アセタール結合（グリコシド結合）",
+                    "pattern": "α(1→4), α(1→6)"
+                }
+            ],
+            "notes": "Representative natural polymer; plant storage polysaccharide; already appears in biomolecule section but also key natural polymer.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-C6H10O5-]_n}",
+            "katex_molecular_formula": "\\ce{(C6H10O5)_n}"
+        },
+        {
+            "iupac_name": "cellulose",
+            "common_name": "cellulose",
+            "local_name": "セルロース",
+            "skeletal_formula": "[-C6H10O5-]n (β-1,4 linked D-glucose)",
+            "molecular_formula": "(C6H10O5)n",
+            "series_general_formula": "Natural fibrous polysaccharides",
+            "functional_groups": [
+                {
+                    "name_en": "Acetal bonds",
+                    "name_ja": "アセタール結合",
+                    "pattern": "β(1→4)"
+                }
+            ],
+            "notes": "Main component of cotton and wood; typical natural fibrous polymer; does not dissolve in water; used to derive rayon, cellulose acetate, etc.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-C6H10O5-]_n (β(1→4))}",
+            "katex_molecular_formula": "\\ce{(C6H10O5)_n}"
+        },
+        {
+            "iupac_name": "glycogen",
+            "common_name": "glycogen",
+            "local_name": "グリコーゲン",
+            "skeletal_formula": "Highly branched α(1→4), α(1→6) D-glucose polymer",
+            "molecular_formula": "(C6H10O5)n",
+            "series_general_formula": "Animal storage polysaccharides",
+            "functional_groups": [
+                {
+                    "name_en": "Acetal bonds",
+                    "name_ja": "アセタール結合",
+                    "pattern": "α(1→4), α(1→6)"
+                }
+            ],
+            "notes": "Storage polysaccharide in animals; typical natural polymer in liver and muscle; more branched than amylopectin.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-C6H10O5-]_n}",
+            "katex_molecular_formula": "\\ce{(C6H10O5)_n}"
+        },
+        {
+            "iupac_name": "poly(cis-1,4-isoprene)",
+            "common_name": "natural rubber",
+            "local_name": "天然ゴム（ポリイソプレン）",
+            "skeletal_formula": "[-CH2-C(=CH2)-CH2-CH2-]n (from isoprene)",
+            "molecular_formula": "(C5H8)n",
+            "series_general_formula": "Isoprene polymers: (C5H8)n",
+            "functional_groups": [
+                {
+                    "name_en": "Alkene",
+                    "name_ja": "二重結合",
+                    "pattern": "C=C along polymer chain"
+                }
+            ],
+            "notes": "Natural elastic polymer from isoprene; basis for rubber; contrasted with synthetic rubbers in high polymer unit.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CH2-C(=CH2)-CH2-CH2-]_n}",
+            "katex_molecular_formula": "\\ce{(C5H8)_n}"
+        },
+        {
+            "iupac_name": "proteins (generic polypeptides)",
+            "common_name": "proteins",
+            "local_name": "タンパク質",
+            "skeletal_formula": "[-NH-CH(R)-CO-]n",
+            "molecular_formula": "approx. (C2H3NO)n + side chains",
+            "series_general_formula": "Polypeptides from α-amino acids",
+            "functional_groups": [
+                {
+                    "name_en": "Peptide bonds",
+                    "name_ja": "ペプチド結合",
+                    "pattern": "–CO–NH–"
+                }
+            ],
+            "notes": "Natural polymers built from α-amino acids; examples: keratin, collagen, enzymes; key natural polymer category in exams.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-NH-CH(R)-CO-]_n}",
+            "katex_molecular_formula": "\\ce{(C2H3NO)_n + side\\ chains}"
+        },
+        {
+            "iupac_name": "poly(hexane-1,6-diyladipamide)",
+            "common_name": "nylon-6,6",
+            "local_name": "ナイロン66（ポリアミド系合成繊維）",
+            "skeletal_formula": "[-NH-(CH2)6-NH-CO-(CH2)4-CO-]n",
+            "molecular_formula": "(C12H22N2O2)n",
+            "series_general_formula": "Polyamides from diamine + diacid: H2N-(CH2)x-NH2 + HOOC-(CH2)y-COOH",
+            "functional_groups": [
+                {
+                    "name_en": "Amide (polyamide) linkage",
+                    "name_ja": "アミド結合（ポリアミド）",
+                    "pattern": "–CO–NH–"
+                }
+            ],
+            "notes": "Representative synthetic fibre; made from hexamethylenediamine and adipic acid; strong, abrasion-resistant; used in fibers and engineering plastics.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-NH-(CH2)6-NH-CO-(CH2)4-CO-]_n}",
+            "katex_molecular_formula": "\\ce{(C12H22N2O2)_n}"
+        },
+        {
+            "iupac_name": "poly(hexanamide)",
+            "common_name": "nylon-6",
+            "local_name": "ナイロン6",
+            "skeletal_formula": "[-NH-(CH2)5-CO-]n",
+            "molecular_formula": "(C6H11NO)n",
+            "series_general_formula": "Ring-opening polymer of ε-caprolactam",
+            "functional_groups": [
+                {
+                    "name_en": "Amide",
+                    "name_ja": "アミド結合",
+                    "pattern": "–CO–NH–"
+                }
+            ],
+            "notes": "Polyamide produced by ring-opening polymerization of ε-caprolactam; used similarly to nylon-6,6.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-NH-(CH2)5-CO-]_n}",
+            "katex_molecular_formula": "\\ce{(C6H11NO)_n}"
+        },
+        {
+            "iupac_name": "poly(ethylene terephthalate)",
+            "common_name": "polyethylene terephthalate (PET)",
+            "local_name": "ポリエチレンテレフタラート（ポリエステル繊維；テリレン）",
+            "skeletal_formula": "[-O-CH2-CH2-O-CO-C6H4-CO-]n",
+            "molecular_formula": "(C10H8O4)n",
+            "series_general_formula": "Polyesters from diol + aromatic diacid",
+            "functional_groups": [
+                {
+                    "name_en": "Ester",
+                    "name_ja": "エステル結合",
+                    "pattern": "–COO–"
+                },
+                {
+                    "name_en": "Aromatic ring",
+                    "name_ja": "芳香族環",
+                    "pattern": "C6H4"
+                }
+            ],
+            "notes": "Typical polyester fibre and plastic (PET bottles); made from ethylene glycol and terephthalic acid; strong, wrinkle-resistant.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-O-CH2-CH2-O-CO-C6H4-CO-]_n}",
+            "katex_molecular_formula": "\\ce{(C10H8O4)_n}"
+        },
+        {
+            "iupac_name": "poly(vinyl alcohol) formal-acetal crosslinked fibre (vinylon)",
+            "common_name": "vinylon",
+            "local_name": "ビニロン",
+            "skeletal_formula": "[-CH2-CHOH-]n partially acetalized with –O–CH2–O–",
+            "molecular_formula": "(C2H4O)n (before crosslinking)",
+            "series_general_formula": "Acetalized poly(vinyl alcohol) fibres",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "–CH2–CHOH–"
+                },
+                {
+                    "name_en": "Acetal",
+                    "name_ja": "アセタール結合",
+                    "pattern": "–O–CH2–O–"
+                }
+            ],
+            "notes": "Made from poly(vinyl alcohol) treated with formaldehyde; strong, water-resistant; typical Japanese-developed synthetic fibre.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CH2-CHOH-]_n (partly –O-CH2-O-)}",
+            "katex_molecular_formula": "\\ce{(C2H4O)_n}"
+        },
+        {
+            "iupac_name": "poly(acrylonitrile)",
+            "common_name": "acrylic fibre (PAN)",
+            "local_name": "アクリル繊維（ポリアクリロニトリル）",
+            "skeletal_formula": "[-CH2-CH(CN)-]n",
+            "molecular_formula": "(C3H3N)n",
+            "series_general_formula": "Nitrile polymers from acrylonitrile",
+            "functional_groups": [
+                {
+                    "name_en": "Nitrile",
+                    "name_ja": "ニトリル基（シアノ基）",
+                    "pattern": "–C≡N"
+                }
+            ],
+            "notes": "Common synthetic fibre with wool-like feel; produced by addition polymerization of acrylonitrile; often blended in clothing.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CH2-CH(CN)-]_n}",
+            "katex_molecular_formula": "\\ce{(C3H3N)_n}"
+        },
+        {
+            "iupac_name": "poly(ethene)",
+            "common_name": "polyethylene",
+            "local_name": "ポリエチレン",
+            "skeletal_formula": "[-CH2-CH2-]n",
+            "molecular_formula": "(C2H4)n",
+            "series_general_formula": "Addition polymers of ethene: (C2H4)n",
+            "functional_groups": [
+                {
+                    "name_en": "Carbon–carbon single bonds",
+                    "name_ja": "炭素–炭素単結合",
+                    "pattern": "C–C (saturated chain)"
+                }
+            ],
+            "notes": "Typical thermoplastic resin; used in films, bags, containers; produced by addition polymerization of ethene.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CH2-CH2-]_n}",
+            "katex_molecular_formula": "\\ce{(C2H4)_n}"
+        },
+        {
+            "iupac_name": "poly(propene)",
+            "common_name": "polypropylene",
+            "local_name": "ポリプロピレン",
+            "skeletal_formula": "[-CH2-CH(CH3)-]n",
+            "molecular_formula": "(C3H6)n",
+            "series_general_formula": "Addition polymers of propene",
+            "functional_groups": [
+                {
+                    "name_en": "Carbon–carbon single bonds",
+                    "name_ja": "炭素–炭素単結合",
+                    "pattern": "C–C"
+                },
+                {
+                    "name_en": "Methyl side group",
+                    "name_ja": "メチル側鎖",
+                    "pattern": "–CH3 on main chain"
+                }
+            ],
+            "notes": "Thermoplastic resin; stronger and more heat-resistant than polyethylene; used in containers, fibers, etc.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CH2-CH(CH3)-]_n}",
+            "katex_molecular_formula": "\\ce{(C3H6)_n}"
+        },
+        {
+            "iupac_name": "poly(1-chloroethene)",
+            "common_name": "poly(vinyl chloride) (PVC)",
+            "local_name": "ポリ塩化ビニル（PVC）",
+            "skeletal_formula": "[-CH2-CH(Cl)-]n",
+            "molecular_formula": "(C2H3Cl)n",
+            "series_general_formula": "Vinyl polymers: –CH2–CH(X)–",
+            "functional_groups": [
+                {
+                    "name_en": "C–Cl bonds",
+                    "name_ja": "炭素–塩素結合",
+                    "pattern": "C–Cl"
+                }
+            ],
+            "notes": "Typical thermoplastic resin; used for pipes, films, records; produced from vinyl chloride monomer.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CH2-CH(Cl)-]_n}",
+            "katex_molecular_formula": "\\ce{(C2H3Cl)_n}"
+        },
+        {
+            "iupac_name": "poly(phenylethene)",
+            "common_name": "polystyrene",
+            "local_name": "ポリスチレン",
+            "skeletal_formula": "[-CH2-CH(C6H5)-]n",
+            "molecular_formula": "(C8H8)n",
+            "series_general_formula": "Aromatic vinyl polymers: –CH2–CH(Ph)–",
+            "functional_groups": [
+                {
+                    "name_en": "Phenyl group",
+                    "name_ja": "フェニル基",
+                    "pattern": "–C6H5"
+                }
+            ],
+            "notes": "Hard, transparent thermoplastic; used for foam (Styrofoam), cases, trays; brittle but easily molded.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CH2-CH(C6H5)-]_n}",
+            "katex_molecular_formula": "\\ce{(C8H8)_n}"
+        },
+        {
+            "iupac_name": "poly(tetrafluoroethene)",
+            "common_name": "polytetrafluoroethylene (PTFE, Teflon)",
+            "local_name": "ポリテトラフルオロエチレン（テフロン）",
+            "skeletal_formula": "[-CF2-CF2-]n",
+            "molecular_formula": "(C2F4)n",
+            "series_general_formula": "Fluorocarbon polymers: –CF2–CF2–",
+            "functional_groups": [
+                {
+                    "name_en": "C–F bonds",
+                    "name_ja": "炭素–フッ素結合",
+                    "pattern": "C–F"
+                }
+            ],
+            "notes": "Very chemically inert and heat-resistant; used for non-stick coatings and chemical equipment; typical fluoropolymer.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CF2-CF2-]_n}",
+            "katex_molecular_formula": "\\ce{(C2F4)_n}"
+        },
+        {
+            "iupac_name": "phenol–formaldehyde resin (generic)",
+            "common_name": "phenol-formaldehyde resin (Bakelite)",
+            "local_name": "フェノール樹脂（ベークライト）",
+            "skeletal_formula": "crosslinked network from phenol and methanal",
+            "molecular_formula": "network polymer (no simple formula)",
+            "series_general_formula": "Thermosetting resins from phenol + formaldehyde",
+            "functional_groups": [
+                {
+                    "name_en": "Phenyl",
+                    "name_ja": "フェニル基",
+                    "pattern": "C6H4–"
+                },
+                {
+                    "name_en": "Methylened linkage",
+                    "name_ja": "メチレン架橋",
+                    "pattern": "–CH2– between rings"
+                }
+            ],
+            "notes": "Representative thermosetting resin; hard, heat-resistant; used for electric insulators, handles, etc.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[C6H4(OH)-CH2-]_n (crosslinked)}",
+            "katex_molecular_formula": "\\text{network polymer}"
+        },
+        {
+            "iupac_name": "urea–formaldehyde resin (generic)",
+            "common_name": "urea resin",
+            "local_name": "尿素樹脂",
+            "skeletal_formula": "network from urea and formaldehyde",
+            "molecular_formula": "network polymer",
+            "series_general_formula": "Thermosetting resins from urea + formaldehyde",
+            "functional_groups": [
+                {
+                    "name_en": "Amide",
+                    "name_ja": "アミド結合",
+                    "pattern": "–NH–CO–NH–"
+                },
+                {
+                    "name_en": "Methylene bridges",
+                    "name_ja": "メチレン架橋",
+                    "pattern": "–CH2–"
+                }
+            ],
+            "notes": "Colorless thermosetting resin; used for tableware, adhesives; appears as typical thermosetting resin example.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\text{(urea–formaldehyde network)}",
+            "katex_molecular_formula": "\\text{network polymer}"
+        },
+        {
+            "iupac_name": "melamine–formaldehyde resin (generic)",
+            "common_name": "melamine resin",
+            "local_name": "メラミン樹脂",
+            "skeletal_formula": "network from melamine and formaldehyde",
+            "molecular_formula": "network polymer",
+            "series_general_formula": "Thermosetting resins from melamine + formaldehyde",
+            "functional_groups": [
+                {
+                    "name_en": "Triazine ring",
+                    "name_ja": "トリアジン環",
+                    "pattern": "C3N3 ring"
+                },
+                {
+                    "name_en": "Methylene bridges",
+                    "name_ja": "メチレン架橋",
+                    "pattern": "–CH2–"
+                }
+            ],
+            "notes": "Hard, heat-resistant thermosetting resin; used in melamine tableware, laminates; standard example in high-school chemistry.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\text{(melamine–formaldehyde network)}",
+            "katex_molecular_formula": "\\text{network polymer}"
+        },
+        {
+            "iupac_name": "poly(1,3-butadiene)",
+            "common_name": "butadiene rubber (BR)",
+            "local_name": "ブタジエンゴム（BR）",
+            "skeletal_formula": "[-CH2-CH=CH-CH2-]n",
+            "molecular_formula": "(C4H6)n",
+            "series_general_formula": "Diene rubbers: (C4H6)n from 1,3-butadiene",
+            "functional_groups": [
+                {
+                    "name_en": "Alkene",
+                    "name_ja": "二重結合",
+                    "pattern": "C=C in main chain"
+                }
+            ],
+            "notes": "Produced by polymerization of 1,3-butadiene; good elasticity; used in tires; typical synthetic rubber example.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CH2-CH=CH-CH2-]_n}",
+            "katex_molecular_formula": "\\ce{(C4H6)_n}"
+        },
+        {
+            "iupac_name": "poly(2-chloro-1,3-butadiene)",
+            "common_name": "chloroprene rubber (CR)",
+            "local_name": "クロロプレンゴム（CR）",
+            "skeletal_formula": "[-CH2-C(Cl)=CH-CH2-]n",
+            "molecular_formula": "(C4H5Cl)n",
+            "series_general_formula": "Halogenated diene rubbers",
+            "functional_groups": [
+                {
+                    "name_en": "C–Cl bonds",
+                    "name_ja": "炭素–塩素結合",
+                    "pattern": "C–Cl"
+                },
+                {
+                    "name_en": "Alkene",
+                    "name_ja": "二重結合",
+                    "pattern": "C=C"
+                }
+            ],
+            "notes": "From chloroprene monomer; good weather and oil resistance; used for belts, hoses; standard CR example.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CH2-C(Cl)=CH-CH2-]_n}",
+            "katex_molecular_formula": "\\ce{(C4H5Cl)_n}"
+        },
+        {
+            "iupac_name": "styrene–butadiene copolymer",
+            "common_name": "styrene-butadiene rubber (SBR)",
+            "local_name": "スチレン-ブタジエンゴム（SBR）",
+            "skeletal_formula": "copolymer of [-CH2-CH(Ph)-] and [-CH2-CH=CH-CH2-]",
+            "molecular_formula": "approx. (C8H8)m(C4H6)n",
+            "series_general_formula": "Copolymer rubbers from styrene + butadiene",
+            "functional_groups": [
+                {
+                    "name_en": "Alkene",
+                    "name_ja": "二重結合",
+                    "pattern": "C=C units"
+                },
+                {
+                    "name_en": "Phenyl group",
+                    "name_ja": "フェニル基",
+                    "pattern": "–C6H5"
+                }
+            ],
+            "notes": "Copolymer of styrene and 1,3-butadiene; major synthetic rubber for tires; better abrasion and heat resistance than natural rubber.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CH2-CH(Ph)-]_m[-CH2-CH=CH-CH2-]_n}",
+            "katex_molecular_formula": "\\ce{(C8H8)_m(C4H6)_n}"
+        },
+        {
+            "iupac_name": "acrylonitrile–butadiene copolymer",
+            "common_name": "nitrile rubber (NBR)",
+            "local_name": "ニトリルゴム（NBR）",
+            "skeletal_formula": "copolymer of [-CH2-CH(CN)-] and [-CH2-CH=CH-CH2-]",
+            "molecular_formula": "approx. (C3H3N)m(C4H6)n",
+            "series_general_formula": "Copolymer rubbers from acrylonitrile + butadiene",
+            "functional_groups": [
+                {
+                    "name_en": "Nitrile",
+                    "name_ja": "ニトリル基",
+                    "pattern": "–C≡N"
+                },
+                {
+                    "name_en": "Alkene units",
+                    "name_ja": "二重結合ユニット",
+                    "pattern": "C=C"
+                }
+            ],
+            "notes": "Excellent oil resistance; used in oil-resistant hoses, seals; appears as typical copolymer synthetic rubber.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CH2-CH(CN)-]_m[-CH2-CH=CH-CH2-]_n}",
+            "katex_molecular_formula": "\\ce{(C3H3N)_m(C4H6)_n}"
+        },
+        {
+            "iupac_name": "poly(cis-1,4-isoprene) (synthetic form)",
+            "common_name": "polyisoprene rubber (IR)",
+            "local_name": "ポリイソプレンゴム（IR）",
+            "skeletal_formula": "[-CH2-C(=CH2)-CH2-CH2-]n",
+            "molecular_formula": "(C5H8)n",
+            "series_general_formula": "Synthetic analog of natural rubber",
+            "functional_groups": [
+                {
+                    "name_en": "Alkene",
+                    "name_ja": "二重結合",
+                    "pattern": "C=C in chain"
+                }
+            ],
+            "notes": "Synthetic version of natural rubber from isoprene; properties similar to natural rubber; used where uniformity is needed.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-CH2-C(=CH2)-CH2-CH2-]_n}",
+            "katex_molecular_formula": "\\ce{(C5H8)_n}"
+        }
+    ]
+}

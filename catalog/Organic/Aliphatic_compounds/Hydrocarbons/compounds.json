@@ -1,0 +1,432 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "methane",
+            "common_name": "methane",
+            "local_name": "メタン",
+            "skeletal_formula": "CH4",
+            "molecular_formula": "CH4",
+            "series_general_formula": "Alkanes: CnH2n+2 (n>=1)",
+            "functional_groups": [],
+            "notes": "Simplest alkane; main component of natural gas; typical saturated hydrocarbon showing substitution and combustion reactions.",
+            "smiles": "C",
+            "katex_skeletal_formula": "\\ce{CH4}",
+            "katex_molecular_formula": "\\ce{CH4}"
+        },
+        {
+            "iupac_name": "ethane",
+            "common_name": "ethane",
+            "local_name": "エタン",
+            "skeletal_formula": "CH3-CH3",
+            "molecular_formula": "C2H6",
+            "series_general_formula": "Alkanes: CnH2n+2 (n>=1)",
+            "functional_groups": [],
+            "notes": "Straight-chain alkane; gas at room temperature; used as a component of natural gas and as a feedstock for ethene.",
+            "smiles": "CC",
+            "katex_skeletal_formula": "\\ce{CH3-CH3}",
+            "katex_molecular_formula": "\\ce{C2H6}"
+        },
+        {
+            "iupac_name": "propane",
+            "common_name": "propane",
+            "local_name": "プロパン",
+            "skeletal_formula": "CH3-CH2-CH3",
+            "molecular_formula": "C3H8",
+            "series_general_formula": "Alkanes: CnH2n+2 (n>=1)",
+            "functional_groups": [],
+            "notes": "Fuel gas; major component of liquefied petroleum gas (LPG); standard example of combustion and substitution reactions.",
+            "smiles": "CCC",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C3H8}"
+        },
+        {
+            "iupac_name": "butane",
+            "common_name": "n-butane",
+            "local_name": "ブタン（正ブタン）",
+            "skeletal_formula": "CH3-CH2-CH2-CH3",
+            "molecular_formula": "C4H10",
+            "series_general_formula": "Alkanes: CnH2n+2 (n>=1)",
+            "functional_groups": [],
+            "notes": "Straight-chain isomer of C4H10; used as fuel gas; contrasted with isobutane (2-methylpropane) in isomer questions.",
+            "smiles": "CCCC",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C4H10}"
+        },
+        {
+            "iupac_name": "2-methylpropane",
+            "common_name": "isobutane",
+            "local_name": "2-メチルプロパン（イソブタン）",
+            "skeletal_formula": "(CH3)3CH",
+            "molecular_formula": "C4H10",
+            "series_general_formula": "Alkanes: CnH2n+2 (n>=1)",
+            "functional_groups": [],
+            "notes": "Branched-chain isomer of butane; important example of structural isomerism; used as refrigerant and propellant.",
+            "smiles": "CC(C)C",
+            "katex_skeletal_formula": "\\ce{(CH3)3CH}",
+            "katex_molecular_formula": "\\ce{C4H10}"
+        },
+        {
+            "iupac_name": "pentane",
+            "common_name": "n-pentane",
+            "local_name": "ペンタン",
+            "skeletal_formula": "CH3-CH2-CH2-CH2-CH3",
+            "molecular_formula": "C5H12",
+            "series_general_formula": "Alkanes: CnH2n+2 (n>=1)",
+            "functional_groups": [],
+            "notes": "Straight-chain C5 alkane; typical example when studying multiple structural isomers (n-pentane, isopentane, neopentane).",
+            "smiles": "CCCCC",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH2-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C5H12}"
+        },
+        {
+            "iupac_name": "2-methylbutane",
+            "common_name": "isopentane",
+            "local_name": "2-メチルブタン（イソペンタン）",
+            "skeletal_formula": "CH3-CH(CH3)-CH2-CH3",
+            "molecular_formula": "C5H12",
+            "series_general_formula": "Alkanes: CnH2n+2 (n>=1)",
+            "functional_groups": [],
+            "notes": "Branched C5 alkane; classic example of structural isomerism and boiling point comparison among C5H12 isomers.",
+            "smiles": "CCC(C)C",
+            "katex_skeletal_formula": "\\ce{CH3-CH(CH3)-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C5H12}"
+        },
+        {
+            "iupac_name": "2,2-dimethylpropane",
+            "common_name": "neopentane",
+            "local_name": "2,2-ジメチルプロパン（ネオペンタン）",
+            "skeletal_formula": "C(CH3)4",
+            "molecular_formula": "C5H12",
+            "series_general_formula": "Alkanes: CnH2n+2 (n>=1)",
+            "functional_groups": [],
+            "notes": "Most highly branched C5H12 isomer; very low boiling point; emphasized in problems on branching vs boiling point.",
+            "smiles": "CC(C)(C)C",
+            "katex_skeletal_formula": "\\ce{C(CH3)4}",
+            "katex_molecular_formula": "\\ce{C5H12}"
+        },
+        {
+            "iupac_name": "hexane",
+            "common_name": "hexane",
+            "local_name": "ヘキサン",
+            "skeletal_formula": "CH3-(CH2)4-CH3",
+            "molecular_formula": "C6H14",
+            "series_general_formula": "Alkanes: CnH2n+2 (n>=1)",
+            "functional_groups": [],
+            "notes": "Straight-chain C6 alkane; common non-polar solvent; basis for many C6 isomer questions.",
+            "smiles": "CCCCCC",
+            "katex_skeletal_formula": "\\ce{CH3-(CH2)4-CH3}",
+            "katex_molecular_formula": "\\ce{C6H14}"
+        },
+        {
+            "iupac_name": "heptane",
+            "common_name": "heptane",
+            "local_name": "ヘプタン",
+            "skeletal_formula": "CH3-(CH2)5-CH3",
+            "molecular_formula": "C7H16",
+            "series_general_formula": "Alkanes: CnH2n+2 (n>=1)",
+            "functional_groups": [],
+            "notes": "Straight-chain C7 alkane; appears in questions on boiling points and combustion.",
+            "smiles": "CCCCCCC",
+            "katex_skeletal_formula": "\\ce{CH3-(CH2)5-CH3}",
+            "katex_molecular_formula": "\\ce{C7H16}"
+        },
+        {
+            "iupac_name": "octane",
+            "common_name": "octane",
+            "local_name": "オクタン",
+            "skeletal_formula": "CH3-(CH2)6-CH3",
+            "molecular_formula": "C8H18",
+            "series_general_formula": "Alkanes: CnH2n+2 (n>=1)",
+            "functional_groups": [],
+            "notes": "Straight-chain C8 alkane; octane number in gasoline quality is defined using its isomers (notably 2,2,4-trimethylpentane).",
+            "smiles": "CCCCCCCC",
+            "katex_skeletal_formula": "\\ce{CH3-(CH2)6-CH3}",
+            "katex_molecular_formula": "\\ce{C8H18}"
+        },
+        {
+            "iupac_name": "ethene",
+            "common_name": "ethylene",
+            "local_name": "エチレン",
+            "skeletal_formula": "CH2=CH2",
+            "molecular_formula": "C2H4",
+            "series_general_formula": "Alkenes (one C=C): CnH2n (n>=2)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkene double bond",
+                    "name_ja": "アルケン（二重結合）",
+                    "pattern": "C=C"
+                }
+            ],
+            "notes": "Simplest alkene; industrially very important; basis for polyethylene via addition polymerization.",
+            "smiles": "C=C",
+            "katex_skeletal_formula": "\\ce{CH2=CH2}",
+            "katex_molecular_formula": "\\ce{C2H4}"
+        },
+        {
+            "iupac_name": "propene",
+            "common_name": "propylene",
+            "local_name": "プロペン（プロピレン）",
+            "skeletal_formula": "CH2=CH-CH3",
+            "molecular_formula": "C3H6",
+            "series_general_formula": "Alkenes (one C=C): CnH2n (n>=2)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkene double bond",
+                    "name_ja": "アルケン（二重結合）",
+                    "pattern": "C=C"
+                }
+            ],
+            "notes": "Typical terminal alkene; starting material for polypropylene and many addition reactions.",
+            "smiles": "C=CC",
+            "katex_skeletal_formula": "\\ce{CH2=CH-CH3}",
+            "katex_molecular_formula": "\\ce{C3H6}"
+        },
+        {
+            "iupac_name": "but-1-ene",
+            "common_name": "1-butene",
+            "local_name": "1-ブテン",
+            "skeletal_formula": "CH2=CH-CH2-CH3",
+            "molecular_formula": "C4H8",
+            "series_general_formula": "Alkenes (one C=C): CnH2n (n>=2)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkene double bond",
+                    "name_ja": "アルケン（二重結合）",
+                    "pattern": "C=C"
+                }
+            ],
+            "notes": "Terminal C4 alkene; used to illustrate position isomerism with but-2-ene in textbooks.",
+            "smiles": "C=CCC",
+            "katex_skeletal_formula": "\\ce{CH2=CH-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C4H8}"
+        },
+        {
+            "iupac_name": "but-2-ene",
+            "common_name": "2-butene",
+            "local_name": "2-ブテン",
+            "skeletal_formula": "CH3-CH=CH-CH3",
+            "molecular_formula": "C4H8",
+            "series_general_formula": "Alkenes (one C=C): CnH2n (n>=2)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkene double bond",
+                    "name_ja": "アルケン（二重結合）",
+                    "pattern": "C=C"
+                }
+            ],
+            "notes": "Internal C4 alkene; example of position isomerism with but-1-ene and of cis–trans (E/Z) isomerism.",
+            "smiles": "CC=CC",
+            "katex_skeletal_formula": "\\ce{CH3-CH=CH-CH3}",
+            "katex_molecular_formula": "\\ce{C4H8}"
+        },
+        {
+            "iupac_name": "2-methylpropene",
+            "common_name": "isobutene",
+            "local_name": "2-メチルプロペン（イソブテン）",
+            "skeletal_formula": "CH2=C(CH3)2",
+            "molecular_formula": "C4H8",
+            "series_general_formula": "Alkenes (one C=C): CnH2n (n>=2)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkene double bond",
+                    "name_ja": "アルケン（二重結合）",
+                    "pattern": "C=C"
+                }
+            ],
+            "notes": "Highly substituted alkene; used industrially to make polyisobutene and MTBE; good example of Markovnikov addition.",
+            "smiles": "C=C(C)C",
+            "katex_skeletal_formula": "\\ce{CH2=C(CH3)2}",
+            "katex_molecular_formula": "\\ce{C4H8}"
+        },
+        {
+            "iupac_name": "pent-1-ene",
+            "common_name": "1-pentene",
+            "local_name": "1-ペンテン",
+            "skeletal_formula": "CH2=CH-CH2-CH2-CH3",
+            "molecular_formula": "C5H10",
+            "series_general_formula": "Alkenes (one C=C): CnH2n (n>=2)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkene double bond",
+                    "name_ja": "アルケン（二重結合）",
+                    "pattern": "C=C"
+                }
+            ],
+            "notes": "Representative higher terminal alkene; used in problems on general formula CnH2n and homologous series.",
+            "smiles": "C=CCCC",
+            "katex_skeletal_formula": "\\ce{CH2=CH-CH2-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C5H10}"
+        },
+        {
+            "iupac_name": "buta-1,3-diene",
+            "common_name": "1,3-butadiene",
+            "local_name": "1,3-ブタジエン",
+            "skeletal_formula": "CH2=CH-CH=CH2",
+            "molecular_formula": "C4H6",
+            "series_general_formula": "Conjugated dienes: CnH2n-2 (two C=C)",
+            "functional_groups": [
+                {
+                    "name_en": "Conjugated diene",
+                    "name_ja": "共役ジエン",
+                    "pattern": "C=C–C=C"
+                }
+            ],
+            "notes": "Conjugated diene; important monomer for synthetic rubber (e.g. polybutadiene, styrene-butadiene rubber).",
+            "smiles": "C=CC=C",
+            "katex_skeletal_formula": "\\ce{CH2=CH-CH=CH2}",
+            "katex_molecular_formula": "\\ce{C4H6}"
+        },
+        {
+            "iupac_name": "ethyne",
+            "common_name": "acetylene",
+            "local_name": "エチン（アセチレン）",
+            "skeletal_formula": "HC≡CH",
+            "molecular_formula": "C2H2",
+            "series_general_formula": "Alkynes (one C≡C): CnH2n-2 (n>=2)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkyne triple bond",
+                    "name_ja": "アルキン（三重結合）",
+                    "pattern": "C≡C"
+                }
+            ],
+            "notes": "Simplest alkyne; strong reducing agent; used in oxyacetylene welding and as a starting material for many syntheses.",
+            "smiles": "C#C",
+            "katex_skeletal_formula": "\\ce{HC#CH}",
+            "katex_molecular_formula": "\\ce{C2H2}"
+        },
+        {
+            "iupac_name": "propyne",
+            "common_name": "methylacetylene",
+            "local_name": "プロピン（メチルアセチレン）",
+            "skeletal_formula": "CH3-C≡CH",
+            "molecular_formula": "C3H4",
+            "series_general_formula": "Alkynes (one C≡C): CnH2n-2 (n>=2)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkyne triple bond",
+                    "name_ja": "アルキン（三重結合）",
+                    "pattern": "C≡C"
+                }
+            ],
+            "notes": "Simplest terminal C3 alkyne; used to illustrate substitution vs addition on terminal alkynes.",
+            "smiles": "CC#C",
+            "katex_skeletal_formula": "\\ce{CH3-C#CH}",
+            "katex_molecular_formula": "\\ce{C3H4}"
+        },
+        {
+            "iupac_name": "but-1-yne",
+            "common_name": "1-butyne",
+            "local_name": "1-ブチン",
+            "skeletal_formula": "HC≡C-CH2-CH3",
+            "molecular_formula": "C4H6",
+            "series_general_formula": "Alkynes (one C≡C): CnH2n-2 (n>=2)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkyne triple bond",
+                    "name_ja": "アルキン（三重結合）",
+                    "pattern": "C≡C"
+                }
+            ],
+            "notes": "Terminal C4 alkyne; appears in problems on general formula CnH2n-2 and position isomerism with but-2-yne.",
+            "smiles": "C#CCC",
+            "katex_skeletal_formula": "\\ce{HC#C-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C4H6}"
+        },
+        {
+            "iupac_name": "but-2-yne",
+            "common_name": "2-butyne",
+            "local_name": "2-ブチン",
+            "skeletal_formula": "CH3-C≡C-CH3",
+            "molecular_formula": "C4H6",
+            "series_general_formula": "Alkynes (one C≡C): CnH2n-2 (n>=2)",
+            "functional_groups": [
+                {
+                    "name_en": "Alkyne triple bond",
+                    "name_ja": "アルキン（三重結合）",
+                    "pattern": "C≡C"
+                }
+            ],
+            "notes": "Internal C4 alkyne; contrasts with but-1-yne in acidity of terminal hydrogen and in some reaction patterns.",
+            "smiles": "CC#CC",
+            "katex_skeletal_formula": "\\ce{CH3-C#C-CH3}",
+            "katex_molecular_formula": "\\ce{C4H6}"
+        },
+        {
+            "iupac_name": "cyclopropane",
+            "common_name": "cyclopropane",
+            "local_name": "シクロプロパン",
+            "skeletal_formula": "(-CH2-)3 (three-membered ring)",
+            "molecular_formula": "C3H6",
+            "series_general_formula": "Cycloalkanes: CnH2n (n>=3)",
+            "functional_groups": [
+                {
+                    "name_en": "Cycloalkane ring",
+                    "name_ja": "シクロアルカン環",
+                    "pattern": "saturated C3 ring"
+                }
+            ],
+            "notes": "Smallest cycloalkane; large ring strain and relatively reactive; used as example of angle strain.",
+            "smiles": "C1CC1",
+            "katex_skeletal_formula": "\\ce{(CH2)3}",
+            "katex_molecular_formula": "\\ce{C3H6}"
+        },
+        {
+            "iupac_name": "cyclobutane",
+            "common_name": "cyclobutane",
+            "local_name": "シクロブタン",
+            "skeletal_formula": "(-CH2-)4 (four-membered ring)",
+            "molecular_formula": "C4H8",
+            "series_general_formula": "Cycloalkanes: CnH2n (n>=3)",
+            "functional_groups": [
+                {
+                    "name_en": "Cycloalkane ring",
+                    "name_ja": "シクロアルカン環",
+                    "pattern": "saturated C4 ring"
+                }
+            ],
+            "notes": "Four-membered cycloalkane; still strained and more reactive than larger rings.",
+            "smiles": "C1CCC1",
+            "katex_skeletal_formula": "\\ce{(CH2)4}",
+            "katex_molecular_formula": "\\ce{C4H8}"
+        },
+        {
+            "iupac_name": "cyclopentane",
+            "common_name": "cyclopentane",
+            "local_name": "シクロペンタン",
+            "skeletal_formula": "(-CH2-)5 (five-membered ring)",
+            "molecular_formula": "C5H10",
+            "series_general_formula": "Cycloalkanes: CnH2n (n>=3)",
+            "functional_groups": [
+                {
+                    "name_en": "Cycloalkane ring",
+                    "name_ja": "シクロアルカン環",
+                    "pattern": "saturated C5 ring"
+                }
+            ],
+            "notes": "Relatively low ring strain; together with cyclohexane, used as example of stable cycloalkanes in textbooks.",
+            "smiles": "C1CCCC1",
+            "katex_skeletal_formula": "\\ce{(CH2)5}",
+            "katex_molecular_formula": "\\ce{C5H10}"
+        },
+        {
+            "iupac_name": "cyclohexane",
+            "common_name": "cyclohexane",
+            "local_name": "シクロヘキサン",
+            "skeletal_formula": "(-CH2-)6 (six-membered ring)",
+            "molecular_formula": "C6H12",
+            "series_general_formula": "Cycloalkanes: CnH2n (n>=3)",
+            "functional_groups": [
+                {
+                    "name_en": "Cycloalkane ring",
+                    "name_ja": "シクロアルカン環",
+                    "pattern": "saturated C6 ring"
+                }
+            ],
+            "notes": "Most stable cycloalkane; adopts chair conformation with minimal strain; key example for conformational analysis.",
+            "smiles": "C1CCCCC1",
+            "katex_skeletal_formula": "\\ce{(CH2)6}",
+            "katex_molecular_formula": "\\ce{C6H12}"
+        }
+    ]
+}

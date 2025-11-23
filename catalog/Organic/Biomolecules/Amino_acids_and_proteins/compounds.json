@@ -1,0 +1,298 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "2-aminoethanoic acid",
+            "common_name": "glycine",
+            "local_name": "グリシン",
+            "skeletal_formula": "H2N-CH2-COOH",
+            "molecular_formula": "C2H5NO2",
+            "series_general_formula": "α-Amino acids: H2N-CH(R)-COOH",
+            "functional_groups": [
+                {
+                    "name_en": "Amino",
+                    "name_ja": "アミノ基",
+                    "pattern": "–NH2"
+                },
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                }
+            ],
+            "notes": "Simplest α-amino acid; no chiral center; neutral side chain (R = H); often the first example in textbooks.",
+            "smiles": "NCC(=O)O",
+            "katex_skeletal_formula": "\\ce{H2N-CH2-COOH}",
+            "katex_molecular_formula": "\\ce{C2H5NO2}"
+        },
+        {
+            "iupac_name": "2-aminopropanoic acid",
+            "common_name": "alanine",
+            "local_name": "アラニン",
+            "skeletal_formula": "H2N-CH(CH3)-COOH",
+            "molecular_formula": "C3H7NO2",
+            "series_general_formula": "Neutral α-amino acids with alkyl side chain",
+            "functional_groups": [
+                {
+                    "name_en": "Amino",
+                    "name_ja": "アミノ基",
+                    "pattern": "–NH2"
+                },
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                },
+                {
+                    "name_en": "Methyl side chain",
+                    "name_ja": "メチル側鎖",
+                    "pattern": "–CH3"
+                }
+            ],
+            "notes": "Neutral amino acid with chiral center; side chain is methyl; very common example alongside glycine.",
+            "smiles": "CC(N)C(=O)O",
+            "katex_skeletal_formula": "\\ce{H2N-CH(CH3)-COOH}",
+            "katex_molecular_formula": "\\ce{C3H7NO2}"
+        },
+        {
+            "iupac_name": "2-amino-3-methylbutanoic acid",
+            "common_name": "valine",
+            "local_name": "バリン",
+            "skeletal_formula": "H2N-CH(CH(CH3)2)-COOH",
+            "molecular_formula": "C5H11NO2",
+            "series_general_formula": "Branched-chain amino acids (BCAA): Val, Leu, Ile",
+            "functional_groups": [
+                {
+                    "name_en": "Amino",
+                    "name_ja": "アミノ基",
+                    "pattern": "–NH2"
+                },
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                },
+                {
+                    "name_en": "Branched alkyl side chain",
+                    "name_ja": "分枝アルキル側鎖",
+                    "pattern": "–CH(CH3)2"
+                }
+            ],
+            "notes": "Hydrophobic essential amino acid; example of branched-chain amino acid in high school problems.",
+            "smiles": "CC(C)C(N)C(=O)O",
+            "katex_skeletal_formula": "\\ce{H2N-CH(CH(CH3)2)-COOH}",
+            "katex_molecular_formula": "\\ce{C5H11NO2}"
+        },
+        {
+            "iupac_name": "2-amino-3-hydroxypropanoic acid",
+            "common_name": "serine",
+            "local_name": "セリン",
+            "skeletal_formula": "H2N-CH(CH2OH)-COOH",
+            "molecular_formula": "C3H7NO3",
+            "series_general_formula": "Neutral polar amino acids with hydroxyl group",
+            "functional_groups": [
+                {
+                    "name_en": "Amino",
+                    "name_ja": "アミノ基",
+                    "pattern": "–NH2"
+                },
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                },
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "–CH2OH"
+                }
+            ],
+            "notes": "Neutral but polar amino acid; used as example of amino acid with hydroxyl side chain.",
+            "smiles": "NCC(O)C(=O)O",
+            "katex_skeletal_formula": "\\ce{H2N-CH(CH2OH)-COOH}",
+            "katex_molecular_formula": "\\ce{C3H7NO3}"
+        },
+        {
+            "iupac_name": "2-amino-3-sulfanylpropanoic acid",
+            "common_name": "cysteine",
+            "local_name": "システイン",
+            "skeletal_formula": "H2N-CH(CH2SH)-COOH",
+            "molecular_formula": "C3H7NO2S",
+            "series_general_formula": "Sulfur-containing amino acids: cysteine, methionine",
+            "functional_groups": [
+                {
+                    "name_en": "Amino",
+                    "name_ja": "アミノ基",
+                    "pattern": "–NH2"
+                },
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                },
+                {
+                    "name_en": "Thiol",
+                    "name_ja": "チオール（スルフヒドリル基）",
+                    "pattern": "–SH"
+                }
+            ],
+            "notes": "Contains –SH; two cysteine residues form disulfide bond (cystine) important for protein structure; often mentioned in high school.",
+            "smiles": "NCC(S)C(=O)O",
+            "katex_skeletal_formula": "\\ce{H2N-CH(CH2SH)-COOH}",
+            "katex_molecular_formula": "\\ce{C3H7NO2S}"
+        },
+        {
+            "iupac_name": "2-aminobutanedioic acid",
+            "common_name": "aspartic acid",
+            "local_name": "アスパラギン酸",
+            "skeletal_formula": "H2N-CH(CH2-COOH)-COOH",
+            "molecular_formula": "C4H7NO4",
+            "series_general_formula": "Acidic amino acids (two carboxyl groups)",
+            "functional_groups": [
+                {
+                    "name_en": "Amino",
+                    "name_ja": "アミノ基",
+                    "pattern": "–NH2"
+                },
+                {
+                    "name_en": "Carboxyl (α)",
+                    "name_ja": "カルボキシ基（α位）",
+                    "pattern": "–COOH"
+                },
+                {
+                    "name_en": "Carboxyl (side chain)",
+                    "name_ja": "カルボキシ基（側鎖）",
+                    "pattern": "–CH2COOH"
+                }
+            ],
+            "notes": "Acidic amino acid; side chain has additional carboxyl group; appears in pH/charge problems and zwitterion discussions.",
+            "smiles": "NCC(C(=O)O)C(=O)O",
+            "katex_skeletal_formula": "\\ce{H2N-CH(CH2COOH)-COOH}",
+            "katex_molecular_formula": "\\ce{C4H7NO4}"
+        },
+        {
+            "iupac_name": "2,6-diaminohexanoic acid",
+            "common_name": "lysine",
+            "local_name": "リシン（リジン）",
+            "skeletal_formula": "H2N-CH(CH2)4-NH2-COOH",
+            "molecular_formula": "C6H14N2O2",
+            "series_general_formula": "Basic amino acids (two amino groups)",
+            "functional_groups": [
+                {
+                    "name_en": "Amino (α)",
+                    "name_ja": "アミノ基（α位）",
+                    "pattern": "–NH2"
+                },
+                {
+                    "name_en": "Amino (side chain)",
+                    "name_ja": "アミノ基（側鎖）",
+                    "pattern": "–(CH2)4NH2"
+                },
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                }
+            ],
+            "notes": "Basic amino acid; positively charged at physiological pH; example of amino acid with two amino groups.",
+            "smiles": "NCCCCCC(C(=O)O)N",
+            "katex_skeletal_formula": "\\ce{H2N-CH(CH2)4-NH2-COOH}",
+            "katex_molecular_formula": "\\ce{C6H14N2O2}"
+        },
+        {
+            "iupac_name": "glycylglycine",
+            "common_name": "glycylglycine (dipeptide of glycine)",
+            "local_name": "グリシルグリシン（ジペプチド）",
+            "skeletal_formula": "H2N-CH2-CO-NH-CH2-COOH",
+            "molecular_formula": "C4H8N2O3",
+            "series_general_formula": "Dipeptides: two amino acids linked by one peptide bond",
+            "functional_groups": [
+                {
+                    "name_en": "Peptide (amide) bond",
+                    "name_ja": "ペプチド結合（アミド結合）",
+                    "pattern": "–CO–NH–"
+                },
+                {
+                    "name_en": "Amino (terminal)",
+                    "name_ja": "末端アミノ基",
+                    "pattern": "H2N–"
+                },
+                {
+                    "name_en": "Carboxyl (terminal)",
+                    "name_ja": "末端カルボキシ基",
+                    "pattern": "–COOH"
+                }
+            ],
+            "notes": "Simplest model dipeptide; used to illustrate peptide bond formation by condensation of two α-amino acids.",
+            "smiles": "NCC(=O)NCC(=O)O",
+            "katex_skeletal_formula": "\\ce{H2N-CH2-CO-NH-CH2-COOH}",
+            "katex_molecular_formula": "\\ce{C4H8N2O3}"
+        },
+        {
+            "iupac_name": "general oligopeptide",
+            "common_name": "peptide (n amino acid residues)",
+            "local_name": "ペプチド（n個のアミノ酸残基）",
+            "skeletal_formula": "H2N-CH(R1)-CO-NH-CH(R2)-CO-…-NH-CH(Rn)-COOH",
+            "molecular_formula": "(C2H3N O)_n + side chain contribution (generic)",
+            "series_general_formula": "Peptides: n amino acid residues linked by n−1 peptide bonds",
+            "functional_groups": [
+                {
+                    "name_en": "Peptide bonds",
+                    "name_ja": "ペプチド結合",
+                    "pattern": "–CO–NH– (repeating)"
+                }
+            ],
+            "notes": "General structure of peptides; formed by condensation polymerization of α-amino acids; hydrolysis yields original amino acids.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{H2N-CH(R1)-CO-(NH-CH(R2)-CO)_{n-1}-OH}",
+            "katex_molecular_formula": "\\ce{(C2H3NO)_n + side\\ chains}"
+        },
+        {
+            "iupac_name": "keratin (fibrous protein)",
+            "common_name": "keratin",
+            "local_name": "ケラチン（繊維状タンパク質）",
+            "skeletal_formula": "polypeptide rich in cysteine; many disulfide bonds –CH2–S–S–CH2–",
+            "molecular_formula": "very large (polypeptide; not written explicitly)",
+            "series_general_formula": "Fibrous proteins: long polypeptide chains forming fibers",
+            "functional_groups": [
+                {
+                    "name_en": "Peptide bonds",
+                    "name_ja": "ペプチド結合",
+                    "pattern": "–CO–NH–"
+                },
+                {
+                    "name_en": "Disulfide bonds",
+                    "name_ja": "ジスルフィド結合",
+                    "pattern": "–S–S– between cysteine residues"
+                }
+            ],
+            "notes": "Main component of hair, nails, wool; typical fibrous protein; many disulfide bonds give mechanical strength.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[–NH–CH(R)–CO–]_n + S–S\\ bonds}",
+            "katex_molecular_formula": "\\text{large polypeptide}"
+        },
+        {
+            "iupac_name": "hemoglobin (globular protein)",
+            "common_name": "hemoglobin",
+            "local_name": "ヘモグロビン（球状タンパク質）",
+            "skeletal_formula": "tetrameric globular protein with heme groups binding O2",
+            "molecular_formula": "very large (approx. 10^4 atoms per molecule)",
+            "series_general_formula": "Globular proteins: compact, water-soluble polypeptides",
+            "functional_groups": [
+                {
+                    "name_en": "Peptide bonds",
+                    "name_ja": "ペプチド結合",
+                    "pattern": "–CO–NH–"
+                },
+                {
+                    "name_en": "Heme (porphyrin–Fe complex)",
+                    "name_ja": "ヘム（ポルフィリン−鉄錯体）",
+                    "pattern": "Fe-porphyrin"
+                }
+            ],
+            "notes": "Typical globular protein in blood; transports oxygen; often contrasted with keratin as example of globular vs fibrous protein.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\text{polypeptide tetramer + heme groups}",
+            "katex_molecular_formula": "\\text{very large}"
+        }
+    ]
+}

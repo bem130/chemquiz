@@ -1,0 +1,308 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "methoxymethane",
+            "common_name": "dimethyl ether",
+            "local_name": "メトキシメタン（ジメチルエーテル）",
+            "skeletal_formula": "CH3-O-CH3",
+            "molecular_formula": "C2H6O",
+            "series_general_formula": "Simple ethers: CnH2n+2O (same as monohydric alcohols)",
+            "functional_groups": [
+                {
+                    "name_en": "Ether linkage",
+                    "name_ja": "エーテル結合",
+                    "pattern": "R–O–R'"
+                }
+            ],
+            "notes": "Simplest ether; structural isomer of ethanol; typical example in questions on isomerism and boiling-point comparison with alcohols.",
+            "smiles": "COC",
+            "katex_skeletal_formula": "\\ce{CH3-O-CH3}",
+            "katex_molecular_formula": "\\ce{C2H6O}"
+        },
+        {
+            "iupac_name": "ethoxyethane",
+            "common_name": "diethyl ether",
+            "local_name": "エトキシエタン（ジエチルエーテル）",
+            "skeletal_formula": "CH3-CH2-O-CH2-CH3",
+            "molecular_formula": "C4H10O",
+            "series_general_formula": "Simple ethers: CnH2n+2O",
+            "functional_groups": [
+                {
+                    "name_en": "Ether linkage",
+                    "name_ja": "エーテル結合",
+                    "pattern": "R–O–R'"
+                }
+            ],
+            "notes": "Representative ether produced by intermolecular dehydration of ethanol; volatile, flammable solvent; appears in many textbook examples.",
+            "smiles": "CCOCC",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-O-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C4H10O}"
+        },
+        {
+            "iupac_name": "methoxyethane",
+            "common_name": "methyl ethyl ether",
+            "local_name": "メトキシエタン（メチルエチルエーテル）",
+            "skeletal_formula": "CH3-O-CH2-CH3",
+            "molecular_formula": "C3H8O",
+            "series_general_formula": "Simple ethers: CnH2n+2O",
+            "functional_groups": [
+                {
+                    "name_en": "Ether linkage",
+                    "name_ja": "エーテル結合",
+                    "pattern": "R–O–R'"
+                }
+            ],
+            "notes": "Unsymmetrical ether; good for practice of IUPAC naming and for isomerism problems with C3H8O alcohols (propanols).",
+            "smiles": "COCC",
+            "katex_skeletal_formula": "\\ce{CH3-O-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C3H8O}"
+        },
+        {
+            "iupac_name": "ethane-1,2-diol",
+            "common_name": "ethylene glycol",
+            "local_name": "エタンド-1,2-ジオール（エチレングリコール）",
+            "skeletal_formula": "HO-CH2-CH2-OH",
+            "molecular_formula": "C2H6O2",
+            "series_general_formula": "Polyols (dihydric): CnH2n+2On, n>=2 (two hydroxyl groups)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Dihydric alcohol; used as antifreeze and in polyester production; typical example of 2-valent alcohol.",
+            "smiles": "OCCO",
+            "katex_skeletal_formula": "\\ce{HO-CH2-CH2-OH}",
+            "katex_molecular_formula": "\\ce{C2H6O2}"
+        },
+        {
+            "iupac_name": "propane-1,2-diol",
+            "common_name": "propylene glycol",
+            "local_name": "プロパン-1,2-ジオール（プロピレングリコール）",
+            "skeletal_formula": "HO-CH2-CH(OH)-CH3",
+            "molecular_formula": "C3H8O2",
+            "series_general_formula": "Polyols (dihydric): CnH2n+2On, n>=2 (two hydroxyl groups)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Dihydric alcohol; used as solvent and humectant; often contrasted with more toxic ethylene glycol.",
+            "smiles": "CC(O)CO",
+            "katex_skeletal_formula": "\\ce{HO-CH2-CH(OH)-CH3}",
+            "katex_molecular_formula": "\\ce{C3H8O2}"
+        },
+        {
+            "iupac_name": "propane-1,2,3-triol",
+            "common_name": "glycerol",
+            "local_name": "プロパン-1,2,3-トリオール（グリセリン）",
+            "skeletal_formula": "HO-CH2-CH(OH)-CH2-OH",
+            "molecular_formula": "C3H8O3",
+            "series_general_formula": "Polyols (trihydric): CnH2n+2On, n>=3 (three hydroxyl groups)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Trihydric alcohol; viscous, sweet-tasting liquid; important in fats, soaps, and many biomolecules; typical 3-valent alcohol in exams.",
+            "smiles": "OCC(O)CO",
+            "katex_skeletal_formula": "\\ce{HO-CH2-CH(OH)-CH2-OH}",
+            "katex_molecular_formula": "\\ce{C3H8O3}"
+        },
+        {
+            "iupac_name": "methanol",
+            "common_name": "methyl alcohol",
+            "local_name": "メタノール",
+            "skeletal_formula": "CH3-OH",
+            "molecular_formula": "CH4O",
+            "series_general_formula": "Primary alcohols (1°): CnH2n+1OH (n>=1)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Simplest aliphatic alcohol; toxic; used as industrial solvent and fuel; often compared with ethanol in exams.",
+            "smiles": "CO",
+            "katex_skeletal_formula": "\\ce{CH3-OH}",
+            "katex_molecular_formula": "\\ce{CH4O}"
+        },
+        {
+            "iupac_name": "ethanol",
+            "common_name": "ethyl alcohol",
+            "local_name": "エタノール",
+            "skeletal_formula": "CH3-CH2-OH",
+            "molecular_formula": "C2H6O",
+            "series_general_formula": "Primary alcohols (1°): CnH2n+1OH (n>=1)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Typical primary alcohol; produced by fermentation; oxidized to ethanal then ethanoic acid; starting material for diethyl ether and ethene via dehydration.",
+            "smiles": "CCO",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-OH}",
+            "katex_molecular_formula": "\\ce{C2H6O}"
+        },
+        {
+            "iupac_name": "propan-1-ol",
+            "common_name": "n-propyl alcohol",
+            "local_name": "1-プロパノール",
+            "skeletal_formula": "CH3-CH2-CH2-OH",
+            "molecular_formula": "C3H8O",
+            "series_general_formula": "Primary alcohols (1°): CnH2n+1OH (n>=1)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Straight-chain C3 primary alcohol; used as example of homologous series extension from ethanol.",
+            "smiles": "CCCO",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH2-OH}",
+            "katex_molecular_formula": "\\ce{C3H8O}"
+        },
+        {
+            "iupac_name": "butan-1-ol",
+            "common_name": "n-butyl alcohol",
+            "local_name": "1-ブタノール",
+            "skeletal_formula": "CH3-CH2-CH2-CH2-OH",
+            "molecular_formula": "C4H10O",
+            "series_general_formula": "Primary alcohols (1°): CnH2n+1OH (n>=1)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Representative higher primary alcohol; often appears as example in classification tables (消防法区分などとともに).",
+            "smiles": "CCCCO",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH2-CH2-OH}",
+            "katex_molecular_formula": "\\ce{C4H10O}"
+        },
+        {
+            "iupac_name": "2-methylpropan-1-ol",
+            "common_name": "isobutyl alcohol",
+            "local_name": "2-メチルプロパン-1-オール（イソブチルアルコール）",
+            "skeletal_formula": "(CH3)2CH-CH2-OH",
+            "molecular_formula": "C4H10O",
+            "series_general_formula": "Primary alcohols (1°): CnH2n+1OH (n>=1)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Branched primary alcohol; useful for questions comparing boiling points and reactivity of isomeric alcohols.",
+            "smiles": "CC(C)CO",
+            "katex_skeletal_formula": "\\ce{(CH3)2CH-CH2-OH}",
+            "katex_molecular_formula": "\\ce{C4H10O}"
+        },
+        {
+            "iupac_name": "2-methylpropan-2-ol",
+            "common_name": "tert-butanol",
+            "local_name": "2-メチルプロパン-2-オール（tert-ブチルアルコール）",
+            "skeletal_formula": "(CH3)3C-OH",
+            "molecular_formula": "C4H10O",
+            "series_general_formula": "Tertiary alcohols (3°): general structure R3C-OH",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Prototypical tertiary alcohol; OH-bearing carbon is attached to three other carbons; resists oxidation under conditions where primary and secondary alcohols oxidize.",
+            "smiles": "CC(C)(C)O",
+            "katex_skeletal_formula": "\\ce{(CH3)3C-OH}",
+            "katex_molecular_formula": "\\ce{C4H10O}"
+        },
+        {
+            "iupac_name": "2-methylbutan-2-ol",
+            "common_name": "tert-amyl alcohol",
+            "local_name": "2-メチルブタン-2-オール（tert-アミルアルコール）",
+            "skeletal_formula": "CH3-C(CH3)(OH)-CH2-CH3",
+            "molecular_formula": "C5H12O",
+            "series_general_formula": "Tertiary alcohols (3°): general structure R3C-OH",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Tertiary alcohol with five carbons; useful for advanced naming and classification, showing branching and tertiary carbon.",
+            "smiles": "CCC(C)(C)O",
+            "katex_skeletal_formula": "\\ce{CH3-C(CH3)(OH)-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C5H12O}"
+        },
+        {
+            "iupac_name": "propan-2-ol",
+            "common_name": "isopropyl alcohol",
+            "local_name": "2-プロパノール（イソプロピルアルコール）",
+            "skeletal_formula": "CH3-CH(OH)-CH3",
+            "molecular_formula": "C3H8O",
+            "series_general_formula": "Secondary alcohols (2°): general structure R1-CH(OH)-R2",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Typical secondary alcohol; used as disinfectant and solvent; gives a ketone (propanone) on oxidation and positive iodoform test.",
+            "smiles": "CC(O)C",
+            "katex_skeletal_formula": "\\ce{CH3-CH(OH)-CH3}",
+            "katex_molecular_formula": "\\ce{C3H8O}"
+        },
+        {
+            "iupac_name": "butan-2-ol",
+            "common_name": "sec-butanol",
+            "local_name": "2-ブタノール（セカンダリーブタノール）",
+            "skeletal_formula": "CH3-CH(OH)-CH2-CH3",
+            "molecular_formula": "C4H10O",
+            "series_general_formula": "Secondary alcohols (2°): general structure R1-CH(OH)-R2",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Representative secondary alcohol in many Japanese explanations of classification; oxidized to butan-2-one (a ketone).",
+            "smiles": "CCC(O)C",
+            "katex_skeletal_formula": "\\ce{CH3-CH(OH)-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C4H10O}"
+        },
+        {
+            "iupac_name": "pentan-3-ol",
+            "common_name": "3-pentanol",
+            "local_name": "3-ペンタノール",
+            "skeletal_formula": "CH3-CH2-CH(OH)-CH2-CH3",
+            "molecular_formula": "C5H12O",
+            "series_general_formula": "Secondary alcohols (2°): general structure R1-CH(OH)-R2",
+            "functional_groups": [
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Example of secondary alcohol where the OH-bearing carbon is in the middle of a longer chain; useful for naming and classification exercises.",
+            "smiles": "CCC(O)CC",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH(OH)-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C5H12O}"
+        }
+    ]
+}

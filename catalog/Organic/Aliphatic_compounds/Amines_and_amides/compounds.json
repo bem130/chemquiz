@@ -1,0 +1,251 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "methanamide",
+            "common_name": "formamide",
+            "local_name": "メタナミド（ホルムアミド）",
+            "skeletal_formula": "H-CONH2",
+            "molecular_formula": "CH3NO",
+            "series_general_formula": "Primary amides from monocarboxylic acids: RCONH2 (n>=0, n=0 gives formamide)",
+            "functional_groups": [
+                {
+                    "name_en": "Amide",
+                    "name_ja": "アミド結合",
+                    "pattern": "–CONH2"
+                }
+            ],
+            "notes": "Simplest carboxylic acid amide; highly polar; used as solvent and intermediate; typical example when introducing the amide functional group.",
+            "smiles": "C(=O)N",
+            "katex_skeletal_formula": "\\ce{H-CONH2}",
+            "katex_molecular_formula": "\\ce{CH3NO}"
+        },
+        {
+            "iupac_name": "ethanamide",
+            "common_name": "acetamide",
+            "local_name": "エタナミド（アセトアミド）",
+            "skeletal_formula": "CH3-CONH2",
+            "molecular_formula": "C2H5NO",
+            "series_general_formula": "Primary amides from saturated monocarboxylic acids: CnH2n+1CONH2",
+            "functional_groups": [
+                {
+                    "name_en": "Amide",
+                    "name_ja": "アミド結合",
+                    "pattern": "–CONH2"
+                }
+            ],
+            "notes": "Most commonly discussed aliphatic amide; derived from ethanoic acid; used as example of high melting point and hydrogen bonding in amides.",
+            "smiles": "CC(=O)N",
+            "katex_skeletal_formula": "\\ce{CH3-CONH2}",
+            "katex_molecular_formula": "\\ce{C2H5NO}"
+        },
+        {
+            "iupac_name": "propanamide",
+            "common_name": "propanamide",
+            "local_name": "プロパンアミド",
+            "skeletal_formula": "CH3-CH2-CONH2",
+            "molecular_formula": "C3H7NO",
+            "series_general_formula": "Primary amides from saturated monocarboxylic acids: CnH2n+1CONH2",
+            "functional_groups": [
+                {
+                    "name_en": "Amide",
+                    "name_ja": "アミド結合",
+                    "pattern": "–CONH2"
+                }
+            ],
+            "notes": "Higher member of the aliphatic amide series; useful for homologous-series questions and for comparing physical properties with ethanamide.",
+            "smiles": "CCC(=O)N",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CONH2}",
+            "katex_molecular_formula": "\\ce{C3H7NO}"
+        },
+        {
+            "iupac_name": "urea",
+            "common_name": "urea",
+            "local_name": "尿素（カルバミド）",
+            "skeletal_formula": "H2N-CO-NH2",
+            "molecular_formula": "CH4N2O",
+            "series_general_formula": "Diamides (carbamides): general structure H2N-CO-NH2 or substituted analogs",
+            "functional_groups": [
+                {
+                    "name_en": "Amide (diamidic)",
+                    "name_ja": "二価アミド結合",
+                    "pattern": "–CONH2 ×2"
+                }
+            ],
+            "notes": "Most important biological amide; end product of protein metabolism in mammals; typical example of a diamide in high-school chemistry.",
+            "smiles": "C(=O)(N)N",
+            "katex_skeletal_formula": "\\ce{H2N-CO-NH2}",
+            "katex_molecular_formula": "\\ce{CH4N2O}"
+        },
+        {
+            "iupac_name": "methanamine",
+            "common_name": "methylamine",
+            "local_name": "メタンアミン（メチルアミン）",
+            "skeletal_formula": "CH3-NH2",
+            "molecular_formula": "CH5N",
+            "series_general_formula": "Primary aliphatic amines: RNH2, CnH2n+3N (n>=1)",
+            "functional_groups": [
+                {
+                    "name_en": "Amino",
+                    "name_ja": "アミノ基",
+                    "pattern": "–NH2"
+                }
+            ],
+            "notes": "Simplest primary aliphatic amine; gas with ammonia-like smell; basic; typical example in tests distinguishing primary, secondary and tertiary amines.",
+            "smiles": "CN",
+            "katex_skeletal_formula": "\\ce{CH3-NH2}",
+            "katex_molecular_formula": "\\ce{CH5N}"
+        },
+        {
+            "iupac_name": "ethanamine",
+            "common_name": "ethylamine",
+            "local_name": "エタンアミン（エチルアミン）",
+            "skeletal_formula": "CH3-CH2-NH2",
+            "molecular_formula": "C2H7N",
+            "series_general_formula": "Primary aliphatic amines: RNH2, CnH2n+3N (n>=1)",
+            "functional_groups": [
+                {
+                    "name_en": "Amino",
+                    "name_ja": "アミノ基",
+                    "pattern": "–NH2"
+                }
+            ],
+            "notes": "Typical lower primary amine; basic and water-soluble; smells like ammonia; standard example in many exam problems.",
+            "smiles": "CCN",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-NH2}",
+            "katex_molecular_formula": "\\ce{C2H7N}"
+        },
+        {
+            "iupac_name": "propan-1-amine",
+            "common_name": "n-propylamine",
+            "local_name": "プロパン-1-アミン（n-プロピルアミン）",
+            "skeletal_formula": "CH3-CH2-CH2-NH2",
+            "molecular_formula": "C3H9N",
+            "series_general_formula": "Primary aliphatic amines: RNH2, CnH2n+3N (n>=1)",
+            "functional_groups": [
+                {
+                    "name_en": "Amino",
+                    "name_ja": "アミノ基",
+                    "pattern": "–NH2"
+                }
+            ],
+            "notes": "Higher primary amine; used for homologous series questions and comparison of basicity and solubility trends.",
+            "smiles": "CCCN",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH2-NH2}",
+            "katex_molecular_formula": "\\ce{C3H9N}"
+        },
+        {
+            "iupac_name": "dimethylamine",
+            "common_name": "dimethylamine",
+            "local_name": "ジメチルアミン",
+            "skeletal_formula": "CH3-NH-CH3",
+            "molecular_formula": "C2H7N",
+            "series_general_formula": "Secondary aliphatic amines: R2NH",
+            "functional_groups": [
+                {
+                    "name_en": "Amino (secondary)",
+                    "name_ja": "二級アミノ基",
+                    "pattern": "R2NH"
+                }
+            ],
+            "notes": "Simple secondary amine; used to illustrate classification (primary vs secondary vs tertiary) and differences in reactivity with nitrous acid.",
+            "smiles": "CN(C)H",
+            "katex_skeletal_formula": "\\ce{CH3-NH-CH3}",
+            "katex_molecular_formula": "\\ce{C2H7N}"
+        },
+        {
+            "iupac_name": "trimethylamine",
+            "common_name": "trimethylamine",
+            "local_name": "トリメチルアミン",
+            "skeletal_formula": "N(CH3)3",
+            "molecular_formula": "C3H9N",
+            "series_general_formula": "Tertiary aliphatic amines: R3N",
+            "functional_groups": [
+                {
+                    "name_en": "Amino (tertiary)",
+                    "name_ja": "三級アミノ基",
+                    "pattern": "R3N"
+                }
+            ],
+            "notes": "Typical tertiary amine; has strong fishy smell; appears in questions about classification, basicity, and solubility of amines.",
+            "smiles": "CN(C)C",
+            "katex_skeletal_formula": "\\ce{N(CH3)3}",
+            "katex_molecular_formula": "\\ce{C3H9N}"
+        },
+        {
+            "iupac_name": "nitromethane",
+            "common_name": "nitromethane",
+            "local_name": "ニトロメタン",
+            "skeletal_formula": "CH3-NO2",
+            "molecular_formula": "CH3NO2",
+            "series_general_formula": "Primary nitroalkanes: RNO2 (R = alkyl), simplest CnH2n+1NO2",
+            "functional_groups": [
+                {
+                    "name_en": "Nitro",
+                    "name_ja": "ニトロ基",
+                    "pattern": "–NO2"
+                }
+            ],
+            "notes": "Simplest nitroalkane; used as solvent and in fuels; classic example of a nitro compound in high-school texts.",
+            "smiles": "C[N+](=O)[O-]",
+            "katex_skeletal_formula": "\\ce{CH3-NO2}",
+            "katex_molecular_formula": "\\ce{CH3NO2}"
+        },
+        {
+            "iupac_name": "nitroethane",
+            "common_name": "nitroethane",
+            "local_name": "ニトロエタン",
+            "skeletal_formula": "CH3-CH2-NO2",
+            "molecular_formula": "C2H5NO2",
+            "series_general_formula": "Primary nitroalkanes: CnH2n+1NO2 (n>=1)",
+            "functional_groups": [
+                {
+                    "name_en": "Nitro",
+                    "name_ja": "ニトロ基",
+                    "pattern": "–NO2"
+                }
+            ],
+            "notes": "Primary nitroalkane; used industrially as solvent and intermediate; typical example in classification of nitro compounds.",
+            "smiles": "CC[N+](=O)[O-]",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-NO2}",
+            "katex_molecular_formula": "\\ce{C2H5NO2}"
+        },
+        {
+            "iupac_name": "1-nitropropane",
+            "common_name": "1-nitropropane",
+            "local_name": "1-ニトロプロパン",
+            "skeletal_formula": "CH3-CH2-CH2-NO2",
+            "molecular_formula": "C3H7NO2",
+            "series_general_formula": "Primary nitroalkanes: CnH2n+1NO2 (n>=1)",
+            "functional_groups": [
+                {
+                    "name_en": "Nitro",
+                    "name_ja": "ニトロ基",
+                    "pattern": "–NO2"
+                }
+            ],
+            "notes": "Primary nitroalkane; appears together with 2-nitropropane in questions that compare primary and secondary nitro compounds.",
+            "smiles": "CCC[N+](=O)[O-]",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH2-NO2}",
+            "katex_molecular_formula": "\\ce{C3H7NO2}"
+        },
+        {
+            "iupac_name": "2-nitropropane",
+            "common_name": "2-nitropropane",
+            "local_name": "2-ニトロプロパン",
+            "skeletal_formula": "(CH3)2CH-NO2",
+            "molecular_formula": "C3H7NO2",
+            "series_general_formula": "Secondary nitroalkanes: general structure R1R2CH-NO2",
+            "functional_groups": [
+                {
+                    "name_en": "Nitro",
+                    "name_ja": "ニトロ基",
+                    "pattern": "–NO2"
+                }
+            ],
+            "notes": "Secondary nitroalkane; contrasted with 1-nitropropane in reactivity and physical properties; used as solvent and intermediate.",
+            "smiles": "CC(C)[N+](=O)[O-]",
+            "katex_skeletal_formula": "\\ce{(CH3)2CH-NO2}",
+            "katex_molecular_formula": "\\ce{C3H7NO2}"
+        }
+    ]
+}
