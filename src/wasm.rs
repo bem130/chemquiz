@@ -483,9 +483,8 @@ fn StructureTile(
     let effect_smiles = smiles.clone();
     let iupac_name = compound.iupac_name.clone();
     let skeletal_formula = compound.skeletal_formula.clone();
-    let molecular_formula = compound.molecular_formula.clone();
-    let formula_badge = (!molecular_formula.is_empty())
-        .then(|| view! { <FormulaBadge formula=molecular_formula.clone() /> });
+    let formula_badge = (!skeletal_formula.is_empty())
+        .then(|| view! { <FormulaBadge formula=skeletal_formula.clone() /> });
 
     create_effect(move |_| {
         let current_theme = theme.get();
