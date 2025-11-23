@@ -483,9 +483,8 @@ fn StructureTile(
     let effect_smiles = smiles.clone();
     let iupac_name = compound.iupac_name.clone();
     let skeletal_formula = compound.skeletal_formula.clone();
-    let molecular_formula = compound.molecular_formula.clone();
-    let formula_badge = (!molecular_formula.is_empty())
-        .then(|| view! { <FormulaBadge formula=molecular_formula.clone() /> });
+    let formula_badge = (!skeletal_formula.is_empty())
+        .then(|| view! { <FormulaBadge formula=skeletal_formula.clone() /> });
 
     create_effect(move |_| {
         let current_theme = theme.get();
@@ -906,10 +905,6 @@ fn App() -> impl IntoView {
     let (hint, set_hint) = create_signal::<Option<String>>(None);
     let (hint_visible, set_hint_visible) = create_signal(false);
 
-    // Quiz uses “last clicked leaf” only
-    let (selected_leaf, set_selected_leaf) = create_signal::<Option<CatalogLeaf>>(None);
-
-    // UI can highlight multiple selected nodes
     let (selected_nodes, set_selected_nodes) = create_signal::<Vec<CatalogLeaf>>(Vec::new());
 
     let (compounds, set_compounds) = create_signal::<Option<Vec<Compound>>>(None);
@@ -981,14 +976,76 @@ fn App() -> impl IntoView {
         let set_score = set_score.clone();
         let set_active_mode = set_active_mode.clone();
         let set_answer_overlay = set_answer_overlay.clone();
+        let selected_nodes = selected_nodes.clone();
+        let set_error = set_error.clone();
+        let set_quiz = set_quiz.clone();
+        let set_feedback = set_feedback.clone();
+        let set_compounds = set_compounds.clone();
+        let set_active_dataset = set_active_dataset.clone();
+        let set_hint = set_hint.clone();
+        let set_hint_visible = set_hint_visible.clone();
+        let set_selected_option = set_selected_option.clone();
 
         Callback::new(move |_| {
             set_score.set(SessionScore::default());
             set_active_mode.set(mode.get());
             set_answer_overlay.set(None);
-            if regenerate() {
-                set_scene.set(Scene::Game);
+            set_selected_option.set(None);
+            set_hint.set(None);
+            set_hint_visible.set(false);
+
+            let selections = selected_nodes.get();
+            if selections.is_empty() {
+                if regenerate() {
+                    set_scene.set(Scene::Game);
+                }
+                return;
             }
+
+            set_error.set(None);
+            set_quiz.set(None);
+            set_feedback.set(FeedbackState::neutral("Loading selected datasets..."));
+
+            let set_scene = set_scene.clone();
+            let regenerate = regenerate.clone();
+            let set_compounds = set_compounds.clone();
+            let set_active_dataset = set_active_dataset.clone();
+            let set_feedback = set_feedback.clone();
+            let set_error = set_error.clone();
+
+            spawn_local(async move {
+                let mut combined = Vec::new();
+
+                for leaf in selections {
+                    match fetch_compound_file(&leaf.file).await {
+                        Ok(mut list) => combined.append(&mut list),
+                        Err(message) => {
+                            set_feedback.set(FeedbackState::wrong(message.clone()));
+                            set_error.set(Some(message));
+                            return;
+                        }
+                    }
+                }
+
+                if combined.is_empty() {
+                    let message = "Selected datasets did not contain any compounds.".to_string();
+                    set_feedback.set(FeedbackState::wrong(message.clone()));
+                    set_error.set(Some(message));
+                    return;
+                }
+
+                let compound_count = combined.len();
+                set_compounds.set(Some(combined.clone()));
+                set_active_dataset.set(combined);
+                set_feedback.set(FeedbackState::neutral(format!(
+                    "Loaded {} compounds from selected datasets.",
+                    compound_count
+                )));
+
+                if regenerate() {
+                    set_scene.set(Scene::Game);
+                }
+            });
         })
     };
 
@@ -1078,7 +1135,6 @@ fn App() -> impl IntoView {
     let handle_selection = {
         let selected_nodes = selected_nodes.clone();
         let set_selected_nodes = set_selected_nodes.clone();
-        let set_selected_leaf = set_selected_leaf.clone();
         let set_error = set_error.clone();
         let set_quiz = set_quiz.clone();
         let set_scene = set_scene.clone();
@@ -1088,50 +1144,32 @@ fn App() -> impl IntoView {
         let set_hint_visible = set_hint_visible.clone();
 
         Callback::new(move |leaf: CatalogLeaf| {
-            // --- UI: トグル ---
             let mut list = selected_nodes.get();
             if let Some(idx) = list.iter().position(|item| item == &leaf) {
-                // すでに選ばれているなら解除
                 list.remove(idx);
             } else {
-                // 新規に選択
                 list.push(leaf.clone());
             }
+
+            let selected_count = list.len();
             set_selected_nodes.set(list);
 
-            // --- クイズ用: 「最後に押したもの」を保存 ---
-            // ここでは仕様をシンプルに保つため、
-            // 実際に問題を出すのは「最後に押した葉ノード 1つだけ」のままにしています。
-            set_selected_leaf.set(Some(leaf.clone()));
-
-            // 以降は今まで通り、leaf.file から 1つの compounds.json を読み込む
             set_error.set(None);
             set_quiz.set(None);
             set_scene.set(Scene::Menu);
             set_compounds.set(None);
             set_hint.set(None);
             set_hint_visible.set(false);
-            set_feedback.set(FeedbackState::neutral("Loading selected catalog entry..."));
-
-            let setter = set_compounds.clone();
-            let error_setter = set_error.clone();
-            let feedback_setter = set_feedback.clone();
-
-            spawn_local(async move {
-                match fetch_compound_file(&leaf.file).await {
-                    Ok(list) => {
-                        feedback_setter.set(FeedbackState::neutral(format!(
-                            "Loaded {} compounds.",
-                            list.len()
-                        )));
-                        setter.set(Some(list));
-                    }
-                    Err(message) => {
-                        feedback_setter.set(FeedbackState::wrong(message.clone()));
-                        error_setter.set(Some(message));
-                    }
-                }
-            });
+            if selected_count == 0 {
+                set_feedback.set(FeedbackState::neutral(
+                    "Select one or more datasets, then start the quiz.",
+                ));
+            } else {
+                set_feedback.set(FeedbackState::neutral(format!(
+                    "{} dataset(s) selected. Start the quiz to load compounds.",
+                    selected_count
+                )));
+            }
         })
     };
 
@@ -1260,11 +1298,19 @@ fn App() -> impl IntoView {
                                 <div class="prompt-heading">"Dataset status"</div>
                                 <div class="menu-status">
                                     <div class="menu-chip">
-                                        <div class="prompt-heading">"Selected path"</div>
-                                        <div>{move || selected_leaf
-                                            .get()
-                                            .map(|leaf| format_path(&leaf.path))
-                                            .unwrap_or_else(|| "Not selected".to_string())}</div>
+                                        <div class="prompt-heading">"Selected datasets"</div>
+                                        <div>{move || {
+                                            let selections = selected_nodes.get();
+                                            if selections.is_empty() {
+                                                "Not selected".to_string()
+                                            } else {
+                                                selections
+                                                    .iter()
+                                                    .map(|leaf| format_path(&leaf.path))
+                                                    .collect::<Vec<_>>()
+                                                    .join(", ")
+                                            }
+                                        }}</div>
                                     </div>
                                     <div class="menu-chip">
                                         <div class="prompt-heading">"Loaded compounds"</div>
