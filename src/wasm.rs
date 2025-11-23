@@ -6,7 +6,7 @@ use crate::{
 };
 use gloo_net::http::Request;
 use js_sys::Reflect;
-use leptos::{html, *};
+use leptos::{ev, html, *};
 use rand::SeedableRng;
 use std::rc::Rc;
 use wasm_bindgen::JsCast;
@@ -83,7 +83,7 @@ struct SessionScore {
 #[derive(Clone)]
 struct AnswerOverlay {
     quiz: QuizItem,
-    dataset: Vec<Compound>,
+    compound: Option<Compound>,
     selected: usize,
     is_correct: bool,
 }
@@ -891,6 +891,7 @@ fn App() -> impl IntoView {
     let (selected_option, set_selected_option) = create_signal::<Option<usize>>(None);
     let (score, set_score) = create_signal(SessionScore::default());
     let (answer_overlay, set_answer_overlay) = create_signal::<Option<AnswerOverlay>>(None);
+    let overlay_ref = create_node_ref::<html::Div>();
     let (feedback, set_feedback) = create_signal(FeedbackState::neutral(
         "Load a catalog entry and start a quiz.",
     ));
@@ -1039,9 +1040,11 @@ fn App() -> impl IntoView {
                 };
                 set_feedback.set(feedback_message);
 
+                let compound = compound_for_prompt(&active_dataset.get(), &item);
+
                 set_answer_overlay.set(Some(AnswerOverlay {
                     quiz: item.clone(),
-                    dataset: active_dataset.get(),
+                    compound,
                     selected: index,
                     is_correct,
                 }));
@@ -1146,6 +1149,17 @@ fn App() -> impl IntoView {
         }
     };
     let incorrect_count = move || score.get().total.saturating_sub(score.get().correct);
+
+    {
+        let overlay_ref = overlay_ref.clone();
+        create_effect(move |_| {
+            if answer_overlay.get().is_some() {
+                if let Some(node) = overlay_ref.get() {
+                    let _ = node.focus();
+                }
+            }
+        });
+    }
 
     view! {
         <div class="app">
@@ -1290,6 +1304,17 @@ fn App() -> impl IntoView {
 
             <Show when=move || scene.get() == Scene::Game>
                 <div class="play-page">
+                    <div class="play-topbar">
+                        <div>
+                            <div class="app-title">"Molecular Structure Quiz (compounds.json)"</div>
+                            <div class="app-subtitle">"Tap outside the result card to move to the next question."</div>
+                        </div>
+                        <div class="play-topbar-actions">
+                            <button class="btn" type="button" on:click=move |_| return_to_menu.call(())>
+                                "Menu"
+                            </button>
+                        </div>
+                    </div>
                     <div class="play-main">
                         {move || {
                             if let Some(item) = quiz.get() {
@@ -1367,35 +1392,116 @@ fn App() -> impl IntoView {
                     <Show when=move || answer_overlay.get().is_some()>
                         {move || {
                             answer_overlay.get().map(|overlay| {
-                                let prompt_compound = compound_for_prompt(&overlay.dataset, &overlay.quiz);
-                                let subtitle = prompt_compound
+                                let subtitle = overlay
+                                    .compound
                                     .as_ref()
                                     .map(|compound| english_label(compound))
                                     .unwrap_or_else(|| "Summary".to_string());
+                                let detail_sections = overlay
+                                    .compound
+                                    .as_ref()
+                                    .map(|compound| compound.detail_sections())
+                                    .unwrap_or_default();
+                                let handle_key = {
+                                    let next_question = next_question.clone();
+                                    move |ev: ev::KeyboardEvent| match ev.key().as_str() {
+                                        "Enter" | " " => {
+                                            ev.prevent_default();
+                                            next_question.call(());
+                                        }
+                                        _ => {}
+                                    }
+                                };
+                                let stop_click = move |ev: ev::MouseEvent| ev.stop_propagation();
                                 let message = if overlay.is_correct {
                                     "Correct"
                                 } else {
                                     "Incorrect"
                                 };
+                                let outcome_class = if overlay.is_correct {
+                                    "result-title correct"
+                                } else {
+                                    "result-title incorrect"
+                                };
+
+                                let compound_view = overlay
+                                    .compound
+                                    .as_ref()
+                                    .map(|compound| {
+                                        let english = english_label(compound);
+                                        let japanese = compound.local_name.clone();
+                                        let molecular = compound.molecular_formula.clone();
+                                        let series = compound.series_general_formula.clone();
+                                        let skeletal = compound.skeletal_formula.clone();
+
+                                        view! {
+                                            <div class="result-core">
+                                                <div class="result-name-block">
+                                                    <p class="result-name-main">{english}</p>
+                                                    {japanese
+                                                        .map(|name| view! { <p class="result-name-ja">{name}</p> })}
+                                                </div>
+                                                <div class="result-formula-block">
+                                                    <FormulaBadge formula=molecular />
+                                                    {series.map(|formula| {
+                                                        view! {
+                                                            <p class="result-series">{"Series formula: "}{formula}</p>
+                                                        }
+                                                    })}
+                                                </div>
+                                                <p class="result-structure">{skeletal}</p>
+                                            </div>
+                                        }
+                                        .into_view()
+                                    })
+                                    .unwrap_or_else(|| {
+                                        view! { <p class="prompt-formula-text">{"Compound details unavailable."}</p> }
+                                            .into_view()
+                                    });
+
+                                let detail_view = if detail_sections.is_empty() {
+                                    view! {}.into_view()
+                                } else {
+                                    view! {
+                                        <div class="result-details">
+                                            {detail_sections
+                                                .into_iter()
+                                                .map(|section| {
+                                                    view! {
+                                                        <div class="result-detail-section">
+                                                            <div class="result-detail-label">{section.label}</div>
+                                                            <ul class="result-detail-list">
+                                                                {section
+                                                                    .entries
+                                                                    .into_iter()
+                                                                    .map(|entry| view! { <li>{entry}</li> })
+                                                                    .collect_view()}
+                                                            </ul>
+                                                        </div>
+                                                    }
+                                                })
+                                                .collect_view()}
+                                        </div>
+                                    }
+                                    .into_view()
+                                };
 
                                 view! {
-                                    <div class="result-overlay" role="dialog" aria-modal="true">
-                                        <div class="result-popup">
-                                            <h2 class=if overlay.is_correct { "result-title correct" } else { "result-title incorrect" }>
-                                                {message}
-                                            </h2>
+                                    <div
+                                        class="result-overlay"
+                                        role="dialog"
+                                        aria-modal="true"
+                                        tabindex="0"
+                                        node_ref=overlay_ref.clone()
+                                        on:click=move |_| next_question.call(())
+                                        on:keydown=handle_key
+                                    >
+                                        <div class="result-popup" on:click=stop_click>
+                                            <h2 class=outcome_class>{message}</h2>
                                             <p class="result-subtitle">{subtitle}</p>
-                                            <div class="result-body">
-                                                <p class="prompt-formula-text">{"Review the highlighted options. The question layout stays fixed while this overlay is visible."}</p>
-                                            </div>
-                                            <div class="overlay-actions">
-                                                <button class="btn btn-primary" type="button" on:click=move |_| next_question.call(())>
-                                                    "Next question"
-                                                </button>
-                                                <button class="btn" type="button" on:click=move |_| return_to_menu.call(())>
-                                                    "Back to menu"
-                                                </button>
-                                            </div>
+                                            {compound_view}
+                                            {detail_view}
+                                            <p class="overlay-hint">{"Tap outside this card or press Enter / Space to continue."}</p>
                                         </div>
                                     </div>
                                 }
