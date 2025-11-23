@@ -505,7 +505,7 @@
                 }
             ],
             "notes": "Acid salt of phosphoric acid; used in buffer solutions; typical example of acid phosphate.",
-            "smiles": "[Na+].OP(=O)(O)O",
+            "smiles": "[Na+].[O-]P(=O)(O)O",
             "katex_skeletal_formula": "\\ce{NaH2PO4}",
             "katex_molecular_formula": "\\ce{NaH2PO4}"
         },
