@@ -79,15 +79,23 @@ impl Compound {
     pub fn detail_sections(&self) -> Vec<CompoundDetailSection> {
         let mut sections = Vec::new();
 
-        if let Some(series) = &self.series_general_formula {
-            let trimmed = series.trim();
-            if !trimmed.is_empty() {
-                sections.push(CompoundDetailSection {
-                    label: "Series formula".to_string(),
-                    entries: vec![trimmed.to_string()],
-                });
+        fn add_section_if_present(
+            sections: &mut Vec<CompoundDetailSection>,
+            label: &str,
+            value: &Option<String>,
+        ) {
+            if let Some(text) = value {
+                let trimmed = text.trim();
+                if !trimmed.is_empty() {
+                    sections.push(CompoundDetailSection {
+                        label: label.to_string(),
+                        entries: vec![trimmed.to_string()],
+                    });
+                }
             }
         }
+
+        add_section_if_present(&mut sections, "Series formula", &self.series_general_formula);
 
         if !self.functional_groups.is_empty() {
             let groups = self
@@ -102,15 +110,7 @@ impl Compound {
             });
         }
 
-        if let Some(notes) = &self.notes {
-            let trimmed = notes.trim();
-            if !trimmed.is_empty() {
-                sections.push(CompoundDetailSection {
-                    label: "Notes".to_string(),
-                    entries: vec![trimmed.to_string()],
-                });
-            }
-        }
+        add_section_if_present(&mut sections, "Notes", &self.notes);
 
         sections
     }

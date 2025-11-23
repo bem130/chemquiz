@@ -1431,7 +1431,6 @@ fn App() -> impl IntoView {
                                         let english = english_label(compound);
                                         let japanese = compound.local_name.clone();
                                         let molecular = compound.molecular_formula.clone();
-                                        let series = compound.series_general_formula.clone();
                                         let skeletal = compound.skeletal_formula.clone();
 
                                         view! {
@@ -1443,11 +1442,6 @@ fn App() -> impl IntoView {
                                                 </div>
                                                 <div class="result-formula-block">
                                                     <FormulaBadge formula=molecular />
-                                                    {series.map(|formula| {
-                                                        view! {
-                                                            <p class="result-series">{"Series formula: "}{formula}</p>
-                                                        }
-                                                    })}
                                                 </div>
                                                 <p class="result-structure">{skeletal}</p>
                                             </div>
@@ -1492,7 +1486,7 @@ fn App() -> impl IntoView {
                                         role="dialog"
                                         aria-modal="true"
                                         tabindex="0"
-                                        node_ref=overlay_ref.clone()
+                                        node_ref=overlay_ref
                                         on:click=move |_| next_question.call(())
                                         on:keydown=handle_key
                                     >
