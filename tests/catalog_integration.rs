@@ -18,6 +18,28 @@ fn aromatic_hydrocarbons_path() -> Vec<String> {
 }
 
 #[test]
+fn merges_multiple_catalog_branches() {
+    let catalog = Catalog::from_directory("catalog").expect("catalog folder should load");
+
+    let mut merged = Vec::new();
+    for path in [organic_alcohols_path(), aromatic_hydrocarbons_path()] {
+        let mut list = catalog
+            .compounds_for(&path)
+            .expect("catalog leaf should exist");
+        merged.append(&mut list);
+    }
+
+    let labels: Vec<String> = merged.iter().map(|compound| compound.english_label()).collect();
+
+    assert!(labels
+        .iter()
+        .any(|label| label.contains("dimethyl ether")), "alcohol branch should contribute entries");
+    assert!(labels
+        .iter()
+        .any(|label| label.contains("benzene")), "aromatic branch should contribute entries");
+}
+
+#[test]
 fn can_generate_quiz_from_category_subset() {
     let catalog = demo_catalog();
     let compounds = catalog

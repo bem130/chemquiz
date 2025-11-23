@@ -85,11 +85,12 @@ trunk serve --public-url /chemquiz/
 
 The app mounts to the page body and mirrors the `quizprototype.html` layout: a top settings panel
 shows quiz mode, a skeletal/full structure toggle, score, and progress. Users can browse a catalog
-tree to load JSON datasets, then start a session that cycles through Menu → Game → Result scenes.
-Each quiz view matches the prototype with dedicated prompt and option cards, hint toggles, and a
-feedback row. Structural prompts respect the view toggle (RDKit MinimalLib + Kekule.js), while
-molecular formulas render through KaTeX/mhchem when present and fall back to text when SMILES data
-is unavailable. The `--public-url` flag keeps asset paths compatible with GitHub Pages.
+tree, select multiple leaf datasets, and start a session that merges all chosen JSON files before
+cycling through Menu → Game → Result scenes. Each quiz view matches the prototype with dedicated
+prompt and option cards, hint toggles, and a feedback row. Structural prompts respect the view
+toggle (RDKit MinimalLib + Kekule.js), while molecular formulas render through KaTeX/mhchem when
+present and fall back to text when SMILES data is unavailable. The `--public-url` flag keeps asset
+paths compatible with GitHub Pages.
 
 ## Deploy to GitHub Pages
 
