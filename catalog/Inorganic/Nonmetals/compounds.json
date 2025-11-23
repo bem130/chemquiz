@@ -1,0 +1,781 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "carbon (graphite)",
+            "common_name": "graphite",
+            "local_name": "黒鉛",
+            "skeletal_formula": "C (layered structure)",
+            "molecular_formula": "C",
+            "series_general_formula": "Allotropes of carbon: graphite, diamond, fullerene",
+            "functional_groups": [],
+            "notes": "Soft, black solid; layers of hexagonal carbon sheets; conducts electricity; used as electrode material and lubricant.",
+            "smiles": "C",
+            "katex_skeletal_formula": "\\ce{C}",
+            "katex_molecular_formula": "\\ce{C}"
+        },
+        {
+            "iupac_name": "carbon (diamond)",
+            "common_name": "diamond",
+            "local_name": "ダイヤモンド",
+            "skeletal_formula": "C (3D network)",
+            "molecular_formula": "C",
+            "series_general_formula": "Allotropes of carbon: graphite, diamond, fullerene",
+            "functional_groups": [],
+            "notes": "Transparent, extremely hard crystal; non-conductive; each carbon is tetrahedrally bonded in a three-dimensional network.",
+            "smiles": "C",
+            "katex_skeletal_formula": "\\ce{C}",
+            "katex_molecular_formula": "\\ce{C}"
+        },
+        {
+            "iupac_name": "carbon monoxide",
+            "common_name": "carbon monoxide",
+            "local_name": "一酸化炭素",
+            "skeletal_formula": "CO",
+            "molecular_formula": "CO",
+            "series_general_formula": "Oxides of carbon: CO, CO2",
+            "functional_groups": [
+                {
+                    "name_en": "Carbon oxide",
+                    "name_ja": "炭素の酸化物",
+                    "pattern": "CO, CO2"
+                }
+            ],
+            "notes": "Colorless, odorless gas; highly toxic; reducing agent used in metal extraction from ores.",
+            "smiles": "C#O",
+            "katex_skeletal_formula": "\\ce{CO}",
+            "katex_molecular_formula": "\\ce{CO}"
+        },
+        {
+            "iupac_name": "carbon dioxide",
+            "common_name": "carbon dioxide",
+            "local_name": "二酸化炭素",
+            "skeletal_formula": "O=C=O",
+            "molecular_formula": "CO2",
+            "series_general_formula": "Acidic oxides of nonmetals: EO2, EO3 (E = C, S, N, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Carbon oxide",
+                    "name_ja": "炭素の酸化物",
+                    "pattern": "CO2"
+                }
+            ],
+            "notes": "Colorless gas; slightly soluble in water to form carbonic acid; product of combustion and respiration; used in carbonation of drinks.",
+            "smiles": "O=C=O",
+            "katex_skeletal_formula": "\\ce{CO2}",
+            "katex_molecular_formula": "\\ce{CO2}"
+        },
+        {
+            "iupac_name": "carbonic acid",
+            "common_name": "carbonic acid",
+            "local_name": "炭酸",
+            "skeletal_formula": "H2CO3",
+            "molecular_formula": "H2CO3",
+            "series_general_formula": "Oxoacids of carbon: H2CO3",
+            "functional_groups": [
+                {
+                    "name_en": "Carbonate",
+                    "name_ja": "炭酸イオン",
+                    "pattern": "CO3^{2-}"
+                }
+            ],
+            "notes": "Weak acid formed when carbon dioxide dissolves in water; unstable and exists only in solution; gives rise to carbonate and hydrogencarbonate salts.",
+            "smiles": "OC(=O)O",
+            "katex_skeletal_formula": "\\ce{H2CO3}",
+            "katex_molecular_formula": "\\ce{H2CO3}"
+        },
+        {
+            "iupac_name": "calcium carbonate",
+            "common_name": "calcium carbonate (limestone)",
+            "local_name": "炭酸カルシウム（石灰石）",
+            "skeletal_formula": "CaCO3",
+            "molecular_formula": "CaCO3",
+            "series_general_formula": "Carbonates: MCO3 (M = Ca, Mg, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Carbonate",
+                    "name_ja": "炭酸イオン",
+                    "pattern": "CO3^{2-}"
+                }
+            ],
+            "notes": "White solid found as limestone, marble, and chalk; decomposes on heating to CaO and CO2; used as building material and in cement.",
+            "smiles": "[Ca+2].[O-]C(=O)[O-]",
+            "katex_skeletal_formula": "\\ce{CaCO3}",
+            "katex_molecular_formula": "\\ce{CaCO3}"
+        },
+        {
+            "iupac_name": "silicon dioxide",
+            "common_name": "silicon dioxide (quartz)",
+            "local_name": "二酸化ケイ素（石英）",
+            "skeletal_formula": "SiO2 (network solid)",
+            "molecular_formula": "SiO2",
+            "series_general_formula": "Silicon oxides and silicates: SiO2, SiO3^{2-}",
+            "functional_groups": [
+                {
+                    "name_en": "Silicate-like oxide",
+                    "name_ja": "ケイ素の酸化物",
+                    "pattern": "SiO2"
+                }
+            ],
+            "notes": "Hard, chemically stable solid; main component of sand and quartz; used in glass and ceramics.",
+            "smiles": "O=[Si]=O",
+            "katex_skeletal_formula": "\\ce{SiO2}",
+            "katex_molecular_formula": "\\ce{SiO2}"
+        },
+        {
+            "iupac_name": "sodium metasilicate",
+            "common_name": "sodium metasilicate (water glass)",
+            "local_name": "メタケイ酸ナトリウム（水ガラス）",
+            "skeletal_formula": "Na2SiO3",
+            "molecular_formula": "Na2SiO3",
+            "series_general_formula": "Silicates: M2SiO3, M2SiO3·nH2O",
+            "functional_groups": [
+                {
+                    "name_en": "Silicate",
+                    "name_ja": "ケイ酸イオン",
+                    "pattern": "SiO3^{2-}"
+                }
+            ],
+            "notes": "Colorless aqueous solution forms a glassy solid on drying; used as adhesive, fireproofing agent, and in detergents.",
+            "smiles": "[Na+].[Na+].[O-]Si(=O)O-",
+            "katex_skeletal_formula": "\\ce{Na2SiO3}",
+            "katex_molecular_formula": "\\ce{Na2SiO3}"
+        },
+        {
+            "iupac_name": "silicon carbide",
+            "common_name": "silicon carbide",
+            "local_name": "炭化ケイ素",
+            "skeletal_formula": "SiC (network solid)",
+            "molecular_formula": "SiC",
+            "series_general_formula": "Carbides: MC, SiC",
+            "functional_groups": [],
+            "notes": "Very hard, high-melting solid; used as abrasive and refractory material; example of covalent network solid containing carbon and silicon.",
+            "smiles": "[Si]C",
+            "katex_skeletal_formula": "\\ce{SiC}",
+            "katex_molecular_formula": "\\ce{SiC}"
+        },
+        {
+            "iupac_name": "difluorine",
+            "common_name": "fluorine",
+            "local_name": "フッ素",
+            "skeletal_formula": "F2",
+            "molecular_formula": "F2",
+            "series_general_formula": "Halogen molecules: X2 (X = F, Cl, Br, I)",
+            "functional_groups": [
+                {
+                    "name_en": "Halogen element",
+                    "name_ja": "ハロゲン単体",
+                    "pattern": "X2"
+                }
+            ],
+            "notes": "Pale yellow diatomic gas; most electronegative element; very reactive; not usually handled in school labs.",
+            "smiles": "F[F]",
+            "katex_skeletal_formula": "\\ce{F2}",
+            "katex_molecular_formula": "\\ce{F2}"
+        },
+        {
+            "iupac_name": "dichlorine",
+            "common_name": "chlorine",
+            "local_name": "塩素",
+            "skeletal_formula": "Cl2",
+            "molecular_formula": "Cl2",
+            "series_general_formula": "Halogen molecules: X2 (X = F, Cl, Br, I)",
+            "functional_groups": [
+                {
+                    "name_en": "Halogen element",
+                    "name_ja": "ハロゲン単体",
+                    "pattern": "X2"
+                }
+            ],
+            "notes": "Greenish-yellow diatomic gas; strong oxidizing and bleaching agent; used for disinfection and in the manufacture of many chlorides.",
+            "smiles": "ClCl",
+            "katex_skeletal_formula": "\\ce{Cl2}",
+            "katex_molecular_formula": "\\ce{Cl2}"
+        },
+        {
+            "iupac_name": "dibromine",
+            "common_name": "bromine",
+            "local_name": "臭素",
+            "skeletal_formula": "Br2",
+            "molecular_formula": "Br2",
+            "series_general_formula": "Halogen molecules: X2 (X = F, Cl, Br, I)",
+            "functional_groups": [
+                {
+                    "name_en": "Halogen element",
+                    "name_ja": "ハロゲン単体",
+                    "pattern": "X2"
+                }
+            ],
+            "notes": "Red-brown liquid at room temperature; volatile, toxic; typical example of halogen that is liquid at room temperature.",
+            "smiles": "BrBr",
+            "katex_skeletal_formula": "\\ce{Br2}",
+            "katex_molecular_formula": "\\ce{Br2}"
+        },
+        {
+            "iupac_name": "diiodine",
+            "common_name": "iodine",
+            "local_name": "ヨウ素",
+            "skeletal_formula": "I2",
+            "molecular_formula": "I2",
+            "series_general_formula": "Halogen molecules: X2 (X = F, Cl, Br, I)",
+            "functional_groups": [
+                {
+                    "name_en": "Halogen element",
+                    "name_ja": "ハロゲン単体",
+                    "pattern": "X2"
+                }
+            ],
+            "notes": "Dark violet-black solid that sublimes to a violet vapor; used as disinfectant and in starch test; least reactive common halogen.",
+            "smiles": "II",
+            "katex_skeletal_formula": "\\ce{I2}",
+            "katex_molecular_formula": "\\ce{I2}"
+        },
+        {
+            "iupac_name": "hydrogen fluoride",
+            "common_name": "hydrogen fluoride",
+            "local_name": "フッ化水素",
+            "skeletal_formula": "HF",
+            "molecular_formula": "HF",
+            "series_general_formula": "Hydrogen halides: HX (X = F, Cl, Br, I)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydrogen halide",
+                    "name_ja": "ハロゲン化水素",
+                    "pattern": "HX"
+                }
+            ],
+            "notes": "Colorless gas or liquid; weak acid in water but highly corrosive; aqueous solution (hydrofluoric acid) etches glass.",
+            "smiles": "[H]F",
+            "katex_skeletal_formula": "\\ce{HF}",
+            "katex_molecular_formula": "\\ce{HF}"
+        },
+        {
+            "iupac_name": "hydrogen chloride",
+            "common_name": "hydrogen chloride",
+            "local_name": "塩化水素",
+            "skeletal_formula": "HCl",
+            "molecular_formula": "HCl",
+            "series_general_formula": "Hydrogen halides: HX (X = F, Cl, Br, I)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydrogen halide",
+                    "name_ja": "ハロゲン化水素",
+                    "pattern": "HX"
+                }
+            ],
+            "notes": "Colorless gas with sharp smell; highly soluble in water to form hydrochloric acid, a strong acid widely used in labs and industry.",
+            "smiles": "[H]Cl",
+            "katex_skeletal_formula": "\\ce{HCl}",
+            "katex_molecular_formula": "\\ce{HCl}"
+        },
+        {
+            "iupac_name": "hydrogen bromide",
+            "common_name": "hydrogen bromide",
+            "local_name": "臭化水素",
+            "skeletal_formula": "HBr",
+            "molecular_formula": "HBr",
+            "series_general_formula": "Hydrogen halides: HX (X = F, Cl, Br, I)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydrogen halide",
+                    "name_ja": "ハロゲン化水素",
+                    "pattern": "HX"
+                }
+            ],
+            "notes": "Colorless gas; aqueous solution is a strong acid (hydrobromic acid); typical example in trend of acidity of hydrogen halides.",
+            "smiles": "[H]Br",
+            "katex_skeletal_formula": "\\ce{HBr}",
+            "katex_molecular_formula": "\\ce{HBr}"
+        },
+        {
+            "iupac_name": "hydrogen iodide",
+            "common_name": "hydrogen iodide",
+            "local_name": "ヨウ化水素",
+            "skeletal_formula": "HI",
+            "molecular_formula": "HI",
+            "series_general_formula": "Hydrogen halides: HX (X = F, Cl, Br, I)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydrogen halide",
+                    "name_ja": "ハロゲン化水素",
+                    "pattern": "HX"
+                }
+            ],
+            "notes": "Colorless gas; aqueous solution is hydroiodic acid, one of the strongest common acids; least thermally stable hydrogen halide.",
+            "smiles": "[H]I",
+            "katex_skeletal_formula": "\\ce{HI}",
+            "katex_molecular_formula": "\\ce{HI}"
+        },
+        {
+            "iupac_name": "hypochlorous acid",
+            "common_name": "hypochlorous acid",
+            "local_name": "次亜塩素酸",
+            "skeletal_formula": "HClO",
+            "molecular_formula": "HClO",
+            "series_general_formula": "Oxyacids of chlorine: HClO, HClO2, HClO3, HClO4",
+            "functional_groups": [
+                {
+                    "name_en": "Hypochlorite",
+                    "name_ja": "次亜塩素酸イオン",
+                    "pattern": "ClO^-"
+                }
+            ],
+            "notes": "Weak oxyacid formed when chlorine dissolves in water; responsible for the bleaching and disinfecting action of chlorine water.",
+            "smiles": "OCl",
+            "katex_skeletal_formula": "\\ce{HClO}",
+            "katex_molecular_formula": "\\ce{HClO}"
+        },
+        {
+            "iupac_name": "sodium hypochlorite",
+            "common_name": "sodium hypochlorite",
+            "local_name": "次亜塩素酸ナトリウム",
+            "skeletal_formula": "NaClO",
+            "molecular_formula": "NaClO",
+            "series_general_formula": "Hypochlorites: MClO (M = alkali or alkaline-earth metal)",
+            "functional_groups": [
+                {
+                    "name_en": "Hypochlorite",
+                    "name_ja": "次亜塩素酸イオン",
+                    "pattern": "ClO^-"
+                }
+            ],
+            "notes": "Active component of household bleach; strong oxidizing and disinfecting agent; produced by reaction of chlorine with cold dilute NaOH.",
+            "smiles": "[Na+].[O-]Cl",
+            "katex_skeletal_formula": "\\ce{NaClO}",
+            "katex_molecular_formula": "\\ce{NaClO}"
+        },
+        {
+            "iupac_name": "dihydrogen",
+            "common_name": "hydrogen",
+            "local_name": "水素",
+            "skeletal_formula": "H2",
+            "molecular_formula": "H2",
+            "series_general_formula": "Diatomic nonmetal molecules: X2 (X = H, N, O, F, Cl, Br, I)",
+            "functional_groups": [],
+            "notes": "Lightest element; colorless, odorless diatomic gas; burns in oxygen to form water and acts as a strong reducing agent.",
+            "smiles": "[H][H]",
+            "katex_skeletal_formula": "\\ce{H2}",
+            "katex_molecular_formula": "\\ce{H2}"
+        },
+        {
+            "iupac_name": "oxidane",
+            "common_name": "water",
+            "local_name": "水",
+            "skeletal_formula": "H2O",
+            "molecular_formula": "H2O",
+            "series_general_formula": "Hydrogen oxides: H2O, H2O2; general type H2On",
+            "functional_groups": [
+                {
+                    "name_en": "Oxide",
+                    "name_ja": "酸化物",
+                    "pattern": "O^{2-} with hydrogen"
+                }
+            ],
+            "notes": "Most abundant compound on Earth; colorless, high boiling point for its molar mass due to hydrogen bonding; universal solvent in high-school chemistry.",
+            "smiles": "O",
+            "katex_skeletal_formula": "\\ce{H2O}",
+            "katex_molecular_formula": "\\ce{H2O}"
+        },
+        {
+            "iupac_name": "dihydrogen dioxide",
+            "common_name": "hydrogen peroxide",
+            "local_name": "過酸化水素",
+            "skeletal_formula": "H-O-O-H",
+            "molecular_formula": "H2O2",
+            "series_general_formula": "Peroxides: X2O2 with peroxide ion O2^{2-}",
+            "functional_groups": [
+                {
+                    "name_en": "Peroxide",
+                    "name_ja": "過酸化物イオン",
+                    "pattern": "O2^{2-}"
+                }
+            ],
+            "notes": "Colorless liquid; stronger oxidizing agent than water; used as bleach and disinfectant; decomposes to water and oxygen.",
+            "smiles": "OO",
+            "katex_skeletal_formula": "\\ce{H-O-O-H}",
+            "katex_molecular_formula": "\\ce{H2O2}"
+        },
+        {
+            "iupac_name": "helium",
+            "common_name": "helium",
+            "local_name": "ヘリウム",
+            "skeletal_formula": "He",
+            "molecular_formula": "He",
+            "series_general_formula": "Noble gases: Group 18 monoatomic gases",
+            "functional_groups": [],
+            "notes": "Noble gas; monoatomic, very low boiling point; lighter than air and nonflammable so used for balloons and airships.",
+            "smiles": "[He]",
+            "katex_skeletal_formula": "\\ce{He}",
+            "katex_molecular_formula": "\\ce{He}"
+        },
+        {
+            "iupac_name": "neon",
+            "common_name": "neon",
+            "local_name": "ネオン",
+            "skeletal_formula": "Ne",
+            "molecular_formula": "Ne",
+            "series_general_formula": "Noble gases: Group 18 monoatomic gases",
+            "functional_groups": [],
+            "notes": "Noble gas; emits red-orange light in discharge tubes; typical example of chemically inert gas at high-school level.",
+            "smiles": "[Ne]",
+            "katex_skeletal_formula": "\\ce{Ne}",
+            "katex_molecular_formula": "\\ce{Ne}"
+        },
+        {
+            "iupac_name": "argon",
+            "common_name": "argon",
+            "local_name": "アルゴン",
+            "skeletal_formula": "Ar",
+            "molecular_formula": "Ar",
+            "series_general_formula": "Noble gases: Group 18 monoatomic gases",
+            "functional_groups": [],
+            "notes": "Noble gas used as inert atmosphere for welding and incandescent light bulbs; colorless, odorless, and very unreactive.",
+            "smiles": "[Ar]",
+            "katex_skeletal_formula": "\\ce{Ar}",
+            "katex_molecular_formula": "\\ce{Ar}"
+        },
+        {
+            "iupac_name": "xenon",
+            "common_name": "xenon",
+            "local_name": "キセノン",
+            "skeletal_formula": "Xe",
+            "molecular_formula": "Xe",
+            "series_general_formula": "Noble gases: Group 18 monoatomic gases; heavier members can form compounds with F and O",
+            "functional_groups": [],
+            "notes": "Heavy noble gas; used in high-intensity lamps and anesthesia; forms stable fluorides such as XeF2 and XeF4 under special conditions.",
+            "smiles": "[Xe]",
+            "katex_skeletal_formula": "\\ce{Xe}",
+            "katex_molecular_formula": "\\ce{Xe}"
+        },
+        {
+            "iupac_name": "xenon difluoride",
+            "common_name": "xenon difluoride",
+            "local_name": "二フッ化キセノン",
+            "skeletal_formula": "XeF2",
+            "molecular_formula": "XeF2",
+            "series_general_formula": "Xenon fluorides: XeFn (n = 2, 4, 6)",
+            "functional_groups": [
+                {
+                    "name_en": "Xenon fluoride",
+                    "name_ja": "キセノンフッ化物",
+                    "pattern": "Xe–F"
+                }
+            ],
+            "notes": "Stable xenon fluoride; strong fluorinating and oxidizing agent; typical example showing that noble gases can form compounds.",
+            "smiles": "F[Xe]F",
+            "katex_skeletal_formula": "\\ce{XeF2}",
+            "katex_molecular_formula": "\\ce{XeF2}"
+        },
+        {
+            "iupac_name": "xenon tetrafluoride",
+            "common_name": "xenon tetrafluoride",
+            "local_name": "四フッ化キセノン",
+            "skeletal_formula": "XeF4",
+            "molecular_formula": "XeF4",
+            "series_general_formula": "Xenon fluorides: XeFn (n = 2, 4, 6)",
+            "functional_groups": [
+                {
+                    "name_en": "Xenon fluoride",
+                    "name_ja": "キセノンフッ化物",
+                    "pattern": "Xe–F"
+                }
+            ],
+            "notes": "First binary noble-gas compound discovered; colorless crystalline solid with square-planar geometry; strong fluorinating and oxidizing agent.",
+            "smiles": "F[Xe](F)(F)F",
+            "katex_skeletal_formula": "\\ce{XeF4}",
+            "katex_molecular_formula": "\\ce{XeF4}"
+        },
+        {
+            "iupac_name": "dinitrogen",
+            "common_name": "nitrogen",
+            "local_name": "窒素",
+            "skeletal_formula": "N2",
+            "molecular_formula": "N2",
+            "series_general_formula": "Diatomic nonmetal molecules: X2 (X = H, N, O, F, Cl, Br, I)",
+            "functional_groups": [],
+            "notes": "Colorless, odorless diatomic gas; makes up about 78% of air; very inert due to strong triple bond.",
+            "smiles": "N#N",
+            "katex_skeletal_formula": "\\ce{N2}",
+            "katex_molecular_formula": "\\ce{N2}"
+        },
+        {
+            "iupac_name": "azane",
+            "common_name": "ammonia",
+            "local_name": "アンモニア",
+            "skeletal_formula": "NH3",
+            "molecular_formula": "NH3",
+            "series_general_formula": "Hydrogen chalcogenides and pnictides: EH3 (E = N, P, As)",
+            "functional_groups": [
+                {
+                    "name_en": "Ammonia",
+                    "name_ja": "アンモニア分子",
+                    "pattern": "NH3"
+                }
+            ],
+            "notes": "Colorless gas with sharp smell; very soluble in water and forms weakly basic solution; important fertilizer raw material (Haber process).",
+            "smiles": "N",
+            "katex_skeletal_formula": "\\ce{NH3}",
+            "katex_molecular_formula": "\\ce{NH3}"
+        },
+        {
+            "iupac_name": "nitrogen monoxide",
+            "common_name": "nitric oxide",
+            "local_name": "一酸化窒素",
+            "skeletal_formula": "NO",
+            "molecular_formula": "NO",
+            "series_general_formula": "Oxides of nitrogen: NO, NO2, N2O, N2O3, N2O5",
+            "functional_groups": [
+                {
+                    "name_en": "Nitrogen oxide",
+                    "name_ja": "窒素酸化物",
+                    "pattern": "NOx"
+                }
+            ],
+            "notes": "Colorless gas; sparingly soluble in water; easily oxidized in air to brown nitrogen dioxide.",
+            "smiles": "[N]=O",
+            "katex_skeletal_formula": "\\ce{NO}",
+            "katex_molecular_formula": "\\ce{NO}"
+        },
+        {
+            "iupac_name": "nitrogen dioxide",
+            "common_name": "nitrogen dioxide",
+            "local_name": "二酸化窒素",
+            "skeletal_formula": "NO2",
+            "molecular_formula": "NO2",
+            "series_general_formula": "Oxides of nitrogen: NO, NO2, N2O, N2O3, N2O5",
+            "functional_groups": [
+                {
+                    "name_en": "Nitrogen oxide",
+                    "name_ja": "窒素酸化物",
+                    "pattern": "NOx"
+                }
+            ],
+            "notes": "Brown gas with pungent smell; toxic and strongly oxidizing; dissolves in water to form a mixture of nitric and nitrous acids.",
+            "smiles": "O=N=O",
+            "katex_skeletal_formula": "\\ce{NO2}",
+            "katex_molecular_formula": "\\ce{NO2}"
+        },
+        {
+            "iupac_name": "dinitrogen monoxide",
+            "common_name": "nitrous oxide",
+            "local_name": "一酸化二窒素（亜酸化窒素）",
+            "skeletal_formula": "N2O",
+            "molecular_formula": "N2O",
+            "series_general_formula": "Oxides of nitrogen: NO, NO2, N2O, N2O3, N2O5",
+            "functional_groups": [
+                {
+                    "name_en": "Nitrogen oxide",
+                    "name_ja": "窒素酸化物",
+                    "pattern": "NOx"
+                }
+            ],
+            "notes": "Colorless gas with slightly sweet odor; used as anesthetic (laughing gas); mild oxidizing agent.",
+            "smiles": "N#N[O]",
+            "katex_skeletal_formula": "\\ce{N2O}",
+            "katex_molecular_formula": "\\ce{N2O}"
+        },
+        {
+            "iupac_name": "nitric acid",
+            "common_name": "nitric acid",
+            "local_name": "硝酸",
+            "skeletal_formula": "HNO3",
+            "molecular_formula": "HNO3",
+            "series_general_formula": "Oxoacids of nitrogen: HNO2, HNO3",
+            "functional_groups": [
+                {
+                    "name_en": "Nitrate",
+                    "name_ja": "硝酸イオン",
+                    "pattern": "NO3^-"
+                }
+            ],
+            "notes": "Strong acid and powerful oxidizing agent; reacts with many metals to form nitrogen oxides; used for fertilizers and explosives.",
+            "smiles": "O=[N+](O)[O-]",
+            "katex_skeletal_formula": "\\ce{HNO3}",
+            "katex_molecular_formula": "\\ce{HNO3}"
+        },
+        {
+            "iupac_name": "tetraphosphorus",
+            "common_name": "white phosphorus",
+            "local_name": "白リン",
+            "skeletal_formula": "P4 (tetrahedral molecule)",
+            "molecular_formula": "P4",
+            "series_general_formula": "Allotropes of phosphorus: white (P4), red, black",
+            "functional_groups": [],
+            "notes": "Waxy, white-yellow solid that glows in the dark; very reactive and ignites in air; stored under water.",
+            "smiles": "P1P(P)P1",
+            "katex_skeletal_formula": "\\ce{P4}",
+            "katex_molecular_formula": "\\ce{P4}"
+        },
+        {
+            "iupac_name": "phosphoric acid",
+            "common_name": "phosphoric acid",
+            "local_name": "リン酸",
+            "skeletal_formula": "H3PO4",
+            "molecular_formula": "H3PO4",
+            "series_general_formula": "Oxoacids of phosphorus: H3PO4, H3PO3, H3PO2",
+            "functional_groups": [
+                {
+                    "name_en": "Phosphate",
+                    "name_ja": "リン酸イオン",
+                    "pattern": "PO4^{3-}"
+                }
+            ],
+            "notes": "Triprotic acid; weaker than sulfuric or nitric acid; important in fertilizers and biological energy transfer (ATP).",
+            "smiles": "OP(=O)(O)O",
+            "katex_skeletal_formula": "\\ce{H3PO4}",
+            "katex_molecular_formula": "\\ce{H3PO4}"
+        },
+        {
+            "iupac_name": "tetraphosphorus decoxide",
+            "common_name": "phosphorus(V) oxide",
+            "local_name": "五酸化二リン（四リン十酸化物）",
+            "skeletal_formula": "P4O10",
+            "molecular_formula": "P4O10",
+            "series_general_formula": "Oxides of phosphorus: P4O6, P4O10 (often written as P2O3, P2O5)",
+            "functional_groups": [
+                {
+                    "name_en": "Oxide",
+                    "name_ja": "酸性酸化物",
+                    "pattern": "E2O5"
+                }
+            ],
+            "notes": "Acidic oxide of phosphorus; strong dehydrating agent; reacts with water to give phosphoric acid; textbook example of acidic oxide.",
+            "smiles": "O=P(OP(=O)(OP(=O)(OP(=O)(O)O)O)O)(O)O",
+            "katex_skeletal_formula": "\\ce{P4O10}",
+            "katex_molecular_formula": "\\ce{P4O10}"
+        },
+        {
+            "iupac_name": "dioxygen",
+            "common_name": "oxygen",
+            "local_name": "酸素",
+            "skeletal_formula": "O2",
+            "molecular_formula": "O2",
+            "series_general_formula": "Diatomic nonmetal molecules: X2 (X = H, N, O, F, Cl, Br, I)",
+            "functional_groups": [],
+            "notes": "Colorless, odorless diatomic gas; supports combustion and respiration; makes up about 21% of air by volume.",
+            "smiles": "O=O",
+            "katex_skeletal_formula": "\\ce{O2}",
+            "katex_molecular_formula": "\\ce{O2}"
+        },
+        {
+            "iupac_name": "trioxygen",
+            "common_name": "ozone",
+            "local_name": "オゾン",
+            "skeletal_formula": "O3",
+            "molecular_formula": "O3",
+            "series_general_formula": "Allotropes of oxygen: O2 and O3",
+            "functional_groups": [],
+            "notes": "Pale blue gas with sharp smell; strong oxidizing agent; forms ozone layer that absorbs ultraviolet radiation.",
+            "smiles": "O1OO1",
+            "katex_skeletal_formula": "\\ce{O3}",
+            "katex_molecular_formula": "\\ce{O3}"
+        },
+        {
+            "iupac_name": "dihydrogen dioxide",
+            "common_name": "hydrogen peroxide",
+            "local_name": "過酸化水素",
+            "skeletal_formula": "H-O-O-H",
+            "molecular_formula": "H2O2",
+            "series_general_formula": "Peroxides: X2O2 with peroxide ion O2^{2-}",
+            "functional_groups": [
+                {
+                    "name_en": "Peroxide",
+                    "name_ja": "過酸化物イオン",
+                    "pattern": "O2^{2-}"
+                }
+            ],
+            "notes": "Colorless liquid; strong oxidizing agent; used as bleach and disinfectant; decomposes to water and oxygen, catalyzed by MnO2 and enzymes.",
+            "smiles": "OO",
+            "katex_skeletal_formula": "\\ce{H-O-O-H}",
+            "katex_molecular_formula": "\\ce{H2O2}"
+        },
+        {
+            "iupac_name": "sulfur",
+            "common_name": "sulfur",
+            "local_name": "硫黄",
+            "skeletal_formula": "S8 (ring structure)",
+            "molecular_formula": "S8",
+            "series_general_formula": "Allotropes of sulfur: rhombic, monoclinic, and plastic sulfur; molecular form S8",
+            "functional_groups": [],
+            "notes": "Yellow solid with several allotropes; burns in air with blue flame to form sulfur dioxide; important nonmetal element.",
+            "smiles": "S1SSSSSSS1",
+            "katex_skeletal_formula": "\\ce{S8}",
+            "katex_molecular_formula": "\\ce{S8}"
+        },
+        {
+            "iupac_name": "hydrogen sulfide",
+            "common_name": "hydrogen sulfide",
+            "local_name": "硫化水素",
+            "skeletal_formula": "H2S",
+            "molecular_formula": "H2S",
+            "series_general_formula": "Hydrogen chalcogenides: H2E (E = O, S, Se)",
+            "functional_groups": [
+                {
+                    "name_en": "Sulfide",
+                    "name_ja": "硫化物イオン",
+                    "pattern": "S^{2-}"
+                }
+            ],
+            "notes": "Colorless gas with rotten-egg odor; weak acid and strong reducing agent; highly toxic; prepared from metal sulfides and acids.",
+            "smiles": "S",
+            "katex_skeletal_formula": "\\ce{H2S}",
+            "katex_molecular_formula": "\\ce{H2S}"
+        },
+        {
+            "iupac_name": "sulfur dioxide",
+            "common_name": "sulfur dioxide",
+            "local_name": "二酸化硫黄",
+            "skeletal_formula": "SO2",
+            "molecular_formula": "SO2",
+            "series_general_formula": "Acidic oxides of nonmetals: EO2, EO3 (E = S, C, N, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Oxide",
+                    "name_ja": "酸化物",
+                    "pattern": "EO2"
+                }
+            ],
+            "notes": "Colorless gas with pungent smell; weakly acidic and acts as both oxidizing and reducing agent; used as preservative and in sulfuric acid production.",
+            "smiles": "O=S=O",
+            "katex_skeletal_formula": "\\ce{SO2}",
+            "katex_molecular_formula": "\\ce{SO2}"
+        },
+        {
+            "iupac_name": "sulfur trioxide",
+            "common_name": "sulfur trioxide",
+            "local_name": "三酸化硫黄",
+            "skeletal_formula": "SO3",
+            "molecular_formula": "SO3",
+            "series_general_formula": "Acidic oxides of nonmetals: EO3 (E = S, N, P, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Oxide",
+                    "name_ja": "酸性酸化物",
+                    "pattern": "EO3"
+                }
+            ],
+            "notes": "Acidic oxide of sulfur; reacts vigorously with water to form sulfuric acid; industrial intermediate in the contact process.",
+            "smiles": "O=S(=O)=O",
+            "katex_skeletal_formula": "\\ce{SO3}",
+            "katex_molecular_formula": "\\ce{SO3}"
+        },
+        {
+            "iupac_name": "sulfuric acid",
+            "common_name": "sulfuric acid",
+            "local_name": "硫酸",
+            "skeletal_formula": "H2SO4",
+            "molecular_formula": "H2SO4",
+            "series_general_formula": "Oxoacids of sulfur: H2SO4, H2SO3",
+            "functional_groups": [
+                {
+                    "name_en": "Sulfate",
+                    "name_ja": "硫酸イオン",
+                    "pattern": "SO4^{2-}"
+                }
+            ],
+            "notes": "Strong diprotic acid; concentrated sulfuric acid is dehydrating and oxidizing; one of the most important industrial chemicals.",
+            "smiles": "OS(=O)(=O)O",
+            "katex_skeletal_formula": "\\ce{H2SO4}",
+            "katex_molecular_formula": "\\ce{H2SO4}"
+        }
+    ]
+}

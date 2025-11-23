@@ -30,7 +30,8 @@
                                     "file": "catalog/Organic/Aliphatic_compounds/Hydrocarbons/Alkynes/compounds.json",
                                     "children": []
                                 }
-                            ]
+                            ],
+                            "file": "catalog/Organic/Aliphatic_compounds/Hydrocarbons/compounds.json"
                         },
                         {
                             "label": "Alcohols and ethers",
@@ -66,7 +67,8 @@
                                     "file": "catalog/Organic/Aliphatic_compounds/Alcohols_and_ethers/Ethers/compounds.json",
                                     "children": []
                                 }
-                            ]
+                            ],
+                            "file": "catalog/Organic/Aliphatic_compounds/Alcohols_and_ethers/compounds.json"
                         },
                         {
                             "label": "Carbonyl compounds (aldehydes and ketones)",
@@ -84,7 +86,8 @@
                                     "file": "catalog/Organic/Aliphatic_compounds/Carbonyl_compounds/Ketones/compounds.json",
                                     "children": []
                                 }
-                            ]
+                            ],
+                            "file": "catalog/Organic/Aliphatic_compounds/Carbonyl_compounds/compounds.json"
                         },
                         {
                             "label": "Carboxylic acids and esters",
@@ -102,7 +105,8 @@
                                     "file": "catalog/Organic/Aliphatic_compounds/Carboxylic_acids_and_esters/Esters/compounds.json",
                                     "children": []
                                 }
-                            ]
+                            ],
+                            "file": "catalog/Organic/Aliphatic_compounds/Carboxylic_acids_and_esters/compounds.json"
                         },
                         {
                             "label": "Amines, amides, and nitro compounds",
@@ -126,9 +130,11 @@
                                     "file": "catalog/Organic/Aliphatic_compounds/Amines_and_amides/Nitro_compounds/compounds.json",
                                     "children": []
                                 }
-                            ]
+                            ],
+                            "file": "catalog/Organic/Aliphatic_compounds/Amines_and_amides/compounds.json"
                         }
-                    ]
+                    ],
+                    "file": "catalog/Organic/Aliphatic_compounds/compounds.json"
                 },
                 {
                     "label": "Aromatic compounds",
@@ -158,7 +164,8 @@
                             "file": "catalog/Organic/Aromatic_compounds/Nitrogen_containing_aromatics/compounds.json",
                             "children": []
                         }
-                    ]
+                    ],
+                    "file": "catalog/Organic/Aromatic_compounds/compounds.json"
                 },
                 {
                     "label": "Polymers",
@@ -188,7 +195,8 @@
                             "file": "catalog/Organic/Polymers/Natural_polymers/compounds.json",
                             "children": []
                         }
-                    ]
+                    ],
+                    "file": "catalog/Organic/Polymers/compounds.json"
                 },
                 {
                     "label": "Biomolecules",
@@ -216,7 +224,8 @@
                                     "file": "catalog/Organic/Biomolecules/Carbohydrates/Polysaccharides/compounds.json",
                                     "children": []
                                 }
-                            ]
+                            ],
+                            "file": "catalog/Organic/Biomolecules/Carbohydrates/compounds.json"
                         },
                         {
                             "label": "Lipids and soaps",
@@ -234,7 +243,8 @@
                                     "file": "catalog/Organic/Biomolecules/Lipids_and_soaps/Soaps/compounds.json",
                                     "children": []
                                 }
-                            ]
+                            ],
+                            "file": "catalog/Organic/Biomolecules/Lipids_and_soaps/compounds.json"
                         },
                         {
                             "label": "Amino acids and proteins",
@@ -252,11 +262,14 @@
                                     "file": "catalog/Organic/Biomolecules/Amino_acids_and_proteins/Peptides_and_proteins/compounds.json",
                                     "children": []
                                 }
-                            ]
+                            ],
+                            "file": "catalog/Organic/Biomolecules/Amino_acids_and_proteins/compounds.json"
                         }
-                    ]
+                    ],
+                    "file": "catalog/Organic/Biomolecules/compounds.json"
                 }
-            ]
+            ],
+            "file": "catalog/Organic/compounds.json"
         },
         {
             "label": "Inorganic compounds",
@@ -302,7 +315,8 @@
                             "file": "catalog/Inorganic/Metals/Chromium_and_manganese/compounds.json",
                             "children": []
                         }
-                    ]
+                    ],
+                    "file": "catalog/Inorganic/Metals/compounds.json"
                 },
                 {
                     "label": "Nonmetals",
@@ -338,7 +352,8 @@
                             "file": "catalog/Inorganic/Nonmetals/Halogens/compounds.json",
                             "children": []
                         }
-                    ]
+                    ],
+                    "file": "catalog/Inorganic/Nonmetals/compounds.json"
                 },
                 {
                     "label": "Acids",
@@ -392,9 +407,11 @@
                             "file": "catalog/Inorganic/Salts/Other_salts/compounds.json",
                             "children": []
                         }
-                    ]
+                    ],
+                    "file": "catalog/Inorganic/Salts/compounds.json"
                 }
-            ]
+            ],
+            "file": "catalog/Inorganic/compounds.json"
         },
         {
             "label": "Reference (formulas and functional groups)",

@@ -1,0 +1,713 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "sodium carbonate",
+            "common_name": "sodium carbonate (soda ash)",
+            "local_name": "炭酸ナトリウム",
+            "skeletal_formula": "Na2CO3",
+            "molecular_formula": "Na2CO3",
+            "series_general_formula": "Carbonates: M2CO3 (M = alkali metal), MCO3 (M = alkaline-earth metal)",
+            "functional_groups": [
+                {
+                    "name_en": "Carbonate",
+                    "name_ja": "炭酸イオン",
+                    "pattern": "CO3^{2-}"
+                }
+            ],
+            "notes": "White crystalline solid; basic salt; highly soluble in water; used in glass manufacturing and as washing soda (decahydrate).",
+            "smiles": "[Na+].[Na+].[O-]C(=O)[O-]",
+            "katex_skeletal_formula": "\\ce{Na2CO3}",
+            "katex_molecular_formula": "\\ce{Na2CO3}"
+        },
+        {
+            "iupac_name": "sodium hydrogencarbonate",
+            "common_name": "sodium bicarbonate (baking soda)",
+            "local_name": "炭酸水素ナトリウム（重曹）",
+            "skeletal_formula": "NaHCO3",
+            "molecular_formula": "NaHCO3",
+            "series_general_formula": "Hydrogencarbonates: MHCO3 (M = Na, K, NH4)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydrogencarbonate",
+                    "name_ja": "炭酸水素イオン",
+                    "pattern": "HCO3^-"
+                }
+            ],
+            "notes": "White crystalline powder; weakly basic; used in baking powders and fire extinguishers; decomposes on heating to Na2CO3, CO2, and H2O.",
+            "smiles": "[Na+].[O-]C(=O)O",
+            "katex_skeletal_formula": "\\ce{NaHCO3}",
+            "katex_molecular_formula": "\\ce{NaHCO3}"
+        },
+        {
+            "iupac_name": "potassium carbonate",
+            "common_name": "potassium carbonate",
+            "local_name": "炭酸カリウム",
+            "skeletal_formula": "K2CO3",
+            "molecular_formula": "K2CO3",
+            "series_general_formula": "Alkali metal carbonates: M2CO3 (M = Na, K, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Carbonate",
+                    "name_ja": "炭酸イオン",
+                    "pattern": "CO3^{2-}"
+                }
+            ],
+            "notes": "White solid; strongly basic; highly soluble in water; used in glass making, detergents, and as desiccant for organic solvents.",
+            "smiles": "[K+].[K+].[O-]C(=O)[O-]",
+            "katex_skeletal_formula": "\\ce{K2CO3}",
+            "katex_molecular_formula": "\\ce{K2CO3}"
+        },
+        {
+            "iupac_name": "calcium carbonate",
+            "common_name": "calcium carbonate",
+            "local_name": "炭酸カルシウム",
+            "skeletal_formula": "CaCO3",
+            "molecular_formula": "CaCO3",
+            "series_general_formula": "Alkaline-earth carbonates: MCO3 (M = Mg, Ca, Sr, Ba)",
+            "functional_groups": [
+                {
+                    "name_en": "Carbonate",
+                    "name_ja": "炭酸イオン",
+                    "pattern": "CO3^{2-}"
+                }
+            ],
+            "notes": "White solid; poorly soluble; main component of limestone, marble, shells; decomposes by heating to CaO and CO2.",
+            "smiles": "[Ca+2].[O-]C(=O)[O-]",
+            "katex_skeletal_formula": "\\ce{CaCO3}",
+            "katex_molecular_formula": "\\ce{CaCO3}"
+        },
+        {
+            "iupac_name": "magnesium carbonate",
+            "common_name": "magnesium carbonate",
+            "local_name": "炭酸マグネシウム",
+            "skeletal_formula": "MgCO3",
+            "molecular_formula": "MgCO3",
+            "series_general_formula": "Alkaline-earth carbonates: MCO3 (M = Mg, Ca, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Carbonate",
+                    "name_ja": "炭酸イオン",
+                    "pattern": "CO3^{2-}"
+                }
+            ],
+            "notes": "White solid; poorly soluble; used as drying agent and in gymnastics and climbing chalk.",
+            "smiles": "[Mg+2].[O-]C(=O)[O-]",
+            "katex_skeletal_formula": "\\ce{MgCO3}",
+            "katex_molecular_formula": "\\ce{MgCO3}"
+        },
+        {
+            "iupac_name": "diammonium carbonate",
+            "common_name": "ammonium carbonate",
+            "local_name": "炭酸アンモニウム",
+            "skeletal_formula": "(NH4)2CO3",
+            "molecular_formula": "(NH4)2CO3",
+            "series_general_formula": "Ammonium carbonates: (NH4)2CO3, NH4HCO3",
+            "functional_groups": [
+                {
+                    "name_en": "Ammonium",
+                    "name_ja": "アンモニウムイオン",
+                    "pattern": "NH4^+"
+                },
+                {
+                    "name_en": "Carbonate",
+                    "name_ja": "炭酸イオン",
+                    "pattern": "CO3^{2-}"
+                }
+            ],
+            "notes": "White solid; decomposes easily to NH3, CO2 and H2O; used historically as smelling salts and in baking.",
+            "smiles": "[NH4+].[NH4+].[O-]C(=O)[O-]",
+            "katex_skeletal_formula": "\\ce{(NH4)2CO3}",
+            "katex_molecular_formula": "\\ce{(NH4)2CO3}"
+        },
+        {
+            "iupac_name": "sodium chloride",
+            "common_name": "sodium chloride (table salt)",
+            "local_name": "塩化ナトリウム（食塩）",
+            "skeletal_formula": "NaCl",
+            "molecular_formula": "NaCl",
+            "series_general_formula": "Alkali metal halides: MX (M = alkali metal; X = F, Cl, Br, I)",
+            "functional_groups": [
+                {
+                    "name_en": "Chloride",
+                    "name_ja": "塩化物イオン",
+                    "pattern": "Cl^-"
+                }
+            ],
+            "notes": "Colorless ionic crystals; highly soluble; typical neutral salt; produced by evaporating seawater and mining rock salt.",
+            "smiles": "[Na+].[Cl-]",
+            "katex_skeletal_formula": "\\ce{NaCl}",
+            "katex_molecular_formula": "\\ce{NaCl}"
+        },
+        {
+            "iupac_name": "potassium chloride",
+            "common_name": "potassium chloride",
+            "local_name": "塩化カリウム",
+            "skeletal_formula": "KCl",
+            "molecular_formula": "KCl",
+            "series_general_formula": "Alkali metal halides: MX (M = alkali metal; X = Cl, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Chloride",
+                    "name_ja": "塩化物イオン",
+                    "pattern": "Cl^-"
+                }
+            ],
+            "notes": "Colorless crystals; highly soluble; used as fertilizer and in KCl–NaCl eutectic mixtures.",
+            "smiles": "[K+].[Cl-]",
+            "katex_skeletal_formula": "\\ce{KCl}",
+            "katex_molecular_formula": "\\ce{KCl}"
+        },
+        {
+            "iupac_name": "calcium chloride",
+            "common_name": "calcium chloride",
+            "local_name": "塩化カルシウム",
+            "skeletal_formula": "CaCl2",
+            "molecular_formula": "CaCl2",
+            "series_general_formula": "Alkaline-earth halides: MX2 (M = Mg, Ca, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Chloride",
+                    "name_ja": "塩化物イオン",
+                    "pattern": "Cl^-"
+                }
+            ],
+            "notes": "White, very hygroscopic crystals; used as drying agent and de-icing agent; highly soluble in water.",
+            "smiles": "[Ca+2].[Cl-].[Cl-]",
+            "katex_skeletal_formula": "\\ce{CaCl2}",
+            "katex_molecular_formula": "\\ce{CaCl2}"
+        },
+        {
+            "iupac_name": "copper(II) chloride",
+            "common_name": "copper(II) chloride",
+            "local_name": "塩化銅(II)",
+            "skeletal_formula": "CuCl2",
+            "molecular_formula": "CuCl2",
+            "series_general_formula": "Transition metal chlorides: MCl2 (M = Cu, Fe, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Chloride",
+                    "name_ja": "塩化物イオン",
+                    "pattern": "Cl^-"
+                }
+            ],
+            "notes": "Green crystals (dihydrate) or brown powder; soluble in water giving blue-green solutions; used in qualitative analysis.",
+            "smiles": "[Cu+2].[Cl-].[Cl-]",
+            "katex_skeletal_formula": "\\ce{CuCl2}",
+            "katex_molecular_formula": "\\ce{CuCl2}"
+        },
+        {
+            "iupac_name": "iron(III) chloride",
+            "common_name": "iron(III) chloride",
+            "local_name": "塩化鉄(III)",
+            "skeletal_formula": "FeCl3",
+            "molecular_formula": "FeCl3",
+            "series_general_formula": "Transition metal chlorides: MCl3 (M = Fe, Al, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Chloride",
+                    "name_ja": "塩化物イオン",
+                    "pattern": "Cl^-"
+                }
+            ],
+            "notes": "Brown crystals; hydrolyzes in water to give acidic solution; used as coagulant in water treatment and in PCB etching.",
+            "smiles": "[Fe+3].[Cl-].[Cl-].[Cl-]",
+            "katex_skeletal_formula": "\\ce{FeCl3}",
+            "katex_molecular_formula": "\\ce{FeCl3}"
+        },
+        {
+            "iupac_name": "silver chloride",
+            "common_name": "silver chloride",
+            "local_name": "塩化銀",
+            "skeletal_formula": "AgCl",
+            "molecular_formula": "AgCl",
+            "series_general_formula": "Sparingly soluble halides: AgX, PbX2 (X = Cl, Br, I)",
+            "functional_groups": [
+                {
+                    "name_en": "Chloride",
+                    "name_ja": "塩化物イオン",
+                    "pattern": "Cl^-"
+                }
+            ],
+            "notes": "White curdy precipitate; almost insoluble in water; forms in qualitative analysis test for Cl^-; dissolves in excess NH3 as [Ag(NH3)2]^+.",
+            "smiles": "[Ag+].[Cl-]",
+            "katex_skeletal_formula": "\\ce{AgCl}",
+            "katex_molecular_formula": "\\ce{AgCl}"
+        },
+        {
+            "iupac_name": "lead(II) chloride",
+            "common_name": "lead(II) chloride",
+            "local_name": "塩化鉛(II)",
+            "skeletal_formula": "PbCl2",
+            "molecular_formula": "PbCl2",
+            "series_general_formula": "Sparingly soluble halides: PbX2 (X = Cl, Br, I)",
+            "functional_groups": [
+                {
+                    "name_en": "Chloride",
+                    "name_ja": "塩化物イオン",
+                    "pattern": "Cl^-"
+                }
+            ],
+            "notes": "White crystalline solid; poorly soluble in cold water but more soluble in hot water; typical example in solubility rules.",
+            "smiles": "[Pb+2].[Cl-].[Cl-]",
+            "katex_skeletal_formula": "\\ce{PbCl2}",
+            "katex_molecular_formula": "\\ce{PbCl2}"
+        },
+        {
+            "iupac_name": "sodium nitrate",
+            "common_name": "sodium nitrate",
+            "local_name": "硝酸ナトリウム",
+            "skeletal_formula": "NaNO3",
+            "molecular_formula": "NaNO3",
+            "series_general_formula": "Nitrates: MNO3 (M = metal, NH4)",
+            "functional_groups": [
+                {
+                    "name_en": "Nitrate",
+                    "name_ja": "硝酸イオン",
+                    "pattern": "NO3^-"
+                }
+            ],
+            "notes": "Colorless crystals; highly soluble; used in fertilizers and explosives; example of \"all nitrates are soluble\" rule.",
+            "smiles": "[Na+].[O-][N+](=O)O",
+            "katex_skeletal_formula": "\\ce{NaNO3}",
+            "katex_molecular_formula": "\\ce{NaNO3}"
+        },
+        {
+            "iupac_name": "potassium nitrate",
+            "common_name": "potassium nitrate (saltpeter)",
+            "local_name": "硝酸カリウム",
+            "skeletal_formula": "KNO3",
+            "molecular_formula": "KNO3",
+            "series_general_formula": "Nitrates: MNO3 (M = metal, NH4)",
+            "functional_groups": [
+                {
+                    "name_en": "Nitrate",
+                    "name_ja": "硝酸イオン",
+                    "pattern": "NO3^-"
+                }
+            ],
+            "notes": "Colorless crystalline solid; strongly oxidizing; used in gunpowder and fertilizers; classic nitrate example.",
+            "smiles": "[K+].[O-][N+](=O)O",
+            "katex_skeletal_formula": "\\ce{KNO3}",
+            "katex_molecular_formula": "\\ce{KNO3}"
+        },
+        {
+            "iupac_name": "ammonium nitrate",
+            "common_name": "ammonium nitrate",
+            "local_name": "硝酸アンモニウム",
+            "skeletal_formula": "NH4NO3",
+            "molecular_formula": "NH4NO3",
+            "series_general_formula": "Ammonium nitrates: NH4NO3",
+            "functional_groups": [
+                {
+                    "name_en": "Ammonium",
+                    "name_ja": "アンモニウムイオン",
+                    "pattern": "NH4^+"
+                },
+                {
+                    "name_en": "Nitrate",
+                    "name_ja": "硝酸イオン",
+                    "pattern": "NO3^-"
+                }
+            ],
+            "notes": "Highly soluble solid; important nitrogen fertilizer and component of some explosives; typical salt combining NH4^+ and NO3^-.",
+            "smiles": "[NH4+].[O-][N+](=O)O",
+            "katex_skeletal_formula": "\\ce{NH4NO3}",
+            "katex_molecular_formula": "\\ce{NH4NO3}"
+        },
+        {
+            "iupac_name": "silver nitrate",
+            "common_name": "silver nitrate",
+            "local_name": "硝酸銀",
+            "skeletal_formula": "AgNO3",
+            "molecular_formula": "AgNO3",
+            "series_general_formula": "Nitrates: MNO3 (M = Ag, Cu, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Nitrate",
+                    "name_ja": "硝酸イオン",
+                    "pattern": "NO3^-"
+                }
+            ],
+            "notes": "Colorless crystals; highly soluble; used in analytical chemistry to precipitate halides (AgCl, AgBr, AgI) and as disinfectant.",
+            "smiles": "[Ag+].[O-][N+](=O)O",
+            "katex_skeletal_formula": "\\ce{AgNO3}",
+            "katex_molecular_formula": "\\ce{AgNO3}"
+        },
+        {
+            "iupac_name": "copper(II) nitrate",
+            "common_name": "copper(II) nitrate",
+            "local_name": "硝酸銅(II)",
+            "skeletal_formula": "Cu(NO3)2",
+            "molecular_formula": "Cu(NO3)2",
+            "series_general_formula": "Metal nitrates: M(NO3)n",
+            "functional_groups": [
+                {
+                    "name_en": "Nitrate",
+                    "name_ja": "硝酸イオン",
+                    "pattern": "NO3^-"
+                }
+            ],
+            "notes": "Blue crystals (hydrates); typical colored nitrate; used in preparation of copper compounds and as oxidizing agent.",
+            "smiles": "[Cu+2].[O-][N+](=O)O.[O-][N+](=O)O",
+            "katex_skeletal_formula": "\\ce{Cu(NO3)2}",
+            "katex_molecular_formula": "\\ce{Cu(NO3)2}"
+        },
+        {
+            "iupac_name": "sodium hydrogensulfate",
+            "common_name": "sodium bisulfate (sodium hydrogen sulfate)",
+            "local_name": "硫酸水素ナトリウム",
+            "skeletal_formula": "NaHSO4",
+            "molecular_formula": "NaHSO4",
+            "series_general_formula": "Acid sulfates: MHSO4 (M = Na, K)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydrogensulfate",
+                    "name_ja": "硫酸水素イオン",
+                    "pattern": "HSO4^-"
+                }
+            ],
+            "notes": "Acid salt of sulfuric acid; forms acidic aqueous solution; typical example of acid salt in neutralization problems.",
+            "smiles": "[Na+].[O-]S(=O)(=O)O",
+            "katex_skeletal_formula": "\\ce{NaHSO4}",
+            "katex_molecular_formula": "\\ce{NaHSO4}"
+        },
+        {
+            "iupac_name": "sodium hypochlorite",
+            "common_name": "sodium hypochlorite",
+            "local_name": "次亜塩素酸ナトリウム",
+            "skeletal_formula": "NaClO",
+            "molecular_formula": "NaClO",
+            "series_general_formula": "Hypochlorites: MClO (M = Na, Ca, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Hypochlorite",
+                    "name_ja": "次亜塩素酸イオン",
+                    "pattern": "ClO^-"
+                }
+            ],
+            "notes": "Active component of bleach; strong oxidizing and disinfecting agent; produced by reacting Cl2 with cold dilute NaOH.",
+            "smiles": "[Na+].[O-]Cl",
+            "katex_skeletal_formula": "\\ce{NaClO}",
+            "katex_molecular_formula": "\\ce{NaClO}"
+        },
+        {
+            "iupac_name": "sodium nitrite",
+            "common_name": "sodium nitrite",
+            "local_name": "亜硝酸ナトリウム",
+            "skeletal_formula": "NaNO2",
+            "molecular_formula": "NaNO2",
+            "series_general_formula": "Nitrites: MNO2 (M = Na, K, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Nitrite",
+                    "name_ja": "亜硝酸イオン",
+                    "pattern": "NO2^-"
+                }
+            ],
+            "notes": "White to pale yellow solid; used in food preservation and as intermediate in diazotization reactions; contrasts with nitrates NO3^-.",
+            "smiles": "[Na+].[O-]N=O",
+            "katex_skeletal_formula": "\\ce{NaNO2}",
+            "katex_molecular_formula": "\\ce{NaNO2}"
+        },
+        {
+            "iupac_name": "sodium sulfide",
+            "common_name": "sodium sulfide",
+            "local_name": "硫化ナトリウム",
+            "skeletal_formula": "Na2S",
+            "molecular_formula": "Na2S",
+            "series_general_formula": "Metal sulfides: M2S (M = alkali metal), MS (M = many metals)",
+            "functional_groups": [
+                {
+                    "name_en": "Sulfide",
+                    "name_ja": "硫化物イオン",
+                    "pattern": "S^{2-}"
+                }
+            ],
+            "notes": "Colorless to yellow solid; strongly basic and reducing; used in qualitative inorganic chemistry for sulfide precipitation.",
+            "smiles": "[Na+].[Na+].[S-2]",
+            "katex_skeletal_formula": "\\ce{Na2S}",
+            "katex_molecular_formula": "\\ce{Na2S}"
+        },
+        {
+            "iupac_name": "ammonium chloride",
+            "common_name": "ammonium chloride",
+            "local_name": "塩化アンモニウム",
+            "skeletal_formula": "NH4Cl",
+            "molecular_formula": "NH4Cl",
+            "series_general_formula": "Ammonium salts: NH4X (X = Cl, NO3, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Ammonium",
+                    "name_ja": "アンモニウムイオン",
+                    "pattern": "NH4^+"
+                },
+                {
+                    "name_en": "Chloride",
+                    "name_ja": "塩化物イオン",
+                    "pattern": "Cl^-"
+                }
+            ],
+            "notes": "Colorless crystals; solution is weakly acidic due to NH4^+ hydrolysis; used in dry cells and as fertilizer.",
+            "smiles": "[NH4+].[Cl-]",
+            "katex_skeletal_formula": "\\ce{NH4Cl}",
+            "katex_molecular_formula": "\\ce{NH4Cl}"
+        },
+        {
+            "iupac_name": "potassium aluminium sulfate dodecahydrate",
+            "common_name": "potassium alum",
+            "local_name": "ミョウバン（硫酸カリウムアルミニウム十二水和物）",
+            "skeletal_formula": "KAl(SO4)2·12H2O",
+            "molecular_formula": "KAl(SO4)2·12H2O",
+            "series_general_formula": "Alums (double sulfates): MAl(SO4)2·12H2O (M = K, NH4, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Sulfate",
+                    "name_ja": "硫酸イオン",
+                    "pattern": "SO4^{2-}"
+                }
+            ],
+            "notes": "Colorless crystals; double salt of K+, Al3+ and SO4^{2-}; used in water purification, mordant dyeing, and as common \"alum\" in daily life.",
+            "smiles": "[K+].[Al+3].[O-]S(=O)(=O)[O-].[O-]S(=O)(=O)[O-].O.O.O.O.O.O.O.O.O.O.O.O",
+            "katex_skeletal_formula": "\\ce{KAl(SO4)2\\cdot 12H2O}",
+            "katex_molecular_formula": "\\ce{KAl(SO4)2\\cdot 12H2O}"
+        },
+        {
+            "iupac_name": "sodium thiosulfate pentahydrate",
+            "common_name": "sodium thiosulfate (hypo)",
+            "local_name": "チオ硫酸ナトリウム五水和物（ハイポ）",
+            "skeletal_formula": "Na2S2O3·5H2O",
+            "molecular_formula": "Na2S2O3·5H2O",
+            "series_general_formula": "Thiosulfates: M2S2O3 (M = Na, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Thiosulfate",
+                    "name_ja": "チオ硫酸イオン",
+                    "pattern": "S2O3^{2-}"
+                }
+            ],
+            "notes": "Colorless crystals; used in photography as fixing agent and in iodine titrations; typical complex anion salt.",
+            "smiles": "[Na+].[Na+].[O-]S(=O)SS(=O)[O-].O.O.O.O.O",
+            "katex_skeletal_formula": "\\ce{Na2S2O3\\cdot 5H2O}",
+            "katex_molecular_formula": "\\ce{Na2S2O3\\cdot 5H2O}"
+        },
+        {
+            "iupac_name": "sodium dihydrogen phosphate",
+            "common_name": "sodium dihydrogen phosphate",
+            "local_name": "二水素リン酸ナトリウム",
+            "skeletal_formula": "NaH2PO4",
+            "molecular_formula": "NaH2PO4",
+            "series_general_formula": "Acid phosphates: MH2PO4 (M = Na, K, NH4)",
+            "functional_groups": [
+                {
+                    "name_en": "Dihydrogen phosphate",
+                    "name_ja": "二水素リン酸イオン",
+                    "pattern": "H2PO4^-"
+                }
+            ],
+            "notes": "Acid salt of phosphoric acid; used in buffer solutions; typical example of acid phosphate.",
+            "smiles": "[Na+].OP(=O)(O)O",
+            "katex_skeletal_formula": "\\ce{NaH2PO4}",
+            "katex_molecular_formula": "\\ce{NaH2PO4}"
+        },
+        {
+            "iupac_name": "disodium hydrogen phosphate",
+            "common_name": "disodium hydrogen phosphate",
+            "local_name": "水素リン酸ナトリウム",
+            "skeletal_formula": "Na2HPO4",
+            "molecular_formula": "Na2HPO4",
+            "series_general_formula": "Acid phosphates: M2HPO4 (M = Na, K)",
+            "functional_groups": [
+                {
+                    "name_en": "Hydrogen phosphate",
+                    "name_ja": "水素リン酸イオン",
+                    "pattern": "HPO4^{2-}"
+                }
+            ],
+            "notes": "Another acid salt of phosphoric acid; used together with NaH2PO4 to make buffer solutions.",
+            "smiles": "[Na+].[Na+].O=P(O)([O-])O",
+            "katex_skeletal_formula": "\\ce{Na2HPO4}",
+            "katex_molecular_formula": "\\ce{Na2HPO4}"
+        },
+        {
+            "iupac_name": "trisodium phosphate",
+            "common_name": "trisodium phosphate",
+            "local_name": "リン酸ナトリウム",
+            "skeletal_formula": "Na3PO4",
+            "molecular_formula": "Na3PO4",
+            "series_general_formula": "Normal phosphates: M3PO4 (M = alkali metal)",
+            "functional_groups": [
+                {
+                    "name_en": "Phosphate",
+                    "name_ja": "リン酸イオン",
+                    "pattern": "PO4^{3-}"
+                }
+            ],
+            "notes": "Strongly basic salt; used in detergents and water softening; typical normal phosphate.",
+            "smiles": "[Na+].[Na+].[Na+].[O-]P(=O)([O-])[O-]",
+            "katex_skeletal_formula": "\\ce{Na3PO4}",
+            "katex_molecular_formula": "\\ce{Na3PO4}"
+        },
+        {
+            "iupac_name": "tricalcium phosphate",
+            "common_name": "calcium phosphate",
+            "local_name": "リン酸カルシウム",
+            "skeletal_formula": "Ca3(PO4)2",
+            "molecular_formula": "Ca3(PO4)2",
+            "series_general_formula": "Insoluble phosphates: M3(PO4)2 (M = Ca, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Phosphate",
+                    "name_ja": "リン酸イオン",
+                    "pattern": "PO4^{3-}"
+                }
+            ],
+            "notes": "White, poorly soluble solid; main component of bones and apatite minerals; used in fertilizers.",
+            "smiles": "[Ca+2].[Ca+2].[Ca+2].[O-]P(=O)([O-])O.[O-]P(=O)([O-])O",
+            "katex_skeletal_formula": "\\ce{Ca3(PO4)2}",
+            "katex_molecular_formula": "\\ce{Ca3(PO4)2}"
+        },
+        {
+            "iupac_name": "ammonium dihydrogen phosphate",
+            "common_name": "ammonium dihydrogen phosphate",
+            "local_name": "二水素リン酸アンモニウム",
+            "skeletal_formula": "NH4H2PO4",
+            "molecular_formula": "NH4H2PO4",
+            "series_general_formula": "Ammonium acid phosphates: NH4H2PO4",
+            "functional_groups": [
+                {
+                    "name_en": "Ammonium",
+                    "name_ja": "アンモニウムイオン",
+                    "pattern": "NH4^+"
+                },
+                {
+                    "name_en": "Dihydrogen phosphate",
+                    "name_ja": "二水素リン酸イオン",
+                    "pattern": "H2PO4^-"
+                }
+            ],
+            "notes": "Soluble phosphate fertilizer; provides both nitrogen and phosphorus; typical ammonium phosphate salt.",
+            "smiles": "[NH4+].OP(=O)(O)O",
+            "katex_skeletal_formula": "\\ce{NH4H2PO4}",
+            "katex_molecular_formula": "\\ce{NH4H2PO4}"
+        },
+        {
+            "iupac_name": "sodium sulfate",
+            "common_name": "sodium sulfate",
+            "local_name": "硫酸ナトリウム",
+            "skeletal_formula": "Na2SO4",
+            "molecular_formula": "Na2SO4",
+            "series_general_formula": "Sulfates: M2SO4 (M = alkali metal), MSO4 (M = alkaline-earth, transition metal)",
+            "functional_groups": [
+                {
+                    "name_en": "Sulfate",
+                    "name_ja": "硫酸イオン",
+                    "pattern": "SO4^{2-}"
+                }
+            ],
+            "notes": "Colorless crystals; highly soluble in water; neutral salt used in labs (Glauber's salt is decahydrate).",
+            "smiles": "[Na+].[Na+].[O-]S(=O)(=O)[O-]",
+            "katex_skeletal_formula": "\\ce{Na2SO4}",
+            "katex_molecular_formula": "\\ce{Na2SO4}"
+        },
+        {
+            "iupac_name": "calcium sulfate",
+            "common_name": "calcium sulfate",
+            "local_name": "硫酸カルシウム",
+            "skeletal_formula": "CaSO4",
+            "molecular_formula": "CaSO4",
+            "series_general_formula": "Sulfates: MSO4 (M = Ca, Ba, etc.)",
+            "functional_groups": [
+                {
+                    "name_en": "Sulfate",
+                    "name_ja": "硫酸イオン",
+                    "pattern": "SO4^{2-}"
+                }
+            ],
+            "notes": "Slightly soluble white solid; occurs as gypsum (CaSO4·2H2O); used in plaster and as example of limited solubility of sulfates.",
+            "smiles": "[Ca+2].[O-]S(=O)(=O)[O-]",
+            "katex_skeletal_formula": "\\ce{CaSO4}",
+            "katex_molecular_formula": "\\ce{CaSO4}"
+        },
+        {
+            "iupac_name": "barium sulfate",
+            "common_name": "barium sulfate",
+            "local_name": "硫酸バリウム",
+            "skeletal_formula": "BaSO4",
+            "molecular_formula": "BaSO4",
+            "series_general_formula": "Insoluble sulfates: BaSO4, PbSO4, SrSO4",
+            "functional_groups": [
+                {
+                    "name_en": "Sulfate",
+                    "name_ja": "硫酸イオン",
+                    "pattern": "SO4^{2-}"
+                }
+            ],
+            "notes": "White solid; very insoluble; used as contrast agent in X-ray imaging and as classic example of sulfate precipitate.",
+            "smiles": "[Ba+2].[O-]S(=O)(=O)[O-]",
+            "katex_skeletal_formula": "\\ce{BaSO4}",
+            "katex_molecular_formula": "\\ce{BaSO4}"
+        },
+        {
+            "iupac_name": "copper(II) sulfate pentahydrate",
+            "common_name": "copper(II) sulfate pentahydrate",
+            "local_name": "硫酸銅(II)五水和物",
+            "skeletal_formula": "CuSO4·5H2O",
+            "molecular_formula": "CuSO4·5H2O",
+            "series_general_formula": "Hydrated metal sulfates: MSO4·nH2O",
+            "functional_groups": [
+                {
+                    "name_en": "Sulfate",
+                    "name_ja": "硫酸イオン",
+                    "pattern": "SO4^{2-}"
+                }
+            ],
+            "notes": "Blue crystals; typical colored salt; used in electroplating, agriculture (fungicide), and as teaching reagent.",
+            "smiles": "[Cu+2].[O-]S(=O)(=O)[O-].O.O.O.O.O",
+            "katex_skeletal_formula": "\\ce{CuSO4\\cdot 5H2O}",
+            "katex_molecular_formula": "\\ce{CuSO4\\cdot 5H2O}"
+        },
+        {
+            "iupac_name": "magnesium sulfate heptahydrate",
+            "common_name": "magnesium sulfate (Epsom salt)",
+            "local_name": "硫酸マグネシウム七水和物",
+            "skeletal_formula": "MgSO4·7H2O",
+            "molecular_formula": "MgSO4·7H2O",
+            "series_general_formula": "Hydrated metal sulfates: MSO4·nH2O",
+            "functional_groups": [
+                {
+                    "name_en": "Sulfate",
+                    "name_ja": "硫酸イオン",
+                    "pattern": "SO4^{2-}"
+                }
+            ],
+            "notes": "Colorless crystals; used in medicine and agriculture; typical example of hydrated sulfate.",
+            "smiles": "[Mg+2].[O-]S(=O)(=O)[O-].O.O.O.O.O.O.O",
+            "katex_skeletal_formula": "\\ce{MgSO4\\cdot 7H2O}",
+            "katex_molecular_formula": "\\ce{MgSO4\\cdot 7H2O}"
+        },
+        {
+            "iupac_name": "diammonium sulfate",
+            "common_name": "ammonium sulfate",
+            "local_name": "硫酸アンモニウム",
+            "skeletal_formula": "(NH4)2SO4",
+            "molecular_formula": "(NH4)2SO4",
+            "series_general_formula": "Ammonium sulfates: (NH4)2SO4",
+            "functional_groups": [
+                {
+                    "name_en": "Ammonium",
+                    "name_ja": "アンモニウムイオン",
+                    "pattern": "NH4^+"
+                },
+                {
+                    "name_en": "Sulfate",
+                    "name_ja": "硫酸イオン",
+                    "pattern": "SO4^{2-}"
+                }
+            ],
+            "notes": "Colorless crystals; widely used nitrogen fertilizer; typical salt containing both NH4^+ and SO4^{2-}.",
+            "smiles": "[NH4+].[NH4+].[O-]S(=O)(=O)[O-]",
+            "katex_skeletal_formula": "\\ce{(NH4)2SO4}",
+            "katex_molecular_formula": "\\ce{(NH4)2SO4}"
+        }
+    ]
+}

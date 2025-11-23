@@ -1,0 +1,194 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "methanoic acid",
+            "common_name": "formic acid",
+            "local_name": "メタン酸（ギ酸）",
+            "skeletal_formula": "H-COOH",
+            "molecular_formula": "CH2O2",
+            "series_general_formula": "Saturated monocarboxylic acids: CnH2n+1COOH (n>=0, n=0 gives HCOOH)",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                }
+            ],
+            "notes": "Simplest carboxylic acid; present in ant stings; stronger than acetic acid; can act both as a reducing agent and an acid.",
+            "smiles": "OC=O",
+            "katex_skeletal_formula": "\\ce{H-COOH}",
+            "katex_molecular_formula": "\\ce{CH2O2}"
+        },
+        {
+            "iupac_name": "ethanoic acid",
+            "common_name": "acetic acid",
+            "local_name": "エタン酸（酢酸）",
+            "skeletal_formula": "CH3-COOH",
+            "molecular_formula": "C2H4O2",
+            "series_general_formula": "Saturated monocarboxylic acids: CnH2n+1COOH (n>=0)",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                }
+            ],
+            "notes": "Main acid in vinegar; typical monobasic carboxylic acid; used to define many esterification examples such as ethyl ethanoate.",
+            "smiles": "CC(=O)O",
+            "katex_skeletal_formula": "\\ce{CH3-COOH}",
+            "katex_molecular_formula": "\\ce{C2H4O2}"
+        },
+        {
+            "iupac_name": "propanoic acid",
+            "common_name": "propionic acid",
+            "local_name": "プロパン酸（プロピオン酸）",
+            "skeletal_formula": "CH3-CH2-COOH",
+            "molecular_formula": "C3H6O2",
+            "series_general_formula": "Saturated monocarboxylic acids: CnH2n+1COOH (n>=0)",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                }
+            ],
+            "notes": "Third member of the saturated monocarboxylic acid series; used as preservative; standard example in homologous-series problems.",
+            "smiles": "CCC(=O)O",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-COOH}",
+            "katex_molecular_formula": "\\ce{C3H6O2}"
+        },
+        {
+            "iupac_name": "butanoic acid",
+            "common_name": "butyric acid",
+            "local_name": "ブタン酸（酪酸）",
+            "skeletal_formula": "CH3-CH2-CH2-COOH",
+            "molecular_formula": "C4H8O2",
+            "series_general_formula": "Saturated monocarboxylic acids: CnH2n+1COOH (n>=0)",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                }
+            ],
+            "notes": "Has strong rancid-butter odor; often used as example for characteristic smells of carboxylic acids and their esters.",
+            "smiles": "CCCC(=O)O",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH2-COOH}",
+            "katex_molecular_formula": "\\ce{C4H8O2}"
+        },
+        {
+            "iupac_name": "ethanedioic acid",
+            "common_name": "oxalic acid",
+            "local_name": "エタン二酸（シュウ酸）",
+            "skeletal_formula": "HOOC-COOH",
+            "molecular_formula": "C2H2O4",
+            "series_general_formula": "Saturated dicarboxylic acids: HOOC-(CH2)n-COOH (n>=0, n=0 gives oxalic acid)",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl (dicarboxylic)",
+                    "name_ja": "二価カルボキシ基",
+                    "pattern": "–COOH ×2"
+                }
+            ],
+            "notes": "Simplest dicarboxylic acid; found in rhubarb and spinach; typical example of dibasic carboxylic acid in high-school texts.",
+            "smiles": "OC(=O)C(=O)O",
+            "katex_skeletal_formula": "\\ce{HOOC-COOH}",
+            "katex_molecular_formula": "\\ce{C2H2O4}"
+        },
+        {
+            "iupac_name": "methyl methanoate",
+            "common_name": "methyl formate",
+            "local_name": "メチルメタン酸メチル（メチルギ酸メチル）",
+            "skeletal_formula": "H-COO-CH3",
+            "molecular_formula": "C2H4O2",
+            "series_general_formula": "Simple saturated esters: general molecular formula CnH2nO2, structure R-COOR'",
+            "functional_groups": [
+                {
+                    "name_en": "Ester linkage",
+                    "name_ja": "エステル結合",
+                    "pattern": "R–COO–R'"
+                }
+            ],
+            "notes": "Simplest aliphatic ester; used as solvent and flavoring; typical example in basic esterification reactions.",
+            "smiles": "COC=O",
+            "katex_skeletal_formula": "\\ce{H-COO-CH3}",
+            "katex_molecular_formula": "\\ce{C2H4O2}"
+        },
+        {
+            "iupac_name": "methyl ethanoate",
+            "common_name": "methyl acetate",
+            "local_name": "メチルエタン酸メチル（酢酸メチル）",
+            "skeletal_formula": "CH3-COO-CH3",
+            "molecular_formula": "C3H6O2",
+            "series_general_formula": "Simple saturated esters: CnH2nO2 (from monocarboxylic acids and alcohols)",
+            "functional_groups": [
+                {
+                    "name_en": "Ester linkage",
+                    "name_ja": "エステル結合",
+                    "pattern": "R–COO–R'"
+                }
+            ],
+            "notes": "Low-boiling ester with fruity smell; often used as example in problems comparing boiling points of acids, esters and alcohols.",
+            "smiles": "CC(=O)OC",
+            "katex_skeletal_formula": "\\ce{CH3-COO-CH3}",
+            "katex_molecular_formula": "\\ce{C3H6O2}"
+        },
+        {
+            "iupac_name": "ethyl ethanoate",
+            "common_name": "ethyl acetate",
+            "local_name": "エチルエタン酸エチル（酢酸エチル）",
+            "skeletal_formula": "CH3-COO-CH2-CH3",
+            "molecular_formula": "C4H8O2",
+            "series_general_formula": "Simple saturated esters: CnH2nO2, structure R-COO-R'",
+            "functional_groups": [
+                {
+                    "name_en": "Ester linkage",
+                    "name_ja": "エステル結合",
+                    "pattern": "R–COO–R'"
+                }
+            ],
+            "notes": "Very common solvent; prepared by esterification of ethanol and ethanoic acid; standard example for ester smell and hydrolysis.",
+            "smiles": "CC(=O)OCC",
+            "katex_skeletal_formula": "\\ce{CH3-COO-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C4H8O2}"
+        },
+        {
+            "iupac_name": "propyl ethanoate",
+            "common_name": "propyl acetate",
+            "local_name": "プロピルエタン酸プロピル（酢酸プロピル）",
+            "skeletal_formula": "CH3-COO-CH2-CH2-CH3",
+            "molecular_formula": "C5H10O2",
+            "series_general_formula": "Simple saturated esters: CnH2nO2",
+            "functional_groups": [
+                {
+                    "name_en": "Ester linkage",
+                    "name_ja": "エステル結合",
+                    "pattern": "R–COO–R'"
+                }
+            ],
+            "notes": "Fruity-smelling ester; used to exemplify how changing the alcohol changes the odor while keeping the same acid part.",
+            "smiles": "CC(=O)OCCC",
+            "katex_skeletal_formula": "\\ce{CH3-COO-CH2-CH2-CH3}",
+            "katex_molecular_formula": "\\ce{C5H10O2}"
+        },
+        {
+            "iupac_name": "methyl butanoate",
+            "common_name": "methyl butyrate",
+            "local_name": "メチルブタン酸メチル（酪酸メチル）",
+            "skeletal_formula": "CH3-CH2-CH2-COO-CH3",
+            "molecular_formula": "C5H10O2",
+            "series_general_formula": "Simple saturated esters: CnH2nO2",
+            "functional_groups": [
+                {
+                    "name_en": "Ester linkage",
+                    "name_ja": "エステル結合",
+                    "pattern": "R–COO–R'"
+                }
+            ],
+            "notes": "Has pineapple-like fruity odor; common example in questions relating smell to ester structure derived from butanoic acid.",
+            "smiles": "CCCC(=O)OC",
+            "katex_skeletal_formula": "\\ce{CH3-CH2-CH2-COO-CH3}",
+            "katex_molecular_formula": "\\ce{C5H10O2}"
+        }
+    ]
+}

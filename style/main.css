@@ -93,6 +93,10 @@ body {
     margin-top: 16px;
 }
 
+.panel.play-panel {
+    padding-bottom: 12px;
+}
+
 .panel-title {
     font-size: 0.9rem;
     font-weight: 600;
@@ -185,7 +189,7 @@ body {
     display: grid;
     grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.7fr);
     gap: 14px;
-    margin-top: 6px;
+    margin-top: 4px;
 }
 
 .grid-main.grid-horizontal {
@@ -376,6 +380,7 @@ body {
     align-items: stretch;
     justify-content: center;
     overflow: hidden;
+    position: relative;
 }
 
 .option-name-inner {
@@ -415,7 +420,7 @@ body {
     align-items: flex-start;
     justify-content: space-between;
     gap: 8px;
-    margin-top: 8px;
+    margin-top: 6px;
     flex-wrap: nowrap;
 }
 
@@ -494,7 +499,7 @@ body {
 }
 
 .footer-note {
-    margin-top: 12px;
+    margin-top: 10px;
     font-size: 0.72rem;
     text-align: center;
     color: var(--text-muted);

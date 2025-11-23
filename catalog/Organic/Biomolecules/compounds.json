@@ -1,0 +1,800 @@
+{
+    "compounds": [
+        {
+            "iupac_name": "2-aminoethanoic acid",
+            "common_name": "glycine",
+            "local_name": "グリシン",
+            "skeletal_formula": "H2N-CH2-COOH",
+            "molecular_formula": "C2H5NO2",
+            "series_general_formula": "α-Amino acids: H2N-CH(R)-COOH",
+            "functional_groups": [
+                {
+                    "name_en": "Amino",
+                    "name_ja": "アミノ基",
+                    "pattern": "–NH2"
+                },
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                }
+            ],
+            "notes": "Simplest α-amino acid; no chiral center; neutral side chain (R = H); often the first example in textbooks.",
+            "smiles": "NCC(=O)O",
+            "katex_skeletal_formula": "\\ce{H2N-CH2-COOH}",
+            "katex_molecular_formula": "\\ce{C2H5NO2}"
+        },
+        {
+            "iupac_name": "2-aminopropanoic acid",
+            "common_name": "alanine",
+            "local_name": "アラニン",
+            "skeletal_formula": "H2N-CH(CH3)-COOH",
+            "molecular_formula": "C3H7NO2",
+            "series_general_formula": "Neutral α-amino acids with alkyl side chain",
+            "functional_groups": [
+                {
+                    "name_en": "Amino",
+                    "name_ja": "アミノ基",
+                    "pattern": "–NH2"
+                },
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                },
+                {
+                    "name_en": "Methyl side chain",
+                    "name_ja": "メチル側鎖",
+                    "pattern": "–CH3"
+                }
+            ],
+            "notes": "Neutral amino acid with chiral center; side chain is methyl; very common example alongside glycine.",
+            "smiles": "CC(N)C(=O)O",
+            "katex_skeletal_formula": "\\ce{H2N-CH(CH3)-COOH}",
+            "katex_molecular_formula": "\\ce{C3H7NO2}"
+        },
+        {
+            "iupac_name": "2-amino-3-methylbutanoic acid",
+            "common_name": "valine",
+            "local_name": "バリン",
+            "skeletal_formula": "H2N-CH(CH(CH3)2)-COOH",
+            "molecular_formula": "C5H11NO2",
+            "series_general_formula": "Branched-chain amino acids (BCAA): Val, Leu, Ile",
+            "functional_groups": [
+                {
+                    "name_en": "Amino",
+                    "name_ja": "アミノ基",
+                    "pattern": "–NH2"
+                },
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                },
+                {
+                    "name_en": "Branched alkyl side chain",
+                    "name_ja": "分枝アルキル側鎖",
+                    "pattern": "–CH(CH3)2"
+                }
+            ],
+            "notes": "Hydrophobic essential amino acid; example of branched-chain amino acid in high school problems.",
+            "smiles": "CC(C)C(N)C(=O)O",
+            "katex_skeletal_formula": "\\ce{H2N-CH(CH(CH3)2)-COOH}",
+            "katex_molecular_formula": "\\ce{C5H11NO2}"
+        },
+        {
+            "iupac_name": "2-amino-3-hydroxypropanoic acid",
+            "common_name": "serine",
+            "local_name": "セリン",
+            "skeletal_formula": "H2N-CH(CH2OH)-COOH",
+            "molecular_formula": "C3H7NO3",
+            "series_general_formula": "Neutral polar amino acids with hydroxyl group",
+            "functional_groups": [
+                {
+                    "name_en": "Amino",
+                    "name_ja": "アミノ基",
+                    "pattern": "–NH2"
+                },
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                },
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "–CH2OH"
+                }
+            ],
+            "notes": "Neutral but polar amino acid; used as example of amino acid with hydroxyl side chain.",
+            "smiles": "NCC(O)C(=O)O",
+            "katex_skeletal_formula": "\\ce{H2N-CH(CH2OH)-COOH}",
+            "katex_molecular_formula": "\\ce{C3H7NO3}"
+        },
+        {
+            "iupac_name": "2-amino-3-sulfanylpropanoic acid",
+            "common_name": "cysteine",
+            "local_name": "システイン",
+            "skeletal_formula": "H2N-CH(CH2SH)-COOH",
+            "molecular_formula": "C3H7NO2S",
+            "series_general_formula": "Sulfur-containing amino acids: cysteine, methionine",
+            "functional_groups": [
+                {
+                    "name_en": "Amino",
+                    "name_ja": "アミノ基",
+                    "pattern": "–NH2"
+                },
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                },
+                {
+                    "name_en": "Thiol",
+                    "name_ja": "チオール（スルフヒドリル基）",
+                    "pattern": "–SH"
+                }
+            ],
+            "notes": "Contains –SH; two cysteine residues form disulfide bond (cystine) important for protein structure; often mentioned in high school.",
+            "smiles": "NCC(S)C(=O)O",
+            "katex_skeletal_formula": "\\ce{H2N-CH(CH2SH)-COOH}",
+            "katex_molecular_formula": "\\ce{C3H7NO2S}"
+        },
+        {
+            "iupac_name": "2-aminobutanedioic acid",
+            "common_name": "aspartic acid",
+            "local_name": "アスパラギン酸",
+            "skeletal_formula": "H2N-CH(CH2-COOH)-COOH",
+            "molecular_formula": "C4H7NO4",
+            "series_general_formula": "Acidic amino acids (two carboxyl groups)",
+            "functional_groups": [
+                {
+                    "name_en": "Amino",
+                    "name_ja": "アミノ基",
+                    "pattern": "–NH2"
+                },
+                {
+                    "name_en": "Carboxyl (α)",
+                    "name_ja": "カルボキシ基（α位）",
+                    "pattern": "–COOH"
+                },
+                {
+                    "name_en": "Carboxyl (side chain)",
+                    "name_ja": "カルボキシ基（側鎖）",
+                    "pattern": "–CH2COOH"
+                }
+            ],
+            "notes": "Acidic amino acid; side chain has additional carboxyl group; appears in pH/charge problems and zwitterion discussions.",
+            "smiles": "NCC(C(=O)O)C(=O)O",
+            "katex_skeletal_formula": "\\ce{H2N-CH(CH2COOH)-COOH}",
+            "katex_molecular_formula": "\\ce{C4H7NO4}"
+        },
+        {
+            "iupac_name": "2,6-diaminohexanoic acid",
+            "common_name": "lysine",
+            "local_name": "リシン（リジン）",
+            "skeletal_formula": "H2N-CH(CH2)4-NH2-COOH",
+            "molecular_formula": "C6H14N2O2",
+            "series_general_formula": "Basic amino acids (two amino groups)",
+            "functional_groups": [
+                {
+                    "name_en": "Amino (α)",
+                    "name_ja": "アミノ基（α位）",
+                    "pattern": "–NH2"
+                },
+                {
+                    "name_en": "Amino (side chain)",
+                    "name_ja": "アミノ基（側鎖）",
+                    "pattern": "–(CH2)4NH2"
+                },
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                }
+            ],
+            "notes": "Basic amino acid; positively charged at physiological pH; example of amino acid with two amino groups.",
+            "smiles": "NCCCCCC(C(=O)O)N",
+            "katex_skeletal_formula": "\\ce{H2N-CH(CH2)4-NH2-COOH}",
+            "katex_molecular_formula": "\\ce{C6H14N2O2}"
+        },
+        {
+            "iupac_name": "glycylglycine",
+            "common_name": "glycylglycine (dipeptide of glycine)",
+            "local_name": "グリシルグリシン（ジペプチド）",
+            "skeletal_formula": "H2N-CH2-CO-NH-CH2-COOH",
+            "molecular_formula": "C4H8N2O3",
+            "series_general_formula": "Dipeptides: two amino acids linked by one peptide bond",
+            "functional_groups": [
+                {
+                    "name_en": "Peptide (amide) bond",
+                    "name_ja": "ペプチド結合（アミド結合）",
+                    "pattern": "–CO–NH–"
+                },
+                {
+                    "name_en": "Amino (terminal)",
+                    "name_ja": "末端アミノ基",
+                    "pattern": "H2N–"
+                },
+                {
+                    "name_en": "Carboxyl (terminal)",
+                    "name_ja": "末端カルボキシ基",
+                    "pattern": "–COOH"
+                }
+            ],
+            "notes": "Simplest model dipeptide; used to illustrate peptide bond formation by condensation of two α-amino acids.",
+            "smiles": "NCC(=O)NCC(=O)O",
+            "katex_skeletal_formula": "\\ce{H2N-CH2-CO-NH-CH2-COOH}",
+            "katex_molecular_formula": "\\ce{C4H8N2O3}"
+        },
+        {
+            "iupac_name": "general oligopeptide",
+            "common_name": "peptide (n amino acid residues)",
+            "local_name": "ペプチド（n個のアミノ酸残基）",
+            "skeletal_formula": "H2N-CH(R1)-CO-NH-CH(R2)-CO-…-NH-CH(Rn)-COOH",
+            "molecular_formula": "(C2H3N O)_n + side chain contribution (generic)",
+            "series_general_formula": "Peptides: n amino acid residues linked by n−1 peptide bonds",
+            "functional_groups": [
+                {
+                    "name_en": "Peptide bonds",
+                    "name_ja": "ペプチド結合",
+                    "pattern": "–CO–NH– (repeating)"
+                }
+            ],
+            "notes": "General structure of peptides; formed by condensation polymerization of α-amino acids; hydrolysis yields original amino acids.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{H2N-CH(R1)-CO-(NH-CH(R2)-CO)_{n-1}-OH}",
+            "katex_molecular_formula": "\\ce{(C2H3NO)_n + side\\ chains}"
+        },
+        {
+            "iupac_name": "keratin (fibrous protein)",
+            "common_name": "keratin",
+            "local_name": "ケラチン（繊維状タンパク質）",
+            "skeletal_formula": "polypeptide rich in cysteine; many disulfide bonds –CH2–S–S–CH2–",
+            "molecular_formula": "very large (polypeptide; not written explicitly)",
+            "series_general_formula": "Fibrous proteins: long polypeptide chains forming fibers",
+            "functional_groups": [
+                {
+                    "name_en": "Peptide bonds",
+                    "name_ja": "ペプチド結合",
+                    "pattern": "–CO–NH–"
+                },
+                {
+                    "name_en": "Disulfide bonds",
+                    "name_ja": "ジスルフィド結合",
+                    "pattern": "–S–S– between cysteine residues"
+                }
+            ],
+            "notes": "Main component of hair, nails, wool; typical fibrous protein; many disulfide bonds give mechanical strength.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[–NH–CH(R)–CO–]_n + S–S\\ bonds}",
+            "katex_molecular_formula": "\\text{large polypeptide}"
+        },
+        {
+            "iupac_name": "hemoglobin (globular protein)",
+            "common_name": "hemoglobin",
+            "local_name": "ヘモグロビン（球状タンパク質）",
+            "skeletal_formula": "tetrameric globular protein with heme groups binding O2",
+            "molecular_formula": "very large (approx. 10^4 atoms per molecule)",
+            "series_general_formula": "Globular proteins: compact, water-soluble polypeptides",
+            "functional_groups": [
+                {
+                    "name_en": "Peptide bonds",
+                    "name_ja": "ペプチド結合",
+                    "pattern": "–CO–NH–"
+                },
+                {
+                    "name_en": "Heme (porphyrin–Fe complex)",
+                    "name_ja": "ヘム（ポルフィリン−鉄錯体）",
+                    "pattern": "Fe-porphyrin"
+                }
+            ],
+            "notes": "Typical globular protein in blood; transports oxygen; often contrasted with keratin as example of globular vs fibrous protein.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\text{polypeptide tetramer + heme groups}",
+            "katex_molecular_formula": "\\text{very large}"
+        },
+        {
+            "iupac_name": "O-α-D-glucopyranosyl-(1→2)-β-D-fructofuranose",
+            "common_name": "sucrose",
+            "local_name": "スクロース（ショ糖）",
+            "skeletal_formula": "Glc(α1→2β)Fru",
+            "molecular_formula": "C12H22O11",
+            "series_general_formula": "Disaccharides (二糖類): C12H22O11; formed by condensation of two monosaccharides",
+            "functional_groups": [
+                {
+                    "name_en": "Acetal (glycosidic bond)",
+                    "name_ja": "アセタール（グリコシド結合）",
+                    "pattern": "C–O–C between sugar units"
+                },
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH (multiple)"
+                }
+            ],
+            "notes": "Non-reducing disaccharide; main component of common sugar; from glucose + fructose; does not give silver mirror or Cu2+ reduction.",
+            "smiles": "OC[C@H]1O[C@@H](O[C@H]2[C@H](O)[C@@H](O)[C@H](O)[C@H](CO)O2)[C@H](O)[C@@H](O)[C@@H]1O",
+            "katex_skeletal_formula": "\\ce{C12H22O11}",
+            "katex_molecular_formula": "\\ce{C12H22O11}"
+        },
+        {
+            "iupac_name": "4-O-α-D-glucopyranosyl-D-glucopyranose",
+            "common_name": "maltose",
+            "local_name": "マルトース（麦芽糖）",
+            "skeletal_formula": "Glc(α1→4)Glc",
+            "molecular_formula": "C12H22O11",
+            "series_general_formula": "Reducing disaccharides: C12H22O11 (one free hemiacetal)",
+            "functional_groups": [
+                {
+                    "name_en": "Hemiacetal",
+                    "name_ja": "ヘミアセタール",
+                    "pattern": "–CHOH–O– (cyclic reducing end)"
+                },
+                {
+                    "name_en": "Glycosidic bond",
+                    "name_ja": "グリコシド結合",
+                    "pattern": "C–O–C between two glucoses"
+                }
+            ],
+            "notes": "Formed by partial hydrolysis of starch; reducing sugar; appears in starch hydrolysis and Benedict/Tollens reactions.",
+            "smiles": "OC[C@H]1O[C@@H](O[C@H]2[C@H](O)[C@@H](O)[C@H](O)[C@H](CO)O2)[C@H](O)[C@@H](O)[C@@H]1O",
+            "katex_skeletal_formula": "\\ce{C12H22O11}",
+            "katex_molecular_formula": "\\ce{C12H22O11}"
+        },
+        {
+            "iupac_name": "4-O-β-D-galactopyranosyl-D-glucopyranose",
+            "common_name": "lactose",
+            "local_name": "ラクトース（乳糖）",
+            "skeletal_formula": "Gal(β1→4)Glc",
+            "molecular_formula": "C12H22O11",
+            "series_general_formula": "Disaccharides in milk sugar: C12H22O11",
+            "functional_groups": [
+                {
+                    "name_en": "Hemiacetal",
+                    "name_ja": "ヘミアセタール",
+                    "pattern": "Reducing end on glucose unit"
+                },
+                {
+                    "name_en": "Glycosidic bond",
+                    "name_ja": "グリコシド結合",
+                    "pattern": "β1→4 linkage"
+                }
+            ],
+            "notes": "Reducing disaccharide in milk; composed of galactose and glucose; important example in carbohydrate unit.",
+            "smiles": "OC[C@H]1O[C@@H](O[C@H]2[C@H](O)[C@@H](O)[C@H](O)[C@H](CO)O2)[C@H](O)[C@@H](O)[C@@H]1O",
+            "katex_skeletal_formula": "\\ce{C12H22O11}",
+            "katex_molecular_formula": "\\ce{C12H22O11}"
+        },
+        {
+            "iupac_name": "D-glucose",
+            "common_name": "glucose (grape sugar)",
+            "local_name": "グルコース（ブドウ糖）",
+            "skeletal_formula": "HO-CH2-(CHOH)4-CHO",
+            "molecular_formula": "C6H12O6",
+            "series_general_formula": "Aldohexoses (アルドヘキソース): C6H12O6; general carbohydrates ~ Cn(H2O)m",
+            "functional_groups": [
+                {
+                    "name_en": "Aldehyde",
+                    "name_ja": "アルデヒド基",
+                    "pattern": "–CHO"
+                },
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH (multiple)"
+                }
+            ],
+            "notes": "Most important monosaccharide in metabolism; reducing sugar; forms starch, glycogen, cellulose upon polymerization.",
+            "smiles": "OC[C@H](O)[C@H](O)[C@H](O)[C@H](O)C=O",
+            "katex_skeletal_formula": "\\ce{HO-CH2-(CHOH)4-CHO}",
+            "katex_molecular_formula": "\\ce{C6H12O6}"
+        },
+        {
+            "iupac_name": "D-fructose",
+            "common_name": "fructose (fruit sugar)",
+            "local_name": "フルクトース（果糖）",
+            "skeletal_formula": "HO-CH2-CO-(CHOH)3-CH2OH",
+            "molecular_formula": "C6H12O6",
+            "series_general_formula": "Ketohexoses (ケトヘキソース): C6H12O6; isomeric with glucose",
+            "functional_groups": [
+                {
+                    "name_en": "Ketone",
+                    "name_ja": "ケトン基",
+                    "pattern": "R-CO-R"
+                },
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH (multiple)"
+                }
+            ],
+            "notes": "Sweet monosaccharide found in fruits and honey; ketose; reducing sugar; forms part of sucrose.",
+            "smiles": "OC[C@H](O)[C@@H](O)C(=O)CO",
+            "katex_skeletal_formula": "\\ce{HO-CH2-CO-(CHOH)3-CH2OH}",
+            "katex_molecular_formula": "\\ce{C6H12O6}"
+        },
+        {
+            "iupac_name": "D-galactose",
+            "common_name": "galactose",
+            "local_name": "ガラクトース",
+            "skeletal_formula": "HO-CH2-(CHOH)4-CHO (different stereochemistry from glucose)",
+            "molecular_formula": "C6H12O6",
+            "series_general_formula": "Aldohexoses: C6H12O6; epimer of glucose",
+            "functional_groups": [
+                {
+                    "name_en": "Aldehyde",
+                    "name_ja": "アルデヒド基",
+                    "pattern": "–CHO"
+                },
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Component of lactose (milk sugar); same formula as glucose but different configuration at one stereocenter.",
+            "smiles": "OC[C@H](O)[C@@H](O)[C@@H](O)[C@H](O)C=O",
+            "katex_skeletal_formula": "\\ce{HO-CH2-(CHOH)4-CHO}",
+            "katex_molecular_formula": "\\ce{C6H12O6}"
+        },
+        {
+            "iupac_name": "D-ribose",
+            "common_name": "ribose",
+            "local_name": "リボース",
+            "skeletal_formula": "HO-CH2-(CHOH)3-CHO",
+            "molecular_formula": "C5H10O5",
+            "series_general_formula": "Aldopentoses (アルドペントース): C5H10O5",
+            "functional_groups": [
+                {
+                    "name_en": "Aldehyde",
+                    "name_ja": "アルデヒド基",
+                    "pattern": "–CHO"
+                },
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH"
+                }
+            ],
+            "notes": "Pentose sugar; component of RNA and many biomolecules; important example of pentose in high school biology/chemistry.",
+            "smiles": "OC[C@H](O)[C@H](O)C=O",
+            "katex_skeletal_formula": "\\ce{HO-CH2-(CHOH)3-CHO}",
+            "katex_molecular_formula": "\\ce{C5H10O5}"
+        },
+        {
+            "iupac_name": "2-deoxy-D-ribose",
+            "common_name": "deoxyribose",
+            "local_name": "デオキシリボース",
+            "skeletal_formula": "HO-CH2-CH2-CHOH-CHO",
+            "molecular_formula": "C5H10O4",
+            "series_general_formula": "Deoxypentoses (デオキシペントース): C5H10O4",
+            "functional_groups": [
+                {
+                    "name_en": "Aldehyde",
+                    "name_ja": "アルデヒド基",
+                    "pattern": "–CHO"
+                },
+                {
+                    "name_en": "Hydroxyl",
+                    "name_ja": "ヒドロキシ基",
+                    "pattern": "R–OH (fewer than ribose)"
+                }
+            ],
+            "notes": "Pentose sugar lacking one hydroxyl group compared to ribose; component of DNA; important in biomolecule unit.",
+            "smiles": "OC[C@H](CO)[C@H](O)C=O",
+            "katex_skeletal_formula": "\\ce{HO-CH2-CH2-CHOH-CHO}",
+            "katex_molecular_formula": "\\ce{C5H10O4}"
+        },
+        {
+            "iupac_name": "starch (amylose and amylopectin)",
+            "common_name": "starch",
+            "local_name": "デンプン（アミロース＋アミロペクチン）",
+            "skeletal_formula": "[-C6H10O5-]n (α-1,4 and α-1,6 linked D-glucose)",
+            "molecular_formula": "(C6H10O5)n",
+            "series_general_formula": "Polysaccharides of glucose: (C6H10O5)n (n ≈ 10^2–10^5)",
+            "functional_groups": [
+                {
+                    "name_en": "Acetal (glycosidic bond)",
+                    "name_ja": "アセタール結合（グリコシド結合）",
+                    "pattern": "α(1→4), α(1→6) between glucose units"
+                }
+            ],
+            "notes": "Storage polysaccharide in plants; gives blue-violet iodine–starch reaction; hydrolyzed to maltose and glucose.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-C6H10O5-]_n}",
+            "katex_molecular_formula": "\\ce{(C6H10O5)_n}"
+        },
+        {
+            "iupac_name": "amylose",
+            "common_name": "amylose",
+            "local_name": "アミロース",
+            "skeletal_formula": "Linear α(1→4)-linked D-glucose polymer",
+            "molecular_formula": "(C6H10O5)n",
+            "series_general_formula": "Linear fraction of starch: (C6H10O5)n",
+            "functional_groups": [
+                {
+                    "name_en": "Acetal",
+                    "name_ja": "アセタール結合",
+                    "pattern": "α(1→4)-glycosidic bonds"
+                }
+            ],
+            "notes": "Linear component of starch; forms helical structure; gives deep blue complex with iodine (iodine–starch reaction).",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-C6H10O5-]_n (α(1→4))}",
+            "katex_molecular_formula": "\\ce{(C6H10O5)_n}"
+        },
+        {
+            "iupac_name": "amylopectin",
+            "common_name": "amylopectin",
+            "local_name": "アミロペクチン",
+            "skeletal_formula": "Branched α(1→4)- and α(1→6)-linked D-glucose polymer",
+            "molecular_formula": "(C6H10O5)n",
+            "series_general_formula": "Branched starch component: (C6H10O5)n",
+            "functional_groups": [
+                {
+                    "name_en": "Acetal",
+                    "name_ja": "アセタール結合",
+                    "pattern": "α(1→4) main chain, α(1→6) branches"
+                }
+            ],
+            "notes": "Highly branched component of starch; gives red-violet color with iodine; more abundant than amylose in natural starch.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-C6H10O5-]_n (α(1→4), α(1→6))}",
+            "katex_molecular_formula": "\\ce{(C6H10O5)_n}"
+        },
+        {
+            "iupac_name": "cellulose",
+            "common_name": "cellulose",
+            "local_name": "セルロース",
+            "skeletal_formula": "[-C6H10O5-]n (β-1,4 linked D-glucose)",
+            "molecular_formula": "(C6H10O5)n",
+            "series_general_formula": "Structural polysaccharides: (C6H10O5)n (β-linkages)",
+            "functional_groups": [
+                {
+                    "name_en": "Acetal",
+                    "name_ja": "アセタール結合",
+                    "pattern": "β(1→4)-glycosidic bonds"
+                }
+            ],
+            "notes": "Main component of plant cell walls; forms straight chains with hydrogen bonding; does not give iodine starch color; not digested by humans.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-C6H10O5-]_n (β(1→4))}",
+            "katex_molecular_formula": "\\ce{(C6H10O5)_n}"
+        },
+        {
+            "iupac_name": "glycogen",
+            "common_name": "glycogen",
+            "local_name": "グリコーゲン",
+            "skeletal_formula": "Branched α(1→4), α(1→6) D-glucose polymer (more highly branched than amylopectin)",
+            "molecular_formula": "(C6H10O5)n",
+            "series_general_formula": "Animal storage polysaccharides: (C6H10O5)n",
+            "functional_groups": [
+                {
+                    "name_en": "Acetal",
+                    "name_ja": "アセタール結合",
+                    "pattern": "α(1→4), α(1→6) linkages"
+                }
+            ],
+            "notes": "Storage polysaccharide in animals (liver, muscle); similar to amylopectin but more branched; gives reddish-brown color with iodine.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{[-C6H10O5-]_n}",
+            "katex_molecular_formula": "\\ce{(C6H10O5)_n}"
+        },
+        {
+            "iupac_name": "octadecanoic acid",
+            "common_name": "stearic acid",
+            "local_name": "ステアリン酸",
+            "skeletal_formula": "CH3-(CH2)16-COOH",
+            "molecular_formula": "C18H36O2",
+            "series_general_formula": "Saturated higher fatty acids: CH3-(CH2)n-COOH (n ≈ 10–18)",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                },
+                {
+                    "name_en": "Alkyl chain",
+                    "name_ja": "アルキル鎖",
+                    "pattern": "–(CH2)n–"
+                }
+            ],
+            "notes": "Typical saturated higher fatty acid; solid at room temperature; used as component of fats and soaps.",
+            "smiles": "CCCCCCCCCCCCCCCCC(=O)O",
+            "katex_skeletal_formula": "\\ce{CH3-(CH2)16-COOH}",
+            "katex_molecular_formula": "\\ce{C18H36O2}"
+        },
+        {
+            "iupac_name": "cis-9-octadecenoic acid",
+            "common_name": "oleic acid",
+            "local_name": "オレイン酸",
+            "skeletal_formula": "CH3-(CH2)7-CH=CH-(CH2)7-COOH",
+            "molecular_formula": "C18H34O2",
+            "series_general_formula": "Monounsaturated higher fatty acids: CnH2n-2O2",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxyl",
+                    "name_ja": "カルボキシ基",
+                    "pattern": "–COOH"
+                },
+                {
+                    "name_en": "Alkene",
+                    "name_ja": "二重結合（アルケン）",
+                    "pattern": "C=C"
+                }
+            ],
+            "notes": "Unsaturated fatty acid; liquid at room temperature; major component of many vegetable oils.",
+            "smiles": "CCCCCCCCC=CCCCCCCC(=O)O",
+            "katex_skeletal_formula": "\\ce{CH3-(CH2)7-CH=CH-(CH2)7-COOH}",
+            "katex_molecular_formula": "\\ce{C18H34O2}"
+        },
+        {
+            "iupac_name": "glycerol tristearate",
+            "common_name": "tristearin (a typical fat)",
+            "local_name": "トリステアリン（代表的な脂肪）",
+            "skeletal_formula": "glycerol triester of stearic acid",
+            "molecular_formula": "C57H110O6",
+            "series_general_formula": "Triglycerides (fats and oils): glycerol triesters of higher fatty acids",
+            "functional_groups": [
+                {
+                    "name_en": "Ester",
+                    "name_ja": "エステル結合",
+                    "pattern": "R-COO-R'"
+                },
+                {
+                    "name_en": "Alkyl chains",
+                    "name_ja": "高級アルキル鎖",
+                    "pattern": "long –(CH2)n–"
+                }
+            ],
+            "notes": "Example of solid fat; formed from glycerol and stearic acid; hydrolysis (saponification) yields glycerol and sodium stearate (soap).",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{(C17H35COO)3C3H5}",
+            "katex_molecular_formula": "\\ce{C57H110O6}"
+        },
+        {
+            "iupac_name": "glycerol trioleate",
+            "common_name": "triolein (a typical oil)",
+            "local_name": "トリオレイン（代表的な油脂）",
+            "skeletal_formula": "glycerol triester of oleic acid",
+            "molecular_formula": "C57H104O6",
+            "series_general_formula": "Triglycerides (oils): glycerol triesters of unsaturated fatty acids",
+            "functional_groups": [
+                {
+                    "name_en": "Ester",
+                    "name_ja": "エステル結合",
+                    "pattern": "R-COO-R'"
+                },
+                {
+                    "name_en": "Alkene",
+                    "name_ja": "二重結合",
+                    "pattern": "C=C (in fatty acid chains)"
+                }
+            ],
+            "notes": "Liquid oil at room temperature; typical component of vegetable oils; more double bonds → lower melting point.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{(C17H33COO)3C3H5}",
+            "katex_molecular_formula": "\\ce{C57H104O6}"
+        },
+        {
+            "iupac_name": "triacylglycerol (generic fat/oil)",
+            "common_name": "fat or oil (triglyceride)",
+            "local_name": "脂肪・油脂（トリアシルグリセロール）",
+            "skeletal_formula": "glycerol triester of higher fatty acids R1COOH, R2COOH, R3COOH",
+            "molecular_formula": "approx. C55–C57H100–H110O6",
+            "series_general_formula": "Triacylglycerols: \\ce{C3H5(OCO-R)3} (R = C11–C17 alkyl)",
+            "functional_groups": [
+                {
+                    "name_en": "Ester",
+                    "name_ja": "エステル結合",
+                    "pattern": "–COO– (3 per molecule)"
+                }
+            ],
+            "notes": "General structure of fats and oils; hydrolyzed by alkali to glycerol and soap; saturation of R affects melting point (fat vs oil).",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{C3H5(OOCR)3}",
+            "katex_molecular_formula": "\\ce{C3H5(OOCR)3}"
+        },
+        {
+            "iupac_name": "sodium octadecanoate",
+            "common_name": "sodium stearate",
+            "local_name": "ステアリン酸ナトリウム",
+            "skeletal_formula": "C17H35COO^- Na^+",
+            "molecular_formula": "C18H35NaO2",
+            "series_general_formula": "Soaps (fatty acid salts): RCOO^- M^+ (R ≈ C11–C17; M = Na, K)",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxylate",
+                    "name_ja": "カルボキシラート（カルボン酸イオン）",
+                    "pattern": "RCOO^-"
+                }
+            ],
+            "notes": "Typical solid soap; sodium salt of stearic acid; forms micelles in water and emulsifies oils.",
+            "smiles": "[Na+].[O-]C(=O)CCCCCCCCCCCCCCCCC",
+            "katex_skeletal_formula": "\\ce{C17H35COONa}",
+            "katex_molecular_formula": "\\ce{C18H35NaO2}"
+        },
+        {
+            "iupac_name": "sodium hexadecanoate",
+            "common_name": "sodium palmitate",
+            "local_name": "パルミチン酸ナトリウム",
+            "skeletal_formula": "C15H31COO^- Na^+",
+            "molecular_formula": "C16H31NaO2",
+            "series_general_formula": "Sodium soaps: CnH2n+1COONa",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxylate",
+                    "name_ja": "カルボキシラート",
+                    "pattern": "RCOO^-"
+                }
+            ],
+            "notes": "Another common sodium soap; from palmitic acid; used in many soap bars and detergents.",
+            "smiles": "[Na+].[O-]C(=O)CCCCCCCCCCCCCCCC",
+            "katex_skeletal_formula": "\\ce{C15H31COONa}",
+            "katex_molecular_formula": "\\ce{C16H31NaO2}"
+        },
+        {
+            "iupac_name": "sodium (9Z-octadec-9-enoate)",
+            "common_name": "sodium oleate",
+            "local_name": "オレイン酸ナトリウム",
+            "skeletal_formula": "C17H33COO^- Na^+",
+            "molecular_formula": "C18H33NaO2",
+            "series_general_formula": "Unsaturated soaps: RCOO^- Na^+ with C=C",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxylate",
+                    "name_ja": "カルボキシラート",
+                    "pattern": "RCOO^-"
+                },
+                {
+                    "name_en": "Alkene",
+                    "name_ja": "二重結合",
+                    "pattern": "C=C in R"
+                }
+            ],
+            "notes": "Soap containing unsaturated hydrocarbon chain; tends to be softer; improves lathering properties.",
+            "smiles": "[Na+].[O-]C(=O)CCCCCCCCC=CCCCCCCCC",
+            "katex_skeletal_formula": "\\ce{C17H33COONa}",
+            "katex_molecular_formula": "\\ce{C18H33NaO2}"
+        },
+        {
+            "iupac_name": "potassium octadecanoate",
+            "common_name": "potassium stearate",
+            "local_name": "ステアリン酸カリウム",
+            "skeletal_formula": "C17H35COO^- K^+",
+            "molecular_formula": "C18H35KO2",
+            "series_general_formula": "Potassium soaps: CnH2n+1COOK",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxylate",
+                    "name_ja": "カルボキシラート",
+                    "pattern": "RCOO^-"
+                }
+            ],
+            "notes": "Potassium soap; softer than sodium soaps; used in liquid soaps and shaving creams.",
+            "smiles": "[K+].[O-]C(=O)CCCCCCCCCCCCCCCCC",
+            "katex_skeletal_formula": "\\ce{C17H35COOK}",
+            "katex_molecular_formula": "\\ce{C18H35KO2}"
+        },
+        {
+            "iupac_name": "fatty acid soap (generic)",
+            "common_name": "soap (generic)",
+            "local_name": "石けん（一般式）",
+            "skeletal_formula": "R–COO^- M^+ (R = C11–C17 alkyl, M = Na or K)",
+            "molecular_formula": "RCOOM (generic)",
+            "series_general_formula": "Soaps: RCOO^- M^+ produced by saponification of fats/oils",
+            "functional_groups": [
+                {
+                    "name_en": "Carboxylate",
+                    "name_ja": "カルボキシラート",
+                    "pattern": "RCOO^-"
+                }
+            ],
+            "notes": "Anionic surfactant; hydrophilic head (COO^- M^+), hydrophobic tail (R); forms micelles in water and emulsifies oils and fats.",
+            "smiles": "",
+            "katex_skeletal_formula": "\\ce{RCOO^- M^+}",
+            "katex_molecular_formula": "\\ce{RCOOM}"
+        }
+    ]
+}
