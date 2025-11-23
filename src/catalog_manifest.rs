@@ -92,15 +92,17 @@ mod tests {
             path: vec!["Organic".to_string(), "Aliphatic compounds".to_string()],
             file: "catalog/Organic/Aliphatic_compounds/compounds.json".to_string(),
         }));
-        assert!(leaves.contains(&CatalogLeaf {
-            path: vec![
-                "Organic".to_string(),
-                "Aliphatic compounds".to_string(),
-                "Alcohols and ethers".to_string(),
-            ],
-            file: "catalog/Organic/Aliphatic_compounds/Alcohols_and_ethers/compounds.json"
-                .to_string(),
-        }));
+        assert!(
+            leaves.contains(&CatalogLeaf {
+                path: vec![
+                    "Organic".to_string(),
+                    "Aliphatic compounds".to_string(),
+                    "Alcohols and ethers".to_string(),
+                ],
+                file: "catalog/Organic/Aliphatic_compounds/Alcohols_and_ethers/compounds.json"
+                    .to_string(),
+            })
+        );
         assert!(leaves.contains(&CatalogLeaf {
             path: vec![
                 "Organic".to_string(),

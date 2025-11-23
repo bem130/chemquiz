@@ -109,12 +109,8 @@ pub fn generate_quiz<R: Rng + ?Sized>(
         .expect("correct option must exist after shuffle");
 
     let prompt = match mode {
-        QuizMode::NameToStructure => {
-            compounds[correct_compound_index].english_label()
-        }
-        QuizMode::StructureToName => {
-            compounds[correct_compound_index].display_structure()
-        }
+        QuizMode::NameToStructure => compounds[correct_compound_index].english_label(),
+        QuizMode::StructureToName => compounds[correct_compound_index].display_structure(),
     };
 
     Ok(QuizItem {
