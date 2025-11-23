@@ -50,6 +50,20 @@ body {
     flex-direction: column;
 }
 
+.play-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.play-topbar-actions {
+    display: flex;
+    gap: 8px;
+}
+
 .play-main {
     position: relative;
     flex: 1 1 auto;
@@ -689,21 +703,27 @@ body {
 .result-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(2, 6, 23, 0.65);
+    background: rgba(15, 23, 42, 0.75);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 60;
-    padding: 12px;
+    padding: 16px;
 }
 
 .result-popup {
-    width: min(520px, 92%);
+    background: var(--panel);
     border-radius: 18px;
-    background: var(--panel-soft);
-    border: 1px solid var(--border-strong);
+    border: 1px solid var(--border);
     box-shadow: var(--shadow);
-    padding: 16px;
+    max-width: 640px;
+    width: min(640px, 90vw);
+    max-height: 70vh;
+    padding: 18px 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
 }
 
 .result-title {
@@ -729,9 +749,77 @@ body {
     font-size: 0.9rem;
 }
 
-.overlay-actions {
-    display: flex;
-    justify-content: flex-end;
+.result-core {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: 8px;
-    margin-top: 12px;
+}
+
+.result-name-block {
+    display: grid;
+    gap: 4px;
+}
+
+.result-name-main {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.result-name-ja {
+    margin: 0;
+    font-size: 0.86rem;
+    color: var(--text-muted);
+}
+
+.result-formula-block {
+    display: grid;
+    gap: 6px;
+    align-content: start;
+}
+
+.result-series {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.result-structure {
+    margin: 0;
+    padding: 8px 10px;
+    border-radius: 12px;
+    border: 1px dashed var(--border);
+    background: rgba(15, 23, 42, 0.9);
+    font-family: ui-monospace, SFMono-Regular, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.result-details {
+    margin-top: 6px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    display: grid;
+    gap: 8px;
+}
+
+.result-detail-section {
+    display: grid;
+    gap: 4px;
+}
+
+.result-detail-label {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.result-detail-list {
+    margin: 0;
+    padding-left: 18px;
+    display: grid;
+    gap: 4px;
+}
+
+.overlay-hint {
+    margin: 0;
+    font-size: 0.78rem;
+    color: var(--text-muted);
 }

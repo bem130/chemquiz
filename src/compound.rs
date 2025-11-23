@@ -11,6 +11,15 @@ pub struct FunctionalGroup {
     pub pattern: String,
 }
 
+/// Structured section used to present compound metadata in overlays and summaries.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct CompoundDetailSection {
+    /// Section label such as "Functional groups".
+    pub label: String,
+    /// Individual bullet points within the section.
+    pub entries: Vec<String>,
+}
+
 /// Represents a chemical compound used for quiz questions.
 #[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
 pub struct Compound {
@@ -63,6 +72,47 @@ impl Compound {
 
     pub fn display_structure(&self) -> String {
         format!("{} ({})", self.skeletal_formula, self.molecular_formula)
+    }
+
+    /// Builds descriptive sections for optional metadata such as series formulas,
+    /// functional groups, and notes. Empty or whitespace-only values are ignored.
+    pub fn detail_sections(&self) -> Vec<CompoundDetailSection> {
+        let mut sections = Vec::new();
+
+        if let Some(series) = &self.series_general_formula {
+            let trimmed = series.trim();
+            if !trimmed.is_empty() {
+                sections.push(CompoundDetailSection {
+                    label: "Series formula".to_string(),
+                    entries: vec![trimmed.to_string()],
+                });
+            }
+        }
+
+        if !self.functional_groups.is_empty() {
+            let groups = self
+                .functional_groups
+                .iter()
+                .map(|group| format!("{} / {}: {}", group.name_en, group.name_ja, group.pattern))
+                .collect();
+
+            sections.push(CompoundDetailSection {
+                label: "Functional groups".to_string(),
+                entries: groups,
+            });
+        }
+
+        if let Some(notes) = &self.notes {
+            let trimmed = notes.trim();
+            if !trimmed.is_empty() {
+                sections.push(CompoundDetailSection {
+                    label: "Notes".to_string(),
+                    entries: vec![trimmed.to_string()],
+                });
+            }
+        }
+
+        sections
     }
 }
 
@@ -185,6 +235,65 @@ mod tests {
             serde_json::from_str(json).expect("compound should parse with smiles");
 
         assert_eq!(parsed.smiles.as_deref(), Some("CC(=O)O"));
+    }
+
+    #[test]
+    fn detail_sections_include_all_metadata() {
+        let compound = Compound {
+            iupac_name: "ethanoic acid".to_string(),
+            common_name: Some("acetic acid".to_string()),
+            local_name: Some("酢酸".to_string()),
+            skeletal_formula: "CH3COOH".to_string(),
+            molecular_formula: "C2H4O2".to_string(),
+            series_general_formula: Some("C_nH_{2n+2}O_2".to_string()),
+            functional_groups: vec![
+                FunctionalGroup {
+                    name_en: "Carboxyl".to_string(),
+                    name_ja: "カルボキシル基".to_string(),
+                    pattern: "-COOH".to_string(),
+                },
+                FunctionalGroup {
+                    name_en: "Hydroxyl".to_string(),
+                    name_ja: "ヒドロキシ基".to_string(),
+                    pattern: "-OH".to_string(),
+                },
+            ],
+            notes: Some("Weak acid found in vinegar".to_string()),
+            smiles: Some("CC(=O)O".to_string()),
+        };
+
+        let sections = compound.detail_sections();
+        assert_eq!(sections.len(), 3);
+        assert_eq!(sections[0].label, "Series formula");
+        assert_eq!(sections[0].entries, vec!["C_nH_{2n+2}O_2".to_string()]);
+        assert_eq!(sections[1].label, "Functional groups");
+        assert_eq!(
+            sections[1].entries,
+            vec![
+                "Carboxyl / カルボキシル基: -COOH".to_string(),
+                "Hydroxyl / ヒドロキシ基: -OH".to_string(),
+            ]
+        );
+        assert_eq!(sections[2].label, "Notes");
+        assert_eq!(sections[2].entries, vec!["Weak acid found in vinegar".to_string()]);
+    }
+
+    #[test]
+    fn detail_sections_skip_empty_values() {
+        let compound = Compound {
+            iupac_name: "methane".to_string(),
+            common_name: None,
+            local_name: None,
+            skeletal_formula: "CH4".to_string(),
+            molecular_formula: "CH4".to_string(),
+            series_general_formula: Some("   ".to_string()),
+            functional_groups: Vec::new(),
+            notes: Some("   ".to_string()),
+            smiles: Some("C".to_string()),
+        };
+
+        let sections = compound.detail_sections();
+        assert!(sections.is_empty());
     }
 
     #[test]
