@@ -351,6 +351,10 @@ export async function renderStructure(smiles, theme, skeletalCanvas, fullDiv) {
         return { ok: false, message: `RDKit get_mol failed: ${err}` };
     }
 
+    if (!molecule) {
+        return { ok: false, message: 'RDKit get_mol returned null for this SMILES.' };
+    }
+
     const width = skeletalCanvas.clientWidth || (skeletalCanvas.parentElement && skeletalCanvas.parentElement.clientWidth) || 260;
     const height = skeletalCanvas.clientHeight || 190;
     skeletalCanvas.width = width;
@@ -363,7 +367,9 @@ export async function renderStructure(smiles, theme, skeletalCanvas, fullDiv) {
     try {
         molecule.draw_to_canvas(offscreen, -1, -1);
     } catch (err) {
-        molecule.delete();
+        if (molecule) {
+            molecule.delete();
+        }
         return { ok: false, message: `RDKit draw_to_canvas failed: ${err}` };
     }
 
@@ -375,7 +381,9 @@ export async function renderStructure(smiles, theme, skeletalCanvas, fullDiv) {
     } catch (err) {
         molblock = '';
     }
-    molecule.delete();
+    if (molecule) {
+        molecule.delete();
+    }
 
     if (molblock && fullDiv) {
         const targetWidth = fullDiv.clientWidth || width;
